@@ -1,0 +1,799 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d1" for="edge" attr.name="weight" attr.type="double"/>
+<key id="d0" for="edge" attr.name="dep_type" attr.type="string"/>
+<graph edgedefault="directed"><node id="updatePet"/>
+<node id="addPet"/>
+<node id="findPetsByStatus"/>
+<node id="findPetsByTags"/>
+<node id="getPetById"/>
+<node id="updatePetWithForm"/>
+<node id="deletePet"/>
+<node id="uploadFile"/>
+<node id="getInventory"/>
+<node id="placeOrder"/>
+<node id="getOrderById"/>
+<node id="deleteOrder"/>
+<node id="createUser"/>
+<node id="createUsersWithListInput"/>
+<node id="loginUser"/>
+<node id="logoutUser"/>
+<node id="getUserByName"/>
+<node id="updateUser"/>
+<node id="deleteUser"/>
+<edge source="updatePet" target="addPet">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="updatePet" target="findPetsByStatus">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="updatePet" target="updatePetWithForm">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.30000000000000004</data>
+</edge>
+<edge source="updatePet" target="placeOrder">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="updatePet" target="createUser">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="updatePet" target="createUsersWithListInput">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="updatePet" target="updateUser">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="updatePet" target="findPetsByTags">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="updatePet" target="getPetById">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="updatePet" target="deletePet">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="updatePet" target="uploadFile">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="updatePet" target="getInventory">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="updatePet" target="getOrderById">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="updatePet" target="deleteOrder">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="updatePet" target="loginUser">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="updatePet" target="logoutUser">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="updatePet" target="getUserByName">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="updatePet" target="deleteUser">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="addPet" target="updatePet">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="addPet" target="findPetsByStatus">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="addPet" target="updatePetWithForm">
+  <data key="d0">nested_resource</data>
+  <data key="d1">0.15000000000000002</data>
+</edge>
+<edge source="addPet" target="placeOrder">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="addPet" target="createUser">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="addPet" target="createUsersWithListInput">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="addPet" target="updateUser">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="addPet" target="findPetsByTags">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="addPet" target="getPetById">
+  <data key="d0">crud</data>
+  <data key="d1">0.09999999999999998</data>
+</edge>
+<edge source="addPet" target="deletePet">
+  <data key="d0">crud</data>
+  <data key="d1">0.09999999999999998</data>
+</edge>
+<edge source="addPet" target="uploadFile">
+  <data key="d0">nested_resource</data>
+  <data key="d1">0.15000000000000002</data>
+</edge>
+<edge source="addPet" target="getInventory">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="addPet" target="getOrderById">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="addPet" target="deleteOrder">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="addPet" target="loginUser">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="addPet" target="logoutUser">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="addPet" target="getUserByName">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="addPet" target="deleteUser">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="findPetsByStatus" target="updatePet">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="findPetsByStatus" target="addPet">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="findPetsByStatus" target="updatePetWithForm">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.30000000000000004</data>
+</edge>
+<edge source="findPetsByStatus" target="placeOrder">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="findPetsByStatus" target="createUser">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="findPetsByStatus" target="createUsersWithListInput">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="findPetsByStatus" target="updateUser">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="findPetsByStatus" target="findPetsByTags">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="findPetsByStatus" target="getPetById">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="findPetsByStatus" target="deletePet">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="findPetsByStatus" target="uploadFile">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="findPetsByStatus" target="getInventory">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="findPetsByStatus" target="getOrderById">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="findPetsByStatus" target="deleteOrder">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="findPetsByStatus" target="loginUser">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="findPetsByStatus" target="logoutUser">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="findPetsByStatus" target="getUserByName">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="findPetsByStatus" target="deleteUser">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="findPetsByTags" target="updatePet">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="findPetsByTags" target="addPet">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="findPetsByTags" target="findPetsByStatus">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="findPetsByTags" target="updatePetWithForm">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.30000000000000004</data>
+</edge>
+<edge source="findPetsByTags" target="placeOrder">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="findPetsByTags" target="createUser">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="findPetsByTags" target="createUsersWithListInput">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="findPetsByTags" target="updateUser">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="findPetsByTags" target="getPetById">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="findPetsByTags" target="deletePet">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="findPetsByTags" target="uploadFile">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="findPetsByTags" target="getInventory">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="findPetsByTags" target="getOrderById">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="findPetsByTags" target="deleteOrder">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="findPetsByTags" target="loginUser">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="findPetsByTags" target="logoutUser">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="findPetsByTags" target="getUserByName">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="findPetsByTags" target="deleteUser">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="getPetById" target="updatePet">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="getPetById" target="addPet">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="getPetById" target="findPetsByStatus">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="getPetById" target="updatePetWithForm">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.30000000000000004</data>
+</edge>
+<edge source="getPetById" target="placeOrder">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="getPetById" target="createUser">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="getPetById" target="createUsersWithListInput">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="getPetById" target="updateUser">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="getPetById" target="findPetsByTags">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="getPetById" target="deletePet">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="getPetById" target="uploadFile">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="getPetById" target="getInventory">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="getPetById" target="getOrderById">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="getPetById" target="deleteOrder">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="getPetById" target="loginUser">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="getPetById" target="logoutUser">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="getPetById" target="getUserByName">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="getPetById" target="deleteUser">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="updatePetWithForm" target="updatePet">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="updatePetWithForm" target="addPet">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="updatePetWithForm" target="findPetsByStatus">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="updatePetWithForm" target="placeOrder">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="updatePetWithForm" target="createUser">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="updatePetWithForm" target="createUsersWithListInput">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="updatePetWithForm" target="updateUser">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="updatePetWithForm" target="findPetsByTags">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="updatePetWithForm" target="getPetById">
+  <data key="d0">crud</data>
+  <data key="d1">0.09999999999999998</data>
+</edge>
+<edge source="updatePetWithForm" target="deletePet">
+  <data key="d0">crud</data>
+  <data key="d1">0.09999999999999998</data>
+</edge>
+<edge source="updatePetWithForm" target="uploadFile">
+  <data key="d0">nested_resource</data>
+  <data key="d1">0.15000000000000002</data>
+</edge>
+<edge source="updatePetWithForm" target="getInventory">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="updatePetWithForm" target="getOrderById">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="updatePetWithForm" target="deleteOrder">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="updatePetWithForm" target="loginUser">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="updatePetWithForm" target="logoutUser">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="updatePetWithForm" target="getUserByName">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="updatePetWithForm" target="deleteUser">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="uploadFile" target="getPetById">
+  <data key="d0">crud</data>
+  <data key="d1">0.09999999999999998</data>
+</edge>
+<edge source="uploadFile" target="updatePet">
+  <data key="d0">crud</data>
+  <data key="d1">0.09999999999999998</data>
+</edge>
+<edge source="uploadFile" target="deletePet">
+  <data key="d0">crud</data>
+  <data key="d1">0.09999999999999998</data>
+</edge>
+<edge source="uploadFile" target="getInventory">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="uploadFile" target="placeOrder">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="uploadFile" target="getOrderById">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="uploadFile" target="deleteOrder">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="uploadFile" target="createUser">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="uploadFile" target="createUsersWithListInput">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="uploadFile" target="loginUser">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="uploadFile" target="logoutUser">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="uploadFile" target="getUserByName">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="uploadFile" target="updateUser">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="uploadFile" target="deleteUser">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="placeOrder" target="updatePet">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="placeOrder" target="addPet">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="placeOrder" target="findPetsByStatus">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="placeOrder" target="updatePetWithForm">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="placeOrder" target="createUser">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="placeOrder" target="createUsersWithListInput">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="placeOrder" target="updateUser">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="placeOrder" target="getPetById">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="placeOrder" target="deletePet">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="placeOrder" target="uploadFile">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="placeOrder" target="getOrderById">
+  <data key="d0">crud</data>
+  <data key="d1">0.09999999999999998</data>
+</edge>
+<edge source="placeOrder" target="deleteOrder">
+  <data key="d0">crud</data>
+  <data key="d1">0.09999999999999998</data>
+</edge>
+<edge source="placeOrder" target="loginUser">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="placeOrder" target="logoutUser">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="placeOrder" target="getUserByName">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="placeOrder" target="deleteUser">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="getOrderById" target="updatePet">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="getOrderById" target="addPet">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="getOrderById" target="findPetsByStatus">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="getOrderById" target="updatePetWithForm">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="getOrderById" target="placeOrder">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="getOrderById" target="createUser">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="getOrderById" target="createUsersWithListInput">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="getOrderById" target="updateUser">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="getOrderById" target="getPetById">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="getOrderById" target="deletePet">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="getOrderById" target="uploadFile">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="getOrderById" target="deleteOrder">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="getOrderById" target="loginUser">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="getOrderById" target="logoutUser">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="getOrderById" target="getUserByName">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="getOrderById" target="deleteUser">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="createUser" target="updatePet">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="createUser" target="addPet">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="createUser" target="placeOrder">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="createUser" target="createUsersWithListInput">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="createUser" target="updateUser">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="createUser" target="loginUser">
+  <data key="d0">nested_resource</data>
+  <data key="d1">0.15000000000000002</data>
+</edge>
+<edge source="createUser" target="getUserByName">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="createUser" target="deleteUser">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="createUser" target="logoutUser">
+  <data key="d0">nested_resource</data>
+  <data key="d1">0.15000000000000002</data>
+</edge>
+<edge source="createUsersWithListInput" target="updatePet">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="createUsersWithListInput" target="addPet">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="createUsersWithListInput" target="placeOrder">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="createUsersWithListInput" target="createUser">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="createUsersWithListInput" target="updateUser">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="createUsersWithListInput" target="loginUser">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.30000000000000004</data>
+</edge>
+<edge source="createUsersWithListInput" target="getUserByName">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="createUsersWithListInput" target="deleteUser">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="createUsersWithListInput" target="logoutUser">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="loginUser" target="updatePet">
+  <data key="d0">authentication</data>
+  <data key="d1">0.050000000000000044</data>
+</edge>
+<edge source="loginUser" target="addPet">
+  <data key="d0">authentication</data>
+  <data key="d1">0.050000000000000044</data>
+</edge>
+<edge source="loginUser" target="findPetsByStatus">
+  <data key="d0">authentication</data>
+  <data key="d1">0.050000000000000044</data>
+</edge>
+<edge source="loginUser" target="findPetsByTags">
+  <data key="d0">authentication</data>
+  <data key="d1">0.050000000000000044</data>
+</edge>
+<edge source="loginUser" target="getPetById">
+  <data key="d0">authentication</data>
+  <data key="d1">0.050000000000000044</data>
+</edge>
+<edge source="loginUser" target="updatePetWithForm">
+  <data key="d0">authentication</data>
+  <data key="d1">0.050000000000000044</data>
+</edge>
+<edge source="loginUser" target="deletePet">
+  <data key="d0">authentication</data>
+  <data key="d1">0.050000000000000044</data>
+</edge>
+<edge source="loginUser" target="uploadFile">
+  <data key="d0">authentication</data>
+  <data key="d1">0.050000000000000044</data>
+</edge>
+<edge source="loginUser" target="getInventory">
+  <data key="d0">authentication</data>
+  <data key="d1">0.050000000000000044</data>
+</edge>
+<edge source="loginUser" target="deleteOrder">
+  <data key="d0">authentication</data>
+  <data key="d1">0.30000000000000004</data>
+</edge>
+<edge source="loginUser" target="updateUser">
+  <data key="d0">authentication</data>
+  <data key="d1">0.30000000000000004</data>
+</edge>
+<edge source="loginUser" target="deleteUser">
+  <data key="d0">authentication</data>
+  <data key="d1">0.30000000000000004</data>
+</edge>
+<edge source="loginUser" target="logoutUser">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="loginUser" target="getUserByName">
+  <data key="d0">transitive</data>
+  <data key="d1">0.5</data>
+</edge>
+<edge source="getUserByName" target="updatePet">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="getUserByName" target="addPet">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="getUserByName" target="placeOrder">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="getUserByName" target="createUser">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="getUserByName" target="createUsersWithListInput">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="getUserByName" target="updateUser">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+<edge source="getUserByName" target="loginUser">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.30000000000000004</data>
+</edge>
+<edge source="getUserByName" target="deleteUser">
+  <data key="d0">parameter_data</data>
+  <data key="d1">0.0</data>
+</edge>
+</graph></graphml>
