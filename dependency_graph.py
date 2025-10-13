@@ -3,6 +3,7 @@ from typing import Dict, List, Set, Optional, Any, Tuple
 from dataclasses import dataclass, field
 import networkx as nx
 import time 
+from collections import deque
 
 class DependencyType(Enum):
     """Types of dependencies between operations"""
@@ -110,11 +111,17 @@ class DependencyGraph:
         self.producers: Dict[str, Set[Operation]] = {}  # param_name -> operations that produce it
         self.consumers: Dict[str, Set[Operation]] = {}  # param_name -> operations that consume it
         self.resource_map: Dict[str, List[Operation]] = {}  # resource -> operations
+        self.ranks: Dict[str, int] = {} # For efficient, rank-based cycle detection
         
     def add_operation(self, operation: Operation):
         """Add an operation node to the graph"""
-        self.operations[operation.operation_id] = operation
-        self.graph.add_node(operation.operation_id, operation=operation)
+        op_id = operation.operation_id
+        if op_id in self.operations:
+            return
+
+        self.operations[op_id] = operation
+        self.graph.add_node(op_id, operation=operation)
+        self.ranks[op_id] = 0  # Initialize rank to 0
         
         # Update indexes
         for param in operation.produces:
@@ -132,17 +139,56 @@ class DependencyGraph:
                 self.resource_map[operation.resource_type] = []
             self.resource_map[operation.resource_type].append(operation)
     
-    def add_dependency(self, dependency: Dependency):
-        """Add a dependency edge to the graph"""
+    def add_dependency(self, dependency: Dependency) -> bool:
+        """Add a dependency edge to the graph, preventing cycles efficiently. Returns True if added."""
+        source_id = dependency.source.operation_id
+        target_id = dependency.target.operation_id
+
+        # Prevent self-loops
+        if source_id == target_id:
+            return False
+
+        # OPTIMIZATION: Use ranks to avoid expensive path checks for forward edges.
+        # An edge u->v can only form a cycle if rank(u) >= rank(v).
+        if self.ranks[source_id] >= self.ranks[target_id]:
+            # This is a potential back-edge, must do a full check.
+            if nx.has_path(self.graph, target_id, source_id):
+                return False
+
+        # Add the edge
         self.dependencies.append(dependency)
         self.graph.add_edge(
-            dependency.source.operation_id,
-            dependency.target.operation_id,
+            source_id,
+            target_id,
             dependency=dependency,
             dep_type=dependency.type.value,
             weight=1.0 - dependency.confidence
         )
+
+        # Propagate rank update if necessary
+        if self.ranks[source_id] + 1 > self.ranks[target_id]:
+            self._update_ranks(source_id, target_id)
+
+        return True
     
+    def _update_ranks(self, source_id: str, target_id: str):
+        """Update ranks of target_id and its descendants after an edge is added."""
+        
+        # Set the initial rank of the target node
+        self.ranks[target_id] = self.ranks[source_id] + 1
+        
+        # Use a queue for a traversal starting from the target.
+        q = deque([target_id])
+        
+        while q:
+            current_id = q.popleft()
+            
+            for successor_id in self.graph.successors(current_id):
+                # A successor's rank must be greater than its parent's rank.
+                if self.ranks[current_id] + 1 > self.ranks[successor_id]:
+                    self.ranks[successor_id] = self.ranks[current_id] + 1
+                    q.append(successor_id)
+
     def get_dependencies(self, operation: Operation, 
                         dep_type: Optional[DependencyType] = None) -> List[Dependency]:
         """Get all dependencies for an operation"""
@@ -987,10 +1033,17 @@ class DependencyGraphBuilder:
         
         print("\nStep 4: Resolving conflicts and adding to graph...")
         resolved_deps = self._resolve_conflicts(all_dependencies)
-        print(f"  Resolved to {len(resolved_deps)} dependencies")
         
+        # Sort dependencies by confidence (highest first) to prioritize adding stronger dependencies.
+        resolved_deps.sort(key=lambda d: d.confidence, reverse=True)
+        
+        print(f"  Adding from {len(resolved_deps)} potential dependencies, ensuring no cycles are created...")
+        added_count = 0
         for dep in resolved_deps:
-            self.graph.add_dependency(dep)
+            if self.graph.add_dependency(dep):
+                added_count += 1
+        
+        print(f"  Successfully added {added_count} dependencies to form a Directed Acyclic Graph (DAG).")
         
         print("\nStep 5: Computing transitive dependencies...")
         transitive_analyzer = TransitiveDependencyAnalyzer(self.graph)
