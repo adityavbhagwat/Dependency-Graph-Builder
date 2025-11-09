@@ -8,6 +8,7 @@ from .nested_analyzer import NestedResourceAnalyzer
 from .constraint_analyzer import ConstraintDependencyAnalyzer
 from .transitive_analyzer import TransitiveDependencyAnalyzer
 from .dependency import Dependency
+import networkx as nx
 
 class DependencyGraphBuilder:
     """Main builder for constructing the dependency graph"""
@@ -79,18 +80,31 @@ class DependencyGraphBuilder:
                 skipped_count += 1
         print(f"  Added {added_count} dependencies, skipped {skipped_count} to prevent cycles.")
         
-        print("\nStep 5: Computing transitive dependencies...")
-        transitive_analyzer = TransitiveDependencyAnalyzer(self.graph)
-        transitive_deps = transitive_analyzer.analyze()
+        # print("\nStep 5: Computing transitive dependencies...")
+        # transitive_analyzer = TransitiveDependencyAnalyzer(self.graph)
+        # transitive_deps = transitive_analyzer.analyze()
         
-        trans_added_count = 0
-        trans_skipped_count = 0
-        for dep in transitive_deps:
-            if self.graph.add_dependency_if_acyclic(dep):
-                trans_added_count += 1
-            else:
-                trans_skipped_count += 1
-        print(f"  Found {len(transitive_deps)} transitive dependencies. Added {trans_added_count}, skipped {trans_skipped_count}.")
+        # trans_added_count = 0
+        # trans_skipped_count = 0
+        # for dep in transitive_deps:
+        #     if self.graph.add_dependency_if_acyclic(dep):
+        #         trans_added_count += 1
+        #     else:
+        #         trans_skipped_count += 1
+        # print(f"  Found {len(transitive_deps)} transitive dependencies. Added {trans_added_count}, skipped {trans_skipped_count}.")
+                # --- NEW FINAL STEP ---
+        print("\nStep 5: Performing transitive reduction to remove redundant edges...")
+        initial_edge_count = self.graph.graph.number_of_edges()
+        
+        # This is the core of the fix. nx.transitive_reduction creates a new graph
+        # with all redundant (transitive) edges removed.
+        reduced_graph = nx.transitive_reduction(self.graph.graph)
+        
+        # Replace the old graph with the new, cleaner, reduced graph.
+        self.graph.graph = reduced_graph
+        
+        final_edge_count = self.graph.graph.number_of_edges()
+        print(f"  Graph optimized. Reduced edge count from {initial_edge_count} to {final_edge_count}.")
         
         return self.graph
     
