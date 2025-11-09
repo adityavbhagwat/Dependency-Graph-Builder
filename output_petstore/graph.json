@@ -6,20 +6,20 @@
       "method": "PUT",
       "resource_type": "pet",
       "consumes": [
+        "id",
+        "name",
         "category",
         "status",
-        "id",
         "photoUrls",
-        "tags",
-        "name"
+        "tags"
       ],
       "produces": [
+        "id",
+        "name",
         "category",
         "status",
-        "id",
         "photoUrls",
-        "tags",
-        "name"
+        "tags"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -30,20 +30,20 @@
       "method": "POST",
       "resource_type": "pet",
       "consumes": [
+        "id",
+        "name",
         "category",
         "status",
-        "id",
         "photoUrls",
-        "tags",
-        "name"
+        "tags"
       ],
       "produces": [
+        "id",
+        "name",
         "category",
         "status",
-        "id",
         "photoUrls",
-        "tags",
-        "name"
+        "tags"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -57,12 +57,12 @@
         "status"
       ],
       "produces": [
+        "id",
+        "name",
         "category",
         "status",
-        "id",
         "photoUrls",
-        "tags",
-        "name"
+        "tags"
       ],
       "is_interesting": false,
       "annotations": {}
@@ -76,12 +76,12 @@
         "tags"
       ],
       "produces": [
+        "id",
+        "name",
         "category",
         "status",
-        "id",
         "photoUrls",
-        "tags",
-        "name"
+        "tags"
       ],
       "is_interesting": false,
       "annotations": {}
@@ -95,12 +95,12 @@
         "petId"
       ],
       "produces": [
+        "id",
+        "name",
         "category",
         "status",
-        "id",
         "photoUrls",
-        "tags",
-        "name"
+        "tags"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -111,17 +111,17 @@
       "method": "POST",
       "resource_type": "pet",
       "consumes": [
-        "name",
+        "petId",
         "status",
-        "petId"
+        "name"
       ],
       "produces": [
+        "id",
+        "name",
         "category",
         "status",
-        "id",
         "photoUrls",
-        "tags",
-        "name"
+        "tags"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -132,8 +132,8 @@
       "method": "DELETE",
       "resource_type": "pet",
       "consumes": [
-        "api_key",
-        "petId"
+        "petId",
+        "api_key"
       ],
       "produces": [],
       "is_interesting": false,
@@ -145,13 +145,13 @@
       "method": "POST",
       "resource_type": "pet",
       "consumes": [
-        "additionalMetadata",
-        "petId"
+        "petId",
+        "additionalMetadata"
       ],
       "produces": [
-        "message",
+        "type",
         "code",
-        "type"
+        "message"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -172,20 +172,20 @@
       "method": "POST",
       "resource_type": "order",
       "consumes": [
-        "status",
+        "shipDate",
+        "petId",
         "id",
         "quantity",
-        "petId",
         "complete",
-        "shipDate"
+        "status"
       ],
       "produces": [
-        "status",
+        "shipDate",
+        "petId",
         "id",
         "quantity",
-        "petId",
         "complete",
-        "shipDate"
+        "status"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -199,12 +199,12 @@
         "orderId"
       ],
       "produces": [
-        "status",
+        "shipDate",
+        "petId",
         "id",
         "quantity",
-        "petId",
         "complete",
-        "shipDate"
+        "status"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -228,23 +228,23 @@
       "resource_type": "user",
       "consumes": [
         "userStatus",
-        "password",
-        "firstName",
-        "email",
         "id",
-        "phone",
+        "email",
         "username",
-        "lastName"
+        "firstName",
+        "lastName",
+        "phone",
+        "password"
       ],
       "produces": [
         "userStatus",
-        "password",
-        "firstName",
-        "email",
         "id",
-        "phone",
+        "email",
         "username",
-        "lastName"
+        "firstName",
+        "lastName",
+        "phone",
+        "password"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -256,23 +256,23 @@
       "resource_type": "createWithList",
       "consumes": [
         "userStatus",
-        "password",
-        "firstName",
-        "email",
         "id",
-        "phone",
+        "email",
         "username",
-        "lastName"
+        "firstName",
+        "lastName",
+        "phone",
+        "password"
       ],
       "produces": [
         "userStatus",
-        "password",
-        "firstName",
-        "email",
         "id",
-        "phone",
+        "email",
         "username",
-        "lastName"
+        "firstName",
+        "lastName",
+        "phone",
+        "password"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -312,13 +312,13 @@
       ],
       "produces": [
         "userStatus",
-        "password",
-        "firstName",
-        "email",
         "id",
-        "phone",
+        "email",
         "username",
-        "lastName"
+        "firstName",
+        "lastName",
+        "phone",
+        "password"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -330,13 +330,13 @@
       "resource_type": "user",
       "consumes": [
         "userStatus",
-        "password",
-        "firstName",
-        "email",
         "id",
-        "phone",
+        "email",
         "username",
-        "lastName"
+        "firstName",
+        "lastName",
+        "phone",
+        "password"
       ],
       "produces": [],
       "is_interesting": true,
@@ -362,181 +362,14 @@
       "type": "parameter_data",
       "confidence": 1.0,
       "parameter_mapping": {
+        "id": "id",
+        "name": "name",
         "category": "category",
         "status": "status",
-        "id": "id",
         "photoUrls": "photoUrls",
-        "tags": "tags",
-        "name": "name"
+        "tags": "tags"
       },
-      "reason": "Parameter 'category' produced by updatePet and consumed by addPet; Parameter 'status' produced by updatePet and consumed by addPet; Parameter 'id' produced by updatePet and consumed by addPet; Parameter 'photoUrls' produced by updatePet and consumed by addPet; Parameter 'tags' produced by updatePet and consumed by addPet; Parameter 'name' produced by updatePet and consumed by addPet",
-      "verified": false
-    },
-    {
-      "source": "addPet",
-      "target": "updatePet",
-      "type": "parameter_data",
-      "confidence": 1.0,
-      "parameter_mapping": {
-        "category": "category",
-        "status": "status",
-        "id": "id",
-        "photoUrls": "photoUrls",
-        "tags": "tags",
-        "name": "name"
-      },
-      "reason": "Parameter 'category' produced by addPet and consumed by updatePet; Parameter 'status' produced by addPet and consumed by updatePet; Parameter 'id' produced by addPet and consumed by updatePet; Parameter 'photoUrls' produced by addPet and consumed by updatePet; Parameter 'tags' produced by addPet and consumed by updatePet; Parameter 'name' produced by addPet and consumed by updatePet; CRUD: Must create pet before updating",
-      "verified": false
-    },
-    {
-      "source": "findPetsByStatus",
-      "target": "updatePet",
-      "type": "parameter_data",
-      "confidence": 1.0,
-      "parameter_mapping": {
-        "category": "category",
-        "status": "status",
-        "id": "id",
-        "photoUrls": "photoUrls",
-        "tags": "tags",
-        "name": "name"
-      },
-      "reason": "Parameter 'category' produced by findPetsByStatus and consumed by updatePet; Parameter 'status' produced by findPetsByStatus and consumed by updatePet; Parameter 'id' produced by findPetsByStatus and consumed by updatePet; Parameter 'photoUrls' produced by findPetsByStatus and consumed by updatePet; Parameter 'tags' produced by findPetsByStatus and consumed by updatePet; Parameter 'name' produced by findPetsByStatus and consumed by updatePet",
-      "verified": false
-    },
-    {
-      "source": "findPetsByStatus",
-      "target": "addPet",
-      "type": "parameter_data",
-      "confidence": 1.0,
-      "parameter_mapping": {
-        "category": "category",
-        "status": "status",
-        "id": "id",
-        "photoUrls": "photoUrls",
-        "tags": "tags",
-        "name": "name"
-      },
-      "reason": "Parameter 'category' produced by findPetsByStatus and consumed by addPet; Parameter 'status' produced by findPetsByStatus and consumed by addPet; Parameter 'id' produced by findPetsByStatus and consumed by addPet; Parameter 'photoUrls' produced by findPetsByStatus and consumed by addPet; Parameter 'tags' produced by findPetsByStatus and consumed by addPet; Parameter 'name' produced by findPetsByStatus and consumed by addPet",
-      "verified": false
-    },
-    {
-      "source": "findPetsByTags",
-      "target": "updatePet",
-      "type": "parameter_data",
-      "confidence": 1.0,
-      "parameter_mapping": {
-        "category": "category",
-        "status": "status",
-        "id": "id",
-        "photoUrls": "photoUrls",
-        "tags": "tags",
-        "name": "name"
-      },
-      "reason": "Parameter 'category' produced by findPetsByTags and consumed by updatePet; Parameter 'status' produced by findPetsByTags and consumed by updatePet; Parameter 'id' produced by findPetsByTags and consumed by updatePet; Parameter 'photoUrls' produced by findPetsByTags and consumed by updatePet; Parameter 'tags' produced by findPetsByTags and consumed by updatePet; Parameter 'name' produced by findPetsByTags and consumed by updatePet",
-      "verified": false
-    },
-    {
-      "source": "findPetsByTags",
-      "target": "addPet",
-      "type": "parameter_data",
-      "confidence": 1.0,
-      "parameter_mapping": {
-        "category": "category",
-        "status": "status",
-        "id": "id",
-        "photoUrls": "photoUrls",
-        "tags": "tags",
-        "name": "name"
-      },
-      "reason": "Parameter 'category' produced by findPetsByTags and consumed by addPet; Parameter 'status' produced by findPetsByTags and consumed by addPet; Parameter 'id' produced by findPetsByTags and consumed by addPet; Parameter 'photoUrls' produced by findPetsByTags and consumed by addPet; Parameter 'tags' produced by findPetsByTags and consumed by addPet; Parameter 'name' produced by findPetsByTags and consumed by addPet",
-      "verified": false
-    },
-    {
-      "source": "getPetById",
-      "target": "updatePet",
-      "type": "parameter_data",
-      "confidence": 1.0,
-      "parameter_mapping": {
-        "category": "category",
-        "status": "status",
-        "id": "id",
-        "photoUrls": "photoUrls",
-        "tags": "tags",
-        "name": "name"
-      },
-      "reason": "Parameter 'category' produced by getPetById and consumed by updatePet; Parameter 'status' produced by getPetById and consumed by updatePet; Parameter 'id' produced by getPetById and consumed by updatePet; Parameter 'photoUrls' produced by getPetById and consumed by updatePet; Parameter 'tags' produced by getPetById and consumed by updatePet; Parameter 'name' produced by getPetById and consumed by updatePet; CRUD: Often read pet before updating",
-      "verified": false
-    },
-    {
-      "source": "getPetById",
-      "target": "addPet",
-      "type": "parameter_data",
-      "confidence": 1.0,
-      "parameter_mapping": {
-        "category": "category",
-        "status": "status",
-        "id": "id",
-        "photoUrls": "photoUrls",
-        "tags": "tags",
-        "name": "name"
-      },
-      "reason": "Parameter 'category' produced by getPetById and consumed by addPet; Parameter 'status' produced by getPetById and consumed by addPet; Parameter 'id' produced by getPetById and consumed by addPet; Parameter 'photoUrls' produced by getPetById and consumed by addPet; Parameter 'tags' produced by getPetById and consumed by addPet; Parameter 'name' produced by getPetById and consumed by addPet",
-      "verified": false
-    },
-    {
-      "source": "updatePetWithForm",
-      "target": "updatePet",
-      "type": "parameter_data",
-      "confidence": 1.0,
-      "parameter_mapping": {
-        "category": "category",
-        "status": "status",
-        "id": "id",
-        "photoUrls": "photoUrls",
-        "tags": "tags",
-        "name": "name"
-      },
-      "reason": "Parameter 'category' produced by updatePetWithForm and consumed by updatePet; Parameter 'status' produced by updatePetWithForm and consumed by updatePet; Parameter 'id' produced by updatePetWithForm and consumed by updatePet; Parameter 'photoUrls' produced by updatePetWithForm and consumed by updatePet; Parameter 'tags' produced by updatePetWithForm and consumed by updatePet; Parameter 'name' produced by updatePetWithForm and consumed by updatePet; CRUD: Must create pet before updating",
-      "verified": false
-    },
-    {
-      "source": "updatePetWithForm",
-      "target": "addPet",
-      "type": "parameter_data",
-      "confidence": 1.0,
-      "parameter_mapping": {
-        "category": "category",
-        "status": "status",
-        "id": "id",
-        "photoUrls": "photoUrls",
-        "tags": "tags",
-        "name": "name"
-      },
-      "reason": "Parameter 'category' produced by updatePetWithForm and consumed by addPet; Parameter 'status' produced by updatePetWithForm and consumed by addPet; Parameter 'id' produced by updatePetWithForm and consumed by addPet; Parameter 'photoUrls' produced by updatePetWithForm and consumed by addPet; Parameter 'tags' produced by updatePetWithForm and consumed by addPet; Parameter 'name' produced by updatePetWithForm and consumed by addPet",
-      "verified": false
-    },
-    {
-      "source": "updatePet",
-      "target": "findPetsByStatus",
-      "type": "parameter_data",
-      "confidence": 1.0,
-      "parameter_mapping": {
-        "status": "status"
-      },
-      "reason": "Parameter 'status' produced by updatePet and consumed by findPetsByStatus",
-      "verified": false
-    },
-    {
-      "source": "updatePet",
-      "target": "updatePetWithForm",
-      "type": "parameter_data",
-      "confidence": 0.7,
-      "parameter_mapping": {
-        "status": "status",
-        "name": "name"
-      },
-      "reason": "Parameter 'status' produced by updatePet and consumed by updatePetWithForm; Parameter 'name' produced by updatePet and consumed by updatePetWithForm",
+      "reason": "Parameter 'id' produced by updatePet and consumed by addPet; Parameter 'name' produced by updatePet and consumed by addPet; Parameter 'category' produced by updatePet and consumed by addPet; Parameter 'status' produced by updatePet and consumed by addPet; Parameter 'photoUrls' produced by updatePet and consumed by addPet; Parameter 'tags' produced by updatePet and consumed by addPet",
       "verified": false
     },
     {
@@ -545,272 +378,10 @@
       "type": "parameter_data",
       "confidence": 1.0,
       "parameter_mapping": {
-        "status": "status",
-        "id": "id"
-      },
-      "reason": "Parameter 'status' produced by updatePet and consumed by placeOrder; Parameter 'id' produced by updatePet and consumed by placeOrder",
-      "verified": false
-    },
-    {
-      "source": "addPet",
-      "target": "findPetsByStatus",
-      "type": "parameter_data",
-      "confidence": 1.0,
-      "parameter_mapping": {
-        "status": "status"
-      },
-      "reason": "Parameter 'status' produced by addPet and consumed by findPetsByStatus; /pet/findByStatus is nested under /pet",
-      "verified": false
-    },
-    {
-      "source": "addPet",
-      "target": "updatePetWithForm",
-      "type": "nested_resource",
-      "confidence": 0.85,
-      "parameter_mapping": {
-        "status": "status",
-        "name": "name"
-      },
-      "reason": "Parameter 'status' produced by addPet and consumed by updatePetWithForm; Parameter 'name' produced by addPet and consumed by updatePetWithForm; /pet/{petId} is nested under /pet",
-      "verified": false
-    },
-    {
-      "source": "addPet",
-      "target": "placeOrder",
-      "type": "parameter_data",
-      "confidence": 1.0,
-      "parameter_mapping": {
-        "status": "status",
-        "id": "id"
-      },
-      "reason": "Parameter 'status' produced by addPet and consumed by placeOrder; Parameter 'id' produced by addPet and consumed by placeOrder",
-      "verified": false
-    },
-    {
-      "source": "findPetsByStatus",
-      "target": "updatePetWithForm",
-      "type": "parameter_data",
-      "confidence": 0.7,
-      "parameter_mapping": {
-        "status": "status",
-        "name": "name"
-      },
-      "reason": "Parameter 'status' produced by findPetsByStatus and consumed by updatePetWithForm; Parameter 'name' produced by findPetsByStatus and consumed by updatePetWithForm",
-      "verified": false
-    },
-    {
-      "source": "findPetsByStatus",
-      "target": "placeOrder",
-      "type": "parameter_data",
-      "confidence": 1.0,
-      "parameter_mapping": {
-        "status": "status",
-        "id": "id"
-      },
-      "reason": "Parameter 'status' produced by findPetsByStatus and consumed by placeOrder; Parameter 'id' produced by findPetsByStatus and consumed by placeOrder",
-      "verified": false
-    },
-    {
-      "source": "findPetsByTags",
-      "target": "findPetsByStatus",
-      "type": "parameter_data",
-      "confidence": 1.0,
-      "parameter_mapping": {
-        "status": "status"
-      },
-      "reason": "Parameter 'status' produced by findPetsByTags and consumed by findPetsByStatus",
-      "verified": false
-    },
-    {
-      "source": "findPetsByTags",
-      "target": "updatePetWithForm",
-      "type": "parameter_data",
-      "confidence": 0.7,
-      "parameter_mapping": {
-        "status": "status",
-        "name": "name"
-      },
-      "reason": "Parameter 'status' produced by findPetsByTags and consumed by updatePetWithForm; Parameter 'name' produced by findPetsByTags and consumed by updatePetWithForm",
-      "verified": false
-    },
-    {
-      "source": "findPetsByTags",
-      "target": "placeOrder",
-      "type": "parameter_data",
-      "confidence": 1.0,
-      "parameter_mapping": {
-        "status": "status",
-        "id": "id"
-      },
-      "reason": "Parameter 'status' produced by findPetsByTags and consumed by placeOrder; Parameter 'id' produced by findPetsByTags and consumed by placeOrder",
-      "verified": false
-    },
-    {
-      "source": "getPetById",
-      "target": "findPetsByStatus",
-      "type": "parameter_data",
-      "confidence": 1.0,
-      "parameter_mapping": {
-        "status": "status"
-      },
-      "reason": "Parameter 'status' produced by getPetById and consumed by findPetsByStatus",
-      "verified": false
-    },
-    {
-      "source": "getPetById",
-      "target": "updatePetWithForm",
-      "type": "parameter_data",
-      "confidence": 0.7,
-      "parameter_mapping": {
-        "status": "status",
-        "name": "name"
-      },
-      "reason": "Parameter 'status' produced by getPetById and consumed by updatePetWithForm; Parameter 'name' produced by getPetById and consumed by updatePetWithForm",
-      "verified": false
-    },
-    {
-      "source": "getPetById",
-      "target": "placeOrder",
-      "type": "parameter_data",
-      "confidence": 1.0,
-      "parameter_mapping": {
-        "status": "status",
-        "id": "id"
-      },
-      "reason": "Parameter 'status' produced by getPetById and consumed by placeOrder; Parameter 'id' produced by getPetById and consumed by placeOrder",
-      "verified": false
-    },
-    {
-      "source": "updatePetWithForm",
-      "target": "findPetsByStatus",
-      "type": "parameter_data",
-      "confidence": 1.0,
-      "parameter_mapping": {
-        "status": "status"
-      },
-      "reason": "Parameter 'status' produced by updatePetWithForm and consumed by findPetsByStatus",
-      "verified": false
-    },
-    {
-      "source": "updatePetWithForm",
-      "target": "placeOrder",
-      "type": "parameter_data",
-      "confidence": 1.0,
-      "parameter_mapping": {
-        "status": "status",
-        "id": "id"
-      },
-      "reason": "Parameter 'status' produced by updatePetWithForm and consumed by placeOrder; Parameter 'id' produced by updatePetWithForm and consumed by placeOrder",
-      "verified": false
-    },
-    {
-      "source": "placeOrder",
-      "target": "updatePet",
-      "type": "parameter_data",
-      "confidence": 1.0,
-      "parameter_mapping": {
-        "status": "status",
-        "id": "id"
-      },
-      "reason": "Parameter 'status' produced by placeOrder and consumed by updatePet; Parameter 'id' produced by placeOrder and consumed by updatePet",
-      "verified": false
-    },
-    {
-      "source": "placeOrder",
-      "target": "addPet",
-      "type": "parameter_data",
-      "confidence": 1.0,
-      "parameter_mapping": {
-        "status": "status",
-        "id": "id"
-      },
-      "reason": "Parameter 'status' produced by placeOrder and consumed by addPet; Parameter 'id' produced by placeOrder and consumed by addPet",
-      "verified": false
-    },
-    {
-      "source": "placeOrder",
-      "target": "findPetsByStatus",
-      "type": "parameter_data",
-      "confidence": 1.0,
-      "parameter_mapping": {
-        "status": "status"
-      },
-      "reason": "Parameter 'status' produced by placeOrder and consumed by findPetsByStatus",
-      "verified": false
-    },
-    {
-      "source": "placeOrder",
-      "target": "updatePetWithForm",
-      "type": "parameter_data",
-      "confidence": 1.0,
-      "parameter_mapping": {
-        "petId": "petId",
-        "status": "status"
-      },
-      "reason": "Parameter 'status' produced by placeOrder and consumed by updatePetWithForm; Parameter 'petId' produced by placeOrder and consumed by updatePetWithForm",
-      "verified": false
-    },
-    {
-      "source": "getOrderById",
-      "target": "updatePet",
-      "type": "parameter_data",
-      "confidence": 1.0,
-      "parameter_mapping": {
-        "status": "status",
-        "id": "id"
-      },
-      "reason": "Parameter 'status' produced by getOrderById and consumed by updatePet; Parameter 'id' produced by getOrderById and consumed by updatePet",
-      "verified": false
-    },
-    {
-      "source": "getOrderById",
-      "target": "addPet",
-      "type": "parameter_data",
-      "confidence": 1.0,
-      "parameter_mapping": {
-        "status": "status",
-        "id": "id"
-      },
-      "reason": "Parameter 'status' produced by getOrderById and consumed by addPet; Parameter 'id' produced by getOrderById and consumed by addPet",
-      "verified": false
-    },
-    {
-      "source": "getOrderById",
-      "target": "findPetsByStatus",
-      "type": "parameter_data",
-      "confidence": 1.0,
-      "parameter_mapping": {
-        "status": "status"
-      },
-      "reason": "Parameter 'status' produced by getOrderById and consumed by findPetsByStatus",
-      "verified": false
-    },
-    {
-      "source": "getOrderById",
-      "target": "updatePetWithForm",
-      "type": "parameter_data",
-      "confidence": 1.0,
-      "parameter_mapping": {
-        "petId": "petId",
-        "status": "status"
-      },
-      "reason": "Parameter 'status' produced by getOrderById and consumed by updatePetWithForm; Parameter 'petId' produced by getOrderById and consumed by updatePetWithForm",
-      "verified": false
-    },
-    {
-      "source": "getOrderById",
-      "target": "placeOrder",
-      "type": "parameter_data",
-      "confidence": 1.0,
-      "parameter_mapping": {
-        "status": "status",
         "id": "id",
-        "quantity": "quantity",
-        "petId": "petId",
-        "complete": "complete",
-        "shipDate": "shipDate"
+        "status": "status"
       },
-      "reason": "Parameter 'status' produced by getOrderById and consumed by placeOrder; Parameter 'id' produced by getOrderById and consumed by placeOrder; Parameter 'quantity' produced by getOrderById and consumed by placeOrder; Parameter 'petId' produced by getOrderById and consumed by placeOrder; Parameter 'complete' produced by getOrderById and consumed by placeOrder; Parameter 'shipDate' produced by getOrderById and consumed by placeOrder",
+      "reason": "Parameter 'id' produced by updatePet and consumed by placeOrder; Parameter 'status' produced by updatePet and consumed by placeOrder",
       "verified": false
     },
     {
@@ -848,6 +419,34 @@
     },
     {
       "source": "addPet",
+      "target": "updatePet",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "id": "id",
+        "name": "name",
+        "category": "category",
+        "status": "status",
+        "photoUrls": "photoUrls",
+        "tags": "tags"
+      },
+      "reason": "Parameter 'id' produced by addPet and consumed by updatePet; Parameter 'name' produced by addPet and consumed by updatePet; Parameter 'category' produced by addPet and consumed by updatePet; Parameter 'status' produced by addPet and consumed by updatePet; Parameter 'photoUrls' produced by addPet and consumed by updatePet; Parameter 'tags' produced by addPet and consumed by updatePet; CRUD: Must create pet before updating",
+      "verified": false
+    },
+    {
+      "source": "addPet",
+      "target": "placeOrder",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "id": "id",
+        "status": "status"
+      },
+      "reason": "Parameter 'id' produced by addPet and consumed by placeOrder; Parameter 'status' produced by addPet and consumed by placeOrder",
+      "verified": false
+    },
+    {
+      "source": "addPet",
       "target": "createUser",
       "type": "parameter_data",
       "confidence": 1.0,
@@ -877,6 +476,50 @@
         "id": "id"
       },
       "reason": "Parameter 'id' produced by addPet and consumed by updateUser",
+      "verified": false
+    },
+    {
+      "source": "findPetsByStatus",
+      "target": "updatePet",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "id": "id",
+        "name": "name",
+        "category": "category",
+        "status": "status",
+        "photoUrls": "photoUrls",
+        "tags": "tags"
+      },
+      "reason": "Parameter 'id' produced by findPetsByStatus and consumed by updatePet; Parameter 'name' produced by findPetsByStatus and consumed by updatePet; Parameter 'category' produced by findPetsByStatus and consumed by updatePet; Parameter 'status' produced by findPetsByStatus and consumed by updatePet; Parameter 'photoUrls' produced by findPetsByStatus and consumed by updatePet; Parameter 'tags' produced by findPetsByStatus and consumed by updatePet",
+      "verified": false
+    },
+    {
+      "source": "findPetsByStatus",
+      "target": "addPet",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "id": "id",
+        "name": "name",
+        "category": "category",
+        "status": "status",
+        "photoUrls": "photoUrls",
+        "tags": "tags"
+      },
+      "reason": "Parameter 'id' produced by findPetsByStatus and consumed by addPet; Parameter 'name' produced by findPetsByStatus and consumed by addPet; Parameter 'category' produced by findPetsByStatus and consumed by addPet; Parameter 'status' produced by findPetsByStatus and consumed by addPet; Parameter 'photoUrls' produced by findPetsByStatus and consumed by addPet; Parameter 'tags' produced by findPetsByStatus and consumed by addPet",
+      "verified": false
+    },
+    {
+      "source": "findPetsByStatus",
+      "target": "placeOrder",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "id": "id",
+        "status": "status"
+      },
+      "reason": "Parameter 'id' produced by findPetsByStatus and consumed by placeOrder; Parameter 'status' produced by findPetsByStatus and consumed by placeOrder",
       "verified": false
     },
     {
@@ -914,6 +557,50 @@
     },
     {
       "source": "findPetsByTags",
+      "target": "updatePet",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "id": "id",
+        "name": "name",
+        "category": "category",
+        "status": "status",
+        "photoUrls": "photoUrls",
+        "tags": "tags"
+      },
+      "reason": "Parameter 'id' produced by findPetsByTags and consumed by updatePet; Parameter 'name' produced by findPetsByTags and consumed by updatePet; Parameter 'category' produced by findPetsByTags and consumed by updatePet; Parameter 'status' produced by findPetsByTags and consumed by updatePet; Parameter 'photoUrls' produced by findPetsByTags and consumed by updatePet; Parameter 'tags' produced by findPetsByTags and consumed by updatePet",
+      "verified": false
+    },
+    {
+      "source": "findPetsByTags",
+      "target": "addPet",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "id": "id",
+        "name": "name",
+        "category": "category",
+        "status": "status",
+        "photoUrls": "photoUrls",
+        "tags": "tags"
+      },
+      "reason": "Parameter 'id' produced by findPetsByTags and consumed by addPet; Parameter 'name' produced by findPetsByTags and consumed by addPet; Parameter 'category' produced by findPetsByTags and consumed by addPet; Parameter 'status' produced by findPetsByTags and consumed by addPet; Parameter 'photoUrls' produced by findPetsByTags and consumed by addPet; Parameter 'tags' produced by findPetsByTags and consumed by addPet",
+      "verified": false
+    },
+    {
+      "source": "findPetsByTags",
+      "target": "placeOrder",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "id": "id",
+        "status": "status"
+      },
+      "reason": "Parameter 'id' produced by findPetsByTags and consumed by placeOrder; Parameter 'status' produced by findPetsByTags and consumed by placeOrder",
+      "verified": false
+    },
+    {
+      "source": "findPetsByTags",
       "target": "createUser",
       "type": "parameter_data",
       "confidence": 1.0,
@@ -943,6 +630,50 @@
         "id": "id"
       },
       "reason": "Parameter 'id' produced by findPetsByTags and consumed by updateUser",
+      "verified": false
+    },
+    {
+      "source": "getPetById",
+      "target": "updatePet",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "id": "id",
+        "name": "name",
+        "category": "category",
+        "status": "status",
+        "photoUrls": "photoUrls",
+        "tags": "tags"
+      },
+      "reason": "Parameter 'id' produced by getPetById and consumed by updatePet; Parameter 'name' produced by getPetById and consumed by updatePet; Parameter 'category' produced by getPetById and consumed by updatePet; Parameter 'status' produced by getPetById and consumed by updatePet; Parameter 'photoUrls' produced by getPetById and consumed by updatePet; Parameter 'tags' produced by getPetById and consumed by updatePet; CRUD: Often read pet before updating",
+      "verified": false
+    },
+    {
+      "source": "getPetById",
+      "target": "addPet",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "id": "id",
+        "name": "name",
+        "category": "category",
+        "status": "status",
+        "photoUrls": "photoUrls",
+        "tags": "tags"
+      },
+      "reason": "Parameter 'id' produced by getPetById and consumed by addPet; Parameter 'name' produced by getPetById and consumed by addPet; Parameter 'category' produced by getPetById and consumed by addPet; Parameter 'status' produced by getPetById and consumed by addPet; Parameter 'photoUrls' produced by getPetById and consumed by addPet; Parameter 'tags' produced by getPetById and consumed by addPet",
+      "verified": false
+    },
+    {
+      "source": "getPetById",
+      "target": "placeOrder",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "id": "id",
+        "status": "status"
+      },
+      "reason": "Parameter 'id' produced by getPetById and consumed by placeOrder; Parameter 'status' produced by getPetById and consumed by placeOrder",
       "verified": false
     },
     {
@@ -980,6 +711,50 @@
     },
     {
       "source": "updatePetWithForm",
+      "target": "updatePet",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "id": "id",
+        "name": "name",
+        "category": "category",
+        "status": "status",
+        "photoUrls": "photoUrls",
+        "tags": "tags"
+      },
+      "reason": "Parameter 'id' produced by updatePetWithForm and consumed by updatePet; Parameter 'name' produced by updatePetWithForm and consumed by updatePet; Parameter 'category' produced by updatePetWithForm and consumed by updatePet; Parameter 'status' produced by updatePetWithForm and consumed by updatePet; Parameter 'photoUrls' produced by updatePetWithForm and consumed by updatePet; Parameter 'tags' produced by updatePetWithForm and consumed by updatePet; CRUD: Must create pet before updating",
+      "verified": false
+    },
+    {
+      "source": "updatePetWithForm",
+      "target": "addPet",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "id": "id",
+        "name": "name",
+        "category": "category",
+        "status": "status",
+        "photoUrls": "photoUrls",
+        "tags": "tags"
+      },
+      "reason": "Parameter 'id' produced by updatePetWithForm and consumed by addPet; Parameter 'name' produced by updatePetWithForm and consumed by addPet; Parameter 'category' produced by updatePetWithForm and consumed by addPet; Parameter 'status' produced by updatePetWithForm and consumed by addPet; Parameter 'photoUrls' produced by updatePetWithForm and consumed by addPet; Parameter 'tags' produced by updatePetWithForm and consumed by addPet",
+      "verified": false
+    },
+    {
+      "source": "updatePetWithForm",
+      "target": "placeOrder",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "id": "id",
+        "status": "status"
+      },
+      "reason": "Parameter 'id' produced by updatePetWithForm and consumed by placeOrder; Parameter 'status' produced by updatePetWithForm and consumed by placeOrder",
+      "verified": false
+    },
+    {
+      "source": "updatePetWithForm",
       "target": "createUser",
       "type": "parameter_data",
       "confidence": 1.0,
@@ -1013,6 +788,30 @@
     },
     {
       "source": "placeOrder",
+      "target": "updatePet",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "id": "id",
+        "status": "status"
+      },
+      "reason": "Parameter 'id' produced by placeOrder and consumed by updatePet; Parameter 'status' produced by placeOrder and consumed by updatePet",
+      "verified": false
+    },
+    {
+      "source": "placeOrder",
+      "target": "addPet",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "id": "id",
+        "status": "status"
+      },
+      "reason": "Parameter 'id' produced by placeOrder and consumed by addPet; Parameter 'status' produced by placeOrder and consumed by addPet",
+      "verified": false
+    },
+    {
+      "source": "placeOrder",
       "target": "createUser",
       "type": "parameter_data",
       "confidence": 1.0,
@@ -1042,6 +841,46 @@
         "id": "id"
       },
       "reason": "Parameter 'id' produced by placeOrder and consumed by updateUser",
+      "verified": false
+    },
+    {
+      "source": "getOrderById",
+      "target": "updatePet",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "id": "id",
+        "status": "status"
+      },
+      "reason": "Parameter 'id' produced by getOrderById and consumed by updatePet; Parameter 'status' produced by getOrderById and consumed by updatePet",
+      "verified": false
+    },
+    {
+      "source": "getOrderById",
+      "target": "addPet",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "id": "id",
+        "status": "status"
+      },
+      "reason": "Parameter 'id' produced by getOrderById and consumed by addPet; Parameter 'status' produced by getOrderById and consumed by addPet",
+      "verified": false
+    },
+    {
+      "source": "getOrderById",
+      "target": "placeOrder",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "id": "id",
+        "status": "status",
+        "shipDate": "shipDate",
+        "petId": "petId",
+        "quantity": "quantity",
+        "complete": "complete"
+      },
+      "reason": "Parameter 'id' produced by getOrderById and consumed by placeOrder; Parameter 'status' produced by getOrderById and consumed by placeOrder; Parameter 'shipDate' produced by getOrderById and consumed by placeOrder; Parameter 'petId' produced by getOrderById and consumed by placeOrder; Parameter 'quantity' produced by getOrderById and consumed by placeOrder; Parameter 'complete' produced by getOrderById and consumed by placeOrder",
       "verified": false
     },
     {
@@ -1118,14 +957,14 @@
       "parameter_mapping": {
         "id": "id",
         "userStatus": "userStatus",
-        "password": "password",
-        "firstName": "firstName",
         "email": "email",
-        "phone": "phone",
         "username": "username",
-        "lastName": "lastName"
+        "firstName": "firstName",
+        "lastName": "lastName",
+        "phone": "phone",
+        "password": "password"
       },
-      "reason": "Parameter 'id' produced by createUser and consumed by createUsersWithListInput; Parameter 'userStatus' produced by createUser and consumed by createUsersWithListInput; Parameter 'password' produced by createUser and consumed by createUsersWithListInput; Parameter 'firstName' produced by createUser and consumed by createUsersWithListInput; Parameter 'email' produced by createUser and consumed by createUsersWithListInput; Parameter 'phone' produced by createUser and consumed by createUsersWithListInput; Parameter 'username' produced by createUser and consumed by createUsersWithListInput; Parameter 'lastName' produced by createUser and consumed by createUsersWithListInput; /user/createWithList is nested under /user",
+      "reason": "Parameter 'id' produced by createUser and consumed by createUsersWithListInput; Parameter 'userStatus' produced by createUser and consumed by createUsersWithListInput; Parameter 'email' produced by createUser and consumed by createUsersWithListInput; Parameter 'username' produced by createUser and consumed by createUsersWithListInput; Parameter 'firstName' produced by createUser and consumed by createUsersWithListInput; Parameter 'lastName' produced by createUser and consumed by createUsersWithListInput; Parameter 'phone' produced by createUser and consumed by createUsersWithListInput; Parameter 'password' produced by createUser and consumed by createUsersWithListInput; /user/createWithList is nested under /user",
       "verified": false
     },
     {
@@ -1136,14 +975,14 @@
       "parameter_mapping": {
         "id": "id",
         "userStatus": "userStatus",
-        "password": "password",
-        "firstName": "firstName",
         "email": "email",
-        "phone": "phone",
         "username": "username",
-        "lastName": "lastName"
+        "firstName": "firstName",
+        "lastName": "lastName",
+        "phone": "phone",
+        "password": "password"
       },
-      "reason": "Parameter 'id' produced by createUser and consumed by updateUser; Parameter 'userStatus' produced by createUser and consumed by updateUser; Parameter 'password' produced by createUser and consumed by updateUser; Parameter 'firstName' produced by createUser and consumed by updateUser; Parameter 'email' produced by createUser and consumed by updateUser; Parameter 'phone' produced by createUser and consumed by updateUser; Parameter 'username' produced by createUser and consumed by updateUser; Parameter 'lastName' produced by createUser and consumed by updateUser; CRUD: Must create user before updating; /user/{username} is nested under /user",
+      "reason": "Parameter 'id' produced by createUser and consumed by updateUser; Parameter 'userStatus' produced by createUser and consumed by updateUser; Parameter 'email' produced by createUser and consumed by updateUser; Parameter 'username' produced by createUser and consumed by updateUser; Parameter 'firstName' produced by createUser and consumed by updateUser; Parameter 'lastName' produced by createUser and consumed by updateUser; Parameter 'phone' produced by createUser and consumed by updateUser; Parameter 'password' produced by createUser and consumed by updateUser; CRUD: Must create user before updating; /user/{username} is nested under /user",
       "verified": false
     },
     {
@@ -1187,14 +1026,14 @@
       "parameter_mapping": {
         "id": "id",
         "userStatus": "userStatus",
-        "password": "password",
-        "firstName": "firstName",
         "email": "email",
-        "phone": "phone",
         "username": "username",
-        "lastName": "lastName"
+        "firstName": "firstName",
+        "lastName": "lastName",
+        "phone": "phone",
+        "password": "password"
       },
-      "reason": "Parameter 'id' produced by createUsersWithListInput and consumed by createUser; Parameter 'userStatus' produced by createUsersWithListInput and consumed by createUser; Parameter 'password' produced by createUsersWithListInput and consumed by createUser; Parameter 'firstName' produced by createUsersWithListInput and consumed by createUser; Parameter 'email' produced by createUsersWithListInput and consumed by createUser; Parameter 'phone' produced by createUsersWithListInput and consumed by createUser; Parameter 'username' produced by createUsersWithListInput and consumed by createUser; Parameter 'lastName' produced by createUsersWithListInput and consumed by createUser",
+      "reason": "Parameter 'id' produced by createUsersWithListInput and consumed by createUser; Parameter 'userStatus' produced by createUsersWithListInput and consumed by createUser; Parameter 'email' produced by createUsersWithListInput and consumed by createUser; Parameter 'username' produced by createUsersWithListInput and consumed by createUser; Parameter 'firstName' produced by createUsersWithListInput and consumed by createUser; Parameter 'lastName' produced by createUsersWithListInput and consumed by createUser; Parameter 'phone' produced by createUsersWithListInput and consumed by createUser; Parameter 'password' produced by createUsersWithListInput and consumed by createUser",
       "verified": false
     },
     {
@@ -1205,14 +1044,14 @@
       "parameter_mapping": {
         "id": "id",
         "userStatus": "userStatus",
-        "password": "password",
-        "firstName": "firstName",
         "email": "email",
-        "phone": "phone",
         "username": "username",
-        "lastName": "lastName"
+        "firstName": "firstName",
+        "lastName": "lastName",
+        "phone": "phone",
+        "password": "password"
       },
-      "reason": "Parameter 'id' produced by createUsersWithListInput and consumed by updateUser; Parameter 'userStatus' produced by createUsersWithListInput and consumed by updateUser; Parameter 'password' produced by createUsersWithListInput and consumed by updateUser; Parameter 'firstName' produced by createUsersWithListInput and consumed by updateUser; Parameter 'email' produced by createUsersWithListInput and consumed by updateUser; Parameter 'phone' produced by createUsersWithListInput and consumed by updateUser; Parameter 'username' produced by createUsersWithListInput and consumed by updateUser; Parameter 'lastName' produced by createUsersWithListInput and consumed by updateUser",
+      "reason": "Parameter 'id' produced by createUsersWithListInput and consumed by updateUser; Parameter 'userStatus' produced by createUsersWithListInput and consumed by updateUser; Parameter 'email' produced by createUsersWithListInput and consumed by updateUser; Parameter 'username' produced by createUsersWithListInput and consumed by updateUser; Parameter 'firstName' produced by createUsersWithListInput and consumed by updateUser; Parameter 'lastName' produced by createUsersWithListInput and consumed by updateUser; Parameter 'phone' produced by createUsersWithListInput and consumed by updateUser; Parameter 'password' produced by createUsersWithListInput and consumed by updateUser",
       "verified": false
     },
     {
@@ -1256,14 +1095,14 @@
       "parameter_mapping": {
         "id": "id",
         "userStatus": "userStatus",
-        "password": "password",
-        "firstName": "firstName",
         "email": "email",
-        "phone": "phone",
         "username": "username",
-        "lastName": "lastName"
+        "firstName": "firstName",
+        "lastName": "lastName",
+        "phone": "phone",
+        "password": "password"
       },
-      "reason": "Parameter 'id' produced by getUserByName and consumed by createUser; Parameter 'userStatus' produced by getUserByName and consumed by createUser; Parameter 'password' produced by getUserByName and consumed by createUser; Parameter 'firstName' produced by getUserByName and consumed by createUser; Parameter 'email' produced by getUserByName and consumed by createUser; Parameter 'phone' produced by getUserByName and consumed by createUser; Parameter 'username' produced by getUserByName and consumed by createUser; Parameter 'lastName' produced by getUserByName and consumed by createUser",
+      "reason": "Parameter 'id' produced by getUserByName and consumed by createUser; Parameter 'userStatus' produced by getUserByName and consumed by createUser; Parameter 'email' produced by getUserByName and consumed by createUser; Parameter 'username' produced by getUserByName and consumed by createUser; Parameter 'firstName' produced by getUserByName and consumed by createUser; Parameter 'lastName' produced by getUserByName and consumed by createUser; Parameter 'phone' produced by getUserByName and consumed by createUser; Parameter 'password' produced by getUserByName and consumed by createUser",
       "verified": false
     },
     {
@@ -1274,14 +1113,14 @@
       "parameter_mapping": {
         "id": "id",
         "userStatus": "userStatus",
-        "password": "password",
-        "firstName": "firstName",
         "email": "email",
-        "phone": "phone",
         "username": "username",
-        "lastName": "lastName"
+        "firstName": "firstName",
+        "lastName": "lastName",
+        "phone": "phone",
+        "password": "password"
       },
-      "reason": "Parameter 'id' produced by getUserByName and consumed by createUsersWithListInput; Parameter 'userStatus' produced by getUserByName and consumed by createUsersWithListInput; Parameter 'password' produced by getUserByName and consumed by createUsersWithListInput; Parameter 'firstName' produced by getUserByName and consumed by createUsersWithListInput; Parameter 'email' produced by getUserByName and consumed by createUsersWithListInput; Parameter 'phone' produced by getUserByName and consumed by createUsersWithListInput; Parameter 'username' produced by getUserByName and consumed by createUsersWithListInput; Parameter 'lastName' produced by getUserByName and consumed by createUsersWithListInput",
+      "reason": "Parameter 'id' produced by getUserByName and consumed by createUsersWithListInput; Parameter 'userStatus' produced by getUserByName and consumed by createUsersWithListInput; Parameter 'email' produced by getUserByName and consumed by createUsersWithListInput; Parameter 'username' produced by getUserByName and consumed by createUsersWithListInput; Parameter 'firstName' produced by getUserByName and consumed by createUsersWithListInput; Parameter 'lastName' produced by getUserByName and consumed by createUsersWithListInput; Parameter 'phone' produced by getUserByName and consumed by createUsersWithListInput; Parameter 'password' produced by getUserByName and consumed by createUsersWithListInput",
       "verified": false
     },
     {
@@ -1292,14 +1131,175 @@
       "parameter_mapping": {
         "id": "id",
         "userStatus": "userStatus",
-        "password": "password",
-        "firstName": "firstName",
         "email": "email",
-        "phone": "phone",
         "username": "username",
-        "lastName": "lastName"
+        "firstName": "firstName",
+        "lastName": "lastName",
+        "phone": "phone",
+        "password": "password"
       },
-      "reason": "Parameter 'id' produced by getUserByName and consumed by updateUser; Parameter 'userStatus' produced by getUserByName and consumed by updateUser; Parameter 'password' produced by getUserByName and consumed by updateUser; Parameter 'firstName' produced by getUserByName and consumed by updateUser; Parameter 'email' produced by getUserByName and consumed by updateUser; Parameter 'phone' produced by getUserByName and consumed by updateUser; Parameter 'username' produced by getUserByName and consumed by updateUser; Parameter 'lastName' produced by getUserByName and consumed by updateUser; CRUD: Often read user before updating",
+      "reason": "Parameter 'id' produced by getUserByName and consumed by updateUser; Parameter 'userStatus' produced by getUserByName and consumed by updateUser; Parameter 'email' produced by getUserByName and consumed by updateUser; Parameter 'username' produced by getUserByName and consumed by updateUser; Parameter 'firstName' produced by getUserByName and consumed by updateUser; Parameter 'lastName' produced by getUserByName and consumed by updateUser; Parameter 'phone' produced by getUserByName and consumed by updateUser; Parameter 'password' produced by getUserByName and consumed by updateUser; CRUD: Often read user before updating",
+      "verified": false
+    },
+    {
+      "source": "updatePet",
+      "target": "updatePetWithForm",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "name": "name",
+        "status": "status"
+      },
+      "reason": "Parameter 'name' produced by updatePet and consumed by updatePetWithForm; Parameter 'status' produced by updatePet and consumed by updatePetWithForm",
+      "verified": false
+    },
+    {
+      "source": "addPet",
+      "target": "updatePetWithForm",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {
+        "name": "name",
+        "status": "status"
+      },
+      "reason": "Parameter 'name' produced by addPet and consumed by updatePetWithForm; Parameter 'status' produced by addPet and consumed by updatePetWithForm; /pet/{petId} is nested under /pet",
+      "verified": false
+    },
+    {
+      "source": "findPetsByStatus",
+      "target": "updatePetWithForm",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "name": "name",
+        "status": "status"
+      },
+      "reason": "Parameter 'name' produced by findPetsByStatus and consumed by updatePetWithForm; Parameter 'status' produced by findPetsByStatus and consumed by updatePetWithForm",
+      "verified": false
+    },
+    {
+      "source": "findPetsByTags",
+      "target": "updatePetWithForm",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "name": "name",
+        "status": "status"
+      },
+      "reason": "Parameter 'name' produced by findPetsByTags and consumed by updatePetWithForm; Parameter 'status' produced by findPetsByTags and consumed by updatePetWithForm",
+      "verified": false
+    },
+    {
+      "source": "getPetById",
+      "target": "updatePetWithForm",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "name": "name",
+        "status": "status"
+      },
+      "reason": "Parameter 'name' produced by getPetById and consumed by updatePetWithForm; Parameter 'status' produced by getPetById and consumed by updatePetWithForm",
+      "verified": false
+    },
+    {
+      "source": "updatePet",
+      "target": "findPetsByStatus",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "status": "status"
+      },
+      "reason": "Parameter 'status' produced by updatePet and consumed by findPetsByStatus",
+      "verified": false
+    },
+    {
+      "source": "addPet",
+      "target": "findPetsByStatus",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "status": "status"
+      },
+      "reason": "Parameter 'status' produced by addPet and consumed by findPetsByStatus; /pet/findByStatus is nested under /pet",
+      "verified": false
+    },
+    {
+      "source": "findPetsByTags",
+      "target": "findPetsByStatus",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "status": "status"
+      },
+      "reason": "Parameter 'status' produced by findPetsByTags and consumed by findPetsByStatus",
+      "verified": false
+    },
+    {
+      "source": "getPetById",
+      "target": "findPetsByStatus",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "status": "status"
+      },
+      "reason": "Parameter 'status' produced by getPetById and consumed by findPetsByStatus",
+      "verified": false
+    },
+    {
+      "source": "updatePetWithForm",
+      "target": "findPetsByStatus",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "status": "status"
+      },
+      "reason": "Parameter 'status' produced by updatePetWithForm and consumed by findPetsByStatus",
+      "verified": false
+    },
+    {
+      "source": "placeOrder",
+      "target": "findPetsByStatus",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "status": "status"
+      },
+      "reason": "Parameter 'status' produced by placeOrder and consumed by findPetsByStatus",
+      "verified": false
+    },
+    {
+      "source": "placeOrder",
+      "target": "updatePetWithForm",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "petId": "petId",
+        "status": "status"
+      },
+      "reason": "Parameter 'status' produced by placeOrder and consumed by updatePetWithForm; Parameter 'petId' produced by placeOrder and consumed by updatePetWithForm",
+      "verified": false
+    },
+    {
+      "source": "getOrderById",
+      "target": "findPetsByStatus",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "status": "status"
+      },
+      "reason": "Parameter 'status' produced by getOrderById and consumed by findPetsByStatus",
+      "verified": false
+    },
+    {
+      "source": "getOrderById",
+      "target": "updatePetWithForm",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "petId": "petId",
+        "status": "status"
+      },
+      "reason": "Parameter 'status' produced by getOrderById and consumed by updatePetWithForm; Parameter 'petId' produced by getOrderById and consumed by updatePetWithForm",
       "verified": false
     },
     {
@@ -1429,34 +1429,10 @@
       "type": "nested_resource",
       "confidence": 0.85,
       "parameter_mapping": {
-        "password": "password",
-        "username": "username"
+        "username": "username",
+        "password": "password"
       },
-      "reason": "Parameter 'password' produced by createUser and consumed by loginUser; Parameter 'username' produced by createUser and consumed by loginUser; /user/login is nested under /user",
-      "verified": false
-    },
-    {
-      "source": "createUsersWithListInput",
-      "target": "loginUser",
-      "type": "parameter_data",
-      "confidence": 0.7,
-      "parameter_mapping": {
-        "password": "password",
-        "username": "username"
-      },
-      "reason": "Parameter 'password' produced by createUsersWithListInput and consumed by loginUser; Parameter 'username' produced by createUsersWithListInput and consumed by loginUser",
-      "verified": false
-    },
-    {
-      "source": "getUserByName",
-      "target": "loginUser",
-      "type": "parameter_data",
-      "confidence": 0.7,
-      "parameter_mapping": {
-        "password": "password",
-        "username": "username"
-      },
-      "reason": "Parameter 'password' produced by getUserByName and consumed by loginUser; Parameter 'username' produced by getUserByName and consumed by loginUser",
+      "reason": "Parameter 'username' produced by createUser and consumed by loginUser; Parameter 'password' produced by createUser and consumed by loginUser; /user/login is nested under /user",
       "verified": false
     },
     {
@@ -1483,6 +1459,18 @@
     },
     {
       "source": "createUsersWithListInput",
+      "target": "loginUser",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "username": "username",
+        "password": "password"
+      },
+      "reason": "Parameter 'username' produced by createUsersWithListInput and consumed by loginUser; Parameter 'password' produced by createUsersWithListInput and consumed by loginUser",
+      "verified": false
+    },
+    {
+      "source": "createUsersWithListInput",
       "target": "getUserByName",
       "type": "parameter_data",
       "confidence": 1.0,
@@ -1501,6 +1489,18 @@
         "username": "username"
       },
       "reason": "Parameter 'username' produced by createUsersWithListInput and consumed by deleteUser",
+      "verified": false
+    },
+    {
+      "source": "getUserByName",
+      "target": "loginUser",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "username": "username",
+        "password": "password"
+      },
+      "reason": "Parameter 'username' produced by getUserByName and consumed by loginUser; Parameter 'password' produced by getUserByName and consumed by loginUser",
       "verified": false
     },
     {
