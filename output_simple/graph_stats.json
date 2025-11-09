@@ -1,0 +1,91 @@
+{
+  "basic": {
+    "num_nodes": 2,
+    "num_edges": 1,
+    "is_dag": true,
+    "directed": true
+  },
+  "components": {
+    "count": 1,
+    "largest_size": 2
+  },
+  "degree": {
+    "in": {
+      "min": 0,
+      "max": 1,
+      "mean": 0.5,
+      "median": 0.5,
+      "stdev": 0.5
+    },
+    "out": {
+      "min": 0,
+      "max": 1,
+      "mean": 0.5,
+      "median": 0.5,
+      "stdev": 0.5
+    }
+  },
+  "longest_path": {
+    "length": 0,
+    "example": [
+      "createUser"
+    ]
+  },
+  "_timings": {
+    "longest_path_sec": 0.0,
+    "betweenness_sec": 0.0,
+    "degree_centrality_sec": 0.0,
+    "pickle_serialize_sec": 0.0,
+    "total_sec": 0.003965854644775391
+  },
+  "centrality": {
+    "betweenness_top": [
+      [
+        "createUser",
+        0.0
+      ],
+      [
+        "getUserById",
+        0.0
+      ]
+    ],
+    "degree_top": [
+      [
+        "createUser",
+        1.0
+      ],
+      [
+        "getUserById",
+        1.0
+      ]
+    ]
+  },
+  "detailed_size_in_memory": {
+    "nodes": {
+      "count": 2,
+      "total_bytes": 28659,
+      "avg_bytes_per_node": 14329,
+      "avg_node_id_bytes": 70,
+      "avg_fields_per_node": 1.0
+    },
+    "edges": {
+      "count": 1,
+      "total_bytes": 23087,
+      "avg_bytes_per_edge": 23087,
+      "avg_fields_per_edge": 3.0
+    },
+    "overhead": {
+      "per_node_bytes": 96,
+      "per_edge_bytes": 40,
+      "total_overhead_bytes": 232
+    },
+    "total_estimated_bytes": 51978,
+    "human_readable": "50.76KB"
+  },
+  "serialization": {
+    "pickle_bytes": 1923
+  },
+  "extras": {
+    "density": 0.5
+  }
+}

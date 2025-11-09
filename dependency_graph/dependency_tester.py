@@ -3,6 +3,7 @@ import sys
 import requests
 from typing import Optional
 from dependency_graph import build_dependency_graph_from_openapi
+from .stats import GraphStatistics
 
 OPENAPI_DIR = os.path.join(os.getcwd(), "openapi_specs")
 os.makedirs(OPENAPI_DIR, exist_ok=True)
@@ -41,6 +42,9 @@ def run_builder_for_spec(spec_path: str, dynamic: bool, output_dir: str):
             output_dir=output_dir
         )
         print(f"✓ Build finished. Operations: {len(graph.operations)} Dependencies: {len(graph.dependencies)}")
+        # Generate and print detailed statistics / benchmark report
+        stats = GraphStatistics()
+        stats.generate_report(graph, output_dir=output_dir)
     except Exception as e:
         print(f"✗ Error running builder: {e}")
 
