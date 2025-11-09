@@ -34,8 +34,8 @@
       "parameter_mapping": {
         "userId": "userId"
       },
-      "reason": "Parameter 'userId' produced by createUser and consumed by getUserById; CRUD: Must create users before reading; /users/{userId} is nested under /users",
-      "verified": false
+      "reason": "/users/{userId} is nested under /users; CRUD: Must create users before reading; Parameter 'userId' produced by createUser and consumed by getUserById",
+      "verified": null
     }
   ],
   "metadata": {

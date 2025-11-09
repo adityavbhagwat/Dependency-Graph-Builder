@@ -1,25 +1,24 @@
 from dataclasses import dataclass, field
 from typing import Dict, Any, Optional
-from .operation import Operation
 from .enums import DependencyType
+from .operation import Operation
 
-@dataclass
+@dataclass(slots=True)
 class Dependency:
-    """Represents a dependency between two operations"""
-    source: Operation  # Operation that must execute first
-    target: Operation  # Operation that depends on source
+    """Represents a dependency between two operations (memory-optimized with __slots__)."""
+    source: Operation
+    target: Operation
     type: DependencyType
-    confidence: float = 1.0  # 0.0 to 1.0
-    
-    # Specific information based on type
-    parameter_mapping: Dict[str, str] = field(default_factory=dict)  # source_param -> target_param
-    constraint: Optional[str] = None
-    reason: Optional[str] = None
-    
-    # Runtime metadata
-    verified: bool = False  # Has this dependency been verified at runtime?
-    success_count: int = 0
-    failure_count: int = 0
-    
-    def __hash__(self):
-        return hash((self.source.operation_id, self.target.operation_id, self.type))
+    reason: str = ""
+    confidence: float = 1.0
+    parameter_mapping: Dict[str, str] = field(default_factory=dict)
+    verified: Optional[bool] = None
+
+    def get_summary(self) -> Dict[str, Any]:
+        """Returns a lightweight dictionary summary for graph edge attributes."""
+        return {
+            "type": self.type.value,
+            "confidence": self.confidence,
+            "reason": self.reason,
+            "param_map_count": len(self.parameter_mapping)
+        }

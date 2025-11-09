@@ -70,24 +70,32 @@ class DependencyGraphBuilder:
         resolved_deps = self._resolve_conflicts(all_dependencies)
         print(f"  Resolved to {len(resolved_deps)} dependencies")
         
+        added_count = 0
+        skipped_count = 0
         for dep in resolved_deps:
-            self.graph.add_dependency(dep)
+            if self.graph.add_dependency_if_acyclic(dep):
+                added_count += 1
+            else:
+                skipped_count += 1
+        print(f"  Added {added_count} dependencies, skipped {skipped_count} to prevent cycles.")
         
         print("\nStep 5: Computing transitive dependencies...")
         transitive_analyzer = TransitiveDependencyAnalyzer(self.graph)
         transitive_deps = transitive_analyzer.analyze()
-        for dep in transitive_deps:
-            self.graph.add_dependency(dep)
-        print(f"  Found {len(transitive_deps)} transitive dependencies")
         
-        # print("\nStep 6: Optimizing graph...")
-        # self._optimize_graph()
+        trans_added_count = 0
+        trans_skipped_count = 0
+        for dep in transitive_deps:
+            if self.graph.add_dependency_if_acyclic(dep):
+                trans_added_count += 1
+            else:
+                trans_skipped_count += 1
+        print(f"  Found {len(transitive_deps)} transitive dependencies. Added {trans_added_count}, skipped {trans_skipped_count}.")
         
         return self.graph
     
     def _resolve_conflicts(self, dependencies: List[Dependency]) -> List[Dependency]:
         """Resolve conflicting dependencies"""
-        # Group by source-target pair
         dep_map: Dict[Tuple[str, str], List[Dependency]] = {}
         
         for dep in dependencies:
@@ -97,32 +105,27 @@ class DependencyGraphBuilder:
             dep_map[key].append(dep)
         
         resolved = []
-        
         for key, deps in dep_map.items():
             if len(deps) == 1:
                 resolved.append(deps[0])
             else:
-                # Multiple dependencies between same operations
-                # Keep the one with highest confidence, or merge
-                merged = self._merge_dependencies(deps)
-                resolved.append(merged)
+                resolved.append(self._merge_dependencies(deps))
         
+        # Prioritize adding high-confidence edges first
+        resolved.sort(key=lambda d: d.confidence, reverse=True)
         return resolved
     
     def _merge_dependencies(self, deps: List[Dependency]) -> Dependency:
         """Merge multiple dependencies into one"""
-        # Sort by confidence
         deps_sorted = sorted(deps, key=lambda d: d.confidence, reverse=True)
-        
-        # Use highest confidence dependency as base
         base = deps_sorted[0]
         
-        # Merge parameter mappings
-        for dep in deps_sorted[1:]:
-            base.parameter_mapping.update(dep.parameter_mapping)
-        
-        # Combine reasons
-        reasons = [d.reason for d in deps if d.reason]
-        base.reason = "; ".join(reasons)
+        merged_params = {}
+        for dep in reversed(deps_sorted):
+            merged_params.update(dep.parameter_mapping)
+        base.parameter_mapping = merged_params
+
+        reasons = {d.reason for d in deps if d.reason}
+        base.reason = "; ".join(sorted(list(reasons)))
         
         return base

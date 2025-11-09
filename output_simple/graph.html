@@ -34,7 +34,7 @@
     <script type="text/javascript">
         // Graph data
         var nodes = new vis.DataSet([{"id": "createUser", "label": "POST\\n/users", "color": "#2196F3", "consumes": [], "produces": ["userId"]}, {"id": "getUserById", "label": "GET\\n/users/{userId}", "color": "#4CAF50", "consumes": ["userId"], "produces": []}]);
-        var edges = new vis.DataSet([{"from": "createUser", "to": "getUserById", "label": "parameter_data", "color": "#2196F3", "title": "Parameter 'userId' produced by createUser and consumed by getUserById; CRUD: Must create users before reading; /users/{userId} is nested under /users"}]);
+        var edges = new vis.DataSet([{"from": "createUser", "to": "getUserById", "label": "parameter_data", "color": "#2196F3", "title": "/users/{userId} is nested under /users; CRUD: Must create users before reading; Parameter 'userId' produced by createUser and consumed by getUserById"}]);
         
         var container = document.getElementById('mynetwork');
         var data = {

@@ -36,7 +36,7 @@
     "betweenness_sec": 0.0,
     "degree_centrality_sec": 0.0,
     "pickle_serialize_sec": 0.0,
-    "total_sec": 0.003965854644775391
+    "total_sec": 0.0
   },
   "centrality": {
     "betweenness_top": [
@@ -63,27 +63,27 @@
   "detailed_size_in_memory": {
     "nodes": {
       "count": 2,
-      "total_bytes": 28659,
-      "avg_bytes_per_node": 14329,
+      "total_bytes": 1476,
+      "avg_bytes_per_node": 738,
       "avg_node_id_bytes": 70,
-      "avg_fields_per_node": 1.0
+      "avg_fields_per_node": 4.0
     },
     "edges": {
       "count": 1,
-      "total_bytes": 23087,
-      "avg_bytes_per_edge": 23087,
-      "avg_fields_per_edge": 3.0
+      "total_bytes": 1151,
+      "avg_bytes_per_edge": 1151,
+      "avg_fields_per_edge": 5.0
     },
     "overhead": {
       "per_node_bytes": 96,
       "per_edge_bytes": 40,
       "total_overhead_bytes": 232
     },
-    "total_estimated_bytes": 51978,
-    "human_readable": "50.76KB"
+    "total_estimated_bytes": 2859,
+    "human_readable": "2.79KB"
   },
   "serialization": {
-    "pickle_bytes": 1923
+    "pickle_bytes": 950
   },
   "extras": {
     "density": 0.5
