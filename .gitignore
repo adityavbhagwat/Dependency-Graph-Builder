@@ -1,0 +1,20 @@
+# Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# IDE / Editor files
+.vscode/
+.idea/
+
+# OS junk files
+.DS_Store
+Thumbs.db
+dip.py
