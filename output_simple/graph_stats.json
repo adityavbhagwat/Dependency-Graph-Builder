@@ -32,11 +32,11 @@
     ]
   },
   "_timings": {
-    "longest_path_sec": 0.0,
+    "longest_path_sec": 0.0009982585906982422,
     "betweenness_sec": 0.0,
     "degree_centrality_sec": 0.0,
     "pickle_serialize_sec": 0.0,
-    "total_sec": 0.0
+    "total_sec": 0.001997709274291992
   },
   "centrality": {
     "betweenness_top": [

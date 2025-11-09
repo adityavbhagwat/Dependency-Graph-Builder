@@ -19,7 +19,7 @@ class OpenAPIParser:
     def parse(self) -> List[Operation]:
         """Main parsing method"""
         # Load specification
-        with open(self.spec_path, 'r') as f:
+        with open(self.spec_path, 'r',encoding='utf-8') as f:
             if self.spec_path.endswith('.yaml') or self.spec_path.endswith('.yml'):
                 self.spec = yaml.safe_load(f)
             else:

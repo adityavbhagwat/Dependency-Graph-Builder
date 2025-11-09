@@ -1,0 +1,290 @@
+{
+  "basic": {
+    "num_nodes": 1111,
+    "num_edges": 241469,
+    "is_dag": true,
+    "directed": true
+  },
+  "components": {
+    "count": 23,
+    "largest_size": 1089
+  },
+  "degree": {
+    "in": {
+      "min": 0,
+      "max": 808,
+      "mean": 217.34383438343835,
+      "median": 167.0,
+      "stdev": 214.63996324338365
+    },
+    "out": {
+      "min": 0,
+      "max": 878,
+      "mean": 217.34383438343835,
+      "median": 159.0,
+      "stdev": 218.1797470663626
+    }
+  },
+  "longest_path": {
+    "length": 45.199999999999974,
+    "example": [
+      "actions/list-jobs-for-workflow-run",
+      "pulls/list-review-comments-for-repo",
+      "security-advisories/create-fork",
+      "repos/list-forks",
+      "pulls/list-review-comments",
+      "code-scanning/get-default-setup",
+      "orgs/enable-or-disable-security-product-on-all-org-repos",
+      "apps/get-org-installation",
+      "apps/check-token",
+      "packages/get-package-for-organization",
+      "packages/list-packages-for-organization",
+      "migrations/list-for-org",
+      "migrations/get-status-for-org",
+      "migrations/get-status-for-authenticated-user",
+      "migrations/start-for-org",
+      "orgs/get",
+      "interactions/set-restrictions-for-repo",
+      "issues/remove-dependency-blocked-by",
+      "issues/list",
+      "campaigns/list-org-campaigns",
+      "security-advisories/list-org-repository-advisories",
+      "security-advisories/list-repository-advisories",
+      "dependency-graph/diff-range",
+      "code-security/attach-enterprise-configuration",
+      "code-security/get-configurations-for-org",
+      "orgs/list-org-roles",
+      "orgs/list-pending-invitations",
+      "teams/list-members-in-org",
+      "orgs/list-members",
+      "orgs/list-outside-collaborators",
+      "migrations/list-repos-for-org",
+      "repos/list-collaborators",
+      "issues/list-comments-for-repo",
+      "repos/get-commit",
+      "git/get-blob",
+      "repos/list-deployments",
+      "repos/get-readme",
+      "security-advisories/list-global-advisories",
+      "code-scanning/list-alerts-for-org",
+      "issues/list-for-org",
+      "teams/add-or-update-membership-for-user-legacy",
+      "code-scanning/list-alerts-for-repo",
+      "issues/list-for-repo",
+      "pulls/list",
+      "issues/add-assignees",
+      "issues/list-milestones",
+      "actions/approve-workflow-run",
+      "repos/get-content",
+      "repos/list-for-org",
+      "packages/get-all-package-versions-for-package-owned-by-org",
+      "actions/get-self-hosted-runner-group-for-org",
+      "repos/list-for-authenticated-user",
+      "repos/create-commit-signature-protection",
+      "repos/create-tag-protection",
+      "repos/get",
+      "enterprise-team-organizations/bulk-add",
+      "enterprise-teams/list",
+      "users/set-primary-email-visibility-for-authenticated-user",
+      "issues/remove-label",
+      "code-security/create-configuration-for-enterprise",
+      "code-security/get-default-configurations-for-enterprise",
+      "enterprise-teams/create",
+      "repos/create-pages-site",
+      "gists/create",
+      "gists/create-comment",
+      "orgs/update",
+      "actions/list-custom-image-versions-for-org",
+      "actions/update-hosted-runner-for-org",
+      "actions/list-self-hosted-runner-groups-for-org",
+      "campaigns/create-campaign",
+      "code-security/get-default-configurations",
+      "code-security/update-configuration",
+      "orgs/list-webhook-deliveries",
+      "orgs/update-webhook",
+      "orgs/custom-properties-for-repos-create-or-update-organization-definition",
+      "teams/create-discussion-in-org",
+      "teams/create-discussion-comment-in-org",
+      "repos/update",
+      "repos/add-collaborator",
+      "code-scanning/create-variant-analysis",
+      "code-scanning/get-variant-analysis",
+      "repos/list-activities",
+      "code-scanning/list-recent-analyses",
+      "repos/get-pages-deployment",
+      "code-security/get-repositories-for-enterprise-configuration",
+      "code-security/get-repositories-for-configuration",
+      "checks/list-for-ref",
+      "checks/update",
+      "checks/list-for-suite",
+      "repos/update-deployment-branch-policy",
+      "repos/get-webhook-config-for-repo",
+      "users/update-authenticated",
+      "repos/create-deployment-branch-policy",
+      "issues/list-events",
+      "issues/update",
+      "codespaces/add-repository-for-secret-for-authenticated-user",
+      "issues/update-label",
+      "issues/create-milestone",
+      "repos/delete",
+      "issues/create-comment",
+      "pulls/check-if-merged",
+      "pulls/create-review",
+      "repos/upload-release-asset",
+      "codespaces/publish-for-authenticated-user",
+      "codespaces/repo-machines-for-authenticated-user",
+      "codespaces/create-with-pr-for-authenticated-user",
+      "secret-scanning/update-alert",
+      "repos/create-using-template",
+      "teams/update-discussion-legacy",
+      "users/get-authenticated",
+      "repos/delete-file",
+      "reactions/list-for-team-discussion-comment-in-org",
+      "reactions/list-for-team-discussion-in-org",
+      "reactions/list-for-commit-comment",
+      "reactions/list-for-issue-comment",
+      "reactions/list-for-issue",
+      "reactions/list-for-pull-request-review-comment",
+      "reactions/list-for-release",
+      "reactions/list-for-team-discussion-comment-legacy",
+      "reactions/list-for-team-discussion-legacy",
+      "reactions/create-for-team-discussion-comment-legacy",
+      "private-registries/create-org-private-registry",
+      "orgs/get-org-ruleset-history",
+      "repos/update-org-ruleset",
+      "hosted-compute/list-network-configurations-for-org",
+      "hosted-compute/update-network-configuration-for-org",
+      "repos/get-repo-ruleset-history",
+      "repos/update-repo-ruleset",
+      "codespaces/create-or-update-secret-for-authenticated-user",
+      "repos/create-or-update-file-contents",
+      "reactions/create-for-issue-comment",
+      "reactions/create-for-issue",
+      "reactions/create-for-pull-request-review-comment",
+      "reactions/create-for-release",
+      "markdown/render",
+      "markdown/render-raw"
+    ]
+  },
+  "_timings": {
+    "longest_path_sec": 0.3059966564178467,
+    "betweenness_sec": 4.902517557144165,
+    "degree_centrality_sec": 0.0,
+    "pickle_serialize_sec": 0.12003922462463379,
+    "total_sec": 6.630435228347778
+  },
+  "centrality": {
+    "betweenness_top": [
+      [
+        "security-advisories/list-global-advisories",
+        0.0128376670849808
+      ],
+      [
+        "orgs/list-memberships-for-authenticated-user",
+        0.01185812775645907
+      ],
+      [
+        "issues/remove-dependency-blocked-by",
+        0.007256184938146169
+      ],
+      [
+        "repos/list-for-authenticated-user",
+        0.006266391241216849
+      ],
+      [
+        "issues/list",
+        0.004516295989549884
+      ],
+      [
+        "reactions/list-for-team-discussion-comment-in-org",
+        0.004217658660097652
+      ],
+      [
+        "reactions/list-for-team-discussion-in-org",
+        0.004217658660097652
+      ],
+      [
+        "campaigns/update-campaign",
+        0.004205611568001661
+      ],
+      [
+        "security-advisories/list-org-repository-advisories",
+        0.003902158423532348
+      ],
+      [
+        "campaigns/list-org-campaigns",
+        0.0034995869401652927
+      ]
+    ],
+    "degree_top": [
+      [
+        "security-advisories/list-global-advisories",
+        0.8063063063063063
+      ],
+      [
+        "apps/check-token",
+        0.7918918918918919
+      ],
+      [
+        "apps/list-installations",
+        0.790990990990991
+      ],
+      [
+        "apps/get-installation",
+        0.790990990990991
+      ],
+      [
+        "repos/update",
+        0.7828828828828829
+      ],
+      [
+        "security-advisories/list-org-repository-advisories",
+        0.7738738738738739
+      ],
+      [
+        "packages/list-packages-for-organization",
+        0.7558558558558559
+      ],
+      [
+        "campaigns/list-org-campaigns",
+        0.7504504504504504
+      ],
+      [
+        "meta/get",
+        0.7387387387387387
+      ],
+      [
+        "projects/add-item-for-user",
+        0.7387387387387387
+      ]
+    ]
+  },
+  "detailed_size_in_memory": {
+    "nodes": {
+      "count": 1111,
+      "total_bytes": 963510,
+      "avg_bytes_per_node": 867,
+      "avg_node_id_bytes": 115,
+      "avg_fields_per_node": 4.0
+    },
+    "edges": {
+      "count": 241469,
+      "total_bytes": 230560897,
+      "avg_bytes_per_edge": 954,
+      "avg_fields_per_edge": 4.035602913831589
+    },
+    "overhead": {
+      "per_node_bytes": 96,
+      "per_edge_bytes": 40,
+      "total_overhead_bytes": 9765416
+    },
+    "total_estimated_bytes": 241289823,
+    "human_readable": "230.11MB"
+  },
+  "serialization": {
+    "pickle_bytes": 21153395
+  },
+  "extras": {
+    "density": 0.1958052562012958
+  }
+}

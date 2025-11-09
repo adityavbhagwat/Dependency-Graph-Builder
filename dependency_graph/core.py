@@ -59,7 +59,7 @@ class DependencyGraph:
             source_id,
             target_id,
             weight=1.0 - dependency.confidence,
-            **dependency.get_summary()
+            **dependency.get_graph_summary()
         )
         return True
     
