@@ -1,39 +1,42 @@
 <?xml version='1.0' encoding='utf-8'?>
-<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><graph edgedefault="directed"><node id="updatePet"/>
-<node id="addPet"/>
-<node id="findPetsByStatus"/>
-<node id="findPetsByTags"/>
-<node id="getPetById"/>
-<node id="updatePetWithForm"/>
-<node id="deletePet"/>
-<node id="uploadFile"/>
-<node id="getInventory"/>
-<node id="placeOrder"/>
-<node id="getOrderById"/>
-<node id="deleteOrder"/>
-<node id="createUser"/>
-<node id="createUsersWithListInput"/>
-<node id="loginUser"/>
-<node id="logoutUser"/>
-<node id="getUserByName"/>
-<node id="updateUser"/>
-<node id="deleteUser"/>
-<edge source="updatePet" target="addPet"/>
-<edge source="addPet" target="findPetsByTags"/>
-<edge source="findPetsByStatus" target="updatePet"/>
-<edge source="findPetsByTags" target="placeOrder"/>
-<edge source="getPetById" target="findPetsByStatus"/>
-<edge source="updatePetWithForm" target="getPetById"/>
-<edge source="uploadFile" target="deletePet"/>
-<edge source="placeOrder" target="createUser"/>
-<edge source="placeOrder" target="deleteOrder"/>
-<edge source="placeOrder" target="uploadFile"/>
-<edge source="getOrderById" target="updatePetWithForm"/>
-<edge source="createUser" target="createUsersWithListInput"/>
-<edge source="createUser" target="logoutUser"/>
-<edge source="createUsersWithListInput" target="updateUser"/>
-<edge source="createUsersWithListInput" target="deleteUser"/>
-<edge source="loginUser" target="getInventory"/>
-<edge source="loginUser" target="updatePetWithForm"/>
-<edge source="getUserByName" target="loginUser"/>
-</graph></graphml>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <graph edgedefault="directed">
+    <node id="updatePet" />
+    <node id="addPet" />
+    <node id="findPetsByStatus" />
+    <node id="findPetsByTags" />
+    <node id="getPetById" />
+    <node id="updatePetWithForm" />
+    <node id="deletePet" />
+    <node id="uploadFile" />
+    <node id="getInventory" />
+    <node id="placeOrder" />
+    <node id="getOrderById" />
+    <node id="deleteOrder" />
+    <node id="createUser" />
+    <node id="createUsersWithListInput" />
+    <node id="loginUser" />
+    <node id="logoutUser" />
+    <node id="getUserByName" />
+    <node id="updateUser" />
+    <node id="deleteUser" />
+    <edge source="updatePet" target="addPet" />
+    <edge source="addPet" target="placeOrder" />
+    <edge source="findPetsByStatus" target="updatePet" />
+    <edge source="findPetsByTags" target="findPetsByStatus" />
+    <edge source="getPetById" target="findPetsByTags" />
+    <edge source="updatePetWithForm" target="getPetById" />
+    <edge source="uploadFile" target="deletePet" />
+    <edge source="placeOrder" target="uploadFile" />
+    <edge source="placeOrder" target="deleteOrder" />
+    <edge source="placeOrder" target="createUser" />
+    <edge source="getOrderById" target="updatePetWithForm" />
+    <edge source="createUser" target="createUsersWithListInput" />
+    <edge source="createUser" target="logoutUser" />
+    <edge source="createUsersWithListInput" target="deleteUser" />
+    <edge source="createUsersWithListInput" target="updateUser" />
+    <edge source="loginUser" target="getInventory" />
+    <edge source="loginUser" target="updatePetWithForm" />
+    <edge source="getUserByName" target="loginUser" />
+  </graph>
+</graphml>

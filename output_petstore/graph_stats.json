@@ -32,27 +32,27 @@
       "loginUser",
       "updatePetWithForm",
       "getPetById",
+      "findPetsByTags",
       "findPetsByStatus",
       "updatePet",
       "addPet",
-      "findPetsByTags",
       "placeOrder",
       "createUser",
       "createUsersWithListInput",
-      "updateUser"
+      "deleteUser"
     ]
   },
   "_timings": {
     "longest_path_sec": 0.0,
-    "betweenness_sec": 0.0,
+    "betweenness_sec": 0.0010006427764892578,
     "degree_centrality_sec": 0.0,
-    "pickle_serialize_sec": 0.001001596450805664,
-    "total_sec": 0.008395910263061523
+    "pickle_serialize_sec": 0.00099945068359375,
+    "total_sec": 0.0040018558502197266
   },
   "centrality": {
     "betweenness_top": [
       [
-        "findPetsByTags",
+        "addPet",
         0.23529411764705882
       ],
       [
@@ -60,15 +60,15 @@
         0.23529411764705882
       ],
       [
-        "addPet",
+        "updatePet",
         0.22875816993464054
       ],
       [
-        "updatePet",
+        "findPetsByStatus",
         0.21568627450980393
       ],
       [
-        "findPetsByStatus",
+        "findPetsByTags",
         0.19607843137254902
       ],
       [
@@ -158,7 +158,7 @@
     "human_readable": "8.72KB"
   },
   "serialization": {
-    "pickle_bytes": 1182
+    "pickle_bytes": 1205
   },
   "extras": {
     "density": 0.05263157894736842

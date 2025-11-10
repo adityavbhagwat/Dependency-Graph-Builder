@@ -1,4 +1,6 @@
 import json
+import os
+import requests  # Add this import
 import pydot
 from typing import Dict, Any
 from .core import DependencyGraph
@@ -241,6 +243,147 @@ class GraphVisualizer:
 
         
         print(f"Created interactive visualization at {output_path}")
+    
+    def export_html(self, output_path: str):
+        """Exports the graph to a self-contained HTML file."""
+        nodes = []
+        edges = []
+
+        # --- NODE AND EDGE EXTRACTION LOGIC ---
+        for op_id, op_data in self.graph.operation_registry.items():
+            method = op_data.method.value
+            color = {
+                'GET': '#4CAF50',
+                'POST': '#2196F3',
+                'PUT': '#FF9800',
+                'PATCH': '#FF9800',
+                'DELETE': '#F44336'
+            }.get(method, '#9E9E9E')
+            
+            nodes.append({
+                "id": op_id,
+                "label": f"{method}\n{op_data.path}",
+                "color": color,
+                "consumes": list(op_data.consumes),
+                "produces": list(op_data.produces)
+            })
+
+        for u, v, data in self.graph.graph.edges(data=True):
+            edges.append({
+                "from": u,
+                "to": v,
+                "label": data.get('type', ''),
+                "color": "#2196F3",
+                "title": data.get('reason', '')
+            })
+
+        # --- THE FIX IS HERE ---
+        # Download the vis.js library content to embed it directly.
+        try:
+            vis_js_url = "https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"
+            vis_js_content = requests.get(vis_js_url).text
+        except requests.RequestException as e:
+            print(f"Warning: Could not download vis.js library. HTML will not be interactive. Error: {e}")
+            vis_js_content = "alert('Could not load visualization library.');"
+
+        html_template = f"""
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Dependency Graph</title>
+    <style>
+        #mynetwork {{
+            width: 100%;
+            height: 800px;
+            border: 1px solid lightgray;
+        }}
+        .legend {{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: white;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }}
+    </style>
+    <script type="text/javascript">
+        // Embedded vis.js library
+        {vis_js_content}
+    </script>
+</head>
+<body>
+    <h1>API Dependency Graph</h1>
+    <div class="legend">
+        <h3>Legend</h3>
+        <div><span style="color: #4CAF50;">■</span> GET Operations</div>
+        <div><span style="color: #2196F3;">■</span> POST Operations</div>
+        <div><span style="color: #FF9800;">■</span> PUT/PATCH Operations</div>
+        <div><span style="color: #F44336;">■</span> DELETE Operations</div>
+    </div>
+    <div id="mynetwork"></div>
+    <script type="text/javascript">
+        var nodes = new vis.DataSet({json.dumps(nodes)});
+        var edges = new vis.DataSet({json.dumps(edges)});
+        
+        var container = document.getElementById('mynetwork');
+        var data = {{
+            nodes: nodes,
+            edges: edges
+        }};
+        
+        var options = {{
+            nodes: {{
+                shape: 'box',
+                margin: 10,
+                widthConstraint: {{
+                    maximum: 200
+                }}
+            }},
+            edges: {{
+                arrows: 'to',
+                smooth: {{
+                    type: 'cubicBezier'
+                }}
+            }},
+            physics: {{
+                enabled: true,
+                barnesHut: {{
+                    gravitationalConstant: -2000,
+                    springConstant: 0.001,
+                    springLength: 200
+                }}
+            }},
+            layout: {{
+                hierarchical: {{
+                    enabled: true,
+                    direction: 'UD',
+                    sortMethod: 'directed'
+                }}
+            }}
+        }};
+        
+        var network = new vis.Network(container, data, options);
+        
+        network.on("click", function(params) {{
+            if (params.nodes.length > 0) {{
+                var nodeId = params.nodes[0];
+                var node = nodes.get(nodeId);
+                alert('Operation: ' + node.label + '\\n' +
+                      'ID: ' + node.id + '\\n' +
+                      'Consumes: ' + (node.consumes || []).join(', ') + '\\n' +
+                      'Produces: ' + (node.produces || []).join(', '));
+            }}
+        }});
+    </script>
+</body>
+</html>
+"""
+        os.makedirs(os.path.dirname(output_path), exist_ok=True)
+        with open(output_path, 'w', encoding='utf-8') as f:
+            f.write(html_template)
+
+        print(f"Created self-contained HTML visualization at {output_path}")
     
     def _get_node_color(self, operation: Operation) -> str:
         """Get color for operation node based on HTTP method"""
