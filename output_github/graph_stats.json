@@ -1,7 +1,7 @@
 {
   "basic": {
     "num_nodes": 1111,
-    "num_edges": 1643,
+    "num_edges": 1644,
     "is_dag": true,
     "directed": true
   },
@@ -12,21 +12,21 @@
   "degree": {
     "in": {
       "min": 0,
-      "max": 56,
-      "mean": 1.478847884788479,
+      "max": 53,
+      "mean": 1.4797479747974798,
       "median": 1.0,
-      "stdev": 3.642836073477518
+      "stdev": 3.6065864252855433
     },
     "out": {
       "min": 0,
       "max": 67,
-      "mean": 1.478847884788479,
+      "mean": 1.4797479747974798,
       "median": 1.0,
-      "stdev": 4.6606973558414575
+      "stdev": 4.673237508555582
     }
   },
   "longest_path": {
-    "length": 211,
+    "length": 206,
     "example": [
       "actions/list-jobs-for-workflow-run",
       "pulls/list-review-comments-for-repo",
@@ -158,8 +158,6 @@
       "checks/list-for-suite",
       "repos/update-deployment-branch-policy",
       "repos/create-webhook",
-      "repos/get-webhook-config-for-repo",
-      "repos/update-webhook",
       "users/update-authenticated",
       "repos/create-deployment-branch-policy",
       "issues/create",
@@ -188,19 +186,16 @@
       "pulls/submit-review",
       "repos/update-release-asset",
       "repos/upload-release-asset",
+      "secret-scanning/update-alert",
+      "repos/create-commit-status",
+      "repos/create-using-template",
+      "teams/create-discussion-legacy",
+      "teams/update-discussion-legacy",
       "codespaces/publish-for-authenticated-user",
       "codespaces/create-with-repo-for-authenticated-user",
       "codespaces/list-devcontainers-in-repository-for-authenticated-user",
       "codespaces/create-with-pr-for-authenticated-user",
       "codespaces/list-in-repository-for-authenticated-user",
-      "repos/create-commit-status",
-      "repos/create-using-template",
-      "teams/create-discussion-legacy",
-      "teams/update-discussion-legacy",
-      "teams/create-discussion-comment-legacy",
-      "teams/update-discussion-comment-legacy",
-      "projects/create-draft-item-for-authenticated-user",
-      "users/get-authenticated",
       "repos/delete-file",
       "reactions/list-for-team-discussion-comment-in-org",
       "reactions/list-for-team-discussion-in-org",
@@ -243,53 +238,53 @@
     ]
   },
   "_timings": {
-    "longest_path_sec": 0.0056340694427490234,
-    "betweenness_sec": 0.6849470138549805,
-    "degree_centrality_sec": 0.0,
+    "longest_path_sec": 0.00431513786315918,
+    "betweenness_sec": 0.7157697677612305,
+    "degree_centrality_sec": 0.0009987354278564453,
     "pickle_serialize_sec": 0.0,
-    "total_sec": 0.6979966163635254
+    "total_sec": 0.7336716651916504
   },
   "centrality": {
     "betweenness_top": [
       [
         "issues/list-milestones",
-        0.2227182999049545
+        0.2228767089903249
       ],
       [
         "issues/remove-assignees",
-        0.2225517672767447
+        0.222711801070683
       ],
       [
         "issues/add-assignees",
-        0.22238360993996698
+        0.2225452684424732
       ],
       [
         "pulls/list",
-        0.22221382789462138
+        0.22237711110569547
       ],
       [
         "issues/list-for-repo",
-        0.22204242114070785
+        0.22220732906034985
       ],
       [
         "code-scanning/list-alerts-for-repo",
-        0.22186938967822642
+        0.22203592230643635
       ],
       [
         "teams/add-or-update-membership-for-user-legacy",
-        0.2216947335071771
+        0.2218628908439549
       ],
       [
         "teams/add-or-update-membership-for-user-in-org",
-        0.2215184526275599
+        0.2216882346729056
       ],
       [
         "orgs/set-membership-for-user",
-        0.22134054703937478
+        0.2215119537932884
       ],
       [
         "orgs/list-memberships-for-authenticated-user",
-        0.22116101674262176
+        0.22133404820510327
       ]
     ],
     "degree_top": [
@@ -299,7 +294,7 @@
       ],
       [
         "reactions/list-for-release",
-        0.06036036036036036
+        0.06126126126126126
       ],
       [
         "reactions/list-for-team-discussion-in-org",
@@ -315,7 +310,7 @@
       ],
       [
         "security-advisories/list-global-advisories",
-        0.051351351351351354
+        0.04864864864864865
       ],
       [
         "repos/update",
@@ -344,23 +339,23 @@
       "avg_fields_per_node": 0.0
     },
     "edges": {
-      "count": 1643,
-      "total_bytes": 476242,
+      "count": 1644,
+      "total_bytes": 476314,
       "avg_bytes_per_edge": 289,
       "avg_fields_per_edge": 0.0
     },
     "overhead": {
       "per_node_bytes": 96,
       "per_edge_bytes": 40,
-      "total_overhead_bytes": 172376
+      "total_overhead_bytes": 172416
     },
-    "total_estimated_bytes": 847701,
-    "human_readable": "827.83KB"
+    "total_estimated_bytes": 847813,
+    "human_readable": "827.94KB"
   },
   "serialization": {
-    "pickle_bytes": 86625
+    "pickle_bytes": 86672
   },
   "extras": {
-    "density": 0.0013322953917013322
+    "density": 0.001333106283601333
   }
 }

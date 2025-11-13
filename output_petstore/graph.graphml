@@ -22,14 +22,14 @@
     <node id="deleteUser" />
     <edge source="updatePet" target="addPet" />
     <edge source="addPet" target="placeOrder" />
-    <edge source="findPetsByStatus" target="updatePet" />
-    <edge source="findPetsByTags" target="findPetsByStatus" />
-    <edge source="getPetById" target="findPetsByTags" />
+    <edge source="findPetsByStatus" target="findPetsByTags" />
+    <edge source="findPetsByTags" target="updatePet" />
+    <edge source="getPetById" target="findPetsByStatus" />
     <edge source="updatePetWithForm" target="getPetById" />
     <edge source="uploadFile" target="deletePet" />
     <edge source="placeOrder" target="uploadFile" />
-    <edge source="placeOrder" target="deleteOrder" />
     <edge source="placeOrder" target="createUser" />
+    <edge source="placeOrder" target="deleteOrder" />
     <edge source="getOrderById" target="updatePetWithForm" />
     <edge source="createUser" target="createUsersWithListInput" />
     <edge source="createUser" target="logoutUser" />

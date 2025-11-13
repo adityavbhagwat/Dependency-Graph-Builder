@@ -32,8 +32,8 @@
       "loginUser",
       "updatePetWithForm",
       "getPetById",
-      "findPetsByTags",
       "findPetsByStatus",
+      "findPetsByTags",
       "updatePet",
       "addPet",
       "placeOrder",
@@ -44,10 +44,10 @@
   },
   "_timings": {
     "longest_path_sec": 0.0,
-    "betweenness_sec": 0.0010006427764892578,
+    "betweenness_sec": 0.0,
     "degree_centrality_sec": 0.0,
-    "pickle_serialize_sec": 0.00099945068359375,
-    "total_sec": 0.0040018558502197266
+    "pickle_serialize_sec": 0.0,
+    "total_sec": 0.0029969215393066406
   },
   "centrality": {
     "betweenness_top": [
@@ -64,11 +64,11 @@
         0.22875816993464054
       ],
       [
-        "findPetsByStatus",
+        "findPetsByTags",
         0.21568627450980393
       ],
       [
-        "findPetsByTags",
+        "findPetsByStatus",
         0.19607843137254902
       ],
       [
