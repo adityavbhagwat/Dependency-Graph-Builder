@@ -57,6 +57,10 @@ def menu():
         print("3) Download & build GitHub API (large)")
         print("4) Build from custom local spec path")
         print("5) Download from URL and build")
+        ## build from user.yaml
+        print("6) Build from user.yaml")
+        ## build from market.yml
+        print("7) Build from market.yml")
         print("q) Quit")
         choice = input("Select option: ").strip().lower()
 
@@ -105,6 +109,26 @@ def menu():
                 dyn = input("Enable dynamic updates? (y/N): ").strip().lower() == "y"
                 out = input("Output directory (default ./output_download): ").strip() or "./output_download"
                 run_builder_for_spec(local, dyn, out)
+        
+        elif choice == "6":
+            spec = "user.yaml"
+            if not os.path.exists(spec):
+                print(f"✗ Local file '{spec}' not found in cwd: {os.getcwd()}")
+                continue
+            dyn = input("Enable dynamic updates? (y/N): ").strip().lower() == "y"
+            out = "./output_user"
+            run_builder_for_spec(spec, dyn, out)
+
+        ## market.yml
+        elif choice == "7":
+            spec = "market.yaml"
+            if not os.path.exists(spec):
+                print(f"✗ Local file '{spec}' not found in cwd: {os.getcwd()}")
+                continue
+            dyn = input("Enable dynamic updates? (y/N): ").strip().lower() == "y"
+            out = "./output_market"
+            run_builder_for_spec(spec, dyn, out)
+
 
         elif choice == "q":
             print("Exiting.")

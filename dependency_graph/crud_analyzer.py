@@ -10,6 +10,33 @@ class CRUDDependencyAnalyzer:
         self.operations = operations
         self.dependencies: List[Dependency] = []
     
+    def _is_true_create(self, op: Operation) -> bool:
+        """
+        Determine if a POST operation is a true 'create' operation.
+        POST on /resource is a create, POST on /resource/{id}/action is not.
+        """
+        if op.method != HTTPMethod.POST:
+            return False
+        
+        # If the path has no path parameters in the last segment, it's likely a create
+        # e.g., POST /pet is create, POST /pet/{petId} is update, POST /pet/{petId}/uploadImage is action
+        path_parts = [p for p in op.path.split('/') if p]
+        if not path_parts:
+            return True
+        
+        last_part = path_parts[-1]
+        
+        # If last part is a path parameter, this is likely an update/action, not a create
+        if last_part.startswith('{'):
+            return False
+        
+        # If there's any path parameter before the last part, this might be a sub-resource action
+        has_path_param = any(p.startswith('{') for p in path_parts[:-1])
+        if has_path_param:
+            return False
+        
+        return True
+    
     def analyze(self) -> List[Dependency]:
         """Find CRUD dependencies"""
         dependencies = []
@@ -24,11 +51,15 @@ class CRUDDependencyAnalyzer:
         
         # For each resource, establish CRUD dependencies
         for resource, ops in resource_ops.items():
-            # Separate by HTTP method
-            creates = [op for op in ops if op.method == HTTPMethod.POST]
+            # Separate by HTTP method - only true creates for POST
+            creates = [op for op in ops if self._is_true_create(op)]
             reads = [op for op in ops if op.method == HTTPMethod.GET]
             updates = [op for op in ops if op.method in [HTTPMethod.PUT, HTTPMethod.PATCH]]
             deletes = [op for op in ops if op.method == HTTPMethod.DELETE]
+            
+            # Also treat non-create POST operations as updates (they modify existing resources)
+            post_updates = [op for op in ops if op.method == HTTPMethod.POST and not self._is_true_create(op)]
+            updates.extend(post_updates)
             
             # CREATE → READ
             for create in creates:

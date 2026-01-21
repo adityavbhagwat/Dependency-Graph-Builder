@@ -8,6 +8,7 @@ from .nested_analyzer import NestedResourceAnalyzer
 from .constraint_analyzer import ConstraintDependencyAnalyzer
 from .transitive_analyzer import TransitiveDependencyAnalyzer
 from .dependency import Dependency
+from .enums import DependencyType
 import networkx as nx
 
 class DependencyGraphBuilder:
@@ -69,6 +70,8 @@ class DependencyGraphBuilder:
         
         print("\nStep 4: Resolving conflicts and adding to graph...")
         resolved_deps = self._resolve_conflicts(all_dependencies)
+        # Prefer higher-level semantics (CRUD/auth) over raw parameter matching
+        resolved_deps.sort(key=self._dependency_priority)
         print(f"  Resolved to {len(resolved_deps)} dependencies")
         
         added_count = 0
@@ -109,7 +112,8 @@ class DependencyGraphBuilder:
         return self.graph
     
     def _resolve_conflicts(self, dependencies: List[Dependency]) -> List[Dependency]:
-        """Resolve conflicting dependencies"""
+        """Resolve conflicting dependencies including bidirectional conflicts"""
+        # First, group by same direction (source, target)
         dep_map: Dict[Tuple[str, str], List[Dependency]] = {}
         
         for dep in dependencies:
@@ -118,28 +122,120 @@ class DependencyGraphBuilder:
                 dep_map[key] = []
             dep_map[key].append(dep)
         
-        resolved = []
+        # Merge same-direction dependencies
+        merged = {}
         for key, deps in dep_map.items():
             if len(deps) == 1:
-                resolved.append(deps[0])
+                merged[key] = deps[0]
             else:
-                resolved.append(self._merge_dependencies(deps))
+                merged[key] = self._merge_dependencies(deps)
         
-        # Prioritize adding high-confidence edges first
-        resolved.sort(key=lambda d: d.confidence, reverse=True)
+        # Now resolve bidirectional conflicts (A→B vs B→A)
+        resolved = self._resolve_bidirectional_conflicts(merged)
+        
+        return resolved
+    
+    def _resolve_bidirectional_conflicts(self, dep_map: Dict[Tuple[str, str], Dependency]) -> List[Dependency]:
+        """
+        Resolve conflicts where we have both A→B and B→A.
+        Keep the one with stronger semantic type (CRUD/auth beats parameter_data).
+        """
+        resolved = []
+        processed = set()
+        
+        type_priority = {
+            DependencyType.CRUD: 0,
+            DependencyType.AUTHENTICATION: 1,
+            DependencyType.AUTHORIZATION: 1,
+            DependencyType.WORKFLOW: 2,
+            DependencyType.NESTED_RESOURCE: 2,
+            DependencyType.CONSTRAINT: 3,
+            DependencyType.PARAMETER_DATA: 4,
+            DependencyType.TRANSITIVE: 5,
+            DependencyType.DYNAMIC: 5,
+        }
+        
+        for (src, tgt), dep in dep_map.items():
+            if (src, tgt) in processed:
+                continue
+            
+            reverse_key = (tgt, src)
+            if reverse_key in dep_map:
+                # Bidirectional conflict! Choose the better one
+                reverse_dep = dep_map[reverse_key]
+                
+                dep_priority = type_priority.get(dep.type, 99)
+                rev_priority = type_priority.get(reverse_dep.type, 99)
+                
+                # Lower priority number = stronger semantic meaning
+                if dep_priority < rev_priority:
+                    resolved.append(dep)
+                elif rev_priority < dep_priority:
+                    resolved.append(reverse_dep)
+                else:
+                    # Same type priority - use confidence
+                    if dep.confidence >= reverse_dep.confidence:
+                        resolved.append(dep)
+                    else:
+                        resolved.append(reverse_dep)
+                
+                processed.add((src, tgt))
+                processed.add(reverse_key)
+            else:
+                # No conflict
+                resolved.append(dep)
+                processed.add((src, tgt))
+        
         return resolved
     
     def _merge_dependencies(self, deps: List[Dependency]) -> Dependency:
-        """Merge multiple dependencies into one"""
-        deps_sorted = sorted(deps, key=lambda d: d.confidence, reverse=True)
+        """Merge multiple dependencies into one, preferring stronger semantic types"""
+        # Sort by type priority first (stronger semantic types first), then confidence
+        type_priority = {
+            DependencyType.CRUD: 0,
+            DependencyType.AUTHENTICATION: 1,
+            DependencyType.AUTHORIZATION: 1,
+            DependencyType.WORKFLOW: 2,
+            DependencyType.NESTED_RESOURCE: 2,
+            DependencyType.CONSTRAINT: 3,
+            DependencyType.PARAMETER_DATA: 4,
+            DependencyType.TRANSITIVE: 5,
+            DependencyType.DYNAMIC: 5,
+        }
+        
+        deps_sorted = sorted(deps, key=lambda d: (type_priority.get(d.type, 99), -d.confidence))
         base = deps_sorted[0]
         
+        # Take the highest confidence value
+        max_confidence = max(d.confidence for d in deps)
+        base.confidence = max_confidence
+        
+        # Merge parameter mappings
         merged_params = {}
         for dep in reversed(deps_sorted):
             merged_params.update(dep.parameter_mapping)
         base.parameter_mapping = merged_params
 
+        # Combine reasons
         reasons = {d.reason for d in deps if d.reason}
         base.reason = "; ".join(sorted(list(reasons)))
         
         return base
+
+    def _dependency_priority(self, dep: Dependency) -> tuple:
+        """
+        Sort dependencies so stronger semantic signals are added first.
+        This prevents low-level parameter matches from blocking CRUD ordering.
+        """
+        type_priority = {
+            DependencyType.CRUD: 0,
+            DependencyType.AUTHENTICATION: 1,
+            DependencyType.AUTHORIZATION: 1,
+            DependencyType.WORKFLOW: 2,
+            DependencyType.NESTED_RESOURCE: 2,
+            DependencyType.CONSTRAINT: 3,
+            DependencyType.PARAMETER_DATA: 4,
+            DependencyType.TRANSITIVE: 5,
+            DependencyType.DYNAMIC: 5,
+        }
+        return (type_priority.get(dep.type, 99), -dep.confidence)

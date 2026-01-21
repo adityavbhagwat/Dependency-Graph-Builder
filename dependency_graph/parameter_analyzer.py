@@ -1,10 +1,16 @@
-from typing import Dict, List
+from typing import Dict, List, Tuple
 from .operation import Operation
 from .dependency import Dependency
-from .enums import DependencyType
+from .enums import DependencyType, HTTPMethod
 
 class ParameterDependencyAnalyzer:
     """Analyze parameter-wise dependencies (producer-consumer)"""
+    
+    # Generic parameter names that exist across many resources and should NOT
+    # create cross-resource dependencies
+    GENERIC_PARAMS = {'id', 'name', 'status', 'type', 'description', 'created_at', 
+                      'updated_at', 'timestamp', 'count', 'total', 'data', 'result',
+                      'message', 'code', 'error', 'success', 'page', 'limit', 'offset'}
     
     def __init__(self, operations: List[Operation]):
         self.operations = operations
@@ -14,43 +20,104 @@ class ParameterDependencyAnalyzer:
         """Find all parameter-wise dependencies"""
         dependencies = []
         
-        # Build producer-consumer maps
-        producers: Dict[str, List[Operation]] = {}
-        consumers: Dict[str, List[Operation]] = {}
+        # Build producer-consumer maps with resource context
+        # Key: (param_name, resource_type or None)
+        producers: Dict[Tuple[str, str], List[Operation]] = {}
+        consumers: Dict[Tuple[str, str], List[Operation]] = {}
         
         for op in self.operations:
+            resource = op.resource_type or '__global__'
+            
             for param in op.produces:
-                if param not in producers:
-                    producers[param] = []
-                producers[param].append(op)
+                key = (param, resource)
+                if key not in producers:
+                    producers[key] = []
+                producers[key].append(op)
             
             for param in op.consumes:
-                if param not in consumers:
-                    consumers[param] = []
-                consumers[param].append(op)
+                key = (param, resource)
+                if key not in consumers:
+                    consumers[key] = []
+                consumers[key].append(op)
         
-        # Match producers with consumers
-        for param_name in producers:
-            if param_name in consumers:
-                for producer in producers[param_name]:
-                    for consumer in consumers[param_name]:
-                        if producer != consumer:
-                            dep = Dependency(
-                                source=producer,
-                                target=consumer,
-                                type=DependencyType.PARAMETER_DATA,
-                                parameter_mapping={param_name: param_name},
-                                confidence=self._calculate_confidence(producer, consumer, param_name),
-                                reason=f"Parameter '{param_name}' produced by {producer.operation_id} "
-                                       f"and consumed by {consumer.operation_id}"
-                            )
-                            dependencies.append(dep)
+        # Match producers with consumers - ONLY within same resource or related resources
+        for (param_name, prod_resource), prod_ops in producers.items():
+            for (cons_param, cons_resource), cons_ops in consumers.items():
+                if param_name != cons_param:
+                    continue
+                
+                # Check if these resources should be linked
+                if not self._should_link_resources(param_name, prod_resource, cons_resource):
+                    continue
+                    
+                for producer in prod_ops:
+                    for consumer in cons_ops:
+                        if producer == consumer:
+                            continue
+                        
+                        # Skip if this would create a semantically backward dependency
+                        # (GET producing data for POST to consume)
+                        if self._is_semantic_backward(producer, consumer):
+                            continue
+                            
+                        dep = Dependency(
+                            source=producer,
+                            target=consumer,
+                            type=DependencyType.PARAMETER_DATA,
+                            parameter_mapping={param_name: param_name},
+                            confidence=self._calculate_confidence(producer, consumer, param_name),
+                            reason=f"Parameter '{param_name}' produced by {producer.operation_id} "
+                                   f"and consumed by {consumer.operation_id}"
+                        )
+                        dependencies.append(dep)
         
-        # Fuzzy matching for similar parameter names
+        # Fuzzy matching - but with same resource constraints
         dependencies.extend(self._fuzzy_parameter_matching(producers, consumers))
         
         self.dependencies = dependencies
         return dependencies
+    
+    def _should_link_resources(self, param_name: str, prod_resource: str, cons_resource: str) -> bool:
+        """
+        Determine if a parameter dependency should be created between two resources.
+        """
+        # Same resource - always allow
+        if prod_resource == cons_resource:
+            return True
+        
+        # Generic parameters should NOT create cross-resource dependencies
+        param_lower = param_name.lower()
+        if param_lower in self.GENERIC_PARAMS:
+            return False
+        
+        # Resource-specific IDs (like petId, userId, orderId) CAN link resources
+        # e.g., petId from /pet can link to /store/order which uses petId
+        if param_lower.endswith('id') and len(param_lower) > 2:
+            # This is a specific ID like "petId", "orderId" - allow cross-resource
+            return True
+        
+        # For other parameters, only allow if resources are related
+        # (e.g., nested paths like /pet and /pet/{petId}/uploadImage)
+        return False
+    
+    def _is_semantic_backward(self, producer: Operation, consumer: Operation) -> bool:
+        """
+        Check if creating producer->consumer would violate CRUD semantics.
+        A GET should not be a dependency for a POST (create) on the same resource.
+        """
+        # Only check for same resource
+        if producer.resource_type != consumer.resource_type:
+            return False
+        
+        # GET producing for POST (create) is backward - you can't get before creating
+        if producer.method == HTTPMethod.GET and consumer.method == HTTPMethod.POST:
+            # Exception: if the POST is an action (like /login) not a create
+            consumer_path_lower = consumer.path.lower()
+            if any(action in consumer_path_lower for action in ['login', 'logout', 'search', 'find']):
+                return False
+            return True
+        
+        return False
     
     def _calculate_confidence(self, producer: Operation, consumer: Operation, param: str) -> float:
         """Calculate confidence score for a dependency"""
@@ -72,8 +139,8 @@ class ParameterDependencyAnalyzer:
         return confidence
     
     def _fuzzy_parameter_matching(self, 
-                                   producers: Dict[str, List[Operation]], 
-                                   consumers: Dict[str, List[Operation]]) -> List[Dependency]:
+                                   producers: Dict[Tuple[str, str], List[Operation]], 
+                                   consumers: Dict[Tuple[str, str], List[Operation]]) -> List[Dependency]:
         """Find dependencies using fuzzy parameter name matching"""
         dependencies = []
         
@@ -82,25 +149,37 @@ class ParameterDependencyAnalyzer:
             'id': ['ID', 'Id', '_id', 'identifier'],
             'user_id': ['userId', 'user_ID', 'userID', 'uid'],
             'username': ['user_name', 'userName', 'login', 'user'],
-            # Add more variations
+            'pet_id': ['petId', 'pet_ID', 'petID'],
+            'order_id': ['orderId', 'order_ID', 'orderID'],
         }
         
-        for prod_param, prod_ops in producers.items():
-            for cons_param, cons_ops in consumers.items():
-                if prod_param != cons_param:
-                    # Check if they're variations of the same parameter
-                    if self._are_parameter_variants(prod_param, cons_param, variations):
-                        for producer in prod_ops:
-                            for consumer in cons_ops:
-                                dep = Dependency(
-                                    source=producer,
-                                    target=consumer,
-                                    type=DependencyType.PARAMETER_DATA,
-                                    parameter_mapping={prod_param: cons_param},
-                                    confidence=0.6,  # Lower confidence for fuzzy matching
-                                    reason=f"Fuzzy match: '{prod_param}' -> '{cons_param}'"
-                                )
-                                dependencies.append(dep)
+        for (prod_param, prod_resource), prod_ops in producers.items():
+            for (cons_param, cons_resource), cons_ops in consumers.items():
+                if prod_param == cons_param:
+                    continue
+                    
+                # Only fuzzy match within same resource type
+                if prod_resource != cons_resource:
+                    continue
+                    
+                # Check if they're variations of the same parameter
+                if self._are_parameter_variants(prod_param, cons_param, variations):
+                    for producer in prod_ops:
+                        for consumer in cons_ops:
+                            if producer == consumer:
+                                continue
+                            # Skip semantically backward dependencies
+                            if self._is_semantic_backward(producer, consumer):
+                                continue
+                            dep = Dependency(
+                                source=producer,
+                                target=consumer,
+                                type=DependencyType.PARAMETER_DATA,
+                                parameter_mapping={prod_param: cons_param},
+                                confidence=0.6,  # Lower confidence for fuzzy matching
+                                reason=f"Fuzzy match: '{prod_param}' -> '{cons_param}'"
+                            )
+                            dependencies.append(dep)
         
         return dependencies
     

@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <graph edgedefault="directed">
+    <node id="errorHtmlUsingGET" />
+    <node id="errorHtmlUsingPUT" />
+    <node id="errorHtmlUsingPOST" />
+    <node id="errorHtmlUsingDELETE" />
+    <node id="errorHtmlUsingPATCH" />
+    <node id="loginUsingPOST" />
+    <node id="getUserPresentationListUsingGET" />
+    <node id="createUserUsingPOST" />
+    <node id="getPermissionPresentationListUsingGET" />
+    <node id="getRolePresentationListUsingGET" />
+    <node id="createRoleUsingPOST" />
+    <node id="getRoleByIdUsingGET" />
+    <node id="deleteRoleByIdUsingDELETE" />
+    <node id="addPermissionOnRoleUsingPOST" />
+    <node id="removePermissionOnRoleUsingDELETE" />
+    <node id="registerNewUserAccountUsingPOST" />
+    <node id="getUserByIdUsingGET" />
+    <node id="updateUserUsingPUT" />
+    <node id="deleteByIdUsingDELETE" />
+    <node id="addRoleUsingPOST" />
+    <node id="removeRoleUsingDELETE" />
+    <edge source="errorHtmlUsingGET" target="errorHtmlUsingPATCH" />
+    <edge source="errorHtmlUsingGET" target="errorHtmlUsingPUT" />
+    <edge source="errorHtmlUsingPOST" target="errorHtmlUsingGET" />
+    <edge source="errorHtmlUsingPOST" target="errorHtmlUsingDELETE" />
+    <edge source="loginUsingPOST" target="addRoleUsingPOST" />
+    <edge source="loginUsingPOST" target="deleteRoleByIdUsingDELETE" />
+    <edge source="loginUsingPOST" target="addPermissionOnRoleUsingPOST" />
+    <edge source="getUserPresentationListUsingGET" target="addRoleUsingPOST" />
+    <edge source="createUserUsingPOST" target="getUserPresentationListUsingGET" />
+    <edge source="createUserUsingPOST" target="getPermissionPresentationListUsingGET" />
+    <edge source="createUserUsingPOST" target="getUserByIdUsingGET" />
+    <edge source="createUserUsingPOST" target="createRoleUsingPOST" />
+    <edge source="createUserUsingPOST" target="registerNewUserAccountUsingPOST" />
+    <edge source="getRolePresentationListUsingGET" target="addPermissionOnRoleUsingPOST" />
+    <edge source="createRoleUsingPOST" target="getRolePresentationListUsingGET" />
+    <edge source="createRoleUsingPOST" target="getRoleByIdUsingGET" />
+    <edge source="createRoleUsingPOST" target="deleteRoleByIdUsingDELETE" />
+    <edge source="getRoleByIdUsingGET" target="addPermissionOnRoleUsingPOST" />
+    <edge source="addPermissionOnRoleUsingPOST" target="removePermissionOnRoleUsingDELETE" />
+    <edge source="registerNewUserAccountUsingPOST" target="loginUsingPOST" />
+    <edge source="getUserByIdUsingGET" target="addRoleUsingPOST" />
+    <edge source="updateUserUsingPUT" target="deleteByIdUsingDELETE" />
+    <edge source="addRoleUsingPOST" target="removeRoleUsingDELETE" />
+    <edge source="removeRoleUsingDELETE" target="updateUserUsingPUT" />
+  </graph>
+</graphml>

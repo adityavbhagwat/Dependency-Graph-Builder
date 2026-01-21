@@ -1,0 +1,161 @@
+{
+  "basic": {
+    "num_nodes": 21,
+    "num_edges": 24,
+    "is_dag": true,
+    "directed": true
+  },
+  "components": {
+    "count": 2,
+    "largest_size": 16
+  },
+  "degree": {
+    "in": {
+      "min": 0,
+      "max": 3,
+      "mean": 1.1428571428571428,
+      "median": 1.0,
+      "stdev": 0.7095078297976829
+    },
+    "out": {
+      "min": 0,
+      "max": 5,
+      "mean": 1.1428571428571428,
+      "median": 1.0,
+      "stdev": 1.2453996981544782
+    }
+  },
+  "longest_path": {
+    "length": 6,
+    "example": [
+      "createUserUsingPOST",
+      "registerNewUserAccountUsingPOST",
+      "loginUsingPOST",
+      "addRoleUsingPOST",
+      "removeRoleUsingDELETE",
+      "updateUserUsingPUT",
+      "deleteByIdUsingDELETE"
+    ]
+  },
+  "_timings": {
+    "longest_path_sec": 0.0002448558807373047,
+    "betweenness_sec": 0.00019097328186035156,
+    "degree_centrality_sec": 5.316734313964844e-05,
+    "pickle_serialize_sec": 8.0108642578125e-05,
+    "total_sec": 0.001013040542602539
+  },
+  "centrality": {
+    "betweenness_top": [
+      [
+        "addRoleUsingPOST",
+        0.039473684210526314
+      ],
+      [
+        "removeRoleUsingDELETE",
+        0.031578947368421054
+      ],
+      [
+        "loginUsingPOST",
+        0.02017543859649123
+      ],
+      [
+        "updateUserUsingPUT",
+        0.018421052631578946
+      ],
+      [
+        "addPermissionOnRoleUsingPOST",
+        0.015789473684210527
+      ],
+      [
+        "createRoleUsingPOST",
+        0.011403508771929824
+      ],
+      [
+        "errorHtmlUsingGET",
+        0.005263157894736842
+      ],
+      [
+        "getUserPresentationListUsingGET",
+        0.005263157894736842
+      ],
+      [
+        "getUserByIdUsingGET",
+        0.005263157894736842
+      ],
+      [
+        "getRolePresentationListUsingGET",
+        0.0043859649122807015
+      ]
+    ],
+    "degree_top": [
+      [
+        "createUserUsingPOST",
+        0.25
+      ],
+      [
+        "loginUsingPOST",
+        0.2
+      ],
+      [
+        "createRoleUsingPOST",
+        0.2
+      ],
+      [
+        "addPermissionOnRoleUsingPOST",
+        0.2
+      ],
+      [
+        "addRoleUsingPOST",
+        0.2
+      ],
+      [
+        "errorHtmlUsingGET",
+        0.15000000000000002
+      ],
+      [
+        "errorHtmlUsingPOST",
+        0.1
+      ],
+      [
+        "getUserPresentationListUsingGET",
+        0.1
+      ],
+      [
+        "getRolePresentationListUsingGET",
+        0.1
+      ],
+      [
+        "getRoleByIdUsingGET",
+        0.1
+      ]
+    ]
+  },
+  "detailed_size_in_memory": {
+    "nodes": {
+      "count": 21,
+      "total_bytes": 3319,
+      "avg_bytes_per_node": 158,
+      "avg_node_id_bytes": 94,
+      "avg_fields_per_node": 0.0
+    },
+    "edges": {
+      "count": 24,
+      "total_bytes": 5942,
+      "avg_bytes_per_edge": 247,
+      "avg_fields_per_edge": 0.0
+    },
+    "overhead": {
+      "per_node_bytes": 96,
+      "per_edge_bytes": 40,
+      "total_overhead_bytes": 2976
+    },
+    "total_estimated_bytes": 12237,
+    "human_readable": "11.95KB"
+  },
+  "serialization": {
+    "pickle_bytes": 1536
+  },
+  "extras": {
+    "density": 0.05714285714285714
+  }
+}

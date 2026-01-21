@@ -1,0 +1,1003 @@
+{
+  "nodes": [
+    {
+      "id": "errorHtmlUsingGET",
+      "path": "/error",
+      "method": "GET",
+      "resource_type": "error",
+      "consumes": [],
+      "produces": [
+        "status",
+        "viewName",
+        "empty",
+        "view",
+        "reference",
+        "model",
+        "modelMap"
+      ],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "errorHtmlUsingPUT",
+      "path": "/error",
+      "method": "PUT",
+      "resource_type": "error",
+      "consumes": [],
+      "produces": [
+        "status",
+        "viewName",
+        "empty",
+        "view",
+        "reference",
+        "model",
+        "modelMap"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "errorHtmlUsingPOST",
+      "path": "/error",
+      "method": "POST",
+      "resource_type": "error",
+      "consumes": [],
+      "produces": [
+        "status",
+        "viewName",
+        "empty",
+        "view",
+        "reference",
+        "model",
+        "modelMap"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "errorHtmlUsingDELETE",
+      "path": "/error",
+      "method": "DELETE",
+      "resource_type": "error",
+      "consumes": [],
+      "produces": [
+        "status",
+        "viewName",
+        "empty",
+        "view",
+        "reference",
+        "model",
+        "modelMap"
+      ],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "errorHtmlUsingPATCH",
+      "path": "/error",
+      "method": "PATCH",
+      "resource_type": "error",
+      "consumes": [],
+      "produces": [
+        "status",
+        "viewName",
+        "empty",
+        "view",
+        "reference",
+        "model",
+        "modelMap"
+      ],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "loginUsingPOST",
+      "path": "/login",
+      "method": "POST",
+      "resource_type": "login",
+      "consumes": [
+        "password",
+        "username"
+      ],
+      "produces": [
+        "birthDate",
+        "loginDt",
+        "permissions",
+        "surname",
+        "updatedDt",
+        "creationDt",
+        "secured",
+        "enabled",
+        "contactDTO",
+        "note",
+        "gender",
+        "username",
+        "addressDTO",
+        "name",
+        "roles",
+        "id"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "getUserPresentationListUsingGET",
+      "path": "/users",
+      "method": "GET",
+      "resource_type": "users",
+      "consumes": [],
+      "produces": [
+        "userList"
+      ],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "createUserUsingPOST",
+      "path": "/users",
+      "method": "POST",
+      "resource_type": "users",
+      "consumes": [
+        "facebook",
+        "address",
+        "website",
+        "address2",
+        "birthDate",
+        "surname",
+        "zipCode",
+        "skype",
+        "contactNote",
+        "secured",
+        "enabled",
+        "country",
+        "note",
+        "mobile",
+        "email",
+        "gender",
+        "city",
+        "username",
+        "name",
+        "linkedin",
+        "password"
+      ],
+      "produces": [
+        "birthDate",
+        "loginDt",
+        "permissions",
+        "surname",
+        "updatedDt",
+        "creationDt",
+        "secured",
+        "enabled",
+        "contactDTO",
+        "note",
+        "gender",
+        "username",
+        "addressDTO",
+        "name",
+        "roles",
+        "id"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "getPermissionPresentationListUsingGET",
+      "path": "/users/rbac/permissions",
+      "method": "GET",
+      "resource_type": "permissions",
+      "consumes": [],
+      "produces": [
+        "permission",
+        "id"
+      ],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "getRolePresentationListUsingGET",
+      "path": "/users/rbac/roles",
+      "method": "GET",
+      "resource_type": "roles",
+      "consumes": [],
+      "produces": [
+        "permissions",
+        "role",
+        "id"
+      ],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "createRoleUsingPOST",
+      "path": "/users/rbac/roles",
+      "method": "POST",
+      "resource_type": "roles",
+      "consumes": [],
+      "produces": [
+        "permissions",
+        "role",
+        "id"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "getRoleByIdUsingGET",
+      "path": "/users/rbac/roles/{roleId}",
+      "method": "GET",
+      "resource_type": "roles",
+      "consumes": [
+        "roleId"
+      ],
+      "produces": [
+        "permissions",
+        "role",
+        "id"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "deleteRoleByIdUsingDELETE",
+      "path": "/users/rbac/roles/{roleId}",
+      "method": "DELETE",
+      "resource_type": "roles",
+      "consumes": [
+        "roleId"
+      ],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "addPermissionOnRoleUsingPOST",
+      "path": "/users/rbac/roles/{roleId}/permissions/{permissionKey}",
+      "method": "POST",
+      "resource_type": "roles",
+      "consumes": [
+        "roleId",
+        "permissionKey"
+      ],
+      "produces": [
+        "permissions",
+        "role",
+        "id"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "removePermissionOnRoleUsingDELETE",
+      "path": "/users/rbac/roles/{roleId}/permissions/{permissionKey}",
+      "method": "DELETE",
+      "resource_type": "roles",
+      "consumes": [
+        "roleId",
+        "permissionKey"
+      ],
+      "produces": [
+        "permissions",
+        "role",
+        "id"
+      ],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "registerNewUserAccountUsingPOST",
+      "path": "/users/register",
+      "method": "POST",
+      "resource_type": "register",
+      "consumes": [
+        "email",
+        "username",
+        "surname",
+        "gender",
+        "name",
+        "password"
+      ],
+      "produces": [
+        "birthDate",
+        "loginDt",
+        "permissions",
+        "surname",
+        "updatedDt",
+        "creationDt",
+        "secured",
+        "enabled",
+        "contactDTO",
+        "note",
+        "gender",
+        "username",
+        "addressDTO",
+        "name",
+        "roles",
+        "id"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "getUserByIdUsingGET",
+      "path": "/users/{id}",
+      "method": "GET",
+      "resource_type": "users",
+      "consumes": [
+        "id"
+      ],
+      "produces": [
+        "birthDate",
+        "loginDt",
+        "permissions",
+        "surname",
+        "updatedDt",
+        "creationDt",
+        "secured",
+        "enabled",
+        "contactDTO",
+        "note",
+        "gender",
+        "username",
+        "addressDTO",
+        "name",
+        "roles",
+        "id"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "updateUserUsingPUT",
+      "path": "/users/{id}",
+      "method": "PUT",
+      "resource_type": "users",
+      "consumes": [
+        "facebook",
+        "address",
+        "website",
+        "address2",
+        "birthDate",
+        "surname",
+        "zipCode",
+        "skype",
+        "contactNote",
+        "secured",
+        "enabled",
+        "country",
+        "note",
+        "mobile",
+        "email",
+        "gender",
+        "city",
+        "username",
+        "name",
+        "linkedin",
+        "password",
+        "id"
+      ],
+      "produces": [
+        "birthDate",
+        "loginDt",
+        "permissions",
+        "surname",
+        "updatedDt",
+        "creationDt",
+        "secured",
+        "enabled",
+        "contactDTO",
+        "note",
+        "gender",
+        "username",
+        "addressDTO",
+        "name",
+        "roles",
+        "id"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "deleteByIdUsingDELETE",
+      "path": "/users/{id}",
+      "method": "DELETE",
+      "resource_type": "users",
+      "consumes": [
+        "id"
+      ],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "addRoleUsingPOST",
+      "path": "/users/{id}/roles/{roleId}",
+      "method": "POST",
+      "resource_type": "users",
+      "consumes": [
+        "roleId",
+        "id"
+      ],
+      "produces": [
+        "birthDate",
+        "loginDt",
+        "permissions",
+        "surname",
+        "updatedDt",
+        "creationDt",
+        "secured",
+        "enabled",
+        "contactDTO",
+        "note",
+        "gender",
+        "username",
+        "addressDTO",
+        "name",
+        "roles",
+        "id"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "removeRoleUsingDELETE",
+      "path": "/users/{id}/roles/{roleId}",
+      "method": "DELETE",
+      "resource_type": "users",
+      "consumes": [
+        "roleId",
+        "id"
+      ],
+      "produces": [
+        "birthDate",
+        "loginDt",
+        "permissions",
+        "surname",
+        "updatedDt",
+        "creationDt",
+        "secured",
+        "enabled",
+        "contactDTO",
+        "note",
+        "gender",
+        "username",
+        "addressDTO",
+        "name",
+        "roles",
+        "id"
+      ],
+      "is_interesting": false,
+      "annotations": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "createUserUsingPOST",
+      "target": "updateUserUsingPUT",
+      "type": "crud",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "addressDTO": "address",
+        "id": "id",
+        "name": "name",
+        "username": "username",
+        "gender": "gender",
+        "note": "note",
+        "enabled": "enabled",
+        "secured": "secured",
+        "surname": "surname",
+        "birthDate": "birthDate"
+      },
+      "reason": "/users/{id} is nested under /users; CRUD: Must create users before updating; Fuzzy match: 'addressDTO' -> 'address'; Parameter 'birthDate' produced by createUserUsingPOST and consumed by updateUserUsingPUT; Parameter 'enabled' produced by createUserUsingPOST and consumed by updateUserUsingPUT; Parameter 'gender' produced by createUserUsingPOST and consumed by updateUserUsingPUT; Parameter 'id' produced by createUserUsingPOST and consumed by updateUserUsingPUT; Parameter 'name' produced by createUserUsingPOST and consumed by updateUserUsingPUT; Parameter 'note' produced by createUserUsingPOST and consumed by updateUserUsingPUT; Parameter 'secured' produced by createUserUsingPOST and consumed by updateUserUsingPUT; Parameter 'surname' produced by createUserUsingPOST and consumed by updateUserUsingPUT; Parameter 'username' produced by createUserUsingPOST and consumed by updateUserUsingPUT",
+      "verified": null
+    },
+    {
+      "source": "getUserByIdUsingGET",
+      "target": "updateUserUsingPUT",
+      "type": "crud",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "addressDTO": "address",
+        "id": "id",
+        "name": "name",
+        "username": "username",
+        "gender": "gender",
+        "note": "note",
+        "enabled": "enabled",
+        "secured": "secured",
+        "surname": "surname",
+        "birthDate": "birthDate"
+      },
+      "reason": "CRUD: Often read users before updating; Fuzzy match: 'addressDTO' -> 'address'; Parameter 'birthDate' produced by getUserByIdUsingGET and consumed by updateUserUsingPUT; Parameter 'enabled' produced by getUserByIdUsingGET and consumed by updateUserUsingPUT; Parameter 'gender' produced by getUserByIdUsingGET and consumed by updateUserUsingPUT; Parameter 'id' produced by getUserByIdUsingGET and consumed by updateUserUsingPUT; Parameter 'name' produced by getUserByIdUsingGET and consumed by updateUserUsingPUT; Parameter 'note' produced by getUserByIdUsingGET and consumed by updateUserUsingPUT; Parameter 'secured' produced by getUserByIdUsingGET and consumed by updateUserUsingPUT; Parameter 'surname' produced by getUserByIdUsingGET and consumed by updateUserUsingPUT; Parameter 'username' produced by getUserByIdUsingGET and consumed by updateUserUsingPUT",
+      "verified": null
+    },
+    {
+      "source": "createUserUsingPOST",
+      "target": "addRoleUsingPOST",
+      "type": "crud",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "id": "id"
+      },
+      "reason": "/users/{id}/roles/{roleId} is nested under /users; CRUD: Must create users before updating; Parameter 'id' produced by createUserUsingPOST and consumed by addRoleUsingPOST",
+      "verified": null
+    },
+    {
+      "source": "createUserUsingPOST",
+      "target": "removeRoleUsingDELETE",
+      "type": "crud",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "id": "id"
+      },
+      "reason": "/users/{id}/roles/{roleId} is nested under /users; CRUD: Must create users before deleting; Parameter 'id' produced by createUserUsingPOST and consumed by removeRoleUsingDELETE",
+      "verified": null
+    },
+    {
+      "source": "createUserUsingPOST",
+      "target": "getUserByIdUsingGET",
+      "type": "crud",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "id": "id"
+      },
+      "reason": "/users/{id} is nested under /users; CRUD: Must create users before reading; Parameter 'id' produced by createUserUsingPOST and consumed by getUserByIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "createUserUsingPOST",
+      "target": "deleteByIdUsingDELETE",
+      "type": "crud",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "id": "id"
+      },
+      "reason": "/users/{id} is nested under /users; CRUD: Must create users before deleting; Parameter 'id' produced by createUserUsingPOST and consumed by deleteByIdUsingDELETE",
+      "verified": null
+    },
+    {
+      "source": "createRoleUsingPOST",
+      "target": "addPermissionOnRoleUsingPOST",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {
+        "permissions": "permissionKey"
+      },
+      "reason": "/users/rbac/roles/{roleId}/permissions/{permissionKey} is nested under /users/rbac/roles; CRUD: Must create roles before updating; Fuzzy match: 'permissions' -> 'permissionKey'",
+      "verified": null
+    },
+    {
+      "source": "createRoleUsingPOST",
+      "target": "removePermissionOnRoleUsingDELETE",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {
+        "permissions": "permissionKey"
+      },
+      "reason": "/users/rbac/roles/{roleId}/permissions/{permissionKey} is nested under /users/rbac/roles; CRUD: Must create roles before deleting; Fuzzy match: 'permissions' -> 'permissionKey'",
+      "verified": null
+    },
+    {
+      "source": "errorHtmlUsingPOST",
+      "target": "errorHtmlUsingGET",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "CRUD: Must create error before reading",
+      "verified": null
+    },
+    {
+      "source": "errorHtmlUsingPOST",
+      "target": "errorHtmlUsingPUT",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "CRUD: Must create error before updating",
+      "verified": null
+    },
+    {
+      "source": "errorHtmlUsingPOST",
+      "target": "errorHtmlUsingPATCH",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "CRUD: Must create error before updating",
+      "verified": null
+    },
+    {
+      "source": "errorHtmlUsingPOST",
+      "target": "errorHtmlUsingDELETE",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "CRUD: Must create error before deleting",
+      "verified": null
+    },
+    {
+      "source": "createUserUsingPOST",
+      "target": "getUserPresentationListUsingGET",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "CRUD: Must create users before reading",
+      "verified": null
+    },
+    {
+      "source": "createRoleUsingPOST",
+      "target": "getRolePresentationListUsingGET",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "CRUD: Must create roles before reading",
+      "verified": null
+    },
+    {
+      "source": "createRoleUsingPOST",
+      "target": "getRoleByIdUsingGET",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "/users/rbac/roles/{roleId} is nested under /users/rbac/roles; CRUD: Must create roles before reading",
+      "verified": null
+    },
+    {
+      "source": "createRoleUsingPOST",
+      "target": "deleteRoleByIdUsingDELETE",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "/users/rbac/roles/{roleId} is nested under /users/rbac/roles; CRUD: Must create roles before deleting",
+      "verified": null
+    },
+    {
+      "source": "getUserByIdUsingGET",
+      "target": "addRoleUsingPOST",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read users before updating",
+      "verified": null
+    },
+    {
+      "source": "errorHtmlUsingGET",
+      "target": "errorHtmlUsingPUT",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read error before updating",
+      "verified": null
+    },
+    {
+      "source": "errorHtmlUsingGET",
+      "target": "errorHtmlUsingPATCH",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read error before updating",
+      "verified": null
+    },
+    {
+      "source": "getUserPresentationListUsingGET",
+      "target": "updateUserUsingPUT",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read users before updating",
+      "verified": null
+    },
+    {
+      "source": "getUserPresentationListUsingGET",
+      "target": "addRoleUsingPOST",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read users before updating",
+      "verified": null
+    },
+    {
+      "source": "getRolePresentationListUsingGET",
+      "target": "addPermissionOnRoleUsingPOST",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read roles before updating",
+      "verified": null
+    },
+    {
+      "source": "getRoleByIdUsingGET",
+      "target": "addPermissionOnRoleUsingPOST",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read roles before updating",
+      "verified": null
+    },
+    {
+      "source": "loginUsingPOST",
+      "target": "deleteRoleByIdUsingDELETE",
+      "type": "authentication",
+      "confidence": 0.7,
+      "parameter_mapping": {},
+      "reason": "deleteRoleByIdUsingDELETE likely requires authentication (heuristic)",
+      "verified": null
+    },
+    {
+      "source": "loginUsingPOST",
+      "target": "addPermissionOnRoleUsingPOST",
+      "type": "authentication",
+      "confidence": 0.7,
+      "parameter_mapping": {},
+      "reason": "addPermissionOnRoleUsingPOST likely requires authentication (heuristic)",
+      "verified": null
+    },
+    {
+      "source": "loginUsingPOST",
+      "target": "removePermissionOnRoleUsingDELETE",
+      "type": "authentication",
+      "confidence": 0.7,
+      "parameter_mapping": {},
+      "reason": "removePermissionOnRoleUsingDELETE likely requires authentication (heuristic)",
+      "verified": null
+    },
+    {
+      "source": "loginUsingPOST",
+      "target": "updateUserUsingPUT",
+      "type": "authentication",
+      "confidence": 0.7,
+      "parameter_mapping": {},
+      "reason": "updateUserUsingPUT likely requires authentication (heuristic)",
+      "verified": null
+    },
+    {
+      "source": "loginUsingPOST",
+      "target": "deleteByIdUsingDELETE",
+      "type": "authentication",
+      "confidence": 0.7,
+      "parameter_mapping": {},
+      "reason": "deleteByIdUsingDELETE likely requires authentication (heuristic)",
+      "verified": null
+    },
+    {
+      "source": "loginUsingPOST",
+      "target": "addRoleUsingPOST",
+      "type": "authentication",
+      "confidence": 0.7,
+      "parameter_mapping": {},
+      "reason": "addRoleUsingPOST likely requires authentication (heuristic)",
+      "verified": null
+    },
+    {
+      "source": "loginUsingPOST",
+      "target": "removeRoleUsingDELETE",
+      "type": "authentication",
+      "confidence": 0.7,
+      "parameter_mapping": {},
+      "reason": "removeRoleUsingDELETE likely requires authentication (heuristic)",
+      "verified": null
+    },
+    {
+      "source": "createUserUsingPOST",
+      "target": "getPermissionPresentationListUsingGET",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {},
+      "reason": "/users/rbac/permissions is nested under /users",
+      "verified": null
+    },
+    {
+      "source": "createUserUsingPOST",
+      "target": "getRolePresentationListUsingGET",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {},
+      "reason": "/users/rbac/roles is nested under /users",
+      "verified": null
+    },
+    {
+      "source": "createUserUsingPOST",
+      "target": "createRoleUsingPOST",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {},
+      "reason": "/users/rbac/roles is nested under /users",
+      "verified": null
+    },
+    {
+      "source": "createUserUsingPOST",
+      "target": "getRoleByIdUsingGET",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {},
+      "reason": "/users/rbac/roles/{roleId} is nested under /users",
+      "verified": null
+    },
+    {
+      "source": "createUserUsingPOST",
+      "target": "deleteRoleByIdUsingDELETE",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {},
+      "reason": "/users/rbac/roles/{roleId} is nested under /users",
+      "verified": null
+    },
+    {
+      "source": "createUserUsingPOST",
+      "target": "addPermissionOnRoleUsingPOST",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {},
+      "reason": "/users/rbac/roles/{roleId}/permissions/{permissionKey} is nested under /users",
+      "verified": null
+    },
+    {
+      "source": "createUserUsingPOST",
+      "target": "removePermissionOnRoleUsingDELETE",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {},
+      "reason": "/users/rbac/roles/{roleId}/permissions/{permissionKey} is nested under /users",
+      "verified": null
+    },
+    {
+      "source": "createUserUsingPOST",
+      "target": "registerNewUserAccountUsingPOST",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {},
+      "reason": "/users/register is nested under /users",
+      "verified": null
+    },
+    {
+      "source": "registerNewUserAccountUsingPOST",
+      "target": "loginUsingPOST",
+      "type": "workflow",
+      "confidence": 0.8,
+      "parameter_mapping": {},
+      "reason": "Must signup before login",
+      "verified": null
+    },
+    {
+      "source": "addRoleUsingPOST",
+      "target": "updateUserUsingPUT",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "addressDTO": "address",
+        "id": "id",
+        "name": "name",
+        "username": "username",
+        "gender": "gender",
+        "note": "note",
+        "enabled": "enabled",
+        "secured": "secured",
+        "surname": "surname",
+        "birthDate": "birthDate"
+      },
+      "reason": "Fuzzy match: 'addressDTO' -> 'address'; Parameter 'birthDate' produced by addRoleUsingPOST and consumed by updateUserUsingPUT; Parameter 'enabled' produced by addRoleUsingPOST and consumed by updateUserUsingPUT; Parameter 'gender' produced by addRoleUsingPOST and consumed by updateUserUsingPUT; Parameter 'id' produced by addRoleUsingPOST and consumed by updateUserUsingPUT; Parameter 'name' produced by addRoleUsingPOST and consumed by updateUserUsingPUT; Parameter 'note' produced by addRoleUsingPOST and consumed by updateUserUsingPUT; Parameter 'secured' produced by addRoleUsingPOST and consumed by updateUserUsingPUT; Parameter 'surname' produced by addRoleUsingPOST and consumed by updateUserUsingPUT; Parameter 'username' produced by addRoleUsingPOST and consumed by updateUserUsingPUT",
+      "verified": null
+    },
+    {
+      "source": "removeRoleUsingDELETE",
+      "target": "updateUserUsingPUT",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "addressDTO": "address",
+        "id": "id",
+        "name": "name",
+        "username": "username",
+        "gender": "gender",
+        "note": "note",
+        "enabled": "enabled",
+        "secured": "secured",
+        "surname": "surname",
+        "birthDate": "birthDate"
+      },
+      "reason": "Fuzzy match: 'addressDTO' -> 'address'; Parameter 'birthDate' produced by removeRoleUsingDELETE and consumed by updateUserUsingPUT; Parameter 'enabled' produced by removeRoleUsingDELETE and consumed by updateUserUsingPUT; Parameter 'gender' produced by removeRoleUsingDELETE and consumed by updateUserUsingPUT; Parameter 'id' produced by removeRoleUsingDELETE and consumed by updateUserUsingPUT; Parameter 'name' produced by removeRoleUsingDELETE and consumed by updateUserUsingPUT; Parameter 'note' produced by removeRoleUsingDELETE and consumed by updateUserUsingPUT; Parameter 'secured' produced by removeRoleUsingDELETE and consumed by updateUserUsingPUT; Parameter 'surname' produced by removeRoleUsingDELETE and consumed by updateUserUsingPUT; Parameter 'username' produced by removeRoleUsingDELETE and consumed by updateUserUsingPUT",
+      "verified": null
+    },
+    {
+      "source": "getUserByIdUsingGET",
+      "target": "deleteByIdUsingDELETE",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "id": "id"
+      },
+      "reason": "Parameter 'id' produced by getUserByIdUsingGET and consumed by deleteByIdUsingDELETE",
+      "verified": null
+    },
+    {
+      "source": "getUserByIdUsingGET",
+      "target": "removeRoleUsingDELETE",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "id": "id"
+      },
+      "reason": "Parameter 'id' produced by getUserByIdUsingGET and consumed by removeRoleUsingDELETE",
+      "verified": null
+    },
+    {
+      "source": "updateUserUsingPUT",
+      "target": "deleteByIdUsingDELETE",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "id": "id"
+      },
+      "reason": "Parameter 'id' produced by updateUserUsingPUT and consumed by deleteByIdUsingDELETE",
+      "verified": null
+    },
+    {
+      "source": "addRoleUsingPOST",
+      "target": "deleteByIdUsingDELETE",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "id": "id"
+      },
+      "reason": "Parameter 'id' produced by addRoleUsingPOST and consumed by deleteByIdUsingDELETE",
+      "verified": null
+    },
+    {
+      "source": "addRoleUsingPOST",
+      "target": "removeRoleUsingDELETE",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "id": "id"
+      },
+      "reason": "Parameter 'id' produced by addRoleUsingPOST and consumed by removeRoleUsingDELETE",
+      "verified": null
+    },
+    {
+      "source": "removeRoleUsingDELETE",
+      "target": "deleteByIdUsingDELETE",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "id": "id"
+      },
+      "reason": "Parameter 'id' produced by removeRoleUsingDELETE and consumed by deleteByIdUsingDELETE",
+      "verified": null
+    },
+    {
+      "source": "getRolePresentationListUsingGET",
+      "target": "removePermissionOnRoleUsingDELETE",
+      "type": "parameter_data",
+      "confidence": 0.6,
+      "parameter_mapping": {
+        "permissions": "permissionKey"
+      },
+      "reason": "Fuzzy match: 'permissions' -> 'permissionKey'",
+      "verified": null
+    },
+    {
+      "source": "getRoleByIdUsingGET",
+      "target": "removePermissionOnRoleUsingDELETE",
+      "type": "parameter_data",
+      "confidence": 0.6,
+      "parameter_mapping": {
+        "permissions": "permissionKey"
+      },
+      "reason": "Fuzzy match: 'permissions' -> 'permissionKey'",
+      "verified": null
+    },
+    {
+      "source": "addPermissionOnRoleUsingPOST",
+      "target": "removePermissionOnRoleUsingDELETE",
+      "type": "parameter_data",
+      "confidence": 0.6,
+      "parameter_mapping": {
+        "permissions": "permissionKey"
+      },
+      "reason": "Fuzzy match: 'permissions' -> 'permissionKey'",
+      "verified": null
+    }
+  ],
+  "metadata": {
+    "num_operations": 21,
+    "num_dependencies": 50
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "basic": {
+    "num_nodes": 49,
+    "num_edges": 42,
+    "is_dag": true,
+    "directed": true
+  },
+  "components": {
+    "count": 11,
+    "largest_size": 32
+  },
+  "degree": {
+    "in": {
+      "min": 0,
+      "max": 3,
+      "mean": 0.8571428571428571,
+      "median": 1.0,
+      "stdev": 0.6388765649999399
+    },
+    "out": {
+      "min": 0,
+      "max": 15,
+      "mean": 0.8571428571428571,
+      "median": 0.0,
+      "stdev": 2.1852940772540506
+    }
+  },
+  "longest_path": {
+    "length": 2,
+    "example": [
+      "errorUsingPOST",
+      "errorUsingGET",
+      "errorUsingPATCH"
+    ]
+  },
+  "_timings": {
+    "longest_path_sec": 0.000308990478515625,
+    "betweenness_sec": 0.00032901763916015625,
+    "degree_centrality_sec": 6.079673767089844e-05,
+    "pickle_serialize_sec": 0.00022602081298828125,
+    "total_sec": 0.0014836788177490234
+  },
+  "centrality": {
+    "betweenness_top": [
+      [
+        "errorUsingGET",
+        0.0008865248226950354
+      ],
+      [
+        "allDistilleriesUsingGET",
+        0.0006648936170212766
+      ],
+      [
+        "getProductsUsingGET",
+        0.0006648936170212766
+      ],
+      [
+        "allRegionsUsingGET",
+        0.0006648936170212766
+      ],
+      [
+        "getCartUsingGET",
+        0.0004432624113475177
+      ],
+      [
+        "postDistilleryUsingPOST",
+        0.0004432624113475177
+      ],
+      [
+        "getOrdersUsingGET",
+        0.0004432624113475177
+      ],
+      [
+        "postProductUsingPOST",
+        0.0004432624113475177
+      ],
+      [
+        "postRegionUsingPOST",
+        0.0004432624113475177
+      ],
+      [
+        "postStorageUsingPOST",
+        0.0004432624113475177
+      ]
+    ],
+    "degree_top": [
+      [
+        "loginUsingGET",
+        0.3125
+      ],
+      [
+        "errorUsingGET",
+        0.0625
+      ],
+      [
+        "updateCartByFormUsingPOST",
+        0.0625
+      ],
+      [
+        "allDistilleriesUsingGET",
+        0.0625
+      ],
+      [
+        "getProductsUsingGET",
+        0.0625
+      ],
+      [
+        "allRegionsUsingGET",
+        0.0625
+      ],
+      [
+        "putRegionUsingPOST",
+        0.0625
+      ],
+      [
+        "errorUsingPOST",
+        0.041666666666666664
+      ],
+      [
+        "getCartUsingGET",
+        0.041666666666666664
+      ],
+      [
+        "setDeliveryUsingPUT",
+        0.041666666666666664
+      ]
+    ]
+  },
+  "detailed_size_in_memory": {
+    "nodes": {
+      "count": 49,
+      "total_bytes": 7405,
+      "avg_bytes_per_node": 151,
+      "avg_node_id_bytes": 87,
+      "avg_fields_per_node": 0.0
+    },
+    "edges": {
+      "count": 42,
+      "total_bytes": 9890,
+      "avg_bytes_per_edge": 235,
+      "avg_fields_per_edge": 0.0
+    },
+    "overhead": {
+      "per_node_bytes": 96,
+      "per_edge_bytes": 40,
+      "total_overhead_bytes": 6384
+    },
+    "total_estimated_bytes": 23679,
+    "human_readable": "23.12KB"
+  },
+  "serialization": {
+    "pickle_bytes": 2569
+  },
+  "extras": {
+    "density": 0.017857142857142856
+  }
+}

@@ -1,0 +1,1198 @@
+{
+  "nodes": [
+    {
+      "id": "indexUsingGET",
+      "path": "/admin",
+      "method": "GET",
+      "resource_type": "admin",
+      "consumes": [],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "indexUsingGET_1",
+      "path": "/admin/",
+      "method": "GET",
+      "resource_type": "admin",
+      "consumes": [],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "indexUsingGET_2",
+      "path": "/admin/index",
+      "method": "GET",
+      "resource_type": "index",
+      "consumes": [],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "errorUsingGET",
+      "path": "/error",
+      "method": "GET",
+      "resource_type": "error",
+      "consumes": [],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "errorUsingPUT",
+      "path": "/error",
+      "method": "PUT",
+      "resource_type": "error",
+      "consumes": [],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "errorUsingPOST",
+      "path": "/error",
+      "method": "POST",
+      "resource_type": "error",
+      "consumes": [],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "errorUsingDELETE",
+      "path": "/error",
+      "method": "DELETE",
+      "resource_type": "error",
+      "consumes": [],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "errorUsingPATCH",
+      "path": "/error",
+      "method": "PATCH",
+      "resource_type": "error",
+      "consumes": [],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "getCartUsingGET",
+      "path": "/cart",
+      "method": "GET",
+      "resource_type": "cart",
+      "consumes": [
+        "cartItems[0].quantity",
+        "totalItems",
+        "cartItems[0].productId",
+        "deliveryIncluded",
+        "user",
+        "productsCost",
+        "deliveryCost",
+        "name",
+        "totalCost"
+      ],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "updateCartByAjaxUsingPUT",
+      "path": "/cart",
+      "method": "PUT",
+      "resource_type": "cart",
+      "consumes": [
+        "cartItems[0].quantity",
+        "totalItems",
+        "cartItems[0].productId",
+        "deliveryIncluded",
+        "user",
+        "productsCost",
+        "productId",
+        "quantity",
+        "_links",
+        "deliveryCost",
+        "name",
+        "totalCost"
+      ],
+      "produces": [
+        "totalItems",
+        "cartItems",
+        "deliveryIncluded",
+        "user",
+        "_links",
+        "deliveryCost",
+        "empty",
+        "productsCost",
+        "totalCost"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "updateCartByFormUsingPOST",
+      "path": "/cart",
+      "method": "POST",
+      "resource_type": "cart",
+      "consumes": [
+        "cartItems[0].quantity",
+        "totalItems",
+        "cartItems[0].productId",
+        "deliveryIncluded",
+        "productId",
+        "productsCost",
+        "user",
+        "quantity",
+        "deliveryCost",
+        "name",
+        "totalCost"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "clearCartUsingPOST",
+      "path": "/cart/clear",
+      "method": "POST",
+      "resource_type": "clear",
+      "consumes": [
+        "cartItems[0].quantity",
+        "totalItems",
+        "cartItems[0].productId",
+        "deliveryIncluded",
+        "user",
+        "productsCost",
+        "deliveryCost",
+        "name",
+        "totalCost"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "setDeliveryUsingPUT",
+      "path": "/cart/delivery/{delivery}",
+      "method": "PUT",
+      "resource_type": "delivery",
+      "consumes": [
+        "cartItems[0].quantity",
+        "totalItems",
+        "delivery",
+        "cartItems[0].productId",
+        "deliveryIncluded",
+        "user",
+        "productsCost",
+        "deliveryCost",
+        "name",
+        "totalCost"
+      ],
+      "produces": [
+        "totalItems",
+        "cartItems",
+        "deliveryIncluded",
+        "user",
+        "_links",
+        "deliveryCost",
+        "empty",
+        "productsCost",
+        "totalCost"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "getGratitudeUsingGET",
+      "path": "/checkout/confirmation",
+      "method": "GET",
+      "resource_type": "confirmation",
+      "consumes": [
+        "name"
+      ],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "detailsUsingGET",
+      "path": "/checkout/details",
+      "method": "GET",
+      "resource_type": "details",
+      "consumes": [
+        "name"
+      ],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "changeContactsUsingPOST",
+      "path": "/checkout/details",
+      "method": "POST",
+      "resource_type": "details",
+      "consumes": [
+        "changeContacts",
+        "name",
+        "address",
+        "phone"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "getPaymentUsingGET",
+      "path": "/checkout/payment",
+      "method": "GET",
+      "resource_type": "payment",
+      "consumes": [
+        "name"
+      ],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "postPaymentUsingPOST",
+      "path": "/checkout/payment",
+      "method": "POST",
+      "resource_type": "payment",
+      "consumes": [
+        "name",
+        "ccNumber"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "getRegistrationPageUsingGET",
+      "path": "/customer/new",
+      "method": "GET",
+      "resource_type": "new",
+      "consumes": [],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "postRegistrationFormUsingPOST",
+      "path": "/customer/new",
+      "method": "POST",
+      "resource_type": "new",
+      "consumes": [
+        "cartItems[0].quantity",
+        "totalItems",
+        "cartItems[0].productId",
+        "deliveryIncluded",
+        "email",
+        "password",
+        "address",
+        "productsCost",
+        "user",
+        "deliveryCost",
+        "name",
+        "totalCost",
+        "phone"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "ordersUsingGET",
+      "path": "/customer/orders",
+      "method": "GET",
+      "resource_type": "orders",
+      "consumes": [
+        "name"
+      ],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "allDistilleriesUsingGET",
+      "path": "/admin/distilleries",
+      "method": "GET",
+      "resource_type": "distilleries",
+      "consumes": [],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "newDistilleryUsingGET",
+      "path": "/admin/distilleries/new",
+      "method": "GET",
+      "resource_type": "new",
+      "consumes": [],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "postDistilleryUsingPOST",
+      "path": "/admin/distilleries/new",
+      "method": "POST",
+      "resource_type": "new",
+      "consumes": [
+        "region",
+        "description",
+        "title",
+        "id"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "deleteDistilleryUsingPOST",
+      "path": "/admin/distilleries/{distilleryId}/delete",
+      "method": "POST",
+      "resource_type": "distilleries",
+      "consumes": [
+        "distilleryId"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "editDistilleryUsingGET",
+      "path": "/admin/distilleries/{distilleryId}/edit",
+      "method": "GET",
+      "resource_type": "distilleries",
+      "consumes": [
+        "distilleryId"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "putDistilleryUsingPOST",
+      "path": "/admin/distilleries/{distilleryId}/edit",
+      "method": "POST",
+      "resource_type": "distilleries",
+      "consumes": [
+        "region",
+        "title",
+        "description",
+        "id",
+        "distilleryId"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "indexUsingGET_3",
+      "path": "/",
+      "method": "GET",
+      "resource_type": null,
+      "consumes": [],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "indexUsingGET_4",
+      "path": "/index",
+      "method": "GET",
+      "resource_type": "index",
+      "consumes": [],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "whatsInsideUsingGET",
+      "path": "/inside",
+      "method": "GET",
+      "resource_type": "inside",
+      "consumes": [],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "loginUsingGET",
+      "path": "/login",
+      "method": "GET",
+      "resource_type": "login",
+      "consumes": [],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "restApiUsingGET",
+      "path": "/rest-api",
+      "method": "GET",
+      "resource_type": "rest-api",
+      "consumes": [],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "getOrdersUsingGET",
+      "path": "/admin/orders",
+      "method": "GET",
+      "resource_type": "orders",
+      "consumes": [
+        "size",
+        "page",
+        "executed",
+        "direct",
+        "sort",
+        "created"
+      ],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "setExecutionStatusUsingPOST",
+      "path": "/admin/orders/{orderId}",
+      "method": "POST",
+      "resource_type": "orders",
+      "consumes": [
+        "orderId",
+        "executed"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "getProductsUsingGET",
+      "path": "/admin/products",
+      "method": "GET",
+      "resource_type": "products",
+      "consumes": [
+        "size",
+        "dist",
+        "page",
+        "direct",
+        "sort"
+      ],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "newProductUsingGET",
+      "path": "/admin/products/new",
+      "method": "GET",
+      "resource_type": "new",
+      "consumes": [],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "postProductUsingPOST",
+      "path": "/admin/products/new",
+      "method": "POST",
+      "resource_type": "new",
+      "consumes": [
+        "age",
+        "price",
+        "available",
+        "description",
+        "productId",
+        "distillery",
+        "volume",
+        "name",
+        "alcohol"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "deleteProductUsingPOST",
+      "path": "/admin/products/{productId}/delete",
+      "method": "POST",
+      "resource_type": "products",
+      "consumes": [
+        "productId"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "editProductUsingGET",
+      "path": "/admin/products/{productId}/edit",
+      "method": "GET",
+      "resource_type": "products",
+      "consumes": [
+        "productId"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "putProductUsingPOST",
+      "path": "/admin/products/{productId}/edit",
+      "method": "POST",
+      "resource_type": "products",
+      "consumes": [
+        "age",
+        "price",
+        "available",
+        "description",
+        "productId",
+        "distillery",
+        "volume",
+        "name",
+        "alcohol"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "allRegionsUsingGET",
+      "path": "/admin/regions",
+      "method": "GET",
+      "resource_type": "regions",
+      "consumes": [],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "newRegionUsingGET",
+      "path": "/admin/regions/new",
+      "method": "GET",
+      "resource_type": "new",
+      "consumes": [],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "postRegionUsingPOST",
+      "path": "/admin/regions/new",
+      "method": "POST",
+      "resource_type": "new",
+      "consumes": [
+        "description",
+        "id",
+        "color",
+        "subtitle",
+        "name"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "deleteRegionUsingPOST",
+      "path": "/admin/regions/{regionId}/delete",
+      "method": "POST",
+      "resource_type": "regions",
+      "consumes": [
+        "regionId"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "editRegionUsingGET",
+      "path": "/admin/regions/{regionId}/edit",
+      "method": "GET",
+      "resource_type": "regions",
+      "consumes": [
+        "regionId"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "putRegionUsingPOST",
+      "path": "/admin/regions/{regionId}/edit",
+      "method": "POST",
+      "resource_type": "regions",
+      "consumes": [
+        "regionId",
+        "description",
+        "id",
+        "color",
+        "subtitle",
+        "name"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "getRegionProductsUsingGET",
+      "path": "/regions/{regionId}",
+      "method": "GET",
+      "resource_type": "regions",
+      "consumes": [
+        "size",
+        "dist",
+        "regionId",
+        "page",
+        "direct",
+        "sort"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "getStorageUnitsUsingGET",
+      "path": "/admin/storage",
+      "method": "GET",
+      "resource_type": "storage",
+      "consumes": [
+        "size",
+        "page",
+        "available",
+        "direct",
+        "sort"
+      ],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "postStorageUsingPOST",
+      "path": "/admin/storage",
+      "method": "POST",
+      "resource_type": "storage",
+      "consumes": [
+        "productsIds",
+        "availableProductsIds"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "updateCartByFormUsingPOST",
+      "target": "updateCartByAjaxUsingPUT",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "CRUD: Must create cart before updating",
+      "verified": null
+    },
+    {
+      "source": "errorUsingPOST",
+      "target": "errorUsingGET",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "CRUD: Must create error before reading",
+      "verified": null
+    },
+    {
+      "source": "errorUsingPOST",
+      "target": "errorUsingPUT",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "CRUD: Must create error before updating",
+      "verified": null
+    },
+    {
+      "source": "errorUsingPOST",
+      "target": "errorUsingPATCH",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "CRUD: Must create error before updating",
+      "verified": null
+    },
+    {
+      "source": "errorUsingPOST",
+      "target": "errorUsingDELETE",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "CRUD: Must create error before deleting",
+      "verified": null
+    },
+    {
+      "source": "updateCartByFormUsingPOST",
+      "target": "getCartUsingGET",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "CRUD: Must create cart before reading",
+      "verified": null
+    },
+    {
+      "source": "changeContactsUsingPOST",
+      "target": "detailsUsingGET",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "CRUD: Must create details before reading",
+      "verified": null
+    },
+    {
+      "source": "postPaymentUsingPOST",
+      "target": "getPaymentUsingGET",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "CRUD: Must create payment before reading",
+      "verified": null
+    },
+    {
+      "source": "postRegistrationFormUsingPOST",
+      "target": "getRegistrationPageUsingGET",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "CRUD: Must create new before reading",
+      "verified": null
+    },
+    {
+      "source": "postDistilleryUsingPOST",
+      "target": "newDistilleryUsingGET",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "CRUD: Must create new before reading",
+      "verified": null
+    },
+    {
+      "source": "postProductUsingPOST",
+      "target": "newProductUsingGET",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "CRUD: Must create new before reading",
+      "verified": null
+    },
+    {
+      "source": "postRegionUsingPOST",
+      "target": "newRegionUsingGET",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "CRUD: Must create new before reading",
+      "verified": null
+    },
+    {
+      "source": "postStorageUsingPOST",
+      "target": "getStorageUnitsUsingGET",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "CRUD: Must create storage before reading",
+      "verified": null
+    },
+    {
+      "source": "getCartUsingGET",
+      "target": "updateCartByAjaxUsingPUT",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read cart before updating",
+      "verified": null
+    },
+    {
+      "source": "errorUsingGET",
+      "target": "errorUsingPUT",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read error before updating",
+      "verified": null
+    },
+    {
+      "source": "errorUsingGET",
+      "target": "errorUsingPATCH",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read error before updating",
+      "verified": null
+    },
+    {
+      "source": "getOrdersUsingGET",
+      "target": "setExecutionStatusUsingPOST",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read orders before updating",
+      "verified": null
+    },
+    {
+      "source": "allDistilleriesUsingGET",
+      "target": "deleteDistilleryUsingPOST",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read distilleries before updating",
+      "verified": null
+    },
+    {
+      "source": "allDistilleriesUsingGET",
+      "target": "putDistilleryUsingPOST",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read distilleries before updating",
+      "verified": null
+    },
+    {
+      "source": "editDistilleryUsingGET",
+      "target": "putDistilleryUsingPOST",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read distilleries before updating",
+      "verified": null
+    },
+    {
+      "source": "getProductsUsingGET",
+      "target": "deleteProductUsingPOST",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read products before updating",
+      "verified": null
+    },
+    {
+      "source": "getProductsUsingGET",
+      "target": "putProductUsingPOST",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read products before updating",
+      "verified": null
+    },
+    {
+      "source": "editProductUsingGET",
+      "target": "putProductUsingPOST",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read products before updating",
+      "verified": null
+    },
+    {
+      "source": "allRegionsUsingGET",
+      "target": "deleteRegionUsingPOST",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read regions before updating",
+      "verified": null
+    },
+    {
+      "source": "allRegionsUsingGET",
+      "target": "putRegionUsingPOST",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read regions before updating",
+      "verified": null
+    },
+    {
+      "source": "editRegionUsingGET",
+      "target": "putRegionUsingPOST",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read regions before updating",
+      "verified": null
+    },
+    {
+      "source": "getRegionProductsUsingGET",
+      "target": "deleteRegionUsingPOST",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read regions before updating",
+      "verified": null
+    },
+    {
+      "source": "getRegionProductsUsingGET",
+      "target": "putRegionUsingPOST",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read regions before updating",
+      "verified": null
+    },
+    {
+      "source": "loginUsingGET",
+      "target": "deleteDistilleryUsingPOST",
+      "type": "authorization",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "Admin operations require authentication; deleteDistilleryUsingPOST likely requires authentication (heuristic)",
+      "verified": null
+    },
+    {
+      "source": "loginUsingGET",
+      "target": "putDistilleryUsingPOST",
+      "type": "authorization",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "Admin operations require authentication; putDistilleryUsingPOST likely requires authentication (heuristic)",
+      "verified": null
+    },
+    {
+      "source": "loginUsingGET",
+      "target": "setExecutionStatusUsingPOST",
+      "type": "authorization",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "Admin operations require authentication; setExecutionStatusUsingPOST likely requires authentication (heuristic)",
+      "verified": null
+    },
+    {
+      "source": "loginUsingGET",
+      "target": "deleteProductUsingPOST",
+      "type": "authorization",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "Admin operations require authentication; deleteProductUsingPOST likely requires authentication (heuristic)",
+      "verified": null
+    },
+    {
+      "source": "loginUsingGET",
+      "target": "putProductUsingPOST",
+      "type": "authorization",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "Admin operations require authentication; putProductUsingPOST likely requires authentication (heuristic)",
+      "verified": null
+    },
+    {
+      "source": "loginUsingGET",
+      "target": "deleteRegionUsingPOST",
+      "type": "authorization",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "Admin operations require authentication; deleteRegionUsingPOST likely requires authentication (heuristic)",
+      "verified": null
+    },
+    {
+      "source": "loginUsingGET",
+      "target": "putRegionUsingPOST",
+      "type": "authorization",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "Admin operations require authentication; putRegionUsingPOST likely requires authentication (heuristic)",
+      "verified": null
+    },
+    {
+      "source": "loginUsingGET",
+      "target": "indexUsingGET",
+      "type": "authorization",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "Admin operations require authentication",
+      "verified": null
+    },
+    {
+      "source": "loginUsingGET",
+      "target": "indexUsingGET_1",
+      "type": "authorization",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "Admin operations require authentication",
+      "verified": null
+    },
+    {
+      "source": "loginUsingGET",
+      "target": "indexUsingGET_2",
+      "type": "authorization",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "Admin operations require authentication",
+      "verified": null
+    },
+    {
+      "source": "loginUsingGET",
+      "target": "allDistilleriesUsingGET",
+      "type": "authorization",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "Admin operations require authentication",
+      "verified": null
+    },
+    {
+      "source": "loginUsingGET",
+      "target": "newDistilleryUsingGET",
+      "type": "authorization",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "Admin operations require authentication",
+      "verified": null
+    },
+    {
+      "source": "loginUsingGET",
+      "target": "postDistilleryUsingPOST",
+      "type": "authorization",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "Admin operations require authentication",
+      "verified": null
+    },
+    {
+      "source": "loginUsingGET",
+      "target": "editDistilleryUsingGET",
+      "type": "authorization",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "Admin operations require authentication",
+      "verified": null
+    },
+    {
+      "source": "loginUsingGET",
+      "target": "getOrdersUsingGET",
+      "type": "authorization",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "Admin operations require authentication",
+      "verified": null
+    },
+    {
+      "source": "loginUsingGET",
+      "target": "getProductsUsingGET",
+      "type": "authorization",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "Admin operations require authentication",
+      "verified": null
+    },
+    {
+      "source": "loginUsingGET",
+      "target": "newProductUsingGET",
+      "type": "authorization",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "Admin operations require authentication",
+      "verified": null
+    },
+    {
+      "source": "loginUsingGET",
+      "target": "postProductUsingPOST",
+      "type": "authorization",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "Admin operations require authentication",
+      "verified": null
+    },
+    {
+      "source": "loginUsingGET",
+      "target": "editProductUsingGET",
+      "type": "authorization",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "Admin operations require authentication",
+      "verified": null
+    },
+    {
+      "source": "loginUsingGET",
+      "target": "allRegionsUsingGET",
+      "type": "authorization",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "Admin operations require authentication",
+      "verified": null
+    },
+    {
+      "source": "loginUsingGET",
+      "target": "newRegionUsingGET",
+      "type": "authorization",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "Admin operations require authentication",
+      "verified": null
+    },
+    {
+      "source": "loginUsingGET",
+      "target": "postRegionUsingPOST",
+      "type": "authorization",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "Admin operations require authentication",
+      "verified": null
+    },
+    {
+      "source": "loginUsingGET",
+      "target": "editRegionUsingGET",
+      "type": "authorization",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "Admin operations require authentication",
+      "verified": null
+    },
+    {
+      "source": "loginUsingGET",
+      "target": "getStorageUnitsUsingGET",
+      "type": "authorization",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "Admin operations require authentication",
+      "verified": null
+    },
+    {
+      "source": "loginUsingGET",
+      "target": "postStorageUsingPOST",
+      "type": "authorization",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "Admin operations require authentication",
+      "verified": null
+    },
+    {
+      "source": "loginUsingGET",
+      "target": "setDeliveryUsingPUT",
+      "type": "authentication",
+      "confidence": 0.7,
+      "parameter_mapping": {},
+      "reason": "setDeliveryUsingPUT likely requires authentication (heuristic)",
+      "verified": null
+    },
+    {
+      "source": "updateCartByFormUsingPOST",
+      "target": "clearCartUsingPOST",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {},
+      "reason": "/cart/clear is nested under /cart",
+      "verified": null
+    },
+    {
+      "source": "updateCartByFormUsingPOST",
+      "target": "setDeliveryUsingPUT",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {},
+      "reason": "/cart/delivery/{delivery} is nested under /cart",
+      "verified": null
+    }
+  ],
+  "metadata": {
+    "num_operations": 49,
+    "num_dependencies": 56
+  }
+}
