@@ -1,0 +1,106 @@
+================================================================================
+DEPENDENCY GRAPH BUILD LOG - SIMPLE_API
+Generated: 2026-01-21 22:49:46
+================================================================================
+
+================================================================================
+DEPENDENCY GRAPH BUILDER
+================================================================================
+
+[PHASE 1] Building Static Dependency Graph
+--------------------------------------------------------------------------------
+Step 1: Parsing OpenAPI specification...
+  Found 2 operations
+
+Step 2: Adding operations to graph...
+
+Step 3: Analyzing dependencies...
+  - Parameter-wise dependencies...
+    Found 1 dependencies
+  - CRUD dependencies...
+    Found 1 dependencies
+  - Logical dependencies...
+    Found 0 dependencies
+  - Nested resource dependencies...
+    Found 1 dependencies
+  - Constraint dependencies...
+    Found 0 dependencies
+
+Step 4: Resolving conflicts and adding to graph...
+  Resolved to 1 dependencies
+  Added 1 dependencies, skipped 0 to prevent cycles.
+
+Step 5: Performing transitive reduction to remove redundant edges...
+  Graph optimized. Reduced edge count from 1 to 1.
+
+================================================================================
+✓ Graph building completed in 0.01 seconds
+================================================================================
+
+[EXPORT] Exporting dependency graph...
+Exported annotated OpenAPI specification to ./output_simple/annotated_spec.yaml
+Exported JSON graph to ./output_simple/graph.json
+Exported GraphML to ./output_simple/graph.graphml
+Exported DOT graph to ./output_simple/graph.dot
+Created interactive visualization at ./output_simple/graph.html
+
+✓ All exports completed in ./output_simple/
+
+[STATS] Generating graph statistics...
+
+--- Per-node and per-edge memory breakdown (estimated) ---
+Average per-node bytes (includes node id + attributes): 134 bytes
+  - Avg node-id bytes: 70 bytes (string length + object overhead)
+  - Avg number of attribute fields per node: 0.00
+  Reasoning:
+    * node-id: stored as Python object (usually str) => bytes = utf-8 length + object overhead.
+    * attributes: dictionary object overhead + sizes of keys and values recursively.
+    * Operation-like attribute objects contribute: object header + per-field sizes (operation_id, path, method, params, annotations).
+    * Lists/maps stored in attributes are walked recursively and their element sizes included.
+
+Average per-edge bytes (includes edge endpoints + attributes): 204 bytes
+  - Avg number of attribute fields per edge: 0.00
+  Reasoning:
+    * edge stores references to source/target (ids) plus an attributes dict.
+    * Dependency-like objects add their __dict__ fields (type, confidence, parameter mappings, flags).
+    * Each container or string contributes its own memory as estimated above.
+----------------------------------------------------------
+
+
+=== Dependency Graph Benchmark Report ===
+Nodes: 2   Edges: 1   DAG: True
+Components: count=1 largest=2
+Degree in: {'min': 0, 'max': 1, 'mean': 0.5, 'median': 0.5, 'stdev': 0.5} out: {'min': 0, 'max': 1, 'mean': 0.5, 'median': 0.5, 'stdev': 0.5}
+Detailed in-memory size estimate:
+  Nodes total bytes: 268  avg/node: 134
+  (avg node-id bytes: 70  avg fields/node: 0.0)
+  Edges total bytes: 204  avg/edge: 204
+  (avg fields/edge: 0.0)
+  Overhead total bytes: 232
+  Estimated total in-memory bytes: 704 (704.00B)
+Pickle serialized size: 614 bytes
+Timings (s): {'longest_path_sec': 0.00019216537475585938, 'betweenness_sec': 9.393692016601562e-05, 'degree_centrality_sec': 5.2928924560546875e-05, 'pickle_serialize_sec': 0.0002200603485107422, 'total_sec': 0.0008919239044189453}
+=== End Report ===
+
+
+
+================================================================================
+DEPENDENCY TYPES SUMMARY
+================================================================================
+  crud: 1
+
+================================================================================
+OPERATION SEQUENCES (Sample)
+================================================================================
+
+To execute: POST /users
+  Prerequisites:
+    (No dependencies - can execute directly)
+
+To execute: GET /users/{userId}
+  Prerequisites:
+    1. POST /users
+
+================================================================================
+END OF LOG
+================================================================================

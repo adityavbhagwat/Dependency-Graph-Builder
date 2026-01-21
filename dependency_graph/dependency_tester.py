@@ -65,7 +65,7 @@ def menu():
         choice = input("Select option: ").strip().lower()
 
         if choice == "1":
-            spec = "C:\dependency_graph_project\simple_api.yaml"
+            spec = "simple_api.yaml"
             if not os.path.exists(spec):
                 print(f"✗ Local file '{spec}' not found in cwd: {os.getcwd()}")
                 continue

@@ -29,7 +29,7 @@
     {
       "source": "createUser",
       "target": "getUserById",
-      "type": "parameter_data",
+      "type": "crud",
       "confidence": 1.0,
       "parameter_mapping": {
         "userId": "userId"
