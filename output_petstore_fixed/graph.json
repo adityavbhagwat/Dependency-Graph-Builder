@@ -6,20 +6,20 @@
       "method": "PUT",
       "resource_type": "pet",
       "consumes": [
-        "photoUrls",
+        "status",
         "id",
         "name",
         "category",
         "tags",
-        "status"
+        "photoUrls"
       ],
       "produces": [
-        "photoUrls",
+        "status",
         "id",
         "name",
         "category",
         "tags",
-        "status"
+        "photoUrls"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -30,20 +30,20 @@
       "method": "POST",
       "resource_type": "pet",
       "consumes": [
-        "photoUrls",
+        "status",
         "id",
         "name",
         "category",
         "tags",
-        "status"
+        "photoUrls"
       ],
       "produces": [
-        "photoUrls",
+        "status",
         "id",
         "name",
         "category",
         "tags",
-        "status"
+        "photoUrls"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -57,12 +57,12 @@
         "status"
       ],
       "produces": [
-        "photoUrls",
+        "status",
         "id",
         "name",
         "category",
         "tags",
-        "status"
+        "photoUrls"
       ],
       "is_interesting": false,
       "annotations": {}
@@ -76,12 +76,12 @@
         "tags"
       ],
       "produces": [
-        "photoUrls",
+        "status",
         "id",
         "name",
         "category",
         "tags",
-        "status"
+        "photoUrls"
       ],
       "is_interesting": false,
       "annotations": {}
@@ -95,12 +95,12 @@
         "petId"
       ],
       "produces": [
-        "photoUrls",
+        "status",
         "id",
         "name",
         "category",
         "tags",
-        "status"
+        "photoUrls"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -112,16 +112,16 @@
       "resource_type": "pet",
       "consumes": [
         "status",
-        "petId",
-        "name"
+        "name",
+        "petId"
       ],
       "produces": [
-        "photoUrls",
+        "status",
         "id",
         "name",
         "category",
         "tags",
-        "status"
+        "photoUrls"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -145,13 +145,13 @@
       "method": "POST",
       "resource_type": "pet",
       "consumes": [
-        "petId",
-        "additionalMetadata"
+        "additionalMetadata",
+        "petId"
       ],
       "produces": [
         "message",
-        "code",
-        "type"
+        "type",
+        "code"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -172,20 +172,20 @@
       "method": "POST",
       "resource_type": "order",
       "consumes": [
-        "complete",
+        "status",
+        "petId",
+        "shipDate",
         "id",
         "quantity",
-        "shipDate",
-        "status",
-        "petId"
+        "complete"
       ],
       "produces": [
-        "complete",
+        "status",
+        "petId",
+        "shipDate",
         "id",
         "quantity",
-        "shipDate",
-        "status",
-        "petId"
+        "complete"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -199,12 +199,12 @@
         "orderId"
       ],
       "produces": [
-        "complete",
+        "status",
+        "petId",
+        "shipDate",
         "id",
         "quantity",
-        "shipDate",
-        "status",
-        "petId"
+        "complete"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -227,24 +227,24 @@
       "method": "POST",
       "resource_type": "user",
       "consumes": [
-        "password",
-        "userStatus",
-        "username",
         "lastName",
         "phone",
-        "email",
         "id",
-        "firstName"
+        "firstName",
+        "email",
+        "userStatus",
+        "password",
+        "username"
       ],
       "produces": [
-        "password",
-        "userStatus",
-        "username",
         "lastName",
         "phone",
-        "email",
         "id",
-        "firstName"
+        "firstName",
+        "email",
+        "userStatus",
+        "password",
+        "username"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -255,24 +255,24 @@
       "method": "POST",
       "resource_type": "createWithList",
       "consumes": [
-        "password",
-        "userStatus",
-        "username",
         "lastName",
         "phone",
-        "email",
         "id",
-        "firstName"
+        "firstName",
+        "email",
+        "userStatus",
+        "password",
+        "username"
       ],
       "produces": [
-        "password",
-        "userStatus",
-        "username",
         "lastName",
         "phone",
-        "email",
         "id",
-        "firstName"
+        "firstName",
+        "email",
+        "userStatus",
+        "password",
+        "username"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -283,8 +283,8 @@
       "method": "GET",
       "resource_type": "login",
       "consumes": [
-        "username",
-        "password"
+        "password",
+        "username"
       ],
       "produces": [],
       "is_interesting": false,
@@ -311,14 +311,14 @@
         "username"
       ],
       "produces": [
-        "password",
-        "userStatus",
-        "username",
         "lastName",
         "phone",
-        "email",
         "id",
-        "firstName"
+        "firstName",
+        "email",
+        "userStatus",
+        "password",
+        "username"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -329,14 +329,14 @@
       "method": "PUT",
       "resource_type": "user",
       "consumes": [
-        "password",
-        "userStatus",
-        "username",
         "lastName",
         "phone",
-        "email",
         "id",
-        "firstName"
+        "firstName",
+        "email",
+        "userStatus",
+        "password",
+        "username"
       ],
       "produces": [],
       "is_interesting": true,
@@ -362,12 +362,12 @@
       "type": "crud",
       "confidence": 1.0,
       "parameter_mapping": {
-        "status": "status",
+        "photoUrls": "photoUrls",
         "tags": "tags",
         "category": "category",
         "name": "name",
         "id": "id",
-        "photoUrls": "photoUrls"
+        "status": "status"
       },
       "reason": "CRUD: Must create pet before updating; Parameter 'category' produced by addPet and consumed by updatePet; Parameter 'id' produced by addPet and consumed by updatePet; Parameter 'name' produced by addPet and consumed by updatePet; Parameter 'photoUrls' produced by addPet and consumed by updatePet; Parameter 'status' produced by addPet and consumed by updatePet; Parameter 'tags' produced by addPet and consumed by updatePet",
       "verified": null
@@ -378,12 +378,12 @@
       "type": "crud",
       "confidence": 1.0,
       "parameter_mapping": {
-        "status": "status",
+        "photoUrls": "photoUrls",
         "tags": "tags",
         "category": "category",
         "name": "name",
         "id": "id",
-        "photoUrls": "photoUrls"
+        "status": "status"
       },
       "reason": "CRUD: Often read pet before updating; Parameter 'category' produced by getPetById and consumed by updatePet; Parameter 'id' produced by getPetById and consumed by updatePet; Parameter 'name' produced by getPetById and consumed by updatePet; Parameter 'photoUrls' produced by getPetById and consumed by updatePet; Parameter 'status' produced by getPetById and consumed by updatePet; Parameter 'tags' produced by getPetById and consumed by updatePet",
       "verified": null
@@ -394,14 +394,14 @@
       "type": "crud",
       "confidence": 1.0,
       "parameter_mapping": {
+        "username": "username",
+        "password": "password",
+        "userStatus": "userStatus",
+        "email": "email",
         "firstName": "firstName",
         "id": "id",
-        "email": "email",
         "phone": "phone",
-        "lastName": "lastName",
-        "username": "username",
-        "userStatus": "userStatus",
-        "password": "password"
+        "lastName": "lastName"
       },
       "reason": "/user/{username} is nested under /user; CRUD: Must create user before updating; Parameter 'email' produced by createUser and consumed by updateUser; Parameter 'firstName' produced by createUser and consumed by updateUser; Parameter 'id' produced by createUser and consumed by updateUser; Parameter 'lastName' produced by createUser and consumed by updateUser; Parameter 'password' produced by createUser and consumed by updateUser; Parameter 'phone' produced by createUser and consumed by updateUser; Parameter 'userStatus' produced by createUser and consumed by updateUser; Parameter 'username' produced by createUser and consumed by updateUser",
       "verified": null
@@ -412,14 +412,14 @@
       "type": "crud",
       "confidence": 1.0,
       "parameter_mapping": {
+        "username": "username",
+        "password": "password",
+        "userStatus": "userStatus",
+        "email": "email",
         "firstName": "firstName",
         "id": "id",
-        "email": "email",
         "phone": "phone",
-        "lastName": "lastName",
-        "username": "username",
-        "userStatus": "userStatus",
-        "password": "password"
+        "lastName": "lastName"
       },
       "reason": "CRUD: Often read user before updating; Parameter 'email' produced by getUserByName and consumed by updateUser; Parameter 'firstName' produced by getUserByName and consumed by updateUser; Parameter 'id' produced by getUserByName and consumed by updateUser; Parameter 'lastName' produced by getUserByName and consumed by updateUser; Parameter 'password' produced by getUserByName and consumed by updateUser; Parameter 'phone' produced by getUserByName and consumed by updateUser; Parameter 'userStatus' produced by getUserByName and consumed by updateUser; Parameter 'username' produced by getUserByName and consumed by updateUser",
       "verified": null
@@ -452,8 +452,8 @@
       "type": "crud",
       "confidence": 0.9,
       "parameter_mapping": {
-        "status": "status",
-        "name": "name"
+        "name": "name",
+        "status": "status"
       },
       "reason": "/pet/{petId} is nested under /pet; CRUD: Must create pet before updating; Parameter 'name' produced by addPet and consumed by updatePetWithForm; Parameter 'status' produced by addPet and consumed by updatePetWithForm",
       "verified": null
@@ -689,12 +689,12 @@
       "type": "parameter_data",
       "confidence": 1.0,
       "parameter_mapping": {
-        "status": "status",
+        "photoUrls": "photoUrls",
         "tags": "tags",
         "category": "category",
         "name": "name",
         "id": "id",
-        "photoUrls": "photoUrls"
+        "status": "status"
       },
       "reason": "Parameter 'category' produced by updatePetWithForm and consumed by updatePet; Parameter 'id' produced by updatePetWithForm and consumed by updatePet; Parameter 'name' produced by updatePetWithForm and consumed by updatePet; Parameter 'photoUrls' produced by updatePetWithForm and consumed by updatePet; Parameter 'status' produced by updatePetWithForm and consumed by updatePet; Parameter 'tags' produced by updatePetWithForm and consumed by updatePet",
       "verified": null

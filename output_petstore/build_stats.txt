@@ -1,0 +1,143 @@
+================================================================================
+DEPENDENCY GRAPH BUILD LOG - PETSTORE
+Generated: 2026-01-21 22:42:16
+================================================================================
+
+================================================================================
+DEPENDENCY GRAPH BUILDER
+================================================================================
+
+[PHASE 1] Building Static Dependency Graph
+--------------------------------------------------------------------------------
+Step 1: Parsing OpenAPI specification...
+  Found 19 operations
+
+Step 2: Adding operations to graph...
+
+Step 3: Analyzing dependencies...
+  - Parameter-wise dependencies...
+    Found 61 dependencies
+  - CRUD dependencies...
+    Found 14 dependencies
+  - Logical dependencies...
+    Found 12 dependencies
+  - Nested resource dependencies...
+    Found 15 dependencies
+  - Constraint dependencies...
+    Found 0 dependencies
+
+Step 4: Resolving conflicts and adding to graph...
+  Resolved to 42 dependencies
+  Added 42 dependencies, skipped 0 to prevent cycles.
+
+Step 5: Performing transitive reduction to remove redundant edges...
+  Graph optimized. Reduced edge count from 42 to 22.
+
+================================================================================
+✓ Graph building completed in 0.06 seconds
+================================================================================
+
+[EXPORT] Exporting dependency graph...
+Exported annotated OpenAPI specification to ./output_petstore/annotated_spec.yaml
+Exported JSON graph to ./output_petstore/graph.json
+Exported GraphML to ./output_petstore/graph.graphml
+Exported DOT graph to ./output_petstore/graph.dot
+Created interactive visualization at ./output_petstore/graph.html
+
+✓ All exports completed in ./output_petstore/
+
+[STATS] Generating graph statistics...
+
+--- Per-node and per-edge memory breakdown (estimated) ---
+Average per-node bytes (includes node id + attributes): 136 bytes
+  - Avg node-id bytes: 72 bytes (string length + object overhead)
+  - Avg number of attribute fields per node: 0.00
+  Reasoning:
+    * node-id: stored as Python object (usually str) => bytes = utf-8 length + object overhead.
+    * attributes: dictionary object overhead + sizes of keys and values recursively.
+    * Operation-like attribute objects contribute: object header + per-field sizes (operation_id, path, method, params, annotations).
+    * Lists/maps stored in attributes are walked recursively and their element sizes included.
+
+Average per-edge bytes (includes edge endpoints + attributes): 205 bytes
+  - Avg number of attribute fields per edge: 0.00
+  Reasoning:
+    * edge stores references to source/target (ids) plus an attributes dict.
+    * Dependency-like objects add their __dict__ fields (type, confidence, parameter mappings, flags).
+    * Each container or string contributes its own memory as estimated above.
+----------------------------------------------------------
+
+
+=== Dependency Graph Benchmark Report ===
+Nodes: 19   Edges: 22   DAG: True
+Components: count=1 largest=19
+Degree in: {'min': 0, 'max': 2, 'mean': 1.1578947368421053, 'median': 1.0, 'stdev': 0.5860804592452654} out: {'min': 0, 'max': 5, 'mean': 1.1578947368421053, 'median': 0.0, 'stdev': 1.598129100072524}
+Detailed in-memory size estimate:
+  Nodes total bytes: 2591  avg/node: 136
+  (avg node-id bytes: 72  avg fields/node: 0.0)
+  Edges total bytes: 4514  avg/edge: 205
+  (avg fields/edge: 0.0)
+  Overhead total bytes: 2704
+  Estimated total in-memory bytes: 9809 (9.58KB)
+Pickle serialized size: 1239 bytes
+Timings (s): {'longest_path_sec': 0.00023794174194335938, 'betweenness_sec': 0.00019097328186035156, 'degree_centrality_sec': 5.817413330078125e-05, 'pickle_serialize_sec': 6.890296936035156e-05, 'total_sec': 0.0009758472442626953}
+=== End Report ===
+
+
+
+================================================================================
+DEPENDENCY TYPES SUMMARY
+================================================================================
+  crud: 14
+  authentication: 12
+  parameter_data: 10
+  nested_resource: 6
+
+================================================================================
+OPERATION SEQUENCES (Sample)
+================================================================================
+
+To execute: PUT /pet
+  Prerequisites:
+    1. POST /user
+    2. POST /store/order
+    3. GET /user/login
+    4. GET /store/order/{orderId}
+    5. POST /pet
+    6. GET /pet/{petId}
+    7. POST /pet/{petId}
+
+To execute: POST /pet
+  Prerequisites:
+    1. POST /user
+    2. GET /user/login
+
+To execute: GET /pet/{petId}
+  Prerequisites:
+    1. POST /user
+    2. POST /store/order
+    3. GET /user/login
+    4. GET /store/order/{orderId}
+    5. POST /pet
+
+To execute: POST /pet/{petId}
+  Prerequisites:
+    1. POST /user
+    2. POST /store/order
+    3. GET /user/login
+    4. GET /store/order/{orderId}
+    5. POST /pet
+    6. GET /pet/{petId}
+
+To execute: POST /pet/{petId}/uploadImage
+  Prerequisites:
+    1. POST /user
+    2. POST /store/order
+    3. GET /user/login
+    4. GET /store/order/{orderId}
+    5. POST /pet
+    6. GET /pet/{petId}
+    7. POST /pet/{petId}
+
+================================================================================
+END OF LOG
+================================================================================

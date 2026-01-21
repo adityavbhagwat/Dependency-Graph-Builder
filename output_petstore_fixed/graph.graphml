@@ -21,26 +21,26 @@
     <node id="updateUser" />
     <node id="deleteUser" />
     <edge source="addPet" target="findPetsByStatus" />
-    <edge source="addPet" target="getPetById" />
     <edge source="addPet" target="findPetsByTags" />
     <edge source="addPet" target="deletePet" />
+    <edge source="addPet" target="getPetById" />
     <edge source="getPetById" target="updatePetWithForm" />
     <edge source="updatePetWithForm" target="updatePet" />
     <edge source="updatePetWithForm" target="uploadFile" />
-    <edge source="placeOrder" target="deleteOrder" />
     <edge source="placeOrder" target="getOrderById" />
+    <edge source="placeOrder" target="deleteOrder" />
     <edge source="getOrderById" target="deletePet" />
     <edge source="getOrderById" target="getPetById" />
+    <edge source="createUser" target="createUsersWithListInput" />
     <edge source="createUser" target="loginUser" />
     <edge source="createUser" target="getUserByName" />
-    <edge source="createUser" target="createUsersWithListInput" />
     <edge source="createUser" target="logoutUser" />
-    <edge source="loginUser" target="deleteOrder" />
-    <edge source="loginUser" target="deleteUser" />
-    <edge source="loginUser" target="updateUser" />
-    <edge source="loginUser" target="getInventory" />
     <edge source="loginUser" target="addPet" />
-    <edge source="getUserByName" target="deleteUser" />
+    <edge source="loginUser" target="updateUser" />
+    <edge source="loginUser" target="deleteUser" />
+    <edge source="loginUser" target="deleteOrder" />
+    <edge source="loginUser" target="getInventory" />
     <edge source="getUserByName" target="updateUser" />
+    <edge source="getUserByName" target="deleteUser" />
   </graph>
 </graphml>
