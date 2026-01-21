@@ -42,4 +42,8 @@ python -m dependency_graph.dependency_tester
 
 ### 5. Check the Output
 
-After the script runs, it will create new `output` folders containing the generated dependency graph, statistics, and visualizations.
+After the script runs, it will create new `output` folders containing the generated dependency graph, statistics, and visualizations. To see visual representation of the graph.html , go to the output folder which contains the graph.html file, run a server using command 
+```
+python -m http.server 8000
+```
+and then visit ``` localhost:8000/graph.html ```
