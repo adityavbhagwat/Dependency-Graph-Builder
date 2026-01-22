@@ -24,16 +24,16 @@
     <node id="fetchPostTranslationalModificationsGET" />
     <node id="fetchPostTranslationalModificationsByPtmFilterPOST" />
     <node id="fetchVersionGET" />
-    <edge source="fetchVariantAnnotationPOST" target="fetchVariantAnnotationGET" />
-    <edge source="fetchVariantAnnotationPOST" target="fetchVariantAnnotationByGenomicLocationPOST" />
     <edge source="fetchVariantAnnotationPOST" target="fetchVariantAnnotationByIdPOST" />
+    <edge source="fetchVariantAnnotationPOST" target="fetchVariantAnnotationByGenomicLocationPOST" />
+    <edge source="fetchVariantAnnotationPOST" target="fetchVariantAnnotationGET" />
     <edge source="fetchVariantAnnotationByIdPOST" target="fetchVariantAnnotationByIdGET" />
     <edge source="fetchVariantAnnotationByGenomicLocationPOST" target="fetchVariantAnnotationByGenomicLocationGET" />
     <edge source="fetchCanonicalEnsemblGeneIdByEntrezGeneIdsPOST" target="fetchCanonicalEnsemblGeneIdByEntrezGeneIdGET" />
     <edge source="fetchCanonicalEnsemblGeneIdByEntrezGeneIdGET" target="fetchEnsemblTranscriptsGET" />
     <edge source="fetchCanonicalEnsemblGeneIdByHugoSymbolsPOST" target="fetchCanonicalEnsemblGeneIdByHugoSymbolGET" />
-    <edge source="fetchCanonicalEnsemblGeneIdByHugoSymbolGET" target="fetchCanonicalEnsemblGeneIdByEntrezGeneIdGET" />
     <edge source="fetchCanonicalEnsemblGeneIdByHugoSymbolGET" target="fetchCanonicalEnsemblTranscriptByHugoSymbolGET" />
+    <edge source="fetchCanonicalEnsemblGeneIdByHugoSymbolGET" target="fetchCanonicalEnsemblGeneIdByEntrezGeneIdGET" />
     <edge source="fetchCanonicalEnsemblTranscriptsByHugoSymbolsPOST" target="fetchCanonicalEnsemblGeneIdByHugoSymbolGET" />
     <edge source="fetchCanonicalEnsemblTranscriptByHugoSymbolGET" target="fetchEnsemblTranscriptsGET" />
     <edge source="fetchEnsemblTranscriptsGET" target="fetchEnsemblTranscriptByTranscriptIdGET" />

@@ -1,6 +1,6 @@
 ================================================================================
 DEPENDENCY GRAPH BUILD LOG - MARKET
-Generated: 2026-01-22 10:24:52
+Generated: 2026-01-22 20:54:03
 ================================================================================
 
 ================================================================================
@@ -79,10 +79,31 @@ Detailed in-memory size estimate:
   Overhead total bytes: 6384
   Estimated total in-memory bytes: 23679 (23.12KB)
 Pickle serialized size: 2569 bytes
-Timings (s): {'longest_path_sec': 0.0001609325408935547, 'betweenness_sec': 0.0002512931823730469, 'degree_centrality_sec': 1.6689300537109375e-05, 'pickle_serialize_sec': 4.601478576660156e-05, 'total_sec': 0.0008759498596191406}
+Timings (s): {'longest_path_sec': 0.000164031982421875, 'betweenness_sec': 0.0002486705780029297, 'degree_centrality_sec': 1.5974044799804688e-05, 'pickle_serialize_sec': 4.506111145019531e-05, 'total_sec': 0.0008907318115234375}
 === End Report ===
 
 
+
+================================================================================
+EDGE REDUCTION PIPELINE
+================================================================================
+  Raw dependencies (all analyzers):     75
+  After conflict resolution:            56
+  After cycle prevention:               56
+  After transitive reduction (FINAL):   42
+
+  Reduction Summary:
+    - Conflicts resolved:      19 edges merged/removed
+    - Cycles prevented:        0 edges skipped
+    - Transitive reduction:    14 redundant edges removed
+    - Total reduction:         44.0% (75 → 42)
+
+  By Analyzer:
+    - logical: 33
+    - crud: 28
+    - parameter: 12
+    - nested_resource: 2
+    - constraint: 0
 
 ================================================================================
 DEPENDENCY TYPES SUMMARY

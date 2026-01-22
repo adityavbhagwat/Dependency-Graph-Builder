@@ -50,14 +50,14 @@
     <node id="getRegionProductsUsingGET" />
     <node id="getStorageUnitsUsingGET" />
     <node id="postStorageUsingPOST" />
-    <edge source="errorUsingGET" target="errorUsingPUT" />
     <edge source="errorUsingGET" target="errorUsingPATCH" />
+    <edge source="errorUsingGET" target="errorUsingPUT" />
     <edge source="errorUsingPOST" target="errorUsingGET" />
     <edge source="errorUsingPOST" target="errorUsingDELETE" />
     <edge source="getCartUsingGET" target="updateCartByAjaxUsingPUT" />
+    <edge source="updateCartByFormUsingPOST" target="getCartUsingGET" />
     <edge source="updateCartByFormUsingPOST" target="clearCartUsingPOST" />
     <edge source="updateCartByFormUsingPOST" target="setDeliveryUsingPUT" />
-    <edge source="updateCartByFormUsingPOST" target="getCartUsingGET" />
     <edge source="changeContactsUsingPOST" target="detailsUsingGET" />
     <edge source="postPaymentUsingPOST" target="getPaymentUsingGET" />
     <edge source="postRegistrationFormUsingPOST" target="getRegistrationPageUsingGET" />
@@ -65,32 +65,32 @@
     <edge source="allDistilleriesUsingGET" target="deleteDistilleryUsingPOST" />
     <edge source="postDistilleryUsingPOST" target="newDistilleryUsingGET" />
     <edge source="editDistilleryUsingGET" target="putDistilleryUsingPOST" />
-    <edge source="loginUsingGET" target="getOrdersUsingGET" />
-    <edge source="loginUsingGET" target="editRegionUsingGET" />
-    <edge source="loginUsingGET" target="postProductUsingPOST" />
-    <edge source="loginUsingGET" target="indexUsingGET_1" />
-    <edge source="loginUsingGET" target="postStorageUsingPOST" />
-    <edge source="loginUsingGET" target="postRegionUsingPOST" />
     <edge source="loginUsingGET" target="indexUsingGET" />
     <edge source="loginUsingGET" target="setDeliveryUsingPUT" />
-    <edge source="loginUsingGET" target="getProductsUsingGET" />
     <edge source="loginUsingGET" target="editDistilleryUsingGET" />
+    <edge source="loginUsingGET" target="getOrdersUsingGET" />
+    <edge source="loginUsingGET" target="editRegionUsingGET" />
+    <edge source="loginUsingGET" target="indexUsingGET_1" />
     <edge source="loginUsingGET" target="allRegionsUsingGET" />
+    <edge source="loginUsingGET" target="postProductUsingPOST" />
     <edge source="loginUsingGET" target="indexUsingGET_2" />
-    <edge source="loginUsingGET" target="allDistilleriesUsingGET" />
-    <edge source="loginUsingGET" target="postDistilleryUsingPOST" />
     <edge source="loginUsingGET" target="editProductUsingGET" />
+    <edge source="loginUsingGET" target="postRegionUsingPOST" />
+    <edge source="loginUsingGET" target="allDistilleriesUsingGET" />
+    <edge source="loginUsingGET" target="postStorageUsingPOST" />
+    <edge source="loginUsingGET" target="postDistilleryUsingPOST" />
+    <edge source="loginUsingGET" target="getProductsUsingGET" />
     <edge source="getOrdersUsingGET" target="setExecutionStatusUsingPOST" />
-    <edge source="getProductsUsingGET" target="deleteProductUsingPOST" />
     <edge source="getProductsUsingGET" target="putProductUsingPOST" />
+    <edge source="getProductsUsingGET" target="deleteProductUsingPOST" />
     <edge source="postProductUsingPOST" target="newProductUsingGET" />
     <edge source="editProductUsingGET" target="putProductUsingPOST" />
-    <edge source="allRegionsUsingGET" target="putRegionUsingPOST" />
     <edge source="allRegionsUsingGET" target="deleteRegionUsingPOST" />
+    <edge source="allRegionsUsingGET" target="putRegionUsingPOST" />
     <edge source="postRegionUsingPOST" target="newRegionUsingGET" />
     <edge source="editRegionUsingGET" target="putRegionUsingPOST" />
-    <edge source="getRegionProductsUsingGET" target="putRegionUsingPOST" />
     <edge source="getRegionProductsUsingGET" target="deleteRegionUsingPOST" />
+    <edge source="getRegionProductsUsingGET" target="putRegionUsingPOST" />
     <edge source="postStorageUsingPOST" target="getStorageUnitsUsingGET" />
   </graph>
 </graphml>

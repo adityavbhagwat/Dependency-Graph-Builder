@@ -1,6 +1,6 @@
 ================================================================================
 DEPENDENCY GRAPH BUILD LOG - OHSOME
-Generated: 2026-01-22 10:24:55
+Generated: 2026-01-22 20:54:05
 ================================================================================
 
 ================================================================================
@@ -34,7 +34,7 @@ Step 5: Performing transitive reduction to remove redundant edges...
   Graph optimized. Reduced edge count from 5161 to 280.
 
 ================================================================================
-✓ Graph building completed in 1.42 seconds
+✓ Graph building completed in 1.37 seconds
 ================================================================================
 
 [EXPORT] Exporting dependency graph...
@@ -79,10 +79,31 @@ Detailed in-memory size estimate:
   Overhead total bytes: 34624
   Estimated total in-memory bytes: 145482 (142.07KB)
 Pickle serialized size: 14618 bytes
-Timings (s): {'longest_path_sec': 0.0007429122924804688, 'betweenness_sec': 0.010490179061889648, 'degree_centrality_sec': 8.082389831542969e-05, 'pickle_serialize_sec': 0.0001289844512939453, 'total_sec': 0.012891769409179688}
+Timings (s): {'longest_path_sec': 0.00074005126953125, 'betweenness_sec': 0.010631084442138672, 'degree_centrality_sec': 6.604194641113281e-05, 'pickle_serialize_sec': 0.00012612342834472656, 'total_sec': 0.013024091720581055}
 === End Report ===
 
 
+
+================================================================================
+EDGE REDUCTION PIPELINE
+================================================================================
+  Raw dependencies (all analyzers):     18830
+  After conflict resolution:            6112
+  After cycle prevention:               5161
+  After transitive reduction (FINAL):   280
+
+  Reduction Summary:
+    - Conflicts resolved:      12718 edges merged/removed
+    - Cycles prevented:        951 edges skipped
+    - Transitive reduction:    4881 redundant edges removed
+    - Total reduction:         98.5% (18830 → 280)
+
+  By Analyzer:
+    - parameter: 8991
+    - constraint: 8914
+    - crud: 577
+    - nested_resource: 348
+    - logical: 0
 
 ================================================================================
 DEPENDENCY TYPES SUMMARY

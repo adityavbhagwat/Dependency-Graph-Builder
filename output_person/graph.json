@@ -6,24 +6,24 @@
       "method": "PUT",
       "resource_type": "person",
       "consumes": [
-        "insurance",
-        "lastName",
-        "address",
-        "age",
-        "createdAt",
-        "cars",
         "id",
-        "firstName"
+        "age",
+        "lastName",
+        "firstName",
+        "cars",
+        "address",
+        "createdAt",
+        "insurance"
       ],
       "produces": [
-        "insurance",
-        "lastName",
-        "address",
-        "age",
-        "createdAt",
-        "cars",
         "id",
-        "firstName"
+        "age",
+        "lastName",
+        "firstName",
+        "cars",
+        "address",
+        "createdAt",
+        "insurance"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -34,24 +34,24 @@
       "method": "POST",
       "resource_type": "person",
       "consumes": [
-        "insurance",
-        "lastName",
-        "address",
-        "age",
-        "createdAt",
-        "cars",
         "id",
-        "firstName"
+        "age",
+        "lastName",
+        "firstName",
+        "cars",
+        "address",
+        "createdAt",
+        "insurance"
       ],
       "produces": [
-        "insurance",
-        "lastName",
-        "address",
-        "age",
-        "createdAt",
-        "cars",
         "id",
-        "firstName"
+        "age",
+        "lastName",
+        "firstName",
+        "cars",
+        "address",
+        "createdAt",
+        "insurance"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -65,14 +65,14 @@
         "id"
       ],
       "produces": [
-        "insurance",
-        "lastName",
-        "address",
-        "age",
-        "createdAt",
-        "cars",
         "id",
-        "firstName"
+        "age",
+        "lastName",
+        "firstName",
+        "cars",
+        "address",
+        "createdAt",
+        "insurance"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -96,14 +96,14 @@
       "resource_type": "persons",
       "consumes": [],
       "produces": [
-        "insurance",
-        "lastName",
-        "address",
-        "age",
-        "createdAt",
-        "cars",
         "id",
-        "firstName"
+        "age",
+        "lastName",
+        "firstName",
+        "cars",
+        "address",
+        "createdAt",
+        "insurance"
       ],
       "is_interesting": false,
       "annotations": {}
@@ -114,14 +114,14 @@
       "method": "PUT",
       "resource_type": "persons",
       "consumes": [
-        "insurance",
-        "lastName",
-        "address",
-        "age",
-        "createdAt",
-        "cars",
         "id",
-        "firstName"
+        "age",
+        "lastName",
+        "firstName",
+        "cars",
+        "address",
+        "createdAt",
+        "insurance"
       ],
       "produces": [],
       "is_interesting": true,
@@ -133,24 +133,24 @@
       "method": "POST",
       "resource_type": "persons",
       "consumes": [
-        "insurance",
-        "lastName",
-        "address",
-        "age",
-        "createdAt",
-        "cars",
         "id",
-        "firstName"
+        "age",
+        "lastName",
+        "firstName",
+        "cars",
+        "address",
+        "createdAt",
+        "insurance"
       ],
       "produces": [
-        "insurance",
-        "lastName",
-        "address",
-        "age",
-        "createdAt",
-        "cars",
         "id",
-        "firstName"
+        "age",
+        "lastName",
+        "firstName",
+        "cars",
+        "address",
+        "createdAt",
+        "insurance"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -194,14 +194,14 @@
         "ids"
       ],
       "produces": [
-        "insurance",
-        "lastName",
-        "address",
-        "age",
-        "createdAt",
-        "cars",
         "id",
-        "firstName"
+        "age",
+        "lastName",
+        "firstName",
+        "cars",
+        "address",
+        "createdAt",
+        "insurance"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -226,14 +226,14 @@
       "type": "crud",
       "confidence": 1.0,
       "parameter_mapping": {
-        "firstName": "firstName",
-        "id": "id",
-        "cars": "cars",
+        "insurance": "insurance",
         "createdAt": "createdAt",
-        "age": "age",
         "address": "address",
+        "cars": "cars",
+        "firstName": "firstName",
         "lastName": "lastName",
-        "insurance": "insurance"
+        "age": "age",
+        "id": "id"
       },
       "reason": "CRUD: Must create person before updating; Parameter 'address' produced by postPersonUsingPOST and consumed by putPersonUsingPUT; Parameter 'age' produced by postPersonUsingPOST and consumed by putPersonUsingPUT; Parameter 'cars' produced by postPersonUsingPOST and consumed by putPersonUsingPUT; Parameter 'createdAt' produced by postPersonUsingPOST and consumed by putPersonUsingPUT; Parameter 'firstName' produced by postPersonUsingPOST and consumed by putPersonUsingPUT; Parameter 'id' produced by postPersonUsingPOST and consumed by putPersonUsingPUT; Parameter 'insurance' produced by postPersonUsingPOST and consumed by putPersonUsingPUT; Parameter 'lastName' produced by postPersonUsingPOST and consumed by putPersonUsingPUT",
       "verified": null
@@ -244,14 +244,14 @@
       "type": "crud",
       "confidence": 1.0,
       "parameter_mapping": {
-        "firstName": "firstName",
-        "id": "id",
-        "cars": "cars",
+        "insurance": "insurance",
         "createdAt": "createdAt",
-        "age": "age",
         "address": "address",
+        "cars": "cars",
+        "firstName": "firstName",
         "lastName": "lastName",
-        "insurance": "insurance"
+        "age": "age",
+        "id": "id"
       },
       "reason": "CRUD: Often read person before updating; Parameter 'address' produced by getPersonUsingGET and consumed by putPersonUsingPUT; Parameter 'age' produced by getPersonUsingGET and consumed by putPersonUsingPUT; Parameter 'cars' produced by getPersonUsingGET and consumed by putPersonUsingPUT; Parameter 'createdAt' produced by getPersonUsingGET and consumed by putPersonUsingPUT; Parameter 'firstName' produced by getPersonUsingGET and consumed by putPersonUsingPUT; Parameter 'id' produced by getPersonUsingGET and consumed by putPersonUsingPUT; Parameter 'insurance' produced by getPersonUsingGET and consumed by putPersonUsingPUT; Parameter 'lastName' produced by getPersonUsingGET and consumed by putPersonUsingPUT",
       "verified": null
@@ -284,14 +284,14 @@
       "type": "crud",
       "confidence": 1.0,
       "parameter_mapping": {
-        "firstName": "firstName",
-        "id": "id",
-        "cars": "cars",
+        "insurance": "insurance",
         "createdAt": "createdAt",
-        "age": "age",
         "address": "address",
+        "cars": "cars",
+        "firstName": "firstName",
         "lastName": "lastName",
-        "insurance": "insurance"
+        "age": "age",
+        "id": "id"
       },
       "reason": "CRUD: Often read persons before updating; Parameter 'address' produced by getPersonsUsingGET and consumed by putPersonUsingPUT_1; Parameter 'age' produced by getPersonsUsingGET and consumed by putPersonUsingPUT_1; Parameter 'cars' produced by getPersonsUsingGET and consumed by putPersonUsingPUT_1; Parameter 'createdAt' produced by getPersonsUsingGET and consumed by putPersonUsingPUT_1; Parameter 'firstName' produced by getPersonsUsingGET and consumed by putPersonUsingPUT_1; Parameter 'id' produced by getPersonsUsingGET and consumed by putPersonUsingPUT_1; Parameter 'insurance' produced by getPersonsUsingGET and consumed by putPersonUsingPUT_1; Parameter 'lastName' produced by getPersonsUsingGET and consumed by putPersonUsingPUT_1",
       "verified": null
@@ -302,14 +302,14 @@
       "type": "crud",
       "confidence": 1.0,
       "parameter_mapping": {
-        "firstName": "firstName",
-        "id": "id",
-        "cars": "cars",
+        "insurance": "insurance",
         "createdAt": "createdAt",
-        "age": "age",
         "address": "address",
+        "cars": "cars",
+        "firstName": "firstName",
         "lastName": "lastName",
-        "insurance": "insurance"
+        "age": "age",
+        "id": "id"
       },
       "reason": "CRUD: Must create persons before updating; Parameter 'address' produced by postPersonsUsingPOST and consumed by putPersonUsingPUT_1; Parameter 'age' produced by postPersonsUsingPOST and consumed by putPersonUsingPUT_1; Parameter 'cars' produced by postPersonsUsingPOST and consumed by putPersonUsingPUT_1; Parameter 'createdAt' produced by postPersonsUsingPOST and consumed by putPersonUsingPUT_1; Parameter 'firstName' produced by postPersonsUsingPOST and consumed by putPersonUsingPUT_1; Parameter 'id' produced by postPersonsUsingPOST and consumed by putPersonUsingPUT_1; Parameter 'insurance' produced by postPersonsUsingPOST and consumed by putPersonUsingPUT_1; Parameter 'lastName' produced by postPersonsUsingPOST and consumed by putPersonUsingPUT_1",
       "verified": null
@@ -320,14 +320,14 @@
       "type": "crud",
       "confidence": 1.0,
       "parameter_mapping": {
-        "firstName": "firstName",
-        "id": "id",
-        "cars": "cars",
+        "insurance": "insurance",
         "createdAt": "createdAt",
-        "age": "age",
         "address": "address",
+        "cars": "cars",
+        "firstName": "firstName",
         "lastName": "lastName",
-        "insurance": "insurance"
+        "age": "age",
+        "id": "id"
       },
       "reason": "CRUD: Often read persons before updating; Parameter 'address' produced by getPersonsUsingGET_1 and consumed by putPersonUsingPUT_1; Parameter 'age' produced by getPersonsUsingGET_1 and consumed by putPersonUsingPUT_1; Parameter 'cars' produced by getPersonsUsingGET_1 and consumed by putPersonUsingPUT_1; Parameter 'createdAt' produced by getPersonsUsingGET_1 and consumed by putPersonUsingPUT_1; Parameter 'firstName' produced by getPersonsUsingGET_1 and consumed by putPersonUsingPUT_1; Parameter 'id' produced by getPersonsUsingGET_1 and consumed by putPersonUsingPUT_1; Parameter 'insurance' produced by getPersonsUsingGET_1 and consumed by putPersonUsingPUT_1; Parameter 'lastName' produced by getPersonsUsingGET_1 and consumed by putPersonUsingPUT_1",
       "verified": null

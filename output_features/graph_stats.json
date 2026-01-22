@@ -30,16 +30,16 @@
     "example": [
       "getFeaturesForProduct",
       "addProduct",
-      "updateFeatureOfProduct",
-      "addFeatureToProduct"
+      "addConfiguration",
+      "addFeatureToConfiguration"
     ]
   },
   "_timings": {
-    "longest_path_sec": 7.390975952148438e-05,
-    "betweenness_sec": 0.00011014938354492188,
-    "degree_centrality_sec": 7.867813110351562e-06,
-    "pickle_serialize_sec": 3.504753112792969e-05,
-    "total_sec": 0.0004930496215820312
+    "longest_path_sec": 7.009506225585938e-05,
+    "betweenness_sec": 0.00010967254638671875,
+    "degree_centrality_sec": 9.059906005859375e-06,
+    "pickle_serialize_sec": 2.6702880859375e-05,
+    "total_sec": 0.00043892860412597656
   },
   "centrality": {
     "betweenness_top": [

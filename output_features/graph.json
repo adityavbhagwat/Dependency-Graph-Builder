@@ -80,10 +80,10 @@
         "productName"
       ],
       "produces": [
-        "constraints",
         "name",
+        "id",
         "features",
-        "id"
+        "constraints"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -118,13 +118,13 @@
       "method": "GET",
       "resource_type": "products",
       "consumes": [
-        "productName",
-        "configurationName"
+        "configurationName",
+        "productName"
       ],
       "produces": [
-        "activedFeatures",
         "name",
-        "valid"
+        "valid",
+        "activedFeatures"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -135,8 +135,8 @@
       "method": "POST",
       "resource_type": "products",
       "consumes": [
-        "productName",
-        "configurationName"
+        "configurationName",
+        "productName"
       ],
       "produces": [],
       "is_interesting": true,
@@ -148,8 +148,8 @@
       "method": "DELETE",
       "resource_type": "products",
       "consumes": [
-        "productName",
-        "configurationName"
+        "configurationName",
+        "productName"
       ],
       "produces": [],
       "is_interesting": false,
@@ -173,8 +173,8 @@
       "method": "POST",
       "resource_type": "products",
       "consumes": [
-        "productName",
         "configurationName",
+        "productName",
         "featureName"
       ],
       "produces": [],
@@ -187,8 +187,8 @@
       "method": "DELETE",
       "resource_type": "products",
       "consumes": [
-        "productName",
         "configurationName",
+        "productName",
         "featureName"
       ],
       "produces": [],
@@ -201,8 +201,8 @@
       "method": "GET",
       "resource_type": "products",
       "consumes": [
-        "productName",
-        "configurationName"
+        "configurationName",
+        "productName"
       ],
       "produces": [],
       "is_interesting": true,
@@ -227,9 +227,9 @@
       "method": "POST",
       "resource_type": "products",
       "consumes": [
+        "sourceFeature",
         "requiredFeature",
-        "productName",
-        "sourceFeature"
+        "productName"
       ],
       "produces": [],
       "is_interesting": true,
@@ -241,9 +241,9 @@
       "method": "POST",
       "resource_type": "products",
       "consumes": [
+        "sourceFeature",
         "excludedFeature",
-        "productName",
-        "sourceFeature"
+        "productName"
       ],
       "produces": [],
       "is_interesting": true,

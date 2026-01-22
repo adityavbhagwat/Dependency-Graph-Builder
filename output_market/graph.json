@@ -87,14 +87,14 @@
       "resource_type": "cart",
       "consumes": [
         "deliveryCost",
-        "user",
-        "totalItems",
-        "productsCost",
         "cartItems[0].quantity",
+        "cartItems[0].productId",
         "totalCost",
-        "deliveryIncluded",
         "name",
-        "cartItems[0].productId"
+        "productsCost",
+        "deliveryIncluded",
+        "totalItems",
+        "user"
       ],
       "produces": [],
       "is_interesting": false,
@@ -106,28 +106,28 @@
       "method": "PUT",
       "resource_type": "cart",
       "consumes": [
-        "productId",
         "deliveryCost",
-        "user",
-        "totalItems",
-        "_links",
-        "productsCost",
         "cartItems[0].quantity",
-        "totalCost",
-        "deliveryIncluded",
-        "name",
         "cartItems[0].productId",
-        "quantity"
+        "totalCost",
+        "name",
+        "_links",
+        "quantity",
+        "productsCost",
+        "productId",
+        "deliveryIncluded",
+        "totalItems",
+        "user"
       ],
       "produces": [
         "deliveryCost",
         "empty",
-        "user",
-        "totalItems",
+        "totalCost",
         "_links",
         "productsCost",
-        "totalCost",
         "deliveryIncluded",
+        "totalItems",
+        "user",
         "cartItems"
       ],
       "is_interesting": true,
@@ -139,17 +139,17 @@
       "method": "POST",
       "resource_type": "cart",
       "consumes": [
-        "productId",
         "deliveryCost",
-        "user",
-        "totalItems",
-        "productsCost",
         "cartItems[0].quantity",
-        "totalCost",
-        "deliveryIncluded",
-        "name",
         "cartItems[0].productId",
-        "quantity"
+        "totalCost",
+        "name",
+        "quantity",
+        "productId",
+        "productsCost",
+        "deliveryIncluded",
+        "totalItems",
+        "user"
       ],
       "produces": [],
       "is_interesting": true,
@@ -162,14 +162,14 @@
       "resource_type": "clear",
       "consumes": [
         "deliveryCost",
-        "user",
-        "totalItems",
-        "productsCost",
         "cartItems[0].quantity",
+        "cartItems[0].productId",
         "totalCost",
-        "deliveryIncluded",
         "name",
-        "cartItems[0].productId"
+        "productsCost",
+        "deliveryIncluded",
+        "totalItems",
+        "user"
       ],
       "produces": [],
       "is_interesting": true,
@@ -183,24 +183,24 @@
       "consumes": [
         "delivery",
         "deliveryCost",
-        "user",
-        "totalItems",
-        "productsCost",
         "cartItems[0].quantity",
+        "cartItems[0].productId",
         "totalCost",
-        "deliveryIncluded",
         "name",
-        "cartItems[0].productId"
+        "productsCost",
+        "deliveryIncluded",
+        "totalItems",
+        "user"
       ],
       "produces": [
         "deliveryCost",
         "empty",
-        "user",
-        "totalItems",
+        "totalCost",
         "_links",
         "productsCost",
-        "totalCost",
         "deliveryIncluded",
+        "totalItems",
+        "user",
         "cartItems"
       ],
       "is_interesting": true,
@@ -236,10 +236,10 @@
       "method": "POST",
       "resource_type": "details",
       "consumes": [
-        "phone",
+        "address",
         "name",
-        "changeContacts",
-        "address"
+        "phone",
+        "changeContacts"
       ],
       "produces": [],
       "is_interesting": true,
@@ -287,18 +287,18 @@
       "resource_type": "new",
       "consumes": [
         "phone",
-        "address",
         "deliveryCost",
-        "user",
-        "totalItems",
-        "productsCost",
         "cartItems[0].quantity",
+        "cartItems[0].productId",
+        "user",
         "totalCost",
-        "email",
-        "password",
-        "deliveryIncluded",
         "name",
-        "cartItems[0].productId"
+        "productsCost",
+        "deliveryIncluded",
+        "password",
+        "address",
+        "email",
+        "totalItems"
       ],
       "produces": [],
       "is_interesting": true,
@@ -342,9 +342,9 @@
       "method": "POST",
       "resource_type": "new",
       "consumes": [
-        "title",
         "region",
         "id",
+        "title",
         "description"
       ],
       "produces": [],
@@ -381,11 +381,11 @@
       "method": "POST",
       "resource_type": "distilleries",
       "consumes": [
-        "region",
-        "title",
-        "distilleryId",
         "id",
-        "description"
+        "distilleryId",
+        "title",
+        "description",
+        "region"
       ],
       "produces": [],
       "is_interesting": true,
@@ -447,12 +447,12 @@
       "method": "GET",
       "resource_type": "orders",
       "consumes": [
-        "sort",
-        "direct",
-        "page",
-        "size",
         "created",
-        "executed"
+        "direct",
+        "executed",
+        "sort",
+        "size",
+        "page"
       ],
       "produces": [],
       "is_interesting": false,
@@ -477,10 +477,10 @@
       "method": "GET",
       "resource_type": "products",
       "consumes": [
-        "sort",
         "direct",
-        "page",
+        "sort",
         "size",
+        "page",
         "dist"
       ],
       "produces": [],
@@ -503,15 +503,15 @@
       "method": "POST",
       "resource_type": "new",
       "consumes": [
-        "price",
-        "productId",
-        "distillery",
         "alcohol",
         "age",
-        "available",
         "volume",
+        "description",
+        "distillery",
         "name",
-        "description"
+        "price",
+        "productId",
+        "available"
       ],
       "produces": [],
       "is_interesting": true,
@@ -547,15 +547,15 @@
       "method": "POST",
       "resource_type": "products",
       "consumes": [
-        "price",
-        "productId",
-        "distillery",
         "alcohol",
         "age",
-        "available",
         "volume",
+        "description",
+        "distillery",
         "name",
-        "description"
+        "price",
+        "productId",
+        "available"
       ],
       "produces": [],
       "is_interesting": true,
@@ -587,11 +587,11 @@
       "method": "POST",
       "resource_type": "new",
       "consumes": [
-        "color",
         "subtitle",
-        "name",
         "id",
-        "description"
+        "description",
+        "name",
+        "color"
       ],
       "produces": [],
       "is_interesting": true,
@@ -627,12 +627,12 @@
       "method": "POST",
       "resource_type": "regions",
       "consumes": [
-        "color",
-        "subtitle",
-        "name",
-        "regionId",
         "id",
-        "description"
+        "regionId",
+        "subtitle",
+        "description",
+        "name",
+        "color"
       ],
       "produces": [],
       "is_interesting": true,
@@ -644,12 +644,12 @@
       "method": "GET",
       "resource_type": "regions",
       "consumes": [
-        "sort",
         "direct",
-        "page",
+        "regionId",
+        "sort",
         "size",
-        "dist",
-        "regionId"
+        "page",
+        "dist"
       ],
       "produces": [],
       "is_interesting": true,
@@ -661,11 +661,11 @@
       "method": "GET",
       "resource_type": "storage",
       "consumes": [
-        "sort",
         "direct",
+        "sort",
+        "size",
         "page",
-        "available",
-        "size"
+        "available"
       ],
       "produces": [],
       "is_interesting": false,
@@ -677,8 +677,8 @@
       "method": "POST",
       "resource_type": "storage",
       "consumes": [
-        "productsIds",
-        "availableProductsIds"
+        "availableProductsIds",
+        "productsIds"
       ],
       "produces": [],
       "is_interesting": true,

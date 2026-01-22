@@ -1,332 +1,240 @@
 {
   "basic": {
     "num_nodes": 1111,
-    "num_edges": 1644,
+    "num_edges": 3091,
     "is_dag": true,
     "directed": true
   },
   "components": {
-    "count": 23,
-    "largest_size": 1089
+    "count": 52,
+    "largest_size": 995
   },
   "degree": {
     "in": {
       "min": 0,
-      "max": 53,
-      "mean": 1.4797479747974798,
+      "max": 92,
+      "mean": 2.782178217821782,
       "median": 1.0,
-      "stdev": 3.6065864252855433
+      "stdev": 9.425881557719448
     },
     "out": {
       "min": 0,
-      "max": 67,
-      "mean": 1.4797479747974798,
+      "max": 221,
+      "mean": 2.782178217821782,
       "median": 1.0,
-      "stdev": 4.673237508555582
+      "stdev": 9.469990838881019
     }
   },
   "longest_path": {
-    "length": 206,
+    "length": 114,
     "example": [
-      "actions/list-jobs-for-workflow-run",
-      "pulls/list-review-comments-for-repo",
-      "security-advisories/create-fork",
-      "repos/list-forks",
-      "pulls/list-review-comments",
-      "code-scanning/get-default-setup",
-      "orgs/enable-or-disable-security-product-on-all-org-repos",
-      "apps/get-org-installation",
-      "apps/check-token",
-      "packages/restore-package-for-org",
-      "packages/get-package-for-organization",
-      "packages/list-packages-for-organization",
-      "migrations/list-for-org",
-      "migrations/get-status-for-org",
-      "migrations/get-status-for-authenticated-user",
-      "migrations/start-for-org",
-      "orgs/get",
-      "interactions/set-restrictions-for-org",
-      "interactions/set-restrictions-for-repo",
-      "interactions/set-restrictions-for-authenticated-user",
-      "issues/remove-dependency-blocked-by",
-      "issues/list",
       "campaigns/list-org-campaigns",
-      "security-advisories/list-org-repository-advisories",
-      "security-advisories/list-repository-advisories",
-      "dependency-graph/diff-range",
-      "code-security/attach-enterprise-configuration",
-      "code-security/get-configurations-for-enterprise",
-      "code-security/get-configurations-for-org",
-      "orgs/list-failed-invitations",
+      "code-scanning/list-alerts-for-org",
       "orgs/list-pending-invitations",
       "teams/list-members-in-org",
       "orgs/list-members",
       "orgs/list-outside-collaborators",
-      "migrations/list-repos-for-org",
-      "repos/list-collaborators",
-      "issues/list-comments-for-repo",
-      "git/get-commit",
-      "git/get-tree",
-      "git/create-tree",
-      "repos/list-deployments",
-      "repos/get-readme",
-      "security-advisories/list-global-advisories",
-      "code-scanning/list-alerts-for-org",
       "issues/list-for-org",
-      "orgs/list-memberships-for-authenticated-user",
-      "orgs/set-membership-for-user",
-      "teams/add-or-update-membership-for-user-in-org",
-      "teams/add-or-update-membership-for-user-legacy",
-      "code-scanning/list-alerts-for-repo",
-      "issues/list-for-repo",
-      "pulls/list",
-      "issues/add-assignees",
-      "issues/remove-assignees",
-      "issues/list-milestones",
-      "orgs/update-membership-for-authenticated-user",
-      "actions/review-pending-deployments-for-run",
-      "actions/get-workflow-run",
-      "repos/get-content",
+      "security-advisories/list-org-repository-advisories",
       "repos/list-for-org",
+      "code-security/get-configurations-for-org",
+      "orgs/list-memberships-for-authenticated-user",
       "packages/get-all-package-versions-for-package-owned-by-org",
-      "actions/get-self-hosted-runner-group-for-org",
-      "repos/list-for-authenticated-user",
-      "activity/get-repo-subscription",
-      "activity/set-thread-subscription",
-      "activity/set-repo-subscription",
-      "secret-scanning/create-push-protection-bypass",
-      "repos/get",
-      "licenses/get",
-      "licenses/get-all-commonly-used",
-      "codes-of-conduct/get-conduct-code",
-      "repos/create-fork",
-      "users/set-primary-email-visibility-for-authenticated-user",
-      "issues/remove-label",
-      "issues/get-label",
-      "code-security/create-configuration-for-enterprise",
-      "code-security/get-default-configurations-for-enterprise",
-      "code-security/update-enterprise-configuration",
-      "enterprise-teams/create",
-      "enterprise-teams/update",
-      "gitignore/get-template",
-      "repos/create-pages-site",
-      "gists/create",
-      "gists/list-comments",
-      "gists/create-comment",
-      "gists/update",
-      "orgs/update",
-      "actions/create-hosted-runner-for-org",
-      "actions/list-hosted-runners-for-org",
-      "actions/update-hosted-runner-for-org",
-      "actions/list-self-hosted-runners-for-org",
-      "actions/create-self-hosted-runner-group-for-org",
-      "actions/list-self-hosted-runner-groups-for-org",
-      "actions/update-self-hosted-runner-group-for-org",
-      "campaigns/create-campaign",
-      "campaigns/update-campaign",
-      "code-security/create-configuration",
-      "code-security/get-default-configurations",
-      "code-security/update-configuration",
-      "orgs/create-webhook",
-      "orgs/get-webhook-config-for-org",
-      "orgs/update-webhook",
-      "orgs/create-issue-type",
-      "orgs/update-issue-type",
-      "orgs/custom-properties-for-repos-create-or-update-organization-definition",
-      "repos/create-in-org",
-      "teams/create",
-      "teams/create-discussion-in-org",
-      "teams/update-discussion-in-org",
-      "teams/create-discussion-comment-in-org",
-      "teams/update-discussion-comment-in-org",
-      "repos/update-commit-comment",
-      "repos/create-commit-comment",
-      "repos/update",
-      "repos/add-collaborator",
-      "code-scanning/create-variant-analysis",
-      "code-scanning/get-variant-analysis",
-      "repos/list-activities",
-      "code-scanning/list-recent-analyses",
-      "repos/create-deployment",
-      "repos/get-pages-deployment",
-      "code-security/get-repositories-for-enterprise-configuration",
-      "code-security/get-repositories-for-configuration",
-      "checks/create",
-      "checks/list-for-ref",
-      "checks/update",
-      "checks/create-suite",
-      "checks/list-for-suite",
-      "repos/update-deployment-branch-policy",
-      "repos/create-webhook",
-      "users/update-authenticated",
-      "repos/create-deployment-branch-policy",
-      "issues/create",
-      "code-scanning/update-alert",
-      "dependabot/update-alert",
-      "repos/create-deployment-status",
-      "issues/update",
-      "codespaces/add-repository-for-secret-for-authenticated-user",
-      "issues/update-label",
-      "issues/create-milestone",
-      "issues/update-milestone",
-      "security-advisories/create-repository-advisory",
-      "security-advisories/create-private-vulnerability-report",
-      "repos/delete",
-      "git/create-commit",
-      "git/create-tag",
-      "pulls/dismiss-review",
-      "issues/create-comment",
-      "pulls/create",
-      "pulls/update-review-comment",
-      "pulls/update",
-      "pulls/create-review-comment",
-      "pulls/create-reply-for-review-comment",
-      "pulls/create-review",
-      "pulls/update-review",
-      "pulls/submit-review",
-      "repos/update-release-asset",
-      "repos/upload-release-asset",
-      "secret-scanning/update-alert",
-      "repos/create-commit-status",
-      "repos/create-using-template",
-      "teams/create-discussion-legacy",
-      "teams/update-discussion-legacy",
-      "codespaces/publish-for-authenticated-user",
-      "codespaces/create-with-repo-for-authenticated-user",
-      "codespaces/list-devcontainers-in-repository-for-authenticated-user",
-      "codespaces/create-with-pr-for-authenticated-user",
-      "codespaces/list-in-repository-for-authenticated-user",
-      "repos/delete-file",
+      "packages/list-packages-for-organization",
       "reactions/list-for-team-discussion-comment-in-org",
       "reactions/list-for-team-discussion-in-org",
+      "api-insights/get-subject-stats",
+      "users/get-context-for-user",
+      "packages/list-packages-for-user",
+      "apps/get-user-installation",
+      "checks/list-for-ref",
+      "checks/list-for-suite",
+      "actions/list-jobs-for-workflow-run",
+      "repos/list-activities",
+      "pulls/list-review-comments-for-repo",
+      "repos/list-forks",
+      "code-scanning/list-recent-analyses",
+      "code-scanning/list-alerts-for-repo",
+      "repos/list-collaborators",
+      "issues/list-for-repo",
+      "repos/create-for-authenticated-user",
+      "repos/list-for-authenticated-user",
+      "issues/list-milestones",
+      "pulls/list",
+      "security-advisories/list-repository-advisories",
       "reactions/list-for-commit-comment",
       "reactions/list-for-issue-comment",
       "reactions/list-for-issue",
       "reactions/list-for-pull-request-review-comment",
       "reactions/list-for-release",
-      "reactions/list-for-team-discussion-comment-legacy",
-      "reactions/list-for-team-discussion-legacy",
-      "reactions/create-for-team-discussion-comment-legacy",
-      "reactions/create-for-team-discussion-legacy",
-      "git/create-blob",
-      "apps/update-webhook-config-for-app",
-      "orgs/update-webhook-config-for-org",
-      "private-registries/create-org-private-registry",
-      "repos/create-org-ruleset",
-      "orgs/get-org-ruleset-history",
-      "repos/update-org-ruleset",
-      "hosted-compute/create-network-configuration-for-org",
-      "hosted-compute/list-network-configurations-for-org",
-      "hosted-compute/update-network-configuration-for-org",
+      "pulls/list-review-comments",
+      "issues/list-comments-for-repo",
+      "git/get-tag",
+      "repos/get-release-by-tag",
+      "repos/update-commit-comment",
+      "pulls/create",
+      "pulls/request-reviewers",
+      "pulls/update-review-comment",
+      "repos/list-commits",
+      "repos/create-commit-comment",
+      "pulls/create-review",
+      "pulls/delete-pending-review",
+      "pulls/update-review",
+      "pulls/submit-review",
+      "code-scanning/update-alert",
+      "dependabot/update-alert",
+      "pulls/update",
+      "repos/add-user-access-restrictions",
+      "issues/create",
+      "issues/add-sub-issue",
+      "issues/reprioritize-sub-issue",
+      "issues/check-user-can-be-assigned",
+      "issues/add-assignees",
+      "issues/remove-assignees",
+      "actions/review-pending-deployments-for-run",
+      "security-advisories/create-repository-advisory",
+      "security-advisories/create-fork",
+      "repos/merge",
+      "pulls/create-review-comment",
+      "pulls/create-reply-for-review-comment",
+      "repos/get-content",
+      "repos/list-deployments",
+      "codespaces/repo-machines-for-authenticated-user",
+      "codespaces/create-with-repo-for-authenticated-user",
+      "migrations/map-commit-author",
+      "issues/get-label",
+      "issues/add-labels",
+      "actions/list-self-hosted-runners-for-repo",
+      "repos/update",
+      "checks/create",
+      "checks/rerequest-run",
+      "checks/update",
+      "repos/create-deployment-branch-policy",
+      "repos/update-deployment-branch-policy",
+      "repos/create-fork",
+      "repos/create-webhook",
+      "repos/update-webhook",
+      "issues/remove-label",
+      "repos/create-deployment",
+      "repos/create-deployment-status",
+      "issues/update",
+      "repos/create-deploy-key",
+      "issues/create-milestone",
+      "issues/update-milestone",
+      "security-advisories/create-private-vulnerability-report",
+      "repos/update-release-asset",
+      "repos/update-release",
+      "repos/upload-release-asset",
       "repos/create-repo-ruleset",
-      "repos/get-repo-ruleset-history",
-      "repos/get-repo-ruleset-version",
       "repos/update-repo-ruleset",
-      "users/create-gpg-key-for-authenticated-user",
-      "projects/add-item-for-org",
-      "projects/add-item-for-user",
-      "reactions/create-for-team-discussion-comment-in-org",
-      "reactions/create-for-team-discussion-in-org",
+      "repos/create-using-template",
+      "repos/add-collaborator",
+      "repos/update-invitation",
+      "code-scanning/create-variant-analysis",
+      "git/create-commit",
+      "git/create-tag",
+      "code-scanning/commit-autofix",
+      "pulls/merge",
+      "repos/delete-file",
       "reactions/create-for-commit-comment",
       "repos/create-or-update-file-contents",
       "reactions/create-for-issue-comment",
       "reactions/create-for-issue",
       "reactions/create-for-pull-request-review-comment",
       "reactions/create-for-release",
-      "markdown/render",
-      "markdown/render-raw"
+      "reactions/delete-for-release"
     ]
   },
   "_timings": {
-    "longest_path_sec": 0.00431513786315918,
-    "betweenness_sec": 0.7157697677612305,
-    "degree_centrality_sec": 0.0009987354278564453,
-    "pickle_serialize_sec": 0.0,
-    "total_sec": 0.7336716651916504
+    "longest_path_sec": 0.004106044769287109,
+    "betweenness_sec": 0.3194901943206787,
+    "degree_centrality_sec": 0.00031495094299316406,
+    "pickle_serialize_sec": 0.0006680488586425781,
+    "total_sec": 0.33299803733825684
   },
   "centrality": {
     "betweenness_top": [
       [
-        "issues/list-milestones",
-        0.2228767089903249
+        "checks/create",
+        0.031874128411549525
       ],
       [
-        "issues/remove-assignees",
-        0.222711801070683
+        "checks/rerequest-run",
+        0.03154350021798175
+      ],
+      [
+        "checks/update",
+        0.03121124731584607
+      ],
+      [
+        "migrations/map-commit-author",
+        0.0254616880180451
+      ],
+      [
+        "issues/remove-dependency-blocked-by",
+        0.024780195796914466
+      ],
+      [
+        "issues/create",
+        0.02367200383431222
       ],
       [
         "issues/add-assignees",
-        0.2225452684424732
+        0.02346322878333699
       ],
       [
-        "pulls/list",
-        0.22237711110569547
+        "issues/remove-assignees",
+        0.023459167011917238
       ],
       [
-        "issues/list-for-repo",
-        0.22220732906034985
+        "repos/create-deployment-branch-policy",
+        0.023096044646991446
       ],
       [
-        "code-scanning/list-alerts-for-repo",
-        0.22203592230643635
-      ],
-      [
-        "teams/add-or-update-membership-for-user-legacy",
-        0.2218628908439549
-      ],
-      [
-        "teams/add-or-update-membership-for-user-in-org",
-        0.2216882346729056
-      ],
-      [
-        "orgs/set-membership-for-user",
-        0.2215119537932884
-      ],
-      [
-        "orgs/list-memberships-for-authenticated-user",
-        0.22133404820510327
+        "issues/check-user-can-be-assigned",
+        0.02305136516137418
       ]
     ],
     "degree_top": [
       [
-        "repos/list-for-authenticated-user",
-        0.062162162162162166
-      ],
-      [
-        "reactions/list-for-release",
-        0.06126126126126126
+        "issues/list-comments-for-repo",
+        0.2
       ],
       [
         "reactions/list-for-team-discussion-in-org",
-        0.05405405405405406
+        0.15405405405405406
       ],
       [
-        "packages/list-packages-for-organization",
-        0.05315315315315315
+        "orgs/enable-or-disable-security-product-on-all-org-repos",
+        0.08288288288288288
       ],
       [
-        "pulls/list-review-comments",
-        0.05315315315315315
+        "orgs/update",
+        0.06846846846846846
       ],
       [
-        "security-advisories/list-global-advisories",
-        0.04864864864864865
+        "actions/add-selected-repo-to-org-secret",
+        0.06576576576576576
       ],
       [
-        "repos/update",
-        0.04684684684684685
+        "codespaces/add-selected-repo-to-org-secret",
+        0.06576576576576576
       ],
       [
-        "issues/remove-dependency-blocked-by",
-        0.04504504504504504
+        "dependabot/add-selected-repo-to-org-secret",
+        0.06576576576576576
       ],
       [
-        "packages/get-all-package-versions-for-package-owned-by-org",
-        0.044144144144144144
+        "actions/remove-selected-repo-from-org-secret",
+        0.06486486486486487
       ],
       [
-        "migrations/start-for-org",
-        0.04144144144144144
+        "codespaces/remove-selected-repo-from-org-secret",
+        0.06486486486486487
+      ],
+      [
+        "dependabot/remove-selected-repo-from-org-secret",
+        0.06486486486486487
       ]
     ]
   },
@@ -339,23 +247,23 @@
       "avg_fields_per_node": 0.0
     },
     "edges": {
-      "count": 1644,
-      "total_bytes": 476314,
-      "avg_bytes_per_edge": 289,
+      "count": 3091,
+      "total_bytes": 946360,
+      "avg_bytes_per_edge": 306,
       "avg_fields_per_edge": 0.0
     },
     "overhead": {
       "per_node_bytes": 96,
       "per_edge_bytes": 40,
-      "total_overhead_bytes": 172416
+      "total_overhead_bytes": 230296
     },
-    "total_estimated_bytes": 847813,
-    "human_readable": "827.94KB"
+    "total_estimated_bytes": 1375739,
+    "human_readable": "1.31MB"
   },
   "serialization": {
-    "pickle_bytes": 86672
+    "pickle_bytes": 111364
   },
   "extras": {
-    "density": 0.001333106283601333
+    "density": 0.0025064668629025066
   }
 }

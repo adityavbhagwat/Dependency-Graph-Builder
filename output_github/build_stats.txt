@@ -1,0 +1,568 @@
+================================================================================
+DEPENDENCY GRAPH BUILD LOG - GITHUB
+Generated: 2026-01-22 20:54:15
+================================================================================
+
+================================================================================
+DEPENDENCY GRAPH BUILDER
+================================================================================
+
+[PHASE 1] Building Static Dependency Graph
+--------------------------------------------------------------------------------
+Step 1: Parsing OpenAPI specification...
+  Found 1111 operations
+
+Step 2: Adding operations to graph...
+
+Step 3: Analyzing dependencies...
+  - Parameter-wise dependencies...
+    Found 11715 dependencies
+  - CRUD dependencies...
+    Found 2107 dependencies
+  - Logical dependencies...
+    Found 3531 dependencies
+  - Nested resource dependencies...
+    Found 424 dependencies
+  - Constraint dependencies...
+    Found 23148 dependencies
+
+Step 4: Resolving conflicts and adding to graph...
+  Resolved to 26551 dependencies
+  Added 25951 dependencies, skipped 600 to prevent cycles.
+
+Step 5: Performing transitive reduction to remove redundant edges...
+  Graph optimized. Reduced edge count from 25951 to 3091.
+
+================================================================================
+✓ Graph building completed in 7.81 seconds
+================================================================================
+
+[EXPORT] Exporting dependency graph...
+Exported annotated OpenAPI specification to ./output_github/annotated_spec.yaml
+Exported JSON graph to ./output_github/graph.json
+Exported GraphML to ./output_github/graph.graphml
+Exported DOT graph to ./output_github/graph.dot
+Created interactive visualization at ./output_github/graph.html
+
+✓ All exports completed in ./output_github/
+
+[STATS] Generating graph statistics...
+
+--- Per-node and per-edge memory breakdown (estimated) ---
+Average per-node bytes (includes node id + attributes): 179 bytes
+  - Avg node-id bytes: 115 bytes (string length + object overhead)
+  - Avg number of attribute fields per node: 0.00
+  Reasoning:
+    * node-id: stored as Python object (usually str) => bytes = utf-8 length + object overhead.
+    * attributes: dictionary object overhead + sizes of keys and values recursively.
+    * Operation-like attribute objects contribute: object header + per-field sizes (operation_id, path, method, params, annotations).
+    * Lists/maps stored in attributes are walked recursively and their element sizes included.
+
+Average per-edge bytes (includes edge endpoints + attributes): 306 bytes
+  - Avg number of attribute fields per edge: 0.00
+  Reasoning:
+    * edge stores references to source/target (ids) plus an attributes dict.
+    * Dependency-like objects add their __dict__ fields (type, confidence, parameter mappings, flags).
+    * Each container or string contributes its own memory as estimated above.
+----------------------------------------------------------
+
+
+=== Dependency Graph Benchmark Report ===
+Nodes: 1111   Edges: 3091   DAG: True
+Components: count=52 largest=995
+Degree in: {'min': 0, 'max': 92, 'mean': 2.782178217821782, 'median': 1.0, 'stdev': 9.425881557719448} out: {'min': 0, 'max': 221, 'mean': 2.782178217821782, 'median': 1.0, 'stdev': 9.469990838881019}
+Detailed in-memory size estimate:
+  Nodes total bytes: 199083  avg/node: 179
+  (avg node-id bytes: 115  avg fields/node: 0.0)
+  Edges total bytes: 946360  avg/edge: 306
+  (avg fields/edge: 0.0)
+  Overhead total bytes: 230296
+  Estimated total in-memory bytes: 1375739 (1.31MB)
+Pickle serialized size: 111364 bytes
+Timings (s): {'longest_path_sec': 0.0045261383056640625, 'betweenness_sec': 0.3143479824066162, 'degree_centrality_sec': 0.0002989768981933594, 'pickle_serialize_sec': 0.0007328987121582031, 'total_sec': 0.3278989791870117}
+=== End Report ===
+
+
+
+================================================================================
+EDGE REDUCTION PIPELINE
+================================================================================
+  Raw dependencies (all analyzers):     40925
+  After conflict resolution:            26551
+  After cycle prevention:               25951
+  After transitive reduction (FINAL):   3091
+
+  Reduction Summary:
+    - Conflicts resolved:      14374 edges merged/removed
+    - Cycles prevented:        600 edges skipped
+    - Transitive reduction:    22860 redundant edges removed
+    - Total reduction:         92.4% (40925 → 3091)
+
+  By Analyzer:
+    - constraint: 23148
+    - parameter: 11715
+    - logical: 3531
+    - crud: 2107
+    - nested_resource: 424
+
+================================================================================
+DEPENDENCY TYPES SUMMARY
+================================================================================
+  constraint: 14519
+  parameter_data: 5574
+  authentication: 3210
+  crud: 2107
+  authorization: 321
+  nested_resource: 220
+
+================================================================================
+OPERATION SEQUENCES (Sample)
+================================================================================
+
+To execute: POST /app-manifests/{code}/conversions
+  Prerequisites:
+    1. GET /user/marketplace_purchases
+    2. GET /app/hook/deliveries/{delivery_id}
+    3. GET /user/marketplace_purchases/stubbed
+    4. GET /user/repository_invitations
+    5. GET /user/following
+    6. POST /user/keys
+    7. GET /app/installation-requests
+    8. GET /user/followers
+    9. GET /user/docker/conflicts
+    10. DELETE /user/interaction-limits
+    11. GET /user/installations
+    12. GET /user/{account_id}
+    13. GET /app/installations/{installation_id}
+    14. GET /user
+    15. DELETE /applications/{client_id}/grant
+    16. DELETE /user/repository_invitations/{invitation_id}
+    17. GET /orgs/{org}/campaigns
+    18. GET /user/interaction-limits
+    19. GET /app
+    20. GET /app/installations
+    21. GET /notifications
+    22. POST /user/ssh_signing_keys
+    23. GET /teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}/reactions
+    24. POST /user/migrations
+    25. DELETE /user/starred/{owner}/{repo}
+    26. POST /user/gpg_keys
+    27. POST /user/emails
+    28. GET /app/hook/deliveries
+    29. POST /user/codespaces
+    30. GET /user/subscriptions
+    31. GET /user/public_emails
+    32. POST /user/social_accounts
+    33. DELETE /user/installations/{installation_id}/repositories/{repository_id}
+    34. GET /user/starred/{owner}/{repo}
+    35. GET /user/starred
+    36. GET /user/blocks
+    37. PATCH /user/email/visibility
+    38. GET /user/packages
+    39. GET /user/installations/{installation_id}/repositories
+    40. GET /issues
+    41. GET /user/following/{username}
+    42. GET /notifications/threads/{thread_id}/subscription
+    43. GET /users/{username}/repos
+    44. PATCH /user/repository_invitations/{invitation_id}
+    45. GET /user/keys
+    46. DELETE /user/keys/{key_id}
+    47. GET /user/keys/{key_id}
+    48. PATCH /user
+    49. POST /user/{user_id}/projectsV2/{project_number}/drafts
+    50. GET /orgs/{org}/code-scanning/alerts
+    51. PUT /user/interaction-limits
+    52. DELETE /user/ssh_signing_keys/{ssh_signing_key_id}
+    53. GET /user/ssh_signing_keys/{ssh_signing_key_id}
+    54. GET /user/ssh_signing_keys
+    55. GET /teams/{team_id}/discussions/{discussion_number}/reactions
+    56. GET /user/migrations/{migration_id}/archive
+    57. DELETE /user/migrations/{migration_id}/repos/{repo_name}/lock
+    58. DELETE /user/migrations/{migration_id}/archive
+    59. GET /user/migrations
+    60. GET /user/migrations/{migration_id}/repositories
+    61. GET /user/gpg_keys
+    62. GET /user/gpg_keys/{gpg_key_id}
+    63. DELETE /user/gpg_keys/{gpg_key_id}
+    64. DELETE /user/emails
+    65. GET /user/emails
+    66. GET /user/codespaces/secrets/{secret_name}/repositories
+    67. GET /user/codespaces/{codespace_name}/machines
+    68. DELETE /user/codespaces/secrets/{secret_name}
+    69. GET /user/codespaces/secrets
+    70. GET /user/codespaces/{codespace_name}/exports/{export_id}
+    71. GET /user/codespaces
+    72. GET /user/codespaces/{codespace_name}
+    73. DELETE /user/codespaces/{codespace_name}
+    74. GET /user/codespaces/secrets/public-key
+    75. GET /user/codespaces/secrets/{secret_name}
+    76. DELETE /user/social_accounts
+    77. GET /user/social_accounts
+    78. PUT /user/starred/{owner}/{repo}
+    79. GET /user/packages/{package_type}/{package_name}/versions
+    80. PUT /user/installations/{installation_id}/repositories/{repository_id}
+    81. GET /user/issues
+    82. GET /search/users
+    83. GET /orgs/{org}/invitations
+    84. GET /teams/{team_id}/members
+    85. GET /user/migrations/{migration_id}
+    86. POST /user/codespaces/{codespace_name}/stop
+    87. POST /user/codespaces/{codespace_name}/exports
+    88. POST /user/codespaces/{codespace_name}/start
+    89. PUT /user/codespaces/secrets/{secret_name}/repositories
+    90. DELETE /user/packages/{package_type}/{package_name}/versions/{package_version_id}
+    91. GET /user/packages/{package_type}/{package_name}/versions/{package_version_id}
+    92. DELETE /user/packages/{package_type}/{package_name}
+    93. GET /user/packages/{package_type}/{package_name}
+    94. GET /orgs/{org}/teams/{team_slug}/members
+    95. GET /user/teams
+    96. PATCH /user/codespaces/{codespace_name}
+    97. POST /user/packages/{package_type}/{package_name}/restore
+    98. POST /user/packages/{package_type}/{package_name}/versions/{package_version_id}/restore
+    99. GET /orgs/{org}/members
+    100. POST /user/codespaces/{codespace_name}/publish
+    101. GET /orgs/{org}/outside_collaborators
+    102. GET /orgs/{org}/issues
+    103. GET /orgs/{org}/security-advisories
+    104. GET /orgs/{org}/repos
+    105. GET /orgs/{org}/code-security/configurations
+    106. GET /user/memberships/orgs
+    107. GET /orgs/{org}/packages/{package_type}/{package_name}/versions
+    108. GET /orgs/{org}/packages
+    109. GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions
+    110. GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions
+    111. GET /orgs/{org}/teams/{team_slug}/teams
+    112. GET /orgs/{org}/dependabot/secrets/{secret_name}
+    113. GET /orgs/{org}/code-security/configurations/{configuration_id}
+    114. GET /orgs/{org}/teams/{team_slug}/projects
+    115. GET /orgs/{org}/codespaces
+    116. GET /orgs/{org}/properties/values
+    117. GET /orgs/{org}/organization-roles/{role_id}/teams
+    118. GET /orgs/{org}/issue-types
+    119. GET /orgs/{org}/rulesets/rule-suites/{rule_suite_id}
+    120. GET /orgs/{org}/hooks
+    121. GET /orgs/{org}/campaigns/{campaign_number}
+    122. GET /orgs/{org}/migrations/{migration_id}/repositories
+    123. GET /orgs/{org}/settings/network-configurations/{network_configuration_id}
+    124. GET /orgs/{org}/organization-roles
+    125. GET /orgs/{org}/dependabot/secrets/public-key
+    126. GET /orgs/{org}/security-managers
+    127. GET /orgs/{org}/blocks
+    128. GET /orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}
+    129. GET /orgs/{org}/packages/{package_type}/{package_name}
+    130. GET /orgs/{org}/installation
+    131. GET /orgs/{org}/projectsV2/{project_number}/fields/{field_id}
+    132. DELETE /orgs/{org}/public_members/{username}
+    133. GET /orgs/{org}
+    134. GET /orgs/{org}/migrations
+    135. GET /orgs/{org}/teams/{team_slug}/projects/{project_id}
+    136. GET /orgs/{org}/rulesets/rule-suites
+    137. GET /orgs/{org}/dependabot/alerts
+    138. GET /orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}
+    139. GET /orgs/{org}/private-registries/public-key
+    140. GET /orgs/{org}/projectsV2/{project_number}/fields
+    141. GET /orgs/{org}/actions/secrets/{secret_name}
+    142. GET /orgs/{org}/actions/runner-groups/{runner_group_id}
+    143. GET /orgs/{org}/insights/api/subject-stats
+    144. GET /orgs/{org}/invitations/{invitation_id}/teams
+    145. GET /orgs/{org}/attestations/repositories
+    146. GET /orgs/{org}/rulesets/{ruleset_id}
+    147. GET /orgs/{org}/members/{username}/codespaces
+    148. GET /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}
+    149. GET /orgs/{org}/rulesets
+    150. GET /orgs/{org}/codespaces/secrets/{secret_name}
+    151. GET /orgs/{org}/hooks/{hook_id}/deliveries
+    152. GET /orgs/{org}/personal-access-tokens/{pat_id}/repositories
+    153. GET /orgs/{org}/organization-roles/{role_id}/users
+    154. GET /orgs/{org}/public_members
+    155. GET /orgs/{org}/personal-access-token-requests/{pat_request_id}/repositories
+    156. GET /orgs/{org}/actions/hosted-runners/{hosted_runner_id}
+    157. GET /orgs/{org}/private-registries/{secret_name}
+    158. GET /orgs/{org}/projectsV2/{project_number}
+    159. GET /orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}/versions/{version}
+    160. GET /orgs/{org}/projectsV2
+    161. GET /orgs/{org}/actions/secrets/public-key
+    162. GET /user/orgs
+    163. GET /orgs/{org}/teams
+    164. GET /orgs/{org}/teams/{team_slug}/invitations
+    165. GET /orgs/{org}/teams/{team_slug}
+    166. GET /orgs/{org}/memberships/{username}
+    167. GET /orgs/{org}/actions/runners/{runner_id}
+    168. GET /orgs/{org}/migrations/{migration_id}/archive
+    169. GET /orgs/{org}/secret-scanning/alerts
+    170. GET /orgs/{org}/teams/{team_slug}/repos
+    171. GET /orgs/{org}/organization-roles/{role_id}
+    172. GET /orgs/{org}/docker/conflicts
+    173. GET /orgs/{org}/actions/variables/{name}
+    174. GET /orgs/{org}/teams/{team_slug}/memberships/{username}
+    175. GET /orgs/{org}/codespaces/secrets/public-key
+    176. GET /orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}
+    177. GET /user/memberships/orgs/{org}
+    178. GET /orgs/{org}/public_members/{username}
+    179. GET /orgs/{org}/insights/api/user-stats/{user_id}
+    180. GET /orgs/{org}/hooks/{hook_id}
+    181. GET /orgs/{org}/failed_invitations
+    182. GET /orgs/{org}/settings/network-settings/{network_settings_id}
+    183. GET /orgs/{org}/members/{username}
+    184. GET /orgs/{org}/migrations/{migration_id}
+    185. GET /users/{username}/hovercard
+    186. PUT /orgs/{org}/public_members/{username}
+    187. PUT /orgs/{org}/memberships/{username}
+    188. POST /orgs/{org}/members/{username}/codespaces/{codespace_name}/stop
+    189. GET /users/{username}/packages
+    190. GET /orgs/{org}/actions/runners
+    191. GET /users/{username}/events
+    192. GET /users/{username}/ssh_signing_keys
+    193. GET /users/{username}/installation
+    194. GET /users/{username}/events/orgs/{org}
+    195. GET /users/{username}/gpg_keys
+    196. POST /orgs/{org}/actions/runners/registration-token
+    197. POST /orgs/{org}/actions/runners/remove-token
+    198. GET /repos/{owner}/{repo}/commits/{ref}/check-runs
+    199. POST /orgs/{org}/migrations
+    200. GET /repos/{owner}/{repo}/check-suites/{check_suite_id}/check-runs
+    201. PATCH /user/memberships/orgs/{org}
+    202. GET /repos/{owner}/{repo}/actions/runs/{run_id}/jobs
+    203. GET /repos/{owner}/{repo}/activity
+    204. GET /repos/{owner}/{repo}/pulls/comments
+    205. GET /repos/{owner}/{repo}/forks
+    206. GET /repos/{owner}/{repo}/code-scanning/analyses
+    207. GET /repos/{owner}/{repo}/code-scanning/alerts
+    208. GET /repos/{owner}/{repo}/collaborators
+    209. GET /repos/{owner}/{repo}/issues
+    210. POST /user/repos
+    211. GET /user/repos
+    212. GET /repos/{owner}/{repo}/milestones
+    213. GET /repos/{owner}/{repo}/pulls
+    214. GET /repos/{owner}/{repo}/security-advisories
+    215. GET /repos/{owner}/{repo}/comments/{comment_id}/reactions
+    216. GET /repos/{owner}/{repo}/issues/comments/{comment_id}/reactions
+    217. GET /repos/{owner}/{repo}/issues/{issue_number}/reactions
+    218. GET /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions
+    219. GET /repos/{owner}/{repo}/releases/{release_id}/reactions
+    220. GET /repos/{owner}/{repo}/pulls/{pull_number}/comments
+    221. GET /repos/{owner}/{repo}/issues/comments
+    222. GET /repos/{owner}/{repo}/commits/{ref}
+    223. GET /repos/{owner}/{repo}/pages/builds/{build_id}
+    224. DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams
+    225. GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/autofix
+    226. GET /repos/{owner}/{repo}/comments/{comment_id}
+    227. GET /repos/{owner}/{repo}/codespaces/secrets/{secret_name}
+    228. GET /repos/{owner}/{repo}/pulls/{pull_number}
+    229. GET /repos/{owner}/{repo}/releases/{release_id}/assets
+    230. GET /repos/{owner}/{repo}/issues/comments/{comment_id}
+    231. GET /repos/{owner}/{repo}/hooks/{hook_id}/deliveries
+    232. GET /repos/{owner}/{repo}/actions/runs/{run_id}/approvals
+    233. GET /repos/{owner}/{repo}/rulesets
+    234. GET /repos/{owner}/{repo}/git/commits/{commit_sha}
+    235. GET /repos/{owner}/{repo}/environments
+    236. GET /repos/{owner}/{repo}/installation
+    237. GET /repos/{owner}/{repo}/deployments/{deployment_id}/statuses
+    238. GET /repos/{owner}/{repo}/hooks/{hook_id}
+    239. GET /repos/{owner}/{repo}/issues/{issue_number}/events
+    240. GET /repos/{owner}/{repo}/keys
+    241. GET /repos/{owner}/{repo}/issues/{issue_number}/timeline
+    242. GET /repos/{owner}/{repo}/git/matching-refs/{ref}
+    243. GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews
+    244. GET /repos/{owner}/{repo}/actions/variables/{name}
+    245. GET /repos/{owner}/{repo}/dependabot/alerts/{alert_number}
+    246. GET /repos/{owner}/{repo}/git/tags/{tag_sha}
+    247. GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps
+    248. GET /repos/{owner}/{repo}/collaborators/{username}/permission
+    249. GET /repos/{owner}/{repo}/actions/secrets/{secret_name}
+    250. GET /repos/{owner}/{repo}/issues/{issue_number}/comments
+    251. GET /repos/{owner}/{repo}/pages
+    252. GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams
+    253. GET /repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}
+    254. GET /repos/{owner}/{repo}/actions/runners/{runner_id}
+    255. GET /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules/{protection_rule_id}
+    256. GET /repos/{owner}/{repo}/codespaces/secrets
+    257. GET /repos/{owner}/{repo}/traffic/popular/paths
+    258. GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions
+    259. GET /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocking
+    260. GET /repos/{owner}/{repo}/codespaces/devcontainers
+    261. GET /repos/{owner}/{repo}/code-scanning/default-setup
+    262. GET /repos/{owner}/{repo}/subscribers
+    263. GET /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies/{branch_policy_id}
+    264. GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}
+    265. GET /repos/{owner}/{repo}/rulesets/{ruleset_id}
+    266. GET /repos/{owner}/{repo}/dependabot/secrets/public-key
+    267. GET /repos/{owner}/{repo}/hooks
+    268. GET /repos/{owner}/{repo}/keys/{key_id}
+    269. GET /repos/{owner}/{repo}/notifications
+    270. GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/comments
+    271. GET /repos/{owner}/{repo}/contributors
+    272. GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users
+    273. GET /repos/{owner}/{repo}/community/profile
+    274. GET /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses/{codeql_variant_analysis_id}
+    275. GET /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by
+    276. GET /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers
+    277. GET /repos/{owner}/{repo}/comments
+    278. GET /repos/{owner}/{repo}/teams
+    279. GET /repos/{owner}/{repo}/actions/artifacts/{artifact_id}
+    280. GET /repos/{owner}/{repo}/branches/{branch}
+    281. GET /repos/{owner}/{repo}/commits/{ref}/statuses
+    282. GET /repos/{owner}/{repo}/check-suites/{check_suite_id}
+    283. GET /repos/{owner}/{repo}/environments/{environment_name}/variables
+    284. GET /repos/{owner}/{repo}/issues/{issue_number}/labels
+    285. GET /repos/{owner}/{repo}/milestones/{milestone_number}/labels
+    286. GET /repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}
+    287. GET /repos/{owner}/{repo}/pulls/{pull_number}/files
+    288. GET /repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}
+    289. GET /repos/{owner}/{repo}/import/authors
+    290. GET /repos/{owner}/{repo}/issues/{issue_number}
+    291. GET /repos/{owner}/{repo}/issues/{issue_number}/parent
+    292. GET /repos/{owner}/{repo}/codespaces/secrets/public-key
+    293. GET /repos/{owner}/{repo}/releases/assets/{asset_id}
+    294. GET /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies
+    295. GET /repos/{owner}/{repo}/pulls/comments/{comment_id}
+    296. GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}
+    297. GET /repos/{owner}/{repo}/actions/runs
+    298. GET /repos/{owner}/{repo}/actions/runs/{run_id}
+    299. GET /repos/{owner}/{repo}/commits/{ref}/status
+    300. GET /repos/{owner}/{repo}/code-scanning/codeql/databases
+    301. GET /repos/{owner}/{repo}/code-security-configuration
+    302. GET /repos/{owner}/{repo}/commits/{commit_sha}/comments
+    303. GET /repos/{owner}/{repo}/codespaces
+    304. GET /repos/{owner}/{repo}/commits/{commit_sha}/pulls
+    305. GET /repos/{owner}/{repo}/commits/{commit_sha}/branches-where-head
+    306. GET /repos/{owner}/{repo}/actions/jobs/{job_id}
+    307. GET /repos/{owner}/{repo}
+    308. GET /repos/{owner}/{repo}/rulesets/rule-suites/{rule_suite_id}
+    309. GET /repos/{owner}/{repo}/compare/{basehead}
+    310. GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances
+    311. GET /repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}
+    312. GET /repos/{owner}/{repo}/stats/contributors
+    313. GET /repos/{owner}/{repo}/pulls/{pull_number}/commits
+    314. GET /repos/{owner}/{repo}/license
+    315. GET /repos/{owner}/{repo}/deployments/{deployment_id}
+    316. GET /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules
+    317. GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}
+    318. GET /repos/{owner}/{repo}/tags
+    319. GET /repos/{owner}/{repo}/dependency-graph/compare/{basehead}
+    320. GET /repos/{owner}/{repo}/branches/{branch}/protection
+    321. GET /repos/{owner}/{repo}/assignees
+    322. GET /repos/{owner}/{repo}/import/large_files
+    323. GET /repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}
+    324. GET /repos/{owner}/{repo}/topics
+    325. GET /repos/{owner}/{repo}/check-runs/{check_run_id}
+    326. GET /repos/{owner}/{repo}/actions/secrets/public-key
+    327. GET /repos/{owner}/{repo}/pages/builds/latest
+    328. GET /repos/{owner}/{repo}/pulls/{pull_number}/merge
+    329. GET /repos/{owner}/{repo}/pages/builds
+    330. GET /repos/{owner}/{repo}/releases/{release_id}
+    331. GET /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments
+    332. GET /repos/{owner}/{repo}/environments/{environment_name}/secrets
+    333. GET /repos/{owner}/{repo}/events
+    334. GET /repos/{owner}/{repo}/dependabot/alerts
+    335. GET /repos/{owner}/{repo}/milestones/{milestone_number}
+    336. GET /repos/{owner}/{repo}/rulesets/rule-suites
+    337. GET /repos/{owner}/{repo}/secret-scanning/alerts
+    338. GET /repos/{owner}/{repo}/git/ref/{ref}
+    339. GET /repos/{owner}/{repo}/environments/{environment_name}/secrets/public-key
+    340. GET /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules/apps
+    341. GET /repos/{owner}/{repo}/issues/events
+    342. GET /repos/{owner}/{repo}/labels
+    343. GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}
+    344. GET /repos/{owner}/{repo}/releases
+    345. GET /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}
+    346. GET /repos/{owner}/{repo}/import
+    347. GET /repos/{owner}/{repo}/environments/{environment_name}
+    348. GET /repos/{owner}/{repo}/releases/latest
+    349. GET /repos/{owner}/{repo}/check-runs/{check_run_id}/annotations
+    350. GET /repos/{owner}/{repo}/dependabot/secrets/{secret_name}
+    351. GET /repos/{owner}/{repo}/security-advisories/{ghsa_id}
+    352. GET /repos/{owner}/{repo}/issues/{issue_number}/sub_issues
+    353. GET /repos/{owner}/{repo}/git/trees/{tree_sha}
+    354. GET /repos/{owner}/{repo}/releases/tags/{tag}
+    355. GET /repos/{owner}/{repo}/branches
+    356. POST /repos/{owner}/{repo}/transfer
+    357. GET /repos/{owner}/{repo}/git/blobs/{file_sha}
+    358. POST /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/autofix
+    359. DELETE /user/codespaces/secrets/{secret_name}/repositories/{repository_id}
+    360. PUT /user/codespaces/secrets/{secret_name}/repositories/{repository_id}
+    361. GET /repos/{owner}/{repo}/readme
+    362. GET /repos/{owner}/{repo}/readme/{dir}
+    363. PUT /user/codespaces/secrets/{secret_name}
+    364. GET /repos/{owner}/{repo}/issues/events/{event_id}
+    365. PATCH /repos/{owner}/{repo}/import
+    366. POST /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules
+    367. PUT /repos/{owner}/{repo}/environments/{environment_name}
+    368. GET /advisories
+    369. POST /repos/{owner}/{repo}/git/trees
+    370. PATCH /repos/{owner}/{repo}/comments/{comment_id}
+    371. POST /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams
+    372. POST /repos/{owner}/{repo}/branches/{branch}/rename
+    373. PUT /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams
+    374. POST /repos/{owner}/{repo}/git/blobs
+    375. PUT /repos/{owner}/{repo}/import
+    376. POST /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps
+    377. DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps
+    378. PUT /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps
+    379. GET /advisories/{ghsa_id}
+    380. POST /repos/{owner}/{repo}/pulls
+    381. PATCH /repos/{owner}/{repo}/import/lfs
+    382. POST /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers
+    383. POST /repos/{owner}/{repo}/pulls/{pull_number}/codespaces
+    384. DELETE /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers
+    385. PATCH /repos/{owner}/{repo}/pulls/comments/{comment_id}
+    386. GET /repos/{owner}/{repo}/commits
+    387. GET /repos/{owner}/{repo}/deployments/{deployment_id}/statuses/{status_id}
+    388. POST /repos/{owner}/{repo}/commits/{commit_sha}/comments
+    389. POST /repos/{owner}/{repo}/pulls/{pull_number}/reviews
+    390. DELETE /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}
+    391. PUT /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}
+    392. POST /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/events
+    393. PATCH /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}
+    394. PATCH /repos/{owner}/{repo}/dependabot/alerts/{alert_number}
+    395. PATCH /repos/{owner}/{repo}/pulls/{pull_number}
+    396. DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users
+    397. POST /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users
+    398. PUT /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users
+    399. GET /repos/{owner}/{repo}/issues/{issue_number}/assignees/{assignee}
+    400. POST /repos/{owner}/{repo}/issues
+    401. POST /repos/{owner}/{repo}/issues/{issue_number}/sub_issues
+    402. DELETE /repos/{owner}/{repo}/issues/{issue_number}/sub_issue
+    403. POST /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by
+    404. PATCH /repos/{owner}/{repo}/issues/{issue_number}/sub_issues/priority
+    405. GET /repos/{owner}/{repo}/assignees/{assignee}
+    406. POST /repos/{owner}/{repo}/issues/{issue_number}/assignees
+    407. DELETE /repos/{owner}/{repo}/issues/{issue_number}/assignees
+    408. POST /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments
+    409. PATCH /repos/{owner}/{repo}/issues/comments/{comment_id}
+    410. POST /repos/{owner}/{repo}/security-advisories
+    411. POST /repos/{owner}/{repo}/security-advisories/{ghsa_id}/forks
+    412. GET /repos/{owner}/{repo}/code-scanning/codeql/databases/{language}
+    413. POST /repos/{owner}/{repo}/merges
+    414. POST /repos/{owner}/{repo}/pulls/{pull_number}/comments
+    415. POST /repos/{owner}/{repo}/pulls/{pull_number}/comments/{comment_id}/replies
+    416. GET /repos/{owner}/{repo}/contents/{path}
+    417. GET /repos/{owner}/{repo}/deployments
+    418. GET /repos/{owner}/{repo}/codespaces/new
+    419. GET /repos/{owner}/{repo}/codespaces/permissions_check
+    420. GET /repos/{owner}/{repo}/codespaces/machines
+    421. POST /repos/{owner}/{repo}/codespaces
+    422. PATCH /repos/{owner}/{repo}/import/authors/{author_id}
+
+To execute: POST /app/hook/deliveries/{delivery_id}/attempts
+  Prerequisites:
+    1. GET /app/hook/deliveries/{delivery_id}
+    2. GET /app/hook/deliveries
+
+To execute: POST /app/installations/{installation_id}/access_tokens
+  Prerequisites:
+    1. GET /app/installations/{installation_id}
+    2. GET /app/installations
+
+To execute: PUT /app/installations/{installation_id}/suspended
+  Prerequisites:
+    1. GET /app/installations/{installation_id}
+    2. GET /app/installations
+
+To execute: POST /applications/{client_id}/token
+  Prerequisites:
+    (No dependencies - can execute directly)
+
+================================================================================
+END OF LOG
+================================================================================

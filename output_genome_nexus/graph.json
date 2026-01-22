@@ -6,36 +6,36 @@
       "method": "POST",
       "resource_type": "annotation",
       "consumes": [
+        "isoformOverrideSource",
         "token",
-        "fields",
-        "isoformOverrideSource"
+        "fields"
       ],
       "produces": [
-        "seq_region_name",
-        "strand",
-        "mutation_assessor",
-        "assembly_name",
-        "successfully_annotated",
-        "end",
-        "nucleotide_context",
-        "annotation_summary",
-        "clinvar",
         "colocatedVariants",
         "intergenic_consequences",
-        "id",
-        "transcript_consequences",
-        "allele_string",
-        "most_severe_consequence",
-        "ptms",
-        "originalVariantQuery",
-        "signalAnnotation",
-        "hotspots",
-        "hgvsg",
         "variant",
-        "my_variant_info",
-        "start",
+        "successfully_annotated",
+        "hotspots",
+        "clinvar",
+        "assembly_name",
+        "allele_string",
         "annotationJSON",
-        "oncokb"
+        "end",
+        "signalAnnotation",
+        "ptms",
+        "seq_region_name",
+        "oncokb",
+        "transcript_consequences",
+        "id",
+        "most_severe_consequence",
+        "annotation_summary",
+        "hgvsg",
+        "originalVariantQuery",
+        "start",
+        "my_variant_info",
+        "strand",
+        "nucleotide_context",
+        "mutation_assessor"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -46,36 +46,36 @@
       "method": "POST",
       "resource_type": "dbsnp",
       "consumes": [
+        "isoformOverrideSource",
         "token",
-        "fields",
-        "isoformOverrideSource"
+        "fields"
       ],
       "produces": [
-        "seq_region_name",
-        "strand",
-        "mutation_assessor",
-        "assembly_name",
-        "successfully_annotated",
-        "end",
-        "nucleotide_context",
-        "annotation_summary",
-        "clinvar",
         "colocatedVariants",
         "intergenic_consequences",
-        "id",
-        "transcript_consequences",
-        "allele_string",
-        "most_severe_consequence",
-        "ptms",
-        "originalVariantQuery",
-        "signalAnnotation",
-        "hotspots",
-        "hgvsg",
         "variant",
-        "my_variant_info",
-        "start",
+        "successfully_annotated",
+        "hotspots",
+        "clinvar",
+        "assembly_name",
+        "allele_string",
         "annotationJSON",
-        "oncokb"
+        "end",
+        "signalAnnotation",
+        "ptms",
+        "seq_region_name",
+        "oncokb",
+        "transcript_consequences",
+        "id",
+        "most_severe_consequence",
+        "annotation_summary",
+        "hgvsg",
+        "originalVariantQuery",
+        "start",
+        "my_variant_info",
+        "strand",
+        "nucleotide_context",
+        "mutation_assessor"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -86,37 +86,37 @@
       "method": "GET",
       "resource_type": "dbsnp",
       "consumes": [
-        "token",
-        "fields",
         "isoformOverrideSource",
-        "variantId"
+        "variantId",
+        "token",
+        "fields"
       ],
       "produces": [
-        "seq_region_name",
-        "strand",
-        "mutation_assessor",
-        "assembly_name",
-        "successfully_annotated",
-        "end",
-        "nucleotide_context",
-        "annotation_summary",
-        "clinvar",
         "colocatedVariants",
         "intergenic_consequences",
-        "id",
-        "transcript_consequences",
-        "allele_string",
-        "most_severe_consequence",
-        "ptms",
-        "originalVariantQuery",
-        "signalAnnotation",
-        "hotspots",
-        "hgvsg",
         "variant",
-        "my_variant_info",
-        "start",
+        "successfully_annotated",
+        "hotspots",
+        "clinvar",
+        "assembly_name",
+        "allele_string",
         "annotationJSON",
-        "oncokb"
+        "end",
+        "signalAnnotation",
+        "ptms",
+        "seq_region_name",
+        "oncokb",
+        "transcript_consequences",
+        "id",
+        "most_severe_consequence",
+        "annotation_summary",
+        "hgvsg",
+        "originalVariantQuery",
+        "start",
+        "my_variant_info",
+        "strand",
+        "nucleotide_context",
+        "mutation_assessor"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -127,41 +127,41 @@
       "method": "POST",
       "resource_type": "genomic",
       "consumes": [
-        "chromosome",
-        "variantAllele",
-        "isoformOverrideSource",
         "token",
-        "end",
         "referenceAllele",
+        "variantAllele",
+        "end",
+        "start",
+        "isoformOverrideSource",
         "fields",
-        "start"
+        "chromosome"
       ],
       "produces": [
-        "seq_region_name",
-        "strand",
-        "mutation_assessor",
-        "assembly_name",
-        "successfully_annotated",
-        "end",
-        "nucleotide_context",
-        "annotation_summary",
-        "clinvar",
         "colocatedVariants",
         "intergenic_consequences",
-        "id",
-        "transcript_consequences",
-        "allele_string",
-        "most_severe_consequence",
-        "ptms",
-        "originalVariantQuery",
-        "signalAnnotation",
-        "hotspots",
-        "hgvsg",
         "variant",
-        "my_variant_info",
-        "start",
+        "successfully_annotated",
+        "hotspots",
+        "clinvar",
+        "assembly_name",
+        "allele_string",
         "annotationJSON",
-        "oncokb"
+        "end",
+        "signalAnnotation",
+        "ptms",
+        "seq_region_name",
+        "oncokb",
+        "transcript_consequences",
+        "id",
+        "most_severe_consequence",
+        "annotation_summary",
+        "hgvsg",
+        "originalVariantQuery",
+        "start",
+        "my_variant_info",
+        "strand",
+        "nucleotide_context",
+        "mutation_assessor"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -172,37 +172,37 @@
       "method": "GET",
       "resource_type": "genomic",
       "consumes": [
+        "isoformOverrideSource",
         "token",
         "fields",
-        "genomicLocation",
-        "isoformOverrideSource"
+        "genomicLocation"
       ],
       "produces": [
-        "seq_region_name",
-        "strand",
-        "mutation_assessor",
-        "assembly_name",
-        "successfully_annotated",
-        "end",
-        "nucleotide_context",
-        "annotation_summary",
-        "clinvar",
         "colocatedVariants",
         "intergenic_consequences",
-        "id",
-        "transcript_consequences",
-        "allele_string",
-        "most_severe_consequence",
-        "ptms",
-        "originalVariantQuery",
-        "signalAnnotation",
-        "hotspots",
-        "hgvsg",
         "variant",
-        "my_variant_info",
-        "start",
+        "successfully_annotated",
+        "hotspots",
+        "clinvar",
+        "assembly_name",
+        "allele_string",
         "annotationJSON",
-        "oncokb"
+        "end",
+        "signalAnnotation",
+        "ptms",
+        "seq_region_name",
+        "oncokb",
+        "transcript_consequences",
+        "id",
+        "most_severe_consequence",
+        "annotation_summary",
+        "hgvsg",
+        "originalVariantQuery",
+        "start",
+        "my_variant_info",
+        "strand",
+        "nucleotide_context",
+        "mutation_assessor"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -213,37 +213,37 @@
       "method": "GET",
       "resource_type": "annotation",
       "consumes": [
-        "token",
         "variant",
         "isoformOverrideSource",
+        "token",
         "fields"
       ],
       "produces": [
-        "seq_region_name",
-        "strand",
-        "mutation_assessor",
-        "assembly_name",
-        "successfully_annotated",
-        "end",
-        "nucleotide_context",
-        "annotation_summary",
-        "clinvar",
         "colocatedVariants",
         "intergenic_consequences",
-        "id",
-        "transcript_consequences",
-        "allele_string",
-        "most_severe_consequence",
-        "ptms",
-        "originalVariantQuery",
-        "signalAnnotation",
-        "hotspots",
-        "hgvsg",
         "variant",
-        "my_variant_info",
-        "start",
+        "successfully_annotated",
+        "hotspots",
+        "clinvar",
+        "assembly_name",
+        "allele_string",
         "annotationJSON",
-        "oncokb"
+        "end",
+        "signalAnnotation",
+        "ptms",
+        "seq_region_name",
+        "oncokb",
+        "transcript_consequences",
+        "id",
+        "most_severe_consequence",
+        "annotation_summary",
+        "hgvsg",
+        "originalVariantQuery",
+        "start",
+        "my_variant_info",
+        "strand",
+        "nucleotide_context",
+        "mutation_assessor"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -255,11 +255,11 @@
       "resource_type": "entrez",
       "consumes": [],
       "produces": [
-        "entrezGeneId",
+        "previousSymbols",
+        "synonyms",
         "geneId",
         "hugoSymbol",
-        "synonyms",
-        "previousSymbols"
+        "entrezGeneId"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -273,11 +273,11 @@
         "entrezGeneId"
       ],
       "produces": [
-        "entrezGeneId",
+        "previousSymbols",
+        "synonyms",
         "geneId",
         "hugoSymbol",
-        "synonyms",
-        "previousSymbols"
+        "entrezGeneId"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -289,11 +289,11 @@
       "resource_type": "hgnc",
       "consumes": [],
       "produces": [
-        "entrezGeneId",
+        "previousSymbols",
+        "synonyms",
         "geneId",
         "hugoSymbol",
-        "synonyms",
-        "previousSymbols"
+        "entrezGeneId"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -307,11 +307,11 @@
         "hugoSymbol"
       ],
       "produces": [
-        "entrezGeneId",
+        "previousSymbols",
+        "synonyms",
         "geneId",
         "hugoSymbol",
-        "synonyms",
-        "previousSymbols"
+        "entrezGeneId"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -325,17 +325,17 @@
         "isoformOverrideSource"
       ],
       "produces": [
-        "exons",
-        "hugoSymbols",
-        "proteinLength",
+        "transcriptId",
+        "pfamDomains",
         "utrs",
-        "proteinId",
         "uniprotId",
         "refseqMrnaId",
-        "transcriptId",
+        "hugoSymbols",
+        "exons",
+        "ccdsId",
+        "proteinLength",
         "geneId",
-        "pfamDomains",
-        "ccdsId"
+        "proteinId"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -346,21 +346,21 @@
       "method": "GET",
       "resource_type": "hgnc",
       "consumes": [
-        "hugoSymbol",
-        "isoformOverrideSource"
+        "isoformOverrideSource",
+        "hugoSymbol"
       ],
       "produces": [
-        "exons",
-        "hugoSymbols",
-        "proteinLength",
+        "transcriptId",
+        "pfamDomains",
         "utrs",
-        "proteinId",
         "uniprotId",
         "refseqMrnaId",
-        "transcriptId",
+        "hugoSymbols",
+        "exons",
+        "ccdsId",
+        "proteinLength",
         "geneId",
-        "pfamDomains",
-        "ccdsId"
+        "proteinId"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -372,21 +372,21 @@
       "resource_type": "transcript",
       "consumes": [
         "geneId",
-        "proteinId",
-        "hugoSymbol"
+        "hugoSymbol",
+        "proteinId"
       ],
       "produces": [
-        "exons",
-        "hugoSymbols",
-        "proteinLength",
+        "transcriptId",
+        "pfamDomains",
         "utrs",
-        "proteinId",
         "uniprotId",
         "refseqMrnaId",
-        "transcriptId",
+        "hugoSymbols",
+        "exons",
+        "ccdsId",
+        "proteinLength",
         "geneId",
-        "pfamDomains",
-        "ccdsId"
+        "proteinId"
       ],
       "is_interesting": false,
       "annotations": {}
@@ -397,23 +397,23 @@
       "method": "POST",
       "resource_type": "transcript",
       "consumes": [
+        "geneIds",
         "proteinIds",
-        "hugoSymbols",
         "transcriptIds",
-        "geneIds"
+        "hugoSymbols"
       ],
       "produces": [
-        "exons",
-        "hugoSymbols",
-        "proteinLength",
+        "transcriptId",
+        "pfamDomains",
         "utrs",
-        "proteinId",
         "uniprotId",
         "refseqMrnaId",
-        "transcriptId",
+        "hugoSymbols",
+        "exons",
+        "ccdsId",
+        "proteinLength",
         "geneId",
-        "pfamDomains",
-        "ccdsId"
+        "proteinId"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -427,17 +427,17 @@
         "transcriptId"
       ],
       "produces": [
-        "exons",
-        "hugoSymbols",
-        "proteinLength",
+        "transcriptId",
+        "pfamDomains",
         "utrs",
-        "proteinId",
         "uniprotId",
         "refseqMrnaId",
-        "transcriptId",
+        "hugoSymbols",
+        "exons",
+        "ccdsId",
+        "proteinLength",
         "geneId",
-        "pfamDomains",
-        "ccdsId"
+        "proteinId"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -451,16 +451,16 @@
         "accession"
       ],
       "produces": [
-        "primary_id",
         "dbname",
-        "display_id",
-        "db_display_name",
-        "info_types",
-        "ensemblGeneId",
-        "version",
-        "synonyms",
         "info_text",
-        "description"
+        "info_types",
+        "display_id",
+        "description",
+        "version",
+        "primary_id",
+        "synonyms",
+        "db_display_name",
+        "ensemblGeneId"
       ],
       "is_interesting": false,
       "annotations": {}
@@ -472,10 +472,10 @@
       "resource_type": "header",
       "consumes": [],
       "produces": [
-        "source",
-        "title",
+        "compound",
         "pdbId",
-        "compound"
+        "source",
+        "title"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -489,10 +489,10 @@
         "pdbId"
       ],
       "produces": [
-        "source",
-        "title",
+        "compound",
         "pdbId",
-        "compound"
+        "source",
+        "title"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -504,8 +504,8 @@
       "resource_type": "domain",
       "consumes": [],
       "produces": [
-        "pfamAccession",
         "name",
+        "pfamAccession",
         "description"
       ],
       "is_interesting": true,
@@ -520,8 +520,8 @@
         "pfamAccession"
       ],
       "produces": [
-        "pfamAccession",
         "name",
+        "pfamAccession",
         "description"
       ],
       "is_interesting": true,
@@ -536,13 +536,13 @@
         "ensemblTranscriptId"
       ],
       "produces": [
-        "uniprotEntry",
-        "uniprotAccession",
-        "ensemblTranscriptIds",
-        "pubmedIds",
-        "type",
+        "sequence",
         "position",
-        "sequence"
+        "uniprotEntry",
+        "type",
+        "ensemblTranscriptIds",
+        "uniprotAccession",
+        "pubmedIds"
       ],
       "is_interesting": false,
       "annotations": {}
@@ -556,13 +556,13 @@
         "transcriptIds"
       ],
       "produces": [
-        "uniprotEntry",
-        "uniprotAccession",
-        "ensemblTranscriptIds",
-        "pubmedIds",
-        "type",
+        "sequence",
         "position",
-        "sequence"
+        "uniprotEntry",
+        "type",
+        "ensemblTranscriptIds",
+        "uniprotAccession",
+        "pubmedIds"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -654,8 +654,8 @@
       "confidence": 0.9,
       "parameter_mapping": {
         "hugoSymbols": "hugoSymbol",
-        "geneId": "geneId",
-        "proteinId": "proteinId"
+        "proteinId": "proteinId",
+        "geneId": "geneId"
       },
       "reason": "CRUD: Must create transcript before reading; Fuzzy match: 'hugoSymbols' -> 'hugoSymbol'; Parameter 'geneId' produced by fetchEnsemblTranscriptsByEnsemblFilterPOST and consumed by fetchEnsemblTranscriptsGET; Parameter 'proteinId' produced by fetchEnsemblTranscriptsByEnsemblFilterPOST and consumed by fetchEnsemblTranscriptsGET",
       "verified": null
@@ -740,28 +740,6 @@
     },
     {
       "source": "fetchCanonicalEnsemblGeneIdByHugoSymbolsPOST",
-      "target": "fetchCanonicalEnsemblGeneIdByEntrezGeneIdGET",
-      "type": "parameter_data",
-      "confidence": 1.0,
-      "parameter_mapping": {
-        "entrezGeneId": "entrezGeneId"
-      },
-      "reason": "Parameter 'entrezGeneId' produced by fetchCanonicalEnsemblGeneIdByHugoSymbolsPOST and consumed by fetchCanonicalEnsemblGeneIdByEntrezGeneIdGET",
-      "verified": null
-    },
-    {
-      "source": "fetchCanonicalEnsemblGeneIdByHugoSymbolGET",
-      "target": "fetchCanonicalEnsemblGeneIdByEntrezGeneIdGET",
-      "type": "parameter_data",
-      "confidence": 1.0,
-      "parameter_mapping": {
-        "entrezGeneId": "entrezGeneId"
-      },
-      "reason": "Parameter 'entrezGeneId' produced by fetchCanonicalEnsemblGeneIdByHugoSymbolGET and consumed by fetchCanonicalEnsemblGeneIdByEntrezGeneIdGET",
-      "verified": null
-    },
-    {
-      "source": "fetchCanonicalEnsemblGeneIdByHugoSymbolsPOST",
       "target": "fetchCanonicalEnsemblTranscriptByHugoSymbolGET",
       "type": "parameter_data",
       "confidence": 1.0,
@@ -780,6 +758,28 @@
         "hugoSymbol": "hugoSymbol"
       },
       "reason": "Parameter 'hugoSymbol' produced by fetchCanonicalEnsemblGeneIdByHugoSymbolGET and consumed by fetchCanonicalEnsemblTranscriptByHugoSymbolGET",
+      "verified": null
+    },
+    {
+      "source": "fetchCanonicalEnsemblGeneIdByHugoSymbolsPOST",
+      "target": "fetchCanonicalEnsemblGeneIdByEntrezGeneIdGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "entrezGeneId": "entrezGeneId"
+      },
+      "reason": "Parameter 'entrezGeneId' produced by fetchCanonicalEnsemblGeneIdByHugoSymbolsPOST and consumed by fetchCanonicalEnsemblGeneIdByEntrezGeneIdGET",
+      "verified": null
+    },
+    {
+      "source": "fetchCanonicalEnsemblGeneIdByHugoSymbolGET",
+      "target": "fetchCanonicalEnsemblGeneIdByEntrezGeneIdGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "entrezGeneId": "entrezGeneId"
+      },
+      "reason": "Parameter 'entrezGeneId' produced by fetchCanonicalEnsemblGeneIdByHugoSymbolGET and consumed by fetchCanonicalEnsemblGeneIdByEntrezGeneIdGET",
       "verified": null
     },
     {

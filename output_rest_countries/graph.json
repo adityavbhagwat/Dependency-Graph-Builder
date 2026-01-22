@@ -31,8 +31,8 @@
       "method": "GET",
       "resource_type": "alpha",
       "consumes": [
-        "fields",
-        "codes"
+        "codes",
+        "fields"
       ],
       "produces": [],
       "is_interesting": false,
@@ -44,8 +44,8 @@
       "method": "GET",
       "resource_type": "currency",
       "consumes": [
-        "fields",
-        "currency"
+        "currency",
+        "fields"
       ],
       "produces": [],
       "is_interesting": true,
@@ -57,9 +57,9 @@
       "method": "GET",
       "resource_type": "name",
       "consumes": [
-        "fields",
         "name",
-        "fullText"
+        "fullText",
+        "fields"
       ],
       "produces": [],
       "is_interesting": true,
@@ -71,8 +71,8 @@
       "method": "GET",
       "resource_type": "callingcode",
       "consumes": [
-        "fields",
-        "callingcode"
+        "callingcode",
+        "fields"
       ],
       "produces": [],
       "is_interesting": true,
@@ -97,8 +97,8 @@
       "method": "GET",
       "resource_type": "region",
       "consumes": [
-        "fields",
-        "region"
+        "region",
+        "fields"
       ],
       "produces": [],
       "is_interesting": true,
@@ -110,8 +110,8 @@
       "method": "GET",
       "resource_type": "lang",
       "consumes": [
-        "fields",
-        "lang"
+        "lang",
+        "fields"
       ],
       "produces": [],
       "is_interesting": true,
@@ -123,8 +123,8 @@
       "method": "GET",
       "resource_type": "regionalbloc",
       "consumes": [
-        "fields",
-        "regionalbloc"
+        "regionalbloc",
+        "fields"
       ],
       "produces": [],
       "is_interesting": true,
@@ -161,8 +161,8 @@
       "method": "GET",
       "resource_type": "alpha",
       "consumes": [
-        "fields",
-        "codes"
+        "codes",
+        "fields"
       ],
       "produces": [],
       "is_interesting": false,
@@ -174,8 +174,8 @@
       "method": "GET",
       "resource_type": "currency",
       "consumes": [
-        "fields",
-        "currency"
+        "currency",
+        "fields"
       ],
       "produces": [],
       "is_interesting": true,
@@ -187,9 +187,9 @@
       "method": "GET",
       "resource_type": "name",
       "consumes": [
-        "fields",
         "name",
-        "fullText"
+        "fullText",
+        "fields"
       ],
       "produces": [],
       "is_interesting": true,
@@ -214,8 +214,8 @@
       "method": "GET",
       "resource_type": "region",
       "consumes": [
-        "fields",
-        "region"
+        "region",
+        "fields"
       ],
       "produces": [],
       "is_interesting": true,
@@ -227,8 +227,8 @@
       "method": "GET",
       "resource_type": "subregion",
       "consumes": [
-        "fields",
-        "subregion"
+        "subregion",
+        "fields"
       ],
       "produces": [],
       "is_interesting": true,
@@ -240,8 +240,8 @@
       "method": "GET",
       "resource_type": "lang",
       "consumes": [
-        "fields",
-        "lang"
+        "lang",
+        "fields"
       ],
       "produces": [],
       "is_interesting": true,
@@ -253,8 +253,8 @@
       "method": "GET",
       "resource_type": "demonym",
       "consumes": [
-        "fields",
-        "demonym"
+        "demonym",
+        "fields"
       ],
       "produces": [],
       "is_interesting": true,
@@ -266,8 +266,8 @@
       "method": "GET",
       "resource_type": "translation",
       "consumes": [
-        "fields",
-        "translation"
+        "translation",
+        "fields"
       ],
       "produces": [],
       "is_interesting": true,

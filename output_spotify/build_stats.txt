@@ -1,6 +1,6 @@
 ================================================================================
 DEPENDENCY GRAPH BUILD LOG - SPOTIFY
-Generated: 2026-01-22 10:24:53
+Generated: 2026-01-22 20:54:06
 ================================================================================
 
 ================================================================================
@@ -79,10 +79,31 @@ Detailed in-memory size estimate:
   Overhead total bytes: 1808
   Estimated total in-memory bytes: 8033 (7.84KB)
 Pickle serialized size: 1260 bytes
-Timings (s): {'longest_path_sec': 6.699562072753906e-05, 'betweenness_sec': 6.389617919921875e-05, 'degree_centrality_sec': 7.152557373046875e-06, 'pickle_serialize_sec': 3.600120544433594e-05, 'total_sec': 0.00039887428283691406}
+Timings (s): {'longest_path_sec': 6.198883056640625e-05, 'betweenness_sec': 6.198883056640625e-05, 'degree_centrality_sec': 6.198883056640625e-06, 'pickle_serialize_sec': 4.1961669921875e-05, 'total_sec': 0.00042700767517089844}
 === End Report ===
 
 
+
+================================================================================
+EDGE REDUCTION PIPELINE
+================================================================================
+  Raw dependencies (all analyzers):     34
+  After conflict resolution:            22
+  After cycle prevention:               22
+  After transitive reduction (FINAL):   14
+
+  Reduction Summary:
+    - Conflicts resolved:      12 edges merged/removed
+    - Cycles prevented:        0 edges skipped
+    - Transitive reduction:    8 redundant edges removed
+    - Total reduction:         58.8% (34 → 14)
+
+  By Analyzer:
+    - parameter: 21
+    - crud: 13
+    - logical: 0
+    - nested_resource: 0
+    - constraint: 0
 
 ================================================================================
 DEPENDENCY TYPES SUMMARY
@@ -100,9 +121,9 @@ To execute: GET /playlists/{playlist_id}
 
 To execute: PUT /playlists/{playlist_id}
   Prerequisites:
-    1. GET /playlists/{playlist_id}
-    2. GET /playlists/{playlist_id}/images
-    3. GET /me/playlists
+    1. GET /playlists/{playlist_id}/images
+    2. GET /me/playlists
+    3. GET /playlists/{playlist_id}
     4. GET /playlists/{playlist_id}/tracks
 
 To execute: GET /playlists/{playlist_id}/images
@@ -111,9 +132,9 @@ To execute: GET /playlists/{playlist_id}/images
 
 To execute: PUT /playlists/{playlist_id1}/{tracks1}
   Prerequisites:
-    1. GET /playlists/{playlist_id}
-    2. GET /playlists/{playlist_id}/images
-    3. GET /me/playlists
+    1. GET /playlists/{playlist_id}/images
+    2. GET /me/playlists
+    3. GET /playlists/{playlist_id}
     4. GET /playlists/{playlist_id}/tracks
 
 To execute: GET /playlists/{playlist_id}/tracks

@@ -1,6 +1,6 @@
 ================================================================================
 DEPENDENCY GRAPH BUILD LOG - REST-COUNTRIES
-Generated: 2026-01-22 10:24:53
+Generated: 2026-01-22 20:54:06
 ================================================================================
 
 ================================================================================
@@ -34,7 +34,7 @@ Step 5: Performing transitive reduction to remove redundant edges...
   Graph optimized. Reduced edge count from 0 to 0.
 
 ================================================================================
-✓ Graph building completed in 0.05 seconds
+✓ Graph building completed in 0.03 seconds
 ================================================================================
 
 [EXPORT] Exporting dependency graph...
@@ -79,10 +79,30 @@ Detailed in-memory size estimate:
   Overhead total bytes: 2016
   Estimated total in-memory bytes: 4777 (4.67KB)
 Pickle serialized size: 1024 bytes
-Timings (s): {'longest_path_sec': 6.198883056640625e-05, 'betweenness_sec': 6.103515625e-05, 'degree_centrality_sec': 1.0967254638671875e-05, 'pickle_serialize_sec': 3.910064697265625e-05, 'total_sec': 0.0003910064697265625}
+Timings (s): {'longest_path_sec': 5.7220458984375e-05, 'betweenness_sec': 6.4849853515625e-05, 'degree_centrality_sec': 1.1205673217773438e-05, 'pickle_serialize_sec': 3.6716461181640625e-05, 'total_sec': 0.0003991127014160156}
 === End Report ===
 
 
+
+================================================================================
+EDGE REDUCTION PIPELINE
+================================================================================
+  Raw dependencies (all analyzers):     0
+  After conflict resolution:            0
+  After cycle prevention:               0
+  After transitive reduction (FINAL):   0
+
+  Reduction Summary:
+    - Conflicts resolved:      0 edges merged/removed
+    - Cycles prevented:        0 edges skipped
+    - Transitive reduction:    0 redundant edges removed
+
+  By Analyzer:
+    - parameter: 0
+    - crud: 0
+    - logical: 0
+    - nested_resource: 0
+    - constraint: 0
 
 ================================================================================
 DEPENDENCY TYPES SUMMARY

@@ -18,22 +18,22 @@
       "method": "PUT",
       "resource_type": "assignments",
       "consumes": [
-        "commitEmpDesc",
         "employeeId",
-        "employee",
-        "commitMgrDesc",
+        "commitDate",
         "project",
         "projectId",
-        "commitDate"
+        "commitEmpDesc",
+        "employee",
+        "commitMgrDesc"
       ],
       "produces": [
-        "commitEmpDesc",
         "employeeId",
-        "employee",
-        "commitMgrDesc",
+        "commitDate",
         "project",
         "projectId",
-        "commitDate"
+        "commitEmpDesc",
+        "employee",
+        "commitMgrDesc"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -44,22 +44,22 @@
       "method": "POST",
       "resource_type": "assignments",
       "consumes": [
-        "commitEmpDesc",
         "employeeId",
-        "employee",
-        "commitMgrDesc",
+        "commitDate",
         "project",
         "projectId",
-        "commitDate"
+        "commitEmpDesc",
+        "employee",
+        "commitMgrDesc"
       ],
       "produces": [
-        "commitEmpDesc",
         "employeeId",
-        "employee",
-        "commitMgrDesc",
+        "commitDate",
         "project",
         "projectId",
-        "commitDate"
+        "commitEmpDesc",
+        "employee",
+        "commitMgrDesc"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -102,13 +102,13 @@
         "projectId"
       ],
       "produces": [
-        "commitEmpDesc",
         "employeeId",
-        "lastName",
-        "commitMgrDesc",
         "commitDate",
+        "commitEmpDesc",
         "projectId",
-        "firstName"
+        "lastName",
+        "firstName",
+        "commitMgrDesc"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -147,22 +147,22 @@
       "method": "POST",
       "resource_type": "save",
       "consumes": [
-        "commitEmpDesc",
         "employeeId",
-        "employee",
-        "commitMgrDesc",
+        "commitDate",
         "project",
         "projectId",
-        "commitDate"
+        "commitEmpDesc",
+        "employee",
+        "commitMgrDesc"
       ],
       "produces": [
-        "commitEmpDesc",
         "employeeId",
-        "employee",
-        "commitMgrDesc",
+        "commitDate",
         "project",
         "projectId",
-        "commitDate"
+        "commitEmpDesc",
+        "employee",
+        "commitMgrDesc"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -173,22 +173,22 @@
       "method": "PUT",
       "resource_type": "update",
       "consumes": [
-        "commitEmpDesc",
         "employeeId",
-        "employee",
-        "commitMgrDesc",
+        "commitDate",
         "project",
         "projectId",
-        "commitDate"
+        "commitEmpDesc",
+        "employee",
+        "commitMgrDesc"
       ],
       "produces": [
-        "commitEmpDesc",
         "employeeId",
-        "employee",
-        "commitMgrDesc",
+        "commitDate",
         "project",
         "projectId",
-        "commitDate"
+        "commitEmpDesc",
+        "employee",
+        "commitMgrDesc"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -219,13 +219,13 @@
         "projectId"
       ],
       "produces": [
-        "commitEmpDesc",
         "employeeId",
-        "employee",
-        "commitMgrDesc",
+        "commitDate",
         "project",
         "projectId",
-        "commitDate"
+        "commitEmpDesc",
+        "employee",
+        "commitMgrDesc"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -250,12 +250,12 @@
       "method": "POST",
       "resource_type": "authenticate",
       "consumes": [
-        "password",
-        "username"
+        "username",
+        "password"
       ],
       "produces": [
-        "username",
-        "isEligible"
+        "isEligible",
+        "username"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -266,12 +266,12 @@
       "method": "POST",
       "resource_type": "authenticate",
       "consumes": [
-        "password",
-        "username"
+        "username",
+        "password"
       ],
       "produces": [
-        "username",
-        "isEligible"
+        "isEligible",
+        "username"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -294,17 +294,17 @@
       "method": "PUT",
       "resource_type": "credentials",
       "consumes": [
-        "credentialId",
-        "password",
-        "username",
         "enabled",
+        "password",
+        "credentialId",
+        "username",
         "role"
       ],
       "produces": [
-        "credentialId",
-        "password",
-        "username",
         "enabled",
+        "password",
+        "credentialId",
+        "username",
         "role"
       ],
       "is_interesting": true,
@@ -316,17 +316,17 @@
       "method": "POST",
       "resource_type": "credentials",
       "consumes": [
-        "credentialId",
-        "password",
-        "username",
         "enabled",
+        "password",
+        "credentialId",
+        "username",
         "role"
       ],
       "produces": [
-        "credentialId",
-        "password",
-        "username",
         "enabled",
+        "password",
+        "credentialId",
+        "username",
         "role"
       ],
       "is_interesting": true,
@@ -374,17 +374,17 @@
       "method": "POST",
       "resource_type": "save",
       "consumes": [
-        "credentialId",
-        "password",
-        "username",
         "enabled",
+        "password",
+        "credentialId",
+        "username",
         "role"
       ],
       "produces": [
-        "credentialId",
-        "password",
-        "username",
         "enabled",
+        "password",
+        "credentialId",
+        "username",
         "role"
       ],
       "is_interesting": true,
@@ -396,17 +396,17 @@
       "method": "PUT",
       "resource_type": "update",
       "consumes": [
-        "credentialId",
-        "password",
-        "username",
         "enabled",
+        "password",
+        "credentialId",
+        "username",
         "role"
       ],
       "produces": [
-        "credentialId",
-        "password",
-        "username",
         "enabled",
+        "password",
+        "credentialId",
+        "username",
         "role"
       ],
       "is_interesting": true,
@@ -421,10 +421,10 @@
         "username"
       ],
       "produces": [
-        "credentialId",
-        "password",
-        "username",
         "enabled",
+        "password",
+        "credentialId",
+        "username",
         "role"
       ],
       "is_interesting": true,
@@ -451,10 +451,10 @@
         "id"
       ],
       "produces": [
-        "credentialId",
-        "password",
-        "username",
         "enabled",
+        "password",
+        "credentialId",
+        "username",
         "role"
       ],
       "is_interesting": true,
@@ -614,28 +614,28 @@
       "method": "PUT",
       "resource_type": "employees",
       "consumes": [
-        "department",
-        "hiredate",
-        "lastName",
-        "phone",
-        "job",
-        "credential",
         "employeeId",
-        "email",
+        "hiredate",
+        "phone",
+        "lastName",
+        "firstName",
+        "job",
+        "department",
         "salary",
-        "firstName"
+        "email",
+        "credential"
       ],
       "produces": [
-        "department",
-        "hiredate",
-        "lastName",
-        "phone",
-        "job",
-        "credential",
         "employeeId",
-        "email",
+        "hiredate",
+        "phone",
+        "lastName",
+        "firstName",
+        "job",
+        "department",
         "salary",
-        "firstName"
+        "email",
+        "credential"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -646,28 +646,28 @@
       "method": "POST",
       "resource_type": "employees",
       "consumes": [
-        "department",
-        "hiredate",
-        "lastName",
-        "phone",
-        "job",
-        "credential",
         "employeeId",
-        "email",
+        "hiredate",
+        "phone",
+        "lastName",
+        "firstName",
+        "job",
+        "department",
         "salary",
-        "firstName"
+        "email",
+        "credential"
       ],
       "produces": [
-        "department",
-        "hiredate",
-        "lastName",
-        "phone",
-        "job",
-        "credential",
         "employeeId",
-        "email",
+        "hiredate",
+        "phone",
+        "lastName",
+        "firstName",
+        "job",
+        "department",
         "salary",
-        "firstName"
+        "email",
+        "credential"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -756,28 +756,28 @@
       "method": "POST",
       "resource_type": "save",
       "consumes": [
-        "department",
-        "hiredate",
-        "lastName",
-        "phone",
-        "job",
-        "credential",
         "employeeId",
-        "email",
+        "hiredate",
+        "phone",
+        "lastName",
+        "firstName",
+        "job",
+        "department",
         "salary",
-        "firstName"
+        "email",
+        "credential"
       ],
       "produces": [
-        "department",
-        "hiredate",
-        "lastName",
-        "phone",
-        "job",
-        "credential",
         "employeeId",
-        "email",
+        "hiredate",
+        "phone",
+        "lastName",
+        "firstName",
+        "job",
+        "department",
         "salary",
-        "firstName"
+        "email",
+        "credential"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -788,28 +788,28 @@
       "method": "PUT",
       "resource_type": "update",
       "consumes": [
-        "department",
-        "hiredate",
-        "lastName",
-        "phone",
-        "job",
-        "credential",
         "employeeId",
-        "email",
+        "hiredate",
+        "phone",
+        "lastName",
+        "firstName",
+        "job",
+        "department",
         "salary",
-        "firstName"
+        "email",
+        "credential"
       ],
       "produces": [
-        "department",
-        "hiredate",
-        "lastName",
-        "phone",
-        "job",
-        "credential",
         "employeeId",
-        "email",
+        "hiredate",
+        "phone",
+        "lastName",
+        "firstName",
+        "job",
+        "department",
         "salary",
-        "firstName"
+        "email",
+        "credential"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -823,16 +823,16 @@
         "username"
       ],
       "produces": [
-        "department",
-        "hiredate",
-        "lastName",
-        "phone",
-        "job",
-        "credential",
         "employeeId",
-        "email",
+        "hiredate",
+        "phone",
+        "lastName",
+        "firstName",
+        "job",
+        "department",
         "salary",
-        "firstName"
+        "email",
+        "credential"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -858,16 +858,16 @@
         "id"
       ],
       "produces": [
-        "department",
-        "hiredate",
-        "lastName",
-        "phone",
-        "job",
-        "credential",
         "employeeId",
-        "email",
+        "hiredate",
+        "phone",
+        "lastName",
+        "firstName",
+        "job",
+        "department",
         "salary",
-        "firstName"
+        "email",
+        "credential"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -890,16 +890,16 @@
       "method": "PUT",
       "resource_type": "locations",
       "consumes": [
-        "postalCode",
         "adr",
         "locationId",
-        "city"
+        "city",
+        "postalCode"
       ],
       "produces": [
-        "postalCode",
         "adr",
         "locationId",
-        "city"
+        "city",
+        "postalCode"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -910,16 +910,16 @@
       "method": "POST",
       "resource_type": "locations",
       "consumes": [
-        "postalCode",
         "adr",
         "locationId",
-        "city"
+        "city",
+        "postalCode"
       ],
       "produces": [
-        "postalCode",
         "adr",
         "locationId",
-        "city"
+        "city",
+        "postalCode"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -966,16 +966,16 @@
       "method": "POST",
       "resource_type": "save",
       "consumes": [
-        "postalCode",
         "adr",
         "locationId",
-        "city"
+        "city",
+        "postalCode"
       ],
       "produces": [
-        "postalCode",
         "adr",
         "locationId",
-        "city"
+        "city",
+        "postalCode"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -986,16 +986,16 @@
       "method": "PUT",
       "resource_type": "update",
       "consumes": [
-        "postalCode",
         "adr",
         "locationId",
-        "city"
+        "city",
+        "postalCode"
       ],
       "produces": [
-        "postalCode",
         "adr",
         "locationId",
-        "city"
+        "city",
+        "postalCode"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -1009,10 +1009,10 @@
         "id"
       ],
       "produces": [
-        "postalCode",
         "adr",
         "locationId",
-        "city"
+        "city",
+        "postalCode"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -1036,17 +1036,17 @@
       "resource_type": "projects",
       "consumes": [
         "endDate",
-        "status",
-        "title",
         "projectId",
-        "startDate"
+        "startDate",
+        "title",
+        "status"
       ],
       "produces": [
         "endDate",
-        "status",
-        "title",
         "projectId",
-        "startDate"
+        "startDate",
+        "title",
+        "status"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -1058,17 +1058,17 @@
       "resource_type": "projects",
       "consumes": [
         "endDate",
-        "status",
-        "title",
         "projectId",
-        "startDate"
+        "startDate",
+        "title",
+        "status"
       ],
       "produces": [
         "endDate",
-        "status",
-        "title",
         "projectId",
-        "startDate"
+        "startDate",
+        "title",
+        "status"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -1116,17 +1116,17 @@
       "resource_type": "save",
       "consumes": [
         "endDate",
-        "status",
-        "title",
         "projectId",
-        "startDate"
+        "startDate",
+        "title",
+        "status"
       ],
       "produces": [
         "endDate",
-        "status",
-        "title",
         "projectId",
-        "startDate"
+        "startDate",
+        "title",
+        "status"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -1138,17 +1138,17 @@
       "resource_type": "update",
       "consumes": [
         "endDate",
-        "status",
-        "title",
         "projectId",
-        "startDate"
+        "startDate",
+        "title",
+        "status"
       ],
       "produces": [
         "endDate",
-        "status",
-        "title",
         "projectId",
-        "startDate"
+        "startDate",
+        "title",
+        "status"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -1163,10 +1163,10 @@
       ],
       "produces": [
         "endDate",
-        "status",
-        "title",
         "projectId",
-        "startDate"
+        "startDate",
+        "title",
+        "status"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -1179,12 +1179,12 @@
       "type": "crud",
       "confidence": 1.0,
       "parameter_mapping": {
-        "projectId": "projectId",
-        "project": "project",
         "commitMgrDesc": "commitMgrDesc",
         "employee": "employee",
-        "employeeId": "employeeId",
         "commitEmpDesc": "commitEmpDesc",
+        "projectId": "projectId",
+        "project": "project",
+        "employeeId": "employeeId",
         "commitDate": "commitDate"
       },
       "reason": "CRUD: Must create assignments before updating; Fuzzy match: 'commitEmpDesc' -> 'commitMgrDesc'; Fuzzy match: 'commitMgrDesc' -> 'commitEmpDesc'; Fuzzy match: 'employee' -> 'employeeId'; Fuzzy match: 'employeeId' -> 'employee'; Fuzzy match: 'project' -> 'projectId'; Fuzzy match: 'projectId' -> 'project'; Parameter 'commitDate' produced by saveUsingPOST and consumed by updateUsingPUT; Parameter 'commitEmpDesc' produced by saveUsingPOST and consumed by updateUsingPUT; Parameter 'commitMgrDesc' produced by saveUsingPOST and consumed by updateUsingPUT; Parameter 'employee' produced by saveUsingPOST and consumed by updateUsingPUT; Parameter 'employeeId' produced by saveUsingPOST and consumed by updateUsingPUT; Parameter 'project' produced by saveUsingPOST and consumed by updateUsingPUT; Parameter 'projectId' produced by saveUsingPOST and consumed by updateUsingPUT",
@@ -1196,12 +1196,12 @@
       "type": "crud",
       "confidence": 1.0,
       "parameter_mapping": {
-        "projectId": "projectId",
-        "project": "project",
         "commitMgrDesc": "commitMgrDesc",
         "employee": "employee",
-        "employeeId": "employeeId",
         "commitEmpDesc": "commitEmpDesc",
+        "projectId": "projectId",
+        "project": "project",
+        "employeeId": "employeeId",
         "commitDate": "commitDate"
       },
       "reason": "CRUD: Often read assignments before updating; Fuzzy match: 'commitEmpDesc' -> 'commitMgrDesc'; Fuzzy match: 'commitMgrDesc' -> 'commitEmpDesc'; Fuzzy match: 'employee' -> 'employeeId'; Fuzzy match: 'employeeId' -> 'employee'; Fuzzy match: 'project' -> 'projectId'; Fuzzy match: 'projectId' -> 'project'; Parameter 'commitDate' produced by findByIdUsingGET and consumed by updateUsingPUT; Parameter 'commitEmpDesc' produced by findByIdUsingGET and consumed by updateUsingPUT; Parameter 'commitMgrDesc' produced by findByIdUsingGET and consumed by updateUsingPUT; Parameter 'employee' produced by findByIdUsingGET and consumed by updateUsingPUT; Parameter 'employeeId' produced by findByIdUsingGET and consumed by updateUsingPUT; Parameter 'project' produced by findByIdUsingGET and consumed by updateUsingPUT; Parameter 'projectId' produced by findByIdUsingGET and consumed by updateUsingPUT",
@@ -1213,8 +1213,8 @@
       "type": "crud",
       "confidence": 1.0,
       "parameter_mapping": {
-        "project": "projectId",
         "employee": "employeeId",
+        "project": "projectId",
         "projectId": "projectId",
         "employeeId": "employeeId"
       },
@@ -1227,10 +1227,10 @@
       "type": "crud",
       "confidence": 1.0,
       "parameter_mapping": {
-        "project": "projectId",
         "employee": "employeeId",
-        "commitDate": "commitDate",
+        "project": "projectId",
         "projectId": "projectId",
+        "commitDate": "commitDate",
         "employeeId": "employeeId"
       },
       "reason": "/app/api/assignments/{employeeId}/{projectId}/{commitDate} is nested under /app/api/assignments; CRUD: Must create assignments before reading; Fuzzy match: 'employee' -> 'employeeId'; Fuzzy match: 'project' -> 'projectId'; Parameter 'commitDate' produced by saveUsingPOST and consumed by findByIdUsingGET; Parameter 'employeeId' produced by saveUsingPOST and consumed by findByIdUsingGET; Parameter 'projectId' produced by saveUsingPOST and consumed by findByIdUsingGET",
@@ -1242,10 +1242,10 @@
       "type": "crud",
       "confidence": 1.0,
       "parameter_mapping": {
-        "project": "projectId",
         "employee": "employeeId",
-        "commitDate": "commitDate",
+        "project": "projectId",
         "projectId": "projectId",
+        "commitDate": "commitDate",
         "employeeId": "employeeId"
       },
       "reason": "/app/api/assignments/{employeeId}/{projectId}/{commitDate} is nested under /app/api/assignments; CRUD: Must create assignments before deleting; Fuzzy match: 'employee' -> 'employeeId'; Fuzzy match: 'project' -> 'projectId'; Parameter 'commitDate' produced by saveUsingPOST and consumed by deleteByIdUsingDELETE_1; Parameter 'employeeId' produced by saveUsingPOST and consumed by deleteByIdUsingDELETE_1; Parameter 'projectId' produced by saveUsingPOST and consumed by deleteByIdUsingDELETE_1",
@@ -1258,10 +1258,10 @@
       "confidence": 1.0,
       "parameter_mapping": {
         "role": "role",
-        "enabled": "enabled",
         "username": "username",
+        "credentialId": "credentialId",
         "password": "password",
-        "credentialId": "credentialId"
+        "enabled": "enabled"
       },
       "reason": "CRUD: Must create credentials before updating; Parameter 'credentialId' produced by saveUsingPOST_2 and consumed by updateUsingPUT_2; Parameter 'enabled' produced by saveUsingPOST_2 and consumed by updateUsingPUT_2; Parameter 'password' produced by saveUsingPOST_2 and consumed by updateUsingPUT_2; Parameter 'role' produced by saveUsingPOST_2 and consumed by updateUsingPUT_2; Parameter 'username' produced by saveUsingPOST_2 and consumed by updateUsingPUT_2",
       "verified": null
@@ -1273,10 +1273,10 @@
       "confidence": 1.0,
       "parameter_mapping": {
         "role": "role",
-        "enabled": "enabled",
         "username": "username",
+        "credentialId": "credentialId",
         "password": "password",
-        "credentialId": "credentialId"
+        "enabled": "enabled"
       },
       "reason": "CRUD: Often read credentials before updating; Parameter 'credentialId' produced by findByIdUsingGET_1 and consumed by updateUsingPUT_2; Parameter 'enabled' produced by findByIdUsingGET_1 and consumed by updateUsingPUT_2; Parameter 'password' produced by findByIdUsingGET_1 and consumed by updateUsingPUT_2; Parameter 'role' produced by findByIdUsingGET_1 and consumed by updateUsingPUT_2; Parameter 'username' produced by findByIdUsingGET_1 and consumed by updateUsingPUT_2",
       "verified": null
@@ -1313,16 +1313,16 @@
       "type": "crud",
       "confidence": 1.0,
       "parameter_mapping": {
-        "firstName": "firstName",
-        "salary": "salary",
-        "email": "email",
-        "employeeId": "employeeId",
         "credential": "credential",
+        "email": "email",
+        "salary": "salary",
+        "department": "department",
         "job": "job",
-        "phone": "phone",
+        "firstName": "firstName",
         "lastName": "lastName",
+        "phone": "phone",
         "hiredate": "hiredate",
-        "department": "department"
+        "employeeId": "employeeId"
       },
       "reason": "CRUD: Must create employees before updating; Parameter 'credential' produced by saveUsingPOST_6 and consumed by updateUsingPUT_6; Parameter 'department' produced by saveUsingPOST_6 and consumed by updateUsingPUT_6; Parameter 'email' produced by saveUsingPOST_6 and consumed by updateUsingPUT_6; Parameter 'employeeId' produced by saveUsingPOST_6 and consumed by updateUsingPUT_6; Parameter 'firstName' produced by saveUsingPOST_6 and consumed by updateUsingPUT_6; Parameter 'hiredate' produced by saveUsingPOST_6 and consumed by updateUsingPUT_6; Parameter 'job' produced by saveUsingPOST_6 and consumed by updateUsingPUT_6; Parameter 'lastName' produced by saveUsingPOST_6 and consumed by updateUsingPUT_6; Parameter 'phone' produced by saveUsingPOST_6 and consumed by updateUsingPUT_6; Parameter 'salary' produced by saveUsingPOST_6 and consumed by updateUsingPUT_6",
       "verified": null
@@ -1333,16 +1333,16 @@
       "type": "crud",
       "confidence": 1.0,
       "parameter_mapping": {
-        "firstName": "firstName",
-        "salary": "salary",
-        "email": "email",
-        "employeeId": "employeeId",
         "credential": "credential",
+        "email": "email",
+        "salary": "salary",
+        "department": "department",
         "job": "job",
-        "phone": "phone",
+        "firstName": "firstName",
         "lastName": "lastName",
+        "phone": "phone",
         "hiredate": "hiredate",
-        "department": "department"
+        "employeeId": "employeeId"
       },
       "reason": "CRUD: Often read employees before updating; Parameter 'credential' produced by findByIdUsingGET_3 and consumed by updateUsingPUT_6; Parameter 'department' produced by findByIdUsingGET_3 and consumed by updateUsingPUT_6; Parameter 'email' produced by findByIdUsingGET_3 and consumed by updateUsingPUT_6; Parameter 'employeeId' produced by findByIdUsingGET_3 and consumed by updateUsingPUT_6; Parameter 'firstName' produced by findByIdUsingGET_3 and consumed by updateUsingPUT_6; Parameter 'hiredate' produced by findByIdUsingGET_3 and consumed by updateUsingPUT_6; Parameter 'job' produced by findByIdUsingGET_3 and consumed by updateUsingPUT_6; Parameter 'lastName' produced by findByIdUsingGET_3 and consumed by updateUsingPUT_6; Parameter 'phone' produced by findByIdUsingGET_3 and consumed by updateUsingPUT_6; Parameter 'salary' produced by findByIdUsingGET_3 and consumed by updateUsingPUT_6",
       "verified": null
@@ -1353,10 +1353,10 @@
       "type": "crud",
       "confidence": 1.0,
       "parameter_mapping": {
+        "postalCode": "postalCode",
         "city": "city",
         "locationId": "locationId",
-        "adr": "adr",
-        "postalCode": "postalCode"
+        "adr": "adr"
       },
       "reason": "CRUD: Must create locations before updating; Parameter 'adr' produced by saveUsingPOST_8 and consumed by updateUsingPUT_8; Parameter 'city' produced by saveUsingPOST_8 and consumed by updateUsingPUT_8; Parameter 'locationId' produced by saveUsingPOST_8 and consumed by updateUsingPUT_8; Parameter 'postalCode' produced by saveUsingPOST_8 and consumed by updateUsingPUT_8",
       "verified": null
@@ -1367,10 +1367,10 @@
       "type": "crud",
       "confidence": 1.0,
       "parameter_mapping": {
+        "postalCode": "postalCode",
         "city": "city",
         "locationId": "locationId",
-        "adr": "adr",
-        "postalCode": "postalCode"
+        "adr": "adr"
       },
       "reason": "CRUD: Often read locations before updating; Parameter 'adr' produced by findByIdUsingGET_4 and consumed by updateUsingPUT_8; Parameter 'city' produced by findByIdUsingGET_4 and consumed by updateUsingPUT_8; Parameter 'locationId' produced by findByIdUsingGET_4 and consumed by updateUsingPUT_8; Parameter 'postalCode' produced by findByIdUsingGET_4 and consumed by updateUsingPUT_8",
       "verified": null
@@ -1381,10 +1381,10 @@
       "type": "crud",
       "confidence": 1.0,
       "parameter_mapping": {
+        "status": "status",
+        "title": "title",
         "startDate": "startDate",
         "projectId": "projectId",
-        "title": "title",
-        "status": "status",
         "endDate": "endDate"
       },
       "reason": "CRUD: Must create projects before updating; Parameter 'endDate' produced by saveUsingPOST_10 and consumed by updateUsingPUT_10; Parameter 'projectId' produced by saveUsingPOST_10 and consumed by updateUsingPUT_10; Parameter 'startDate' produced by saveUsingPOST_10 and consumed by updateUsingPUT_10; Parameter 'status' produced by saveUsingPOST_10 and consumed by updateUsingPUT_10; Parameter 'title' produced by saveUsingPOST_10 and consumed by updateUsingPUT_10",
@@ -1396,10 +1396,10 @@
       "type": "crud",
       "confidence": 1.0,
       "parameter_mapping": {
+        "status": "status",
+        "title": "title",
         "startDate": "startDate",
         "projectId": "projectId",
-        "title": "title",
-        "status": "status",
         "endDate": "endDate"
       },
       "reason": "CRUD: Often read projects before updating; Parameter 'endDate' produced by findByIdUsingGET_5 and consumed by updateUsingPUT_10; Parameter 'projectId' produced by findByIdUsingGET_5 and consumed by updateUsingPUT_10; Parameter 'startDate' produced by findByIdUsingGET_5 and consumed by updateUsingPUT_10; Parameter 'status' produced by findByIdUsingGET_5 and consumed by updateUsingPUT_10; Parameter 'title' produced by findByIdUsingGET_5 and consumed by updateUsingPUT_10",
@@ -2111,10 +2111,10 @@
       "type": "parameter_data",
       "confidence": 1.0,
       "parameter_mapping": {
-        "project": "projectId",
         "employee": "employeeId",
-        "commitDate": "commitDate",
+        "project": "projectId",
         "projectId": "projectId",
+        "commitDate": "commitDate",
         "employeeId": "employeeId"
       },
       "reason": "Fuzzy match: 'employee' -> 'employeeId'; Fuzzy match: 'project' -> 'projectId'; Parameter 'commitDate' produced by updateUsingPUT and consumed by deleteByIdUsingDELETE_1; Parameter 'employeeId' produced by updateUsingPUT and consumed by deleteByIdUsingDELETE_1; Parameter 'projectId' produced by updateUsingPUT and consumed by deleteByIdUsingDELETE_1",
@@ -2126,8 +2126,8 @@
       "type": "parameter_data",
       "confidence": 1.0,
       "parameter_mapping": {
-        "project": "projectId",
         "employee": "employeeId",
+        "project": "projectId",
         "projectId": "projectId",
         "employeeId": "employeeId"
       },
@@ -2140,10 +2140,10 @@
       "type": "parameter_data",
       "confidence": 1.0,
       "parameter_mapping": {
-        "project": "projectId",
         "employee": "employeeId",
-        "commitDate": "commitDate",
+        "project": "projectId",
         "projectId": "projectId",
+        "commitDate": "commitDate",
         "employeeId": "employeeId"
       },
       "reason": "Fuzzy match: 'employee' -> 'employeeId'; Fuzzy match: 'project' -> 'projectId'; Parameter 'commitDate' produced by findByIdUsingGET and consumed by deleteByIdUsingDELETE_1; Parameter 'employeeId' produced by findByIdUsingGET and consumed by deleteByIdUsingDELETE_1; Parameter 'projectId' produced by findByIdUsingGET and consumed by deleteByIdUsingDELETE_1",

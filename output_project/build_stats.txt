@@ -1,6 +1,6 @@
 ================================================================================
 DEPENDENCY GRAPH BUILD LOG - PROJECT
-Generated: 2026-01-22 10:24:53
+Generated: 2026-01-22 20:54:03
 ================================================================================
 
 ================================================================================
@@ -79,10 +79,31 @@ Detailed in-memory size estimate:
   Overhead total bytes: 10152
   Estimated total in-memory bytes: 42461 (41.47KB)
 Pickle serialized size: 3838 bytes
-Timings (s): {'longest_path_sec': 0.0003077983856201172, 'betweenness_sec': 0.0010602474212646484, 'degree_centrality_sec': 2.7894973754882812e-05, 'pickle_serialize_sec': 7.319450378417969e-05, 'total_sec': 0.0020711421966552734}
+Timings (s): {'longest_path_sec': 0.00024390220642089844, 'betweenness_sec': 0.0010669231414794922, 'degree_centrality_sec': 2.6226043701171875e-05, 'pickle_serialize_sec': 7.915496826171875e-05, 'total_sec': 0.002007007598876953}
 === End Report ===
 
 
+
+================================================================================
+EDGE REDUCTION PIPELINE
+================================================================================
+  Raw dependencies (all analyzers):     708
+  After conflict resolution:            370
+  After cycle prevention:               339
+  After transitive reduction (FINAL):   93
+
+  Reduction Summary:
+    - Conflicts resolved:      338 edges merged/removed
+    - Cycles prevented:        31 edges skipped
+    - Transitive reduction:    246 redundant edges removed
+    - Total reduction:         86.9% (708 → 93)
+
+  By Analyzer:
+    - parameter: 614
+    - crud: 50
+    - nested_resource: 36
+    - logical: 8
+    - constraint: 0
 
 ================================================================================
 DEPENDENCY TYPES SUMMARY
@@ -99,8 +120,8 @@ OPERATION SEQUENCES (Sample)
 To execute: PUT /app/api/assignments
   Prerequisites:
     1. POST /app/api/assignments
-    2. GET /app/api/assignments/{employeeId}/{projectId}/{commitDate}
-    3. GET /app/api/assignments
+    2. GET /app/api/assignments
+    3. GET /app/api/assignments/{employeeId}/{projectId}/{commitDate}
     4. GET /app/api/assignments/
     5. GET /app/api/assignments/{employeeId}/{projectId}
 
@@ -113,15 +134,15 @@ To execute: GET /app/api/assignments/data/project-commit/{employeeId}/{projectId
     1. POST /app/api/assignments
     2. POST /app/api/credentials
     3. POST /app/api/departments
-    4. GET /app/api/assignments/{employeeId}/{projectId}/{commitDate}
-    5. GET /app/api/assignments
+    4. GET /app/api/assignments
+    5. GET /app/api/assignments/{employeeId}/{projectId}/{commitDate}
     6. GET /app/api/assignments/
-    7. GET /app/api/credentials/{id}
+    7. GET /app/api/credentials
     8. GET /app/api/credentials/username/{username}
-    9. GET /app/api/credentials
+    9. GET /app/api/credentials/{id}
     10. GET /app/api/credentials/
-    11. GET /app/api/departments
-    12. GET /app/api/departments/
+    11. GET /app/api/departments/
+    12. GET /app/api/departments
     13. GET /app/api/departments/{id}
     14. GET /app/api/assignments/{employeeId}/{projectId}
     15. PUT /app/api/credentials
@@ -133,28 +154,28 @@ To execute: GET /app/api/assignments/data/project-commit/{employeeId}/{projectId
     21. PUT /app/api/credentials/update
     22. PUT /app/api/departments/update
     23. POST /app/api/assignments/save
-    24. POST /app/api/employees
-    25. POST /app/api/projects
-    26. GET /app/api/employees/
-    27. GET /app/api/employees/{id}
-    28. GET /app/api/employees/username/{username}
-    29. GET /app/api/employees
-    30. GET /app/api/projects
-    31. GET /app/api/projects/
-    32. GET /app/api/projects/{id}
-    33. POST /app/api/employees/save
-    34. POST /app/api/projects/save
+    24. POST /app/api/projects
+    25. POST /app/api/employees
+    26. GET /app/api/projects
+    27. GET /app/api/projects/
+    28. GET /app/api/projects/{id}
+    29. GET /app/api/employees/username/{username}
+    30. GET /app/api/employees/{id}
+    31. GET /app/api/employees/
+    32. GET /app/api/employees
+    33. POST /app/api/projects/save
+    34. POST /app/api/employees/save
     35. PUT /app/api/assignments/update
-    36. PUT /app/api/projects/update
-    37. PUT /app/api/employees/update
-    38. PUT /app/api/projects
-    39. PUT /app/api/employees
+    36. PUT /app/api/employees/update
+    37. PUT /app/api/projects/update
+    38. PUT /app/api/employees
+    39. PUT /app/api/projects
 
 To execute: GET /app/api/assignments/data/project-commit/{employeeId}/{projectId}/{commitDate}
   Prerequisites:
     1. POST /app/api/assignments
-    2. GET /app/api/assignments/{employeeId}/{projectId}/{commitDate}
-    3. GET /app/api/assignments
+    2. GET /app/api/assignments
+    3. GET /app/api/assignments/{employeeId}/{projectId}/{commitDate}
     4. GET /app/api/assignments/
     5. GET /app/api/assignments/{employeeId}/{projectId}
     6. PUT /app/api/assignments
@@ -164,15 +185,15 @@ To execute: GET /app/api/assignments/data/project-commit/{projectId}
     1. POST /app/api/assignments
     2. POST /app/api/credentials
     3. POST /app/api/departments
-    4. GET /app/api/assignments/{employeeId}/{projectId}/{commitDate}
-    5. GET /app/api/assignments
+    4. GET /app/api/assignments
+    5. GET /app/api/assignments/{employeeId}/{projectId}/{commitDate}
     6. GET /app/api/assignments/
-    7. GET /app/api/credentials/{id}
+    7. GET /app/api/credentials
     8. GET /app/api/credentials/username/{username}
-    9. GET /app/api/credentials
+    9. GET /app/api/credentials/{id}
     10. GET /app/api/credentials/
-    11. GET /app/api/departments
-    12. GET /app/api/departments/
+    11. GET /app/api/departments/
+    12. GET /app/api/departments
     13. GET /app/api/departments/{id}
     14. GET /app/api/assignments/{employeeId}/{projectId}
     15. PUT /app/api/credentials
@@ -182,15 +203,15 @@ To execute: GET /app/api/assignments/data/project-commit/{projectId}
     19. POST /app/api/departments/save
     20. GET /app/api/assignments/data/project-commit/{employeeId}/{projectId}/{commitDate}
     21. POST /app/api/assignments/save
-    22. POST /app/api/employees
-    23. POST /app/api/projects
-    24. GET /app/api/employees/{id}
-    25. GET /app/api/employees/username/{username}
-    26. GET /app/api/projects
-    27. GET /app/api/projects/
-    28. GET /app/api/projects/{id}
-    29. POST /app/api/employees/save
-    30. POST /app/api/projects/save
+    22. POST /app/api/projects
+    23. POST /app/api/employees
+    24. GET /app/api/projects
+    25. GET /app/api/projects/
+    26. GET /app/api/projects/{id}
+    27. GET /app/api/employees/username/{username}
+    28. GET /app/api/employees/{id}
+    29. POST /app/api/projects/save
+    30. POST /app/api/employees/save
     31. PUT /app/api/assignments/update
     32. PUT /app/api/projects/update
     33. PUT /app/api/projects

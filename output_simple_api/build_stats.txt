@@ -1,6 +1,6 @@
 ================================================================================
 DEPENDENCY GRAPH BUILD LOG - SIMPLE_API
-Generated: 2026-01-22 10:24:52
+Generated: 2026-01-22 20:54:03
 ================================================================================
 
 ================================================================================
@@ -79,10 +79,31 @@ Detailed in-memory size estimate:
   Overhead total bytes: 232
   Estimated total in-memory bytes: 704 (704.00B)
 Pickle serialized size: 614 bytes
-Timings (s): {'longest_path_sec': 0.00018286705017089844, 'betweenness_sec': 9.489059448242188e-05, 'degree_centrality_sec': 5.0067901611328125e-05, 'pickle_serialize_sec': 6.198883056640625e-05, 'total_sec': 0.0007050037384033203}
+Timings (s): {'longest_path_sec': 0.0003387928009033203, 'betweenness_sec': 0.00017714500427246094, 'degree_centrality_sec': 9.226799011230469e-05, 'pickle_serialize_sec': 0.0005311965942382812, 'total_sec': 0.0017762184143066406}
 === End Report ===
 
 
+
+================================================================================
+EDGE REDUCTION PIPELINE
+================================================================================
+  Raw dependencies (all analyzers):     3
+  After conflict resolution:            1
+  After cycle prevention:               1
+  After transitive reduction (FINAL):   1
+
+  Reduction Summary:
+    - Conflicts resolved:      2 edges merged/removed
+    - Cycles prevented:        0 edges skipped
+    - Transitive reduction:    0 redundant edges removed
+    - Total reduction:         66.7% (3 → 1)
+
+  By Analyzer:
+    - parameter: 1
+    - crud: 1
+    - nested_resource: 1
+    - logical: 0
+    - constraint: 0
 
 ================================================================================
 DEPENDENCY TYPES SUMMARY

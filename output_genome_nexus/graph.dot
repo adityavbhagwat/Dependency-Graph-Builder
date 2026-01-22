@@ -38,10 +38,10 @@ fetchVariantAnnotationPOST -> fetchVariantAnnotationByIdPOST [label="nested_reso
 fetchVariantAnnotationPOST -> fetchVariantAnnotationByIdGET [label="nested_resource", color="#9C27B0"];
 fetchVariantAnnotationPOST -> fetchVariantAnnotationByGenomicLocationPOST [label="nested_resource", color="#9C27B0"];
 fetchVariantAnnotationPOST -> fetchVariantAnnotationByGenomicLocationGET [label="nested_resource", color="#9C27B0"];
-fetchCanonicalEnsemblGeneIdByHugoSymbolsPOST -> fetchCanonicalEnsemblGeneIdByEntrezGeneIdGET [label="parameter_data", color="#2196F3"];
-fetchCanonicalEnsemblGeneIdByHugoSymbolGET -> fetchCanonicalEnsemblGeneIdByEntrezGeneIdGET [label="parameter_data", color="#2196F3"];
 fetchCanonicalEnsemblGeneIdByHugoSymbolsPOST -> fetchCanonicalEnsemblTranscriptByHugoSymbolGET [label="parameter_data", color="#2196F3"];
 fetchCanonicalEnsemblGeneIdByHugoSymbolGET -> fetchCanonicalEnsemblTranscriptByHugoSymbolGET [label="parameter_data", color="#2196F3"];
+fetchCanonicalEnsemblGeneIdByHugoSymbolsPOST -> fetchCanonicalEnsemblGeneIdByEntrezGeneIdGET [label="parameter_data", color="#2196F3"];
+fetchCanonicalEnsemblGeneIdByHugoSymbolGET -> fetchCanonicalEnsemblGeneIdByEntrezGeneIdGET [label="parameter_data", color="#2196F3"];
 fetchCanonicalEnsemblTranscriptsByHugoSymbolsPOST -> fetchEnsemblTranscriptByTranscriptIdGET [label="parameter_data", color="#2196F3"];
 fetchCanonicalEnsemblTranscriptByHugoSymbolGET -> fetchEnsemblTranscriptByTranscriptIdGET [label="parameter_data", color="#2196F3"];
 fetchEnsemblTranscriptsGET -> fetchEnsemblTranscriptByTranscriptIdGET [label="parameter_data", color="#2196F3"];

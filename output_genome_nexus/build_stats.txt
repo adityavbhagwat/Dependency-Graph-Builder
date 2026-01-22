@@ -1,6 +1,6 @@
 ================================================================================
 DEPENDENCY GRAPH BUILD LOG - GENOME-NEXUS
-Generated: 2026-01-22 10:24:53
+Generated: 2026-01-22 20:54:06
 ================================================================================
 
 ================================================================================
@@ -79,10 +79,31 @@ Detailed in-memory size estimate:
   Overhead total bytes: 2888
   Estimated total in-memory bytes: 12275 (11.99KB)
 Pickle serialized size: 1817 bytes
-Timings (s): {'longest_path_sec': 9.083747863769531e-05, 'betweenness_sec': 0.00010800361633300781, 'degree_centrality_sec': 1.0967254638671875e-05, 'pickle_serialize_sec': 4.57763671875e-05, 'total_sec': 0.00055694580078125}
+Timings (s): {'longest_path_sec': 9.202957153320312e-05, 'betweenness_sec': 0.00010204315185546875, 'degree_centrality_sec': 1.2159347534179688e-05, 'pickle_serialize_sec': 3.886222839355469e-05, 'total_sec': 0.0005257129669189453}
 === End Report ===
 
 
+
+================================================================================
+EDGE REDUCTION PIPELINE
+================================================================================
+  Raw dependencies (all analyzers):     55
+  After conflict resolution:            29
+  After cycle prevention:               29
+  After transitive reduction (FINAL):   17
+
+  Reduction Summary:
+    - Conflicts resolved:      26 edges merged/removed
+    - Cycles prevented:        0 edges skipped
+    - Transitive reduction:    12 redundant edges removed
+    - Total reduction:         69.1% (55 → 17)
+
+  By Analyzer:
+    - parameter: 32
+    - nested_resource: 12
+    - crud: 11
+    - logical: 0
+    - constraint: 0
 
 ================================================================================
 DEPENDENCY TYPES SUMMARY

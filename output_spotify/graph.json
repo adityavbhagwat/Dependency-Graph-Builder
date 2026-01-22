@@ -7,18 +7,18 @@
       "resource_type": "me",
       "consumes": [],
       "produces": [
-        "product",
-        "explicit_content",
-        "type",
-        "images",
+        "id",
         "country",
-        "href",
-        "display_name",
+        "type",
         "external_urls",
-        "email",
         "uri",
+        "display_name",
+        "images",
+        "product",
+        "email",
         "followers",
-        "id"
+        "href",
+        "explicit_content"
       ],
       "is_interesting": false,
       "annotations": {}
@@ -29,17 +29,17 @@
       "method": "GET",
       "resource_type": "playlists",
       "consumes": [
-        "offset",
-        "limit"
+        "limit",
+        "offset"
       ],
       "produces": [
-        "href",
+        "limit",
+        "offset",
+        "next",
         "total",
         "items",
-        "next",
-        "offset",
         "previous",
-        "limit"
+        "href"
       ],
       "is_interesting": false,
       "annotations": {}
@@ -50,33 +50,33 @@
       "method": "GET",
       "resource_type": "playlists",
       "consumes": [
+        "playlist_id",
         "additional_types",
         "fields",
-        "playlist_id",
         "market"
       ],
       "produces": [
-        "owner",
-        "type",
-        "tracks.href",
-        "public",
-        "tracks.limit",
-        "href",
         "tracks.offset",
-        "external_urls",
-        "tracks.previous",
         "tracks.next",
-        "tracks",
-        "name",
-        "id",
-        "description",
         "tracks.total",
-        "tracks.items",
-        "images",
-        "snapshot_id",
+        "type",
+        "external_urls",
+        "collaborative",
+        "name",
+        "tracks",
+        "public",
         "uri",
-        "followers",
-        "collaborative"
+        "snapshot_id",
+        "tracks.items",
+        "href",
+        "id",
+        "tracks.previous",
+        "description",
+        "tracks.href",
+        "owner",
+        "images",
+        "tracks.limit",
+        "followers"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -87,11 +87,11 @@
       "method": "PUT",
       "resource_type": "playlists",
       "consumes": [
-        "collaborative",
         "playlist_id",
         "name",
         "public",
-        "description"
+        "description",
+        "collaborative"
       ],
       "produces": [],
       "is_interesting": true,
@@ -119,10 +119,10 @@
       "method": "PUT",
       "resource_type": "playlists",
       "consumes": [
-        "playlist_id1",
         "tracks1",
         "range_start",
-        "insert_before"
+        "insert_before",
+        "playlist_id1"
       ],
       "produces": [
         "snapshot_id"
@@ -136,9 +136,9 @@
       "method": "DELETE",
       "resource_type": "playlists",
       "consumes": [
+        "playlist_id",
         "snapshot_id",
-        "tracks",
-        "playlist_id"
+        "tracks"
       ],
       "produces": [
         "snapshot_id"
@@ -153,20 +153,20 @@
       "resource_type": "playlists",
       "consumes": [
         "playlist_id",
-        "market",
+        "limit",
         "additional_types",
         "offset",
-        "fields",
-        "limit"
+        "market",
+        "fields"
       ],
       "produces": [
-        "href",
+        "limit",
+        "offset",
+        "next",
         "total",
         "items",
-        "next",
-        "offset",
         "previous",
-        "limit"
+        "href"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -193,12 +193,12 @@
       "method": "PUT",
       "resource_type": "playlists",
       "consumes": [
-        "snapshot_id",
-        "range_length",
         "playlist_id",
-        "insert_before",
+        "range_length",
         "range_start",
-        "uris"
+        "uris",
+        "snapshot_id",
+        "insert_before"
       ],
       "produces": [
         "snapshot_id"
@@ -212,62 +212,62 @@
       "method": "GET",
       "resource_type": "search",
       "consumes": [
+        "limit",
         "type",
-        "q",
-        "market",
-        "include_external",
         "offset",
-        "limit"
+        "market",
+        "q",
+        "include_external"
       ],
       "produces": [
-        "episodes.limit",
-        "shows.previous",
-        "albums",
-        "shows.href",
-        "playlists.previous",
-        "tracks.href",
-        "tracks.limit",
-        "tracks.offset",
-        "artists.next",
-        "albums.previous",
-        "tracks",
         "albums.href",
-        "shows",
-        "shows.total",
-        "albums.next",
-        "episodes.items",
         "tracks.total",
-        "artists",
-        "playlists.next",
-        "albums.limit",
-        "episodes.next",
-        "playlists",
-        "shows.offset",
-        "albums.total",
-        "episodes.offset",
-        "playlists.total",
-        "artists.previous",
-        "episodes.previous",
-        "playlists.href",
+        "shows",
+        "albums.previous",
         "shows.next",
-        "tracks.previous",
-        "artists.href",
-        "artists.offset",
-        "tracks.next",
-        "albums.items",
+        "shows.previous",
         "albums.offset",
-        "shows.items",
-        "shows.limit",
-        "episodes",
+        "artists.offset",
+        "playlists.limit",
+        "playlists.previous",
         "playlists.offset",
+        "shows.limit",
+        "artists.next",
+        "artists.href",
+        "artists.limit",
+        "tracks.href",
+        "shows.items",
+        "tracks.limit",
+        "playlists.href",
+        "albums.items",
+        "tracks.offset",
+        "tracks.next",
+        "albums.next",
+        "playlists",
+        "episodes.limit",
+        "artists.previous",
+        "artists.items",
+        "playlists.next",
+        "shows.total",
+        "tracks",
+        "episodes.offset",
+        "artists",
+        "albums.total",
+        "episodes.items",
+        "shows.offset",
         "tracks.items",
         "episodes.href",
-        "artists.items",
+        "episodes.previous",
+        "episodes.next",
+        "episodes.total",
+        "tracks.previous",
+        "shows.href",
+        "playlists.total",
         "playlists.items",
-        "playlists.limit",
-        "artists.limit",
-        "artists.total",
-        "episodes.total"
+        "albums",
+        "albums.limit",
+        "episodes",
+        "artists.total"
       ],
       "is_interesting": false,
       "annotations": {}
@@ -278,18 +278,18 @@
       "method": "GET",
       "resource_type": "users",
       "consumes": [
+        "limit",
         "user_id",
-        "offset",
-        "limit"
+        "offset"
       ],
       "produces": [
-        "href",
+        "limit",
+        "offset",
+        "next",
         "total",
         "items",
-        "next",
-        "offset",
         "previous",
-        "limit"
+        "href"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -300,34 +300,34 @@
       "method": "POST",
       "resource_type": "users",
       "consumes": [
-        "collaborative",
-        "user_id",
         "name",
         "public",
-        "description"
+        "user_id",
+        "description",
+        "collaborative"
       ],
       "produces": [
-        "owner",
-        "tracks.href",
-        "tracks.limit",
+        "tracks.total",
+        "collaborative",
+        "name",
         "href",
+        "description",
+        "tracks.href",
+        "owner",
+        "tracks.limit",
+        "followers",
         "tracks.offset",
+        "tracks.next",
+        "type",
         "external_urls",
         "tracks",
-        "description",
-        "tracks.total",
-        "images",
-        "snapshot_id",
-        "uri",
-        "type",
         "public",
-        "tracks.previous",
-        "tracks.next",
-        "name",
-        "id",
+        "uri",
+        "snapshot_id",
         "tracks.items",
-        "followers",
-        "collaborative"
+        "id",
+        "tracks.previous",
+        "images"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -340,10 +340,10 @@
       "type": "crud",
       "confidence": 1.0,
       "parameter_mapping": {
-        "collaborative": "collaborative",
         "description": "description",
+        "public": "public",
         "name": "name",
-        "public": "public"
+        "collaborative": "collaborative"
       },
       "reason": "CRUD: Often read playlists before updating; Parameter 'collaborative' produced by endpoint-get-playlist and consumed by endpoint-change-playlist-details; Parameter 'description' produced by endpoint-get-playlist and consumed by endpoint-change-playlist-details; Parameter 'name' produced by endpoint-get-playlist and consumed by endpoint-change-playlist-details; Parameter 'public' produced by endpoint-get-playlist and consumed by endpoint-change-playlist-details",
       "verified": null
@@ -556,8 +556,8 @@
       "type": "parameter_data",
       "confidence": 0.7,
       "parameter_mapping": {
-        "limit": "limit",
-        "offset": "offset"
+        "offset": "offset",
+        "limit": "limit"
       },
       "reason": "Parameter 'limit' produced by endpoint-get-a-list-of-current-users-playlists and consumed by endpoint-get-playlists-tracks; Parameter 'offset' produced by endpoint-get-a-list-of-current-users-playlists and consumed by endpoint-get-playlists-tracks",
       "verified": null

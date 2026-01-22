@@ -19,10 +19,10 @@
     <edge source="getPersonsUsingGET" target="putPersonUsingPUT_1" />
     <edge source="postPersonsUsingPOST" target="getPersonsUsingGET" />
     <edge source="postPersonsUsingPOST" target="deletePersonsUsingDELETE_1" />
-    <edge source="postPersonsUsingPOST" target="getPersonsUsingGET_1" />
+    <edge source="postPersonsUsingPOST" target="deletePersonsUsingDELETE" />
     <edge source="postPersonsUsingPOST" target="averageAgeUsingGET" />
     <edge source="postPersonsUsingPOST" target="getCountUsingGET" />
-    <edge source="postPersonsUsingPOST" target="deletePersonsUsingDELETE" />
+    <edge source="postPersonsUsingPOST" target="getPersonsUsingGET_1" />
     <edge source="getPersonsUsingGET_1" target="putPersonUsingPUT_1" />
   </graph>
 </graphml>

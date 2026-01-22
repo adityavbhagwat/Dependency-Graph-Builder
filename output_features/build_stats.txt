@@ -1,6 +1,6 @@
 ================================================================================
 DEPENDENCY GRAPH BUILD LOG - FEATURES
-Generated: 2026-01-22 10:24:53
+Generated: 2026-01-22 20:54:03
 ================================================================================
 
 ================================================================================
@@ -34,7 +34,7 @@ Step 5: Performing transitive reduction to remove redundant edges...
   Graph optimized. Reduced edge count from 43 to 16.
 
 ================================================================================
-✓ Graph building completed in 0.02 seconds
+✓ Graph building completed in 0.01 seconds
 ================================================================================
 
 [EXPORT] Exporting dependency graph...
@@ -79,10 +79,31 @@ Detailed in-memory size estimate:
   Overhead total bytes: 2368
   Estimated total in-memory bytes: 8840 (8.63KB)
 Pickle serialized size: 1326 bytes
-Timings (s): {'longest_path_sec': 7.390975952148438e-05, 'betweenness_sec': 0.00011014938354492188, 'degree_centrality_sec': 7.867813110351562e-06, 'pickle_serialize_sec': 3.504753112792969e-05, 'total_sec': 0.0004930496215820312}
+Timings (s): {'longest_path_sec': 7.605552673339844e-05, 'betweenness_sec': 0.00010585784912109375, 'degree_centrality_sec': 9.298324584960938e-06, 'pickle_serialize_sec': 3.981590270996094e-05, 'total_sec': 0.0004978179931640625}
 === End Report ===
 
 
+
+================================================================================
+EDGE REDUCTION PIPELINE
+================================================================================
+  Raw dependencies (all analyzers):     49
+  After conflict resolution:            43
+  After cycle prevention:               43
+  After transitive reduction (FINAL):   16
+
+  Reduction Summary:
+    - Conflicts resolved:      6 edges merged/removed
+    - Cycles prevented:        0 edges skipped
+    - Transitive reduction:    27 redundant edges removed
+    - Total reduction:         67.3% (49 → 16)
+
+  By Analyzer:
+    - crud: 29
+    - nested_resource: 17
+    - parameter: 3
+    - logical: 0
+    - constraint: 0
 
 ================================================================================
 DEPENDENCY TYPES SUMMARY
@@ -103,10 +124,10 @@ To execute: PUT /products/{productName}/features/{featureName}
   Prerequisites:
     1. GET /products/{productName}/configurations
     2. GET /products
-    3. GET /products/{productName}/configurations/{configurationName}/features
-    4. GET /products/{productName}/configurations/{configurationName}
-    5. GET /products/{productName}
-    6. GET /products/{productName}/features
+    3. GET /products/{productName}/configurations/{configurationName}
+    4. GET /products/{productName}
+    5. GET /products/{productName}/features
+    6. GET /products/{productName}/configurations/{configurationName}/features
     7. POST /products/{productName}
 
 To execute: POST /products/{productName}/features/{featureName}
@@ -128,10 +149,10 @@ To execute: POST /products/{productName}
   Prerequisites:
     1. GET /products/{productName}/configurations
     2. GET /products
-    3. GET /products/{productName}/configurations/{configurationName}/features
-    4. GET /products/{productName}/configurations/{configurationName}
-    5. GET /products/{productName}
-    6. GET /products/{productName}/features
+    3. GET /products/{productName}/configurations/{configurationName}
+    4. GET /products/{productName}
+    5. GET /products/{productName}/features
+    6. GET /products/{productName}/configurations/{configurationName}/features
 
 ================================================================================
 END OF LOG

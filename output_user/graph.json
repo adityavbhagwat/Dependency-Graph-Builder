@@ -7,13 +7,13 @@
       "resource_type": "error",
       "consumes": [],
       "produces": [
-        "view",
         "modelMap",
-        "model",
-        "status",
-        "reference",
+        "viewName",
         "empty",
-        "viewName"
+        "model",
+        "reference",
+        "status",
+        "view"
       ],
       "is_interesting": false,
       "annotations": {}
@@ -25,13 +25,13 @@
       "resource_type": "error",
       "consumes": [],
       "produces": [
-        "view",
         "modelMap",
-        "model",
-        "status",
-        "reference",
+        "viewName",
         "empty",
-        "viewName"
+        "model",
+        "reference",
+        "status",
+        "view"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -43,13 +43,13 @@
       "resource_type": "error",
       "consumes": [],
       "produces": [
-        "view",
         "modelMap",
-        "model",
-        "status",
-        "reference",
+        "viewName",
         "empty",
-        "viewName"
+        "model",
+        "reference",
+        "status",
+        "view"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -61,13 +61,13 @@
       "resource_type": "error",
       "consumes": [],
       "produces": [
-        "view",
         "modelMap",
-        "model",
-        "status",
-        "reference",
+        "viewName",
         "empty",
-        "viewName"
+        "model",
+        "reference",
+        "status",
+        "view"
       ],
       "is_interesting": false,
       "annotations": {}
@@ -79,13 +79,13 @@
       "resource_type": "error",
       "consumes": [],
       "produces": [
-        "view",
         "modelMap",
-        "model",
-        "status",
-        "reference",
+        "viewName",
         "empty",
-        "viewName"
+        "model",
+        "reference",
+        "status",
+        "view"
       ],
       "is_interesting": false,
       "annotations": {}
@@ -96,26 +96,26 @@
       "method": "POST",
       "resource_type": "login",
       "consumes": [
-        "password",
-        "username"
+        "username",
+        "password"
       ],
       "produces": [
-        "enabled",
-        "creationDt",
-        "updatedDt",
-        "loginDt",
-        "secured",
-        "name",
-        "surname",
-        "permissions",
-        "note",
-        "id",
-        "roles",
-        "username",
         "gender",
+        "secured",
+        "enabled",
+        "loginDt",
+        "name",
+        "permissions",
+        "roles",
+        "id",
+        "surname",
+        "birthDate",
+        "note",
         "contactDTO",
         "addressDTO",
-        "birthDate"
+        "creationDt",
+        "updatedDt",
+        "username"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -138,45 +138,45 @@
       "method": "POST",
       "resource_type": "users",
       "consumes": [
-        "website",
-        "enabled",
-        "country",
-        "mobile",
-        "password",
-        "address2",
-        "email",
-        "skype",
-        "secured",
-        "name",
-        "surname",
-        "note",
-        "linkedin",
-        "address",
-        "username",
-        "zipCode",
-        "contactNote",
-        "facebook",
         "gender",
+        "secured",
+        "address2",
+        "name",
+        "enabled",
+        "zipCode",
+        "username",
+        "email",
+        "address",
+        "facebook",
+        "mobile",
+        "surname",
+        "skype",
+        "contactNote",
+        "country",
+        "birthDate",
+        "note",
+        "website",
         "city",
-        "birthDate"
+        "password",
+        "linkedin"
       ],
       "produces": [
-        "enabled",
-        "creationDt",
-        "updatedDt",
-        "loginDt",
-        "secured",
-        "name",
-        "surname",
-        "permissions",
-        "note",
-        "id",
-        "roles",
-        "username",
         "gender",
+        "secured",
+        "enabled",
+        "loginDt",
+        "name",
+        "permissions",
+        "roles",
+        "id",
+        "surname",
+        "birthDate",
+        "note",
         "contactDTO",
         "addressDTO",
-        "birthDate"
+        "creationDt",
+        "updatedDt",
+        "username"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -188,8 +188,8 @@
       "resource_type": "permissions",
       "consumes": [],
       "produces": [
-        "permission",
-        "id"
+        "id",
+        "permission"
       ],
       "is_interesting": false,
       "annotations": {}
@@ -201,9 +201,9 @@
       "resource_type": "roles",
       "consumes": [],
       "produces": [
-        "role",
+        "permissions",
         "id",
-        "permissions"
+        "role"
       ],
       "is_interesting": false,
       "annotations": {}
@@ -215,9 +215,9 @@
       "resource_type": "roles",
       "consumes": [],
       "produces": [
-        "role",
+        "permissions",
         "id",
-        "permissions"
+        "role"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -231,9 +231,9 @@
         "roleId"
       ],
       "produces": [
-        "role",
+        "permissions",
         "id",
-        "permissions"
+        "role"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -256,13 +256,13 @@
       "method": "POST",
       "resource_type": "roles",
       "consumes": [
-        "roleId",
-        "permissionKey"
+        "permissionKey",
+        "roleId"
       ],
       "produces": [
-        "role",
+        "permissions",
         "id",
-        "permissions"
+        "role"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -273,13 +273,13 @@
       "method": "DELETE",
       "resource_type": "roles",
       "consumes": [
-        "roleId",
-        "permissionKey"
+        "permissionKey",
+        "roleId"
       ],
       "produces": [
-        "role",
+        "permissions",
         "id",
-        "permissions"
+        "role"
       ],
       "is_interesting": false,
       "annotations": {}
@@ -290,30 +290,30 @@
       "method": "POST",
       "resource_type": "register",
       "consumes": [
-        "gender",
-        "email",
-        "password",
-        "username",
-        "name",
-        "surname"
-      ],
-      "produces": [
-        "enabled",
-        "creationDt",
-        "updatedDt",
-        "loginDt",
-        "secured",
         "name",
         "surname",
-        "permissions",
-        "note",
-        "id",
-        "roles",
-        "username",
+        "password",
         "gender",
+        "email",
+        "username"
+      ],
+      "produces": [
+        "gender",
+        "secured",
+        "enabled",
+        "loginDt",
+        "name",
+        "permissions",
+        "roles",
+        "id",
+        "surname",
+        "birthDate",
+        "note",
         "contactDTO",
         "addressDTO",
-        "birthDate"
+        "creationDt",
+        "updatedDt",
+        "username"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -327,22 +327,22 @@
         "id"
       ],
       "produces": [
-        "enabled",
-        "creationDt",
-        "updatedDt",
-        "loginDt",
-        "secured",
-        "name",
-        "surname",
-        "permissions",
-        "note",
-        "id",
-        "roles",
-        "username",
         "gender",
+        "secured",
+        "enabled",
+        "loginDt",
+        "name",
+        "permissions",
+        "roles",
+        "id",
+        "surname",
+        "birthDate",
+        "note",
         "contactDTO",
         "addressDTO",
-        "birthDate"
+        "creationDt",
+        "updatedDt",
+        "username"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -353,46 +353,46 @@
       "method": "PUT",
       "resource_type": "users",
       "consumes": [
-        "website",
-        "enabled",
-        "country",
-        "email",
-        "password",
-        "address2",
-        "skype",
+        "gender",
         "secured",
+        "address2",
         "name",
+        "enabled",
+        "zipCode",
+        "email",
+        "address",
+        "facebook",
+        "mobile",
         "id",
         "surname",
-        "note",
-        "linkedin",
-        "address",
-        "birthDate",
-        "username",
-        "zipCode",
+        "skype",
         "contactNote",
-        "facebook",
-        "gender",
+        "country",
+        "birthDate",
+        "note",
+        "website",
         "city",
-        "mobile"
+        "password",
+        "linkedin",
+        "username"
       ],
       "produces": [
-        "enabled",
-        "creationDt",
-        "updatedDt",
-        "loginDt",
-        "secured",
-        "name",
-        "surname",
-        "permissions",
-        "note",
-        "id",
-        "roles",
-        "username",
         "gender",
+        "secured",
+        "enabled",
+        "loginDt",
+        "name",
+        "permissions",
+        "roles",
+        "id",
+        "surname",
+        "birthDate",
+        "note",
         "contactDTO",
         "addressDTO",
-        "birthDate"
+        "creationDt",
+        "updatedDt",
+        "username"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -415,26 +415,26 @@
       "method": "POST",
       "resource_type": "users",
       "consumes": [
-        "roleId",
-        "id"
+        "id",
+        "roleId"
       ],
       "produces": [
-        "enabled",
-        "creationDt",
-        "updatedDt",
-        "loginDt",
-        "secured",
-        "name",
-        "surname",
-        "permissions",
-        "note",
-        "id",
-        "roles",
-        "username",
         "gender",
+        "secured",
+        "enabled",
+        "loginDt",
+        "name",
+        "permissions",
+        "roles",
+        "id",
+        "surname",
+        "birthDate",
+        "note",
         "contactDTO",
         "addressDTO",
-        "birthDate"
+        "creationDt",
+        "updatedDt",
+        "username"
       ],
       "is_interesting": true,
       "annotations": {}
@@ -445,26 +445,26 @@
       "method": "DELETE",
       "resource_type": "users",
       "consumes": [
-        "roleId",
-        "id"
+        "id",
+        "roleId"
       ],
       "produces": [
-        "enabled",
-        "creationDt",
-        "updatedDt",
-        "loginDt",
-        "secured",
-        "name",
-        "surname",
-        "permissions",
-        "note",
-        "id",
-        "roles",
-        "username",
         "gender",
+        "secured",
+        "enabled",
+        "loginDt",
+        "name",
+        "permissions",
+        "roles",
+        "id",
+        "surname",
+        "birthDate",
+        "note",
         "contactDTO",
         "addressDTO",
-        "birthDate"
+        "creationDt",
+        "updatedDt",
+        "username"
       ],
       "is_interesting": false,
       "annotations": {}
@@ -478,15 +478,15 @@
       "confidence": 1.0,
       "parameter_mapping": {
         "addressDTO": "address",
-        "birthDate": "birthDate",
-        "gender": "gender",
         "username": "username",
-        "id": "id",
         "note": "note",
+        "birthDate": "birthDate",
         "surname": "surname",
+        "id": "id",
         "name": "name",
+        "enabled": "enabled",
         "secured": "secured",
-        "enabled": "enabled"
+        "gender": "gender"
       },
       "reason": "/users/{id} is nested under /users; CRUD: Must create users before updating; Fuzzy match: 'addressDTO' -> 'address'; Parameter 'birthDate' produced by createUserUsingPOST and consumed by updateUserUsingPUT; Parameter 'enabled' produced by createUserUsingPOST and consumed by updateUserUsingPUT; Parameter 'gender' produced by createUserUsingPOST and consumed by updateUserUsingPUT; Parameter 'id' produced by createUserUsingPOST and consumed by updateUserUsingPUT; Parameter 'name' produced by createUserUsingPOST and consumed by updateUserUsingPUT; Parameter 'note' produced by createUserUsingPOST and consumed by updateUserUsingPUT; Parameter 'secured' produced by createUserUsingPOST and consumed by updateUserUsingPUT; Parameter 'surname' produced by createUserUsingPOST and consumed by updateUserUsingPUT; Parameter 'username' produced by createUserUsingPOST and consumed by updateUserUsingPUT",
       "verified": null
@@ -498,15 +498,15 @@
       "confidence": 1.0,
       "parameter_mapping": {
         "addressDTO": "address",
-        "birthDate": "birthDate",
-        "gender": "gender",
         "username": "username",
-        "id": "id",
         "note": "note",
+        "birthDate": "birthDate",
         "surname": "surname",
+        "id": "id",
         "name": "name",
+        "enabled": "enabled",
         "secured": "secured",
-        "enabled": "enabled"
+        "gender": "gender"
       },
       "reason": "CRUD: Often read users before updating; Fuzzy match: 'addressDTO' -> 'address'; Parameter 'birthDate' produced by getUserByIdUsingGET and consumed by updateUserUsingPUT; Parameter 'enabled' produced by getUserByIdUsingGET and consumed by updateUserUsingPUT; Parameter 'gender' produced by getUserByIdUsingGET and consumed by updateUserUsingPUT; Parameter 'id' produced by getUserByIdUsingGET and consumed by updateUserUsingPUT; Parameter 'name' produced by getUserByIdUsingGET and consumed by updateUserUsingPUT; Parameter 'note' produced by getUserByIdUsingGET and consumed by updateUserUsingPUT; Parameter 'secured' produced by getUserByIdUsingGET and consumed by updateUserUsingPUT; Parameter 'surname' produced by getUserByIdUsingGET and consumed by updateUserUsingPUT; Parameter 'username' produced by getUserByIdUsingGET and consumed by updateUserUsingPUT",
       "verified": null
@@ -863,15 +863,15 @@
       "confidence": 1.0,
       "parameter_mapping": {
         "addressDTO": "address",
-        "birthDate": "birthDate",
-        "gender": "gender",
         "username": "username",
-        "id": "id",
         "note": "note",
+        "birthDate": "birthDate",
         "surname": "surname",
+        "id": "id",
         "name": "name",
+        "enabled": "enabled",
         "secured": "secured",
-        "enabled": "enabled"
+        "gender": "gender"
       },
       "reason": "Fuzzy match: 'addressDTO' -> 'address'; Parameter 'birthDate' produced by addRoleUsingPOST and consumed by updateUserUsingPUT; Parameter 'enabled' produced by addRoleUsingPOST and consumed by updateUserUsingPUT; Parameter 'gender' produced by addRoleUsingPOST and consumed by updateUserUsingPUT; Parameter 'id' produced by addRoleUsingPOST and consumed by updateUserUsingPUT; Parameter 'name' produced by addRoleUsingPOST and consumed by updateUserUsingPUT; Parameter 'note' produced by addRoleUsingPOST and consumed by updateUserUsingPUT; Parameter 'secured' produced by addRoleUsingPOST and consumed by updateUserUsingPUT; Parameter 'surname' produced by addRoleUsingPOST and consumed by updateUserUsingPUT; Parameter 'username' produced by addRoleUsingPOST and consumed by updateUserUsingPUT",
       "verified": null
@@ -883,15 +883,15 @@
       "confidence": 1.0,
       "parameter_mapping": {
         "addressDTO": "address",
-        "birthDate": "birthDate",
-        "gender": "gender",
         "username": "username",
-        "id": "id",
         "note": "note",
+        "birthDate": "birthDate",
         "surname": "surname",
+        "id": "id",
         "name": "name",
+        "enabled": "enabled",
         "secured": "secured",
-        "enabled": "enabled"
+        "gender": "gender"
       },
       "reason": "Fuzzy match: 'addressDTO' -> 'address'; Parameter 'birthDate' produced by removeRoleUsingDELETE and consumed by updateUserUsingPUT; Parameter 'enabled' produced by removeRoleUsingDELETE and consumed by updateUserUsingPUT; Parameter 'gender' produced by removeRoleUsingDELETE and consumed by updateUserUsingPUT; Parameter 'id' produced by removeRoleUsingDELETE and consumed by updateUserUsingPUT; Parameter 'name' produced by removeRoleUsingDELETE and consumed by updateUserUsingPUT; Parameter 'note' produced by removeRoleUsingDELETE and consumed by updateUserUsingPUT; Parameter 'secured' produced by removeRoleUsingDELETE and consumed by updateUserUsingPUT; Parameter 'surname' produced by removeRoleUsingDELETE and consumed by updateUserUsingPUT; Parameter 'username' produced by removeRoleUsingDELETE and consumed by updateUserUsingPUT",
       "verified": null

@@ -6,17 +6,17 @@
       "method": "POST",
       "resource_type": "check",
       "consumes": [
-        "language",
-        "preferredVariants",
-        "enabledRules",
+        "disabledRules",
         "motherTongue",
+        "enabledOnly",
+        "preferredVariants",
         "enabledCategories",
         "text",
-        "enabledOnly",
-        "disabledRules",
         "altLanguages",
+        "data",
+        "language",
         "disabledCategories",
-        "data"
+        "enabledRules"
       ],
       "produces": [],
       "is_interesting": true,
@@ -29,8 +29,8 @@
       "resource_type": null,
       "consumes": [
         "language",
-        "check1",
-        "text"
+        "text",
+        "check1"
       ],
       "produces": [],
       "is_interesting": true,
@@ -57,8 +57,8 @@
       "resource_type": null,
       "consumes": [
         "language",
-        "preferredVariants",
         "text",
+        "preferredVariants",
         "check3"
       ],
       "produces": [],

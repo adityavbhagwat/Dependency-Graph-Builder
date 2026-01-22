@@ -38,17 +38,17 @@
       "findByUsernameUsingGET_1",
       "saveUsingPOST_7",
       "updateUsingPUT_1",
-      "updateUsingPUT_11",
-      "updateUsingPUT_10",
-      "deleteByIdUsingDELETE_11"
+      "updateUsingPUT_7",
+      "updateUsingPUT_6",
+      "deleteByIdUsingDELETE_7"
     ]
   },
   "_timings": {
-    "longest_path_sec": 0.0003077983856201172,
-    "betweenness_sec": 0.0010602474212646484,
-    "degree_centrality_sec": 2.7894973754882812e-05,
-    "pickle_serialize_sec": 7.319450378417969e-05,
-    "total_sec": 0.0020711421966552734
+    "longest_path_sec": 0.00023603439331054688,
+    "betweenness_sec": 0.0009129047393798828,
+    "degree_centrality_sec": 2.288818359375e-05,
+    "pickle_serialize_sec": 6.699562072753906e-05,
+    "total_sec": 0.0017518997192382812
   },
   "centrality": {
     "betweenness_top": [

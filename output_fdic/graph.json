@@ -6,13 +6,13 @@
       "method": "GET",
       "resource_type": "institutions",
       "consumes": [
-        "",
-        "sort_order",
-        "sort_by",
-        "offset",
-        "search",
-        "filters",
         "limit",
+        "search",
+        "",
+        "sort_by",
+        "sort_order",
+        "filters",
+        "offset",
         "fields"
       ],
       "produces": [
@@ -28,13 +28,13 @@
       "method": "GET",
       "resource_type": "locations",
       "consumes": [
+        "limit",
         "",
-        "sort_order",
         "sort_by",
-        "offset",
-        "fields",
+        "sort_order",
         "filters",
-        "limit"
+        "offset",
+        "fields"
       ],
       "produces": [
         "data",
@@ -49,17 +49,17 @@
       "method": "GET",
       "resource_type": "summary",
       "consumes": [
+        "limit",
         "",
-        "sort_order",
-        "sort_by",
-        "agg_sum_fields",
         "agg_by",
+        "sort_by",
         "agg_limit",
-        "offset",
-        "fields",
+        "sort_order",
         "filters",
+        "offset",
         "agg_term_fields",
-        "limit"
+        "agg_sum_fields",
+        "fields"
       ],
       "produces": [
         "data",
@@ -74,19 +74,19 @@
       "method": "GET",
       "resource_type": "failures",
       "consumes": [
+        "limit",
         "",
-        "sort_order",
-        "sort_by",
-        "agg_sum_fields",
-        "subtotal_by",
-        "total_fields",
         "agg_by",
+        "sort_by",
+        "total_fields",
         "agg_limit",
-        "offset",
-        "fields",
+        "sort_order",
         "filters",
+        "subtotal_by",
+        "offset",
         "agg_term_fields",
-        "limit"
+        "agg_sum_fields",
+        "fields"
       ],
       "produces": [
         "data",
@@ -102,16 +102,16 @@
       "method": "GET",
       "resource_type": "history",
       "consumes": [
-        "",
-        "sort_order",
-        "sort_by",
-        "agg_by",
-        "agg_limit",
-        "offset",
-        "search",
-        "filters",
-        "agg_term_fields",
         "limit",
+        "search",
+        "",
+        "agg_by",
+        "sort_by",
+        "agg_limit",
+        "sort_order",
+        "filters",
+        "offset",
+        "agg_term_fields",
         "fields"
       ],
       "produces": [
@@ -128,17 +128,17 @@
       "method": "GET",
       "resource_type": "financials",
       "consumes": [
+        "limit",
         "",
-        "sort_order",
-        "sort_by",
-        "agg_sum_fields",
         "agg_by",
+        "sort_by",
         "agg_limit",
-        "offset",
-        "fields",
+        "sort_order",
         "filters",
+        "offset",
         "agg_term_fields",
-        "limit"
+        "agg_sum_fields",
+        "fields"
       ],
       "produces": [
         "data",

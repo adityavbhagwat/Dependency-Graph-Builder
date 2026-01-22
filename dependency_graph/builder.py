@@ -20,6 +20,17 @@ class DependencyGraphBuilder:
         self.graph = DependencyGraph()
         self.operations: List = []
         
+        # Statistics tracking for edge reduction pipeline
+        self.build_stats: Dict[str, Any] = {
+            'raw_dependencies': 0,           # Total from all analyzers
+            'after_conflict_resolution': 0,  # After merging/resolving conflicts
+            'after_cycle_prevention': 0,     # After adding to graph (acyclic check)
+            'after_transitive_reduction': 0, # Final edge count
+            'skipped_for_cycles': 0,         # Edges skipped to prevent cycles
+            'removed_by_reduction': 0,       # Edges removed by transitive reduction
+            'by_analyzer': {}                # Breakdown by analyzer type
+        }
+        
     def build(self) -> DependencyGraph:
         """Main method to build the dependency graph"""
         print("Step 1: Parsing OpenAPI specification...")
@@ -39,6 +50,7 @@ class DependencyGraphBuilder:
         param_deps = param_analyzer.analyze()
         all_dependencies.extend(param_deps)
         print(f"    Found {len(param_deps)} dependencies")
+        self.build_stats['by_analyzer']['parameter'] = len(param_deps)
         
         # CRUD dependencies
         print("  - CRUD dependencies...")
@@ -46,6 +58,7 @@ class DependencyGraphBuilder:
         crud_deps = crud_analyzer.analyze()
         all_dependencies.extend(crud_deps)
         print(f"    Found {len(crud_deps)} dependencies")
+        self.build_stats['by_analyzer']['crud'] = len(crud_deps)
         
         # Logical dependencies
         print("  - Logical dependencies...")
@@ -53,6 +66,7 @@ class DependencyGraphBuilder:
         logical_deps = logical_analyzer.analyze()
         all_dependencies.extend(logical_deps)
         print(f"    Found {len(logical_deps)} dependencies")
+        self.build_stats['by_analyzer']['logical'] = len(logical_deps)
         
         # Nested resource dependencies
         print("  - Nested resource dependencies...")
@@ -60,6 +74,7 @@ class DependencyGraphBuilder:
         nested_deps = nested_analyzer.analyze()
         all_dependencies.extend(nested_deps)
         print(f"    Found {len(nested_deps)} dependencies")
+        self.build_stats['by_analyzer']['nested_resource'] = len(nested_deps)
         
         # Constraint dependencies
         print("  - Constraint dependencies...")
@@ -67,12 +82,17 @@ class DependencyGraphBuilder:
         constraint_deps = constraint_analyzer.analyze()
         all_dependencies.extend(constraint_deps)
         print(f"    Found {len(constraint_deps)} dependencies")
+        self.build_stats['by_analyzer']['constraint'] = len(constraint_deps)
+        
+        # Track raw dependencies total
+        self.build_stats['raw_dependencies'] = len(all_dependencies)
         
         print("\nStep 4: Resolving conflicts and adding to graph...")
         resolved_deps = self._resolve_conflicts(all_dependencies)
         # Prefer higher-level semantics (CRUD/auth) over raw parameter matching
         resolved_deps.sort(key=self._dependency_priority)
         print(f"  Resolved to {len(resolved_deps)} dependencies")
+        self.build_stats['after_conflict_resolution'] = len(resolved_deps)
         
         added_count = 0
         skipped_count = 0
@@ -82,6 +102,8 @@ class DependencyGraphBuilder:
             else:
                 skipped_count += 1
         print(f"  Added {added_count} dependencies, skipped {skipped_count} to prevent cycles.")
+        self.build_stats['after_cycle_prevention'] = added_count
+        self.build_stats['skipped_for_cycles'] = skipped_count
         
         # print("\nStep 5: Computing transitive dependencies...")
         # transitive_analyzer = TransitiveDependencyAnalyzer(self.graph)
@@ -108,6 +130,10 @@ class DependencyGraphBuilder:
         
         final_edge_count = self.graph.graph.number_of_edges()
         print(f"  Graph optimized. Reduced edge count from {initial_edge_count} to {final_edge_count}.")
+        
+        # Track final statistics
+        self.build_stats['after_transitive_reduction'] = final_edge_count
+        self.build_stats['removed_by_reduction'] = initial_edge_count - final_edge_count
         
         return self.graph
     

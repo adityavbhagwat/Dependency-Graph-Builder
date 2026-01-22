@@ -46,6 +46,7 @@ class CompleteDependencyGraphBuilder:
         # Core components
         self.parser: Optional[OpenAPIParser] = None
         self.graph: Optional[DependencyGraph] = None
+        self.builder: Optional[DependencyGraphBuilder] = None  # Store builder for stats
         self.dynamic_manager: Optional[DynamicDependencyManager] = None
         self.analyzer: Optional[GraphAnalyzer] = None
         self.visualizer: Optional[GraphVisualizer] = None
@@ -79,8 +80,8 @@ class CompleteDependencyGraphBuilder:
             # Step 1: Build initial static graph
             print("\n[PHASE 1] Building Static Dependency Graph")
             print("-" * 80)
-            builder = DependencyGraphBuilder(self.spec_path)
-            self.graph = builder.build()
+            self.builder = DependencyGraphBuilder(self.spec_path)
+            self.graph = self.builder.build()
             
             # Step 2: Analyze graph
             # print("\n[PHASE 2] Analyzing Dependency Graph")
@@ -141,6 +142,45 @@ class CompleteDependencyGraphBuilder:
         log_content.append("=" * 80)
         log_content.append("")
         log_content.append(self._captured_output)
+        log_content.append("")
+        log_content.append("=" * 80)
+        log_content.append("EDGE REDUCTION PIPELINE")
+        log_content.append("=" * 80)
+        
+        # Add edge reduction statistics
+        if self.builder and hasattr(self.builder, 'build_stats'):
+            stats = self.builder.build_stats
+            raw = stats.get('raw_dependencies', 0)
+            after_conflict = stats.get('after_conflict_resolution', 0)
+            after_cycle = stats.get('after_cycle_prevention', 0)
+            final = stats.get('after_transitive_reduction', 0)
+            skipped_cycles = stats.get('skipped_for_cycles', 0)
+            removed_reduction = stats.get('removed_by_reduction', 0)
+            
+            log_content.append(f"  Raw dependencies (all analyzers):     {raw}")
+            log_content.append(f"  After conflict resolution:            {after_conflict}")
+            log_content.append(f"  After cycle prevention:               {after_cycle}")
+            log_content.append(f"  After transitive reduction (FINAL):   {final}")
+            log_content.append("")
+            log_content.append("  Reduction Summary:")
+            conflicts_resolved = raw - after_conflict
+            log_content.append(f"    - Conflicts resolved:      {conflicts_resolved} edges merged/removed")
+            log_content.append(f"    - Cycles prevented:        {skipped_cycles} edges skipped")
+            log_content.append(f"    - Transitive reduction:    {removed_reduction} redundant edges removed")
+            if raw > 0:
+                reduction_pct = ((raw - final) / raw) * 100
+                log_content.append(f"    - Total reduction:         {reduction_pct:.1f}% ({raw} → {final})")
+            
+            # Breakdown by analyzer
+            by_analyzer = stats.get('by_analyzer', {})
+            if by_analyzer:
+                log_content.append("")
+                log_content.append("  By Analyzer:")
+                for analyzer, count in sorted(by_analyzer.items(), key=lambda x: x[1], reverse=True):
+                    log_content.append(f"    - {analyzer}: {count}")
+        else:
+            log_content.append("  (Build statistics not available)")
+        
         log_content.append("")
         log_content.append("=" * 80)
         log_content.append("DEPENDENCY TYPES SUMMARY")

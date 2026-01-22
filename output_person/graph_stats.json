@@ -35,11 +35,11 @@
     ]
   },
   "_timings": {
-    "longest_path_sec": 6.914138793945312e-05,
-    "betweenness_sec": 4.982948303222656e-05,
-    "degree_centrality_sec": 7.867813110351562e-06,
-    "pickle_serialize_sec": 3.719329833984375e-05,
-    "total_sec": 0.0003840923309326172
+    "longest_path_sec": 5.507469177246094e-05,
+    "betweenness_sec": 4.673004150390625e-05,
+    "degree_centrality_sec": 7.152557373046875e-06,
+    "pickle_serialize_sec": 2.5987625122070312e-05,
+    "total_sec": 0.00032210350036621094
   },
   "centrality": {
     "betweenness_top": [

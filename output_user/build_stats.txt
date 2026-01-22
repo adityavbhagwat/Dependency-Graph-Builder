@@ -1,6 +1,6 @@
 ================================================================================
 DEPENDENCY GRAPH BUILD LOG - USER
-Generated: 2026-01-22 10:24:52
+Generated: 2026-01-22 20:54:03
 ================================================================================
 
 ================================================================================
@@ -34,7 +34,7 @@ Step 5: Performing transitive reduction to remove redundant edges...
   Graph optimized. Reduced edge count from 50 to 24.
 
 ================================================================================
-✓ Graph building completed in 0.04 seconds
+✓ Graph building completed in 0.05 seconds
 ================================================================================
 
 [EXPORT] Exporting dependency graph...
@@ -79,10 +79,31 @@ Detailed in-memory size estimate:
   Overhead total bytes: 2976
   Estimated total in-memory bytes: 12237 (11.95KB)
 Pickle serialized size: 1536 bytes
-Timings (s): {'longest_path_sec': 0.00010395050048828125, 'betweenness_sec': 0.00012302398681640625, 'degree_centrality_sec': 1.0967254638671875e-05, 'pickle_serialize_sec': 3.910064697265625e-05, 'total_sec': 0.0005848407745361328}
+Timings (s): {'longest_path_sec': 0.00010418891906738281, 'betweenness_sec': 0.0001227855682373047, 'degree_centrality_sec': 1.0967254638671875e-05, 'pickle_serialize_sec': 3.600120544433594e-05, 'total_sec': 0.0006201267242431641}
 === End Report ===
 
 
+
+================================================================================
+EDGE REDUCTION PIPELINE
+================================================================================
+  Raw dependencies (all analyzers):     137
+  After conflict resolution:            50
+  After cycle prevention:               50
+  After transitive reduction (FINAL):   24
+
+  Reduction Summary:
+    - Conflicts resolved:      87 edges merged/removed
+    - Cycles prevented:        0 edges skipped
+    - Transitive reduction:    26 redundant edges removed
+    - Total reduction:         82.5% (137 → 24)
+
+  By Analyzer:
+    - parameter: 89
+    - crud: 23
+    - nested_resource: 17
+    - logical: 8
+    - constraint: 0
 
 ================================================================================
 DEPENDENCY TYPES SUMMARY
