@@ -1,0 +1,45 @@
+{
+  "nodes": [
+    {
+      "id": "createUser",
+      "path": "/users",
+      "method": "POST",
+      "resource_type": "users",
+      "consumes": [],
+      "produces": [
+        "userId"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "getUserById",
+      "path": "/users/{userId}",
+      "method": "GET",
+      "resource_type": "users",
+      "consumes": [
+        "userId"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "createUser",
+      "target": "getUserById",
+      "type": "crud",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "userId": "userId"
+      },
+      "reason": "/users/{userId} is nested under /users; CRUD: Must create users before reading; Parameter 'userId' produced by createUser and consumed by getUserById",
+      "verified": null
+    }
+  ],
+  "metadata": {
+    "num_operations": 2,
+    "num_dependencies": 1
+  }
+}

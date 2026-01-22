@@ -1,0 +1,9 @@
+digraph G {
+rankdir=TB;
+searchInstitutions [label="GET /institutions", shape=box, style=filled, fillcolor="#4CAF50"];
+searchLocations [label="GET /locations", shape=box, style=filled, fillcolor="#4CAF50"];
+getHistorical [label="GET /summary", shape=box, style=filled, fillcolor="#4CAF50"];
+getFailures [label="GET /failures", shape=box, style=filled, fillcolor="#4CAF50"];
+getHistory [label="GET /history", shape=box, style=filled, fillcolor="#4CAF50"];
+getFinancials [label="GET /financials", shape=box, style=filled, fillcolor="#4CAF50"];
+}

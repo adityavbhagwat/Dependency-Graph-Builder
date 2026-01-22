@@ -1,0 +1,115 @@
+{
+  "basic": {
+    "num_nodes": 5,
+    "num_edges": 0,
+    "is_dag": true,
+    "directed": true
+  },
+  "components": {
+    "count": 5,
+    "largest_size": 1
+  },
+  "degree": {
+    "in": {
+      "min": 0,
+      "max": 0,
+      "mean": 0.0,
+      "median": 0.0,
+      "stdev": 0.0
+    },
+    "out": {
+      "min": 0,
+      "max": 0,
+      "mean": 0.0,
+      "median": 0.0,
+      "stdev": 0.0
+    }
+  },
+  "longest_path": {
+    "length": 0,
+    "example": [
+      "POST__check"
+    ]
+  },
+  "_timings": {
+    "longest_path_sec": 2.9802322387695312e-05,
+    "betweenness_sec": 1.9073486328125e-05,
+    "degree_centrality_sec": 6.198883056640625e-06,
+    "pickle_serialize_sec": 3.695487976074219e-05,
+    "total_sec": 0.0002551078796386719
+  },
+  "centrality": {
+    "betweenness_top": [
+      [
+        "POST__check",
+        0.0
+      ],
+      [
+        "POST__{check1}",
+        0.0
+      ],
+      [
+        "POST__{check2}",
+        0.0
+      ],
+      [
+        "POST__{check3}",
+        0.0
+      ],
+      [
+        "GET__languages",
+        0.0
+      ]
+    ],
+    "degree_top": [
+      [
+        "POST__check",
+        0.0
+      ],
+      [
+        "POST__{check1}",
+        0.0
+      ],
+      [
+        "POST__{check2}",
+        0.0
+      ],
+      [
+        "POST__{check3}",
+        0.0
+      ],
+      [
+        "GET__languages",
+        0.0
+      ]
+    ]
+  },
+  "detailed_size_in_memory": {
+    "nodes": {
+      "count": 5,
+      "total_bytes": 699,
+      "avg_bytes_per_node": 139,
+      "avg_node_id_bytes": 75,
+      "avg_fields_per_node": 0.0
+    },
+    "edges": {
+      "count": 0,
+      "total_bytes": 0,
+      "avg_bytes_per_edge": 0,
+      "avg_fields_per_edge": 0.0
+    },
+    "overhead": {
+      "per_node_bytes": 96,
+      "per_edge_bytes": 40,
+      "total_overhead_bytes": 480
+    },
+    "total_estimated_bytes": 1179,
+    "human_readable": "1.15KB"
+  },
+  "serialization": {
+    "pickle_bytes": 689
+  },
+  "extras": {
+    "density": 0
+  }
+}

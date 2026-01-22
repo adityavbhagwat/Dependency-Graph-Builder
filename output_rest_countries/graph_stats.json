@@ -1,0 +1,155 @@
+{
+  "basic": {
+    "num_nodes": 21,
+    "num_edges": 0,
+    "is_dag": true,
+    "directed": true
+  },
+  "components": {
+    "count": 21,
+    "largest_size": 1
+  },
+  "degree": {
+    "in": {
+      "min": 0,
+      "max": 0,
+      "mean": 0.0,
+      "median": 0.0,
+      "stdev": 0.0
+    },
+    "out": {
+      "min": 0,
+      "max": 0,
+      "mean": 0.0,
+      "median": 0.0,
+      "stdev": 0.0
+    }
+  },
+  "longest_path": {
+    "length": 0,
+    "example": [
+      "v2All"
+    ]
+  },
+  "_timings": {
+    "longest_path_sec": 6.198883056640625e-05,
+    "betweenness_sec": 6.103515625e-05,
+    "degree_centrality_sec": 1.0967254638671875e-05,
+    "pickle_serialize_sec": 3.910064697265625e-05,
+    "total_sec": 0.0003910064697265625
+  },
+  "centrality": {
+    "betweenness_top": [
+      [
+        "v2All",
+        0.0
+      ],
+      [
+        "v2Alphacode",
+        0.0
+      ],
+      [
+        "v2Alphacodes",
+        0.0
+      ],
+      [
+        "v2Currency",
+        0.0
+      ],
+      [
+        "v2Name",
+        0.0
+      ],
+      [
+        "v2Callingcode",
+        0.0
+      ],
+      [
+        "v2Capital",
+        0.0
+      ],
+      [
+        "v2Region",
+        0.0
+      ],
+      [
+        "v2Lang",
+        0.0
+      ],
+      [
+        "v2Regionalbloc",
+        0.0
+      ]
+    ],
+    "degree_top": [
+      [
+        "v2All",
+        0.0
+      ],
+      [
+        "v2Alphacode",
+        0.0
+      ],
+      [
+        "v2Alphacodes",
+        0.0
+      ],
+      [
+        "v2Currency",
+        0.0
+      ],
+      [
+        "v2Name",
+        0.0
+      ],
+      [
+        "v2Callingcode",
+        0.0
+      ],
+      [
+        "v2Capital",
+        0.0
+      ],
+      [
+        "v2Region",
+        0.0
+      ],
+      [
+        "v2Lang",
+        0.0
+      ],
+      [
+        "v2Regionalbloc",
+        0.0
+      ]
+    ]
+  },
+  "detailed_size_in_memory": {
+    "nodes": {
+      "count": 21,
+      "total_bytes": 2761,
+      "avg_bytes_per_node": 131,
+      "avg_node_id_bytes": 67,
+      "avg_fields_per_node": 0.0
+    },
+    "edges": {
+      "count": 0,
+      "total_bytes": 0,
+      "avg_bytes_per_edge": 0,
+      "avg_fields_per_edge": 0.0
+    },
+    "overhead": {
+      "per_node_bytes": 96,
+      "per_edge_bytes": 40,
+      "total_overhead_bytes": 2016
+    },
+    "total_estimated_bytes": 4777,
+    "human_readable": "4.67KB"
+  },
+  "serialization": {
+    "pickle_bytes": 1024
+  },
+  "extras": {
+    "density": 0
+  }
+}

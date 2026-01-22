@@ -26,19 +26,19 @@
     <edge source="errorHtmlUsingGET" target="errorHtmlUsingPUT" />
     <edge source="errorHtmlUsingPOST" target="errorHtmlUsingGET" />
     <edge source="errorHtmlUsingPOST" target="errorHtmlUsingDELETE" />
-    <edge source="loginUsingPOST" target="addRoleUsingPOST" />
     <edge source="loginUsingPOST" target="deleteRoleByIdUsingDELETE" />
+    <edge source="loginUsingPOST" target="addRoleUsingPOST" />
     <edge source="loginUsingPOST" target="addPermissionOnRoleUsingPOST" />
     <edge source="getUserPresentationListUsingGET" target="addRoleUsingPOST" />
     <edge source="createUserUsingPOST" target="getUserPresentationListUsingGET" />
-    <edge source="createUserUsingPOST" target="getPermissionPresentationListUsingGET" />
-    <edge source="createUserUsingPOST" target="getUserByIdUsingGET" />
     <edge source="createUserUsingPOST" target="createRoleUsingPOST" />
     <edge source="createUserUsingPOST" target="registerNewUserAccountUsingPOST" />
+    <edge source="createUserUsingPOST" target="getUserByIdUsingGET" />
+    <edge source="createUserUsingPOST" target="getPermissionPresentationListUsingGET" />
     <edge source="getRolePresentationListUsingGET" target="addPermissionOnRoleUsingPOST" />
     <edge source="createRoleUsingPOST" target="getRolePresentationListUsingGET" />
-    <edge source="createRoleUsingPOST" target="getRoleByIdUsingGET" />
     <edge source="createRoleUsingPOST" target="deleteRoleByIdUsingDELETE" />
+    <edge source="createRoleUsingPOST" target="getRoleByIdUsingGET" />
     <edge source="getRoleByIdUsingGET" target="addPermissionOnRoleUsingPOST" />
     <edge source="addPermissionOnRoleUsingPOST" target="removePermissionOnRoleUsingDELETE" />
     <edge source="registerNewUserAccountUsingPOST" target="loginUsingPOST" />

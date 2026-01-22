@@ -1,0 +1,38 @@
+digraph G {
+rankdir=TB;
+"endpoint-get-current-users-profile" [label="GET /me", shape=box, style=filled, fillcolor="#4CAF50"];
+"endpoint-get-a-list-of-current-users-playlists" [label="GET /me/playlists", shape=box, style=filled, fillcolor="#4CAF50"];
+"endpoint-get-playlist" [label="GET /playlists/{playlist_id}", shape=box, style=filled, fillcolor="#4CAF50"];
+"endpoint-change-playlist-details" [label="PUT /playlists/{playlist_id}", shape=box, style=filled, fillcolor="#FF9800"];
+"endpoint-get-playlist-cover" [label="GET /playlists/{playlist_id}/images", shape=box, style=filled, fillcolor="#4CAF50"];
+"endpoint-remove-tracks-playlist1" [label="PUT /playlists/{playlist_id1}/{tracks1}", shape=box, style=filled, fillcolor="#FF9800"];
+"endpoint-remove-tracks-playlist" [label="DELETE /playlists/{playlist_id}/tracks", shape=box, style=filled, fillcolor="#F44336"];
+"endpoint-get-playlists-tracks" [label="GET /playlists/{playlist_id}/tracks", shape=box, style=filled, fillcolor="#4CAF50"];
+"endpoint-add-tracks-to-playlist" [label="POST /playlists/{playlist_id}/tracks", shape=box, style=filled, fillcolor="#2196F3"];
+"endpoint-reorder-or-replace-playlists-tracks" [label="PUT /playlists/{playlist_id}/tracks", shape=box, style=filled, fillcolor="#FF9800"];
+"endpoint-search" [label="GET /search", shape=box, style=filled, fillcolor="#4CAF50"];
+"endpoint-get-list-users-playlists" [label="GET /users/{user_id}/playlists", shape=box, style=filled, fillcolor="#4CAF50"];
+"endpoint-create-playlist" [label="POST /users/{user_id}/playlists", shape=box, style=filled, fillcolor="#2196F3"];
+"endpoint-get-playlist" -> "endpoint-change-playlist-details" [label=crud, color="#4CAF50"];
+"endpoint-get-playlist" -> "endpoint-reorder-or-replace-playlists-tracks" [label=crud, color="#4CAF50"];
+"endpoint-get-playlist" -> "endpoint-remove-tracks-playlist1" [label=crud, color="#4CAF50"];
+"endpoint-get-a-list-of-current-users-playlists" -> "endpoint-change-playlist-details" [label=crud, color="#4CAF50"];
+"endpoint-get-a-list-of-current-users-playlists" -> "endpoint-remove-tracks-playlist1" [label=crud, color="#4CAF50"];
+"endpoint-get-playlist" -> "endpoint-add-tracks-to-playlist" [label=crud, color="#4CAF50"];
+"endpoint-get-playlist-cover" -> "endpoint-change-playlist-details" [label=crud, color="#4CAF50"];
+"endpoint-get-playlist-cover" -> "endpoint-remove-tracks-playlist1" [label=crud, color="#4CAF50"];
+"endpoint-get-playlists-tracks" -> "endpoint-change-playlist-details" [label=crud, color="#4CAF50"];
+"endpoint-get-playlists-tracks" -> "endpoint-remove-tracks-playlist1" [label=crud, color="#4CAF50"];
+"endpoint-get-playlists-tracks" -> "endpoint-reorder-or-replace-playlists-tracks" [label=crud, color="#4CAF50"];
+"endpoint-get-playlists-tracks" -> "endpoint-add-tracks-to-playlist" [label=crud, color="#4CAF50"];
+"endpoint-get-list-users-playlists" -> "endpoint-create-playlist" [label=crud, color="#4CAF50"];
+"endpoint-get-playlist" -> "endpoint-remove-tracks-playlist" [label="parameter_data", color="#2196F3"];
+"endpoint-remove-tracks-playlist" -> "endpoint-reorder-or-replace-playlists-tracks" [label="parameter_data", color="#2196F3"];
+"endpoint-add-tracks-to-playlist" -> "endpoint-remove-tracks-playlist" [label="parameter_data", color="#2196F3"];
+"endpoint-add-tracks-to-playlist" -> "endpoint-reorder-or-replace-playlists-tracks" [label="parameter_data", color="#2196F3"];
+"endpoint-remove-tracks-playlist1" -> "endpoint-remove-tracks-playlist" [label="parameter_data", color="#2196F3"];
+"endpoint-remove-tracks-playlist1" -> "endpoint-reorder-or-replace-playlists-tracks" [label="parameter_data", color="#2196F3"];
+"endpoint-create-playlist" -> "endpoint-remove-tracks-playlist" [label="parameter_data", color="#2196F3"];
+"endpoint-create-playlist" -> "endpoint-reorder-or-replace-playlists-tracks" [label="parameter_data", color="#2196F3"];
+"endpoint-get-a-list-of-current-users-playlists" -> "endpoint-get-playlists-tracks" [label="parameter_data", color="#2196F3"];
+}

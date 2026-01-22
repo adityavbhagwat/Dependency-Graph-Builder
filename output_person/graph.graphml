@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <graph edgedefault="directed">
+    <node id="putPersonUsingPUT" />
+    <node id="postPersonUsingPOST" />
+    <node id="getPersonUsingGET" />
+    <node id="deletePersonUsingDELETE" />
+    <node id="getPersonsUsingGET" />
+    <node id="putPersonUsingPUT_1" />
+    <node id="postPersonsUsingPOST" />
+    <node id="deletePersonsUsingDELETE" />
+    <node id="averageAgeUsingGET" />
+    <node id="getCountUsingGET" />
+    <node id="getPersonsUsingGET_1" />
+    <node id="deletePersonsUsingDELETE_1" />
+    <edge source="putPersonUsingPUT" target="deletePersonUsingDELETE" />
+    <edge source="postPersonUsingPOST" target="getPersonUsingGET" />
+    <edge source="getPersonUsingGET" target="putPersonUsingPUT" />
+    <edge source="getPersonsUsingGET" target="putPersonUsingPUT_1" />
+    <edge source="postPersonsUsingPOST" target="getPersonsUsingGET" />
+    <edge source="postPersonsUsingPOST" target="deletePersonsUsingDELETE_1" />
+    <edge source="postPersonsUsingPOST" target="getPersonsUsingGET_1" />
+    <edge source="postPersonsUsingPOST" target="averageAgeUsingGET" />
+    <edge source="postPersonsUsingPOST" target="getCountUsingGET" />
+    <edge source="postPersonsUsingPOST" target="deletePersonsUsingDELETE" />
+    <edge source="getPersonsUsingGET_1" target="putPersonUsingPUT_1" />
+  </graph>
+</graphml>

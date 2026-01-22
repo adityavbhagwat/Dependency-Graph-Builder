@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <graph edgedefault="directed">
+    <node id="endpoint-get-current-users-profile" />
+    <node id="endpoint-get-a-list-of-current-users-playlists" />
+    <node id="endpoint-get-playlist" />
+    <node id="endpoint-change-playlist-details" />
+    <node id="endpoint-get-playlist-cover" />
+    <node id="endpoint-remove-tracks-playlist1" />
+    <node id="endpoint-remove-tracks-playlist" />
+    <node id="endpoint-get-playlists-tracks" />
+    <node id="endpoint-add-tracks-to-playlist" />
+    <node id="endpoint-reorder-or-replace-playlists-tracks" />
+    <node id="endpoint-search" />
+    <node id="endpoint-get-list-users-playlists" />
+    <node id="endpoint-create-playlist" />
+    <edge source="endpoint-get-a-list-of-current-users-playlists" target="endpoint-get-playlists-tracks" />
+    <edge source="endpoint-get-playlist" target="endpoint-add-tracks-to-playlist" />
+    <edge source="endpoint-get-playlist" target="endpoint-remove-tracks-playlist1" />
+    <edge source="endpoint-get-playlist" target="endpoint-change-playlist-details" />
+    <edge source="endpoint-get-playlist-cover" target="endpoint-change-playlist-details" />
+    <edge source="endpoint-get-playlist-cover" target="endpoint-remove-tracks-playlist1" />
+    <edge source="endpoint-remove-tracks-playlist1" target="endpoint-remove-tracks-playlist" />
+    <edge source="endpoint-remove-tracks-playlist" target="endpoint-reorder-or-replace-playlists-tracks" />
+    <edge source="endpoint-get-playlists-tracks" target="endpoint-change-playlist-details" />
+    <edge source="endpoint-get-playlists-tracks" target="endpoint-add-tracks-to-playlist" />
+    <edge source="endpoint-get-playlists-tracks" target="endpoint-remove-tracks-playlist1" />
+    <edge source="endpoint-add-tracks-to-playlist" target="endpoint-remove-tracks-playlist" />
+    <edge source="endpoint-get-list-users-playlists" target="endpoint-create-playlist" />
+    <edge source="endpoint-create-playlist" target="endpoint-remove-tracks-playlist" />
+  </graph>
+</graphml>

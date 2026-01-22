@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Dependency Graph</title>
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <style>
+        #mynetwork {
+            width: 100%;
+            height: 800px;
+            border: 1px solid lightgray;
+        }
+        .legend {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: white;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>API Dependency Graph</h1>
+    <div class="legend">
+        <h3>Legend</h3>
+        <div><span style="color: #4CAF50;">■</span> GET Operations</div>
+        <div><span style="color: #2196F3;">■</span> POST Operations</div>
+        <div><span style="color: #FF9800;">■</span> PUT/PATCH Operations</div>
+        <div><span style="color: #F44336;">■</span> DELETE Operations</div>
+    </div>
+    <div id="mynetwork"></div>
+    <script type="text/javascript">
+        // Graph data
+        var nodes = new vis.DataSet([{"id": "v2All", "label": "GET\\n/v2/all", "color": "#4CAF50", "consumes": ["fields"], "produces": []}, {"id": "v2Alphacode", "label": "GET\\n/v2/alpha/{alphacode}", "color": "#4CAF50", "consumes": ["alphacode", "fields"], "produces": []}, {"id": "v2Alphacodes", "label": "GET\\n/v2/alpha", "color": "#4CAF50", "consumes": ["fields", "codes"], "produces": []}, {"id": "v2Currency", "label": "GET\\n/v2/currency/{currency}", "color": "#4CAF50", "consumes": ["fields", "currency"], "produces": []}, {"id": "v2Name", "label": "GET\\n/v2/name/{name}", "color": "#4CAF50", "consumes": ["fields", "name", "fullText"], "produces": []}, {"id": "v2Callingcode", "label": "GET\\n/v2/callingcode/{callingcode}", "color": "#4CAF50", "consumes": ["fields", "callingcode"], "produces": []}, {"id": "v2Capital", "label": "GET\\n/v2/capital/{capital}", "color": "#4CAF50", "consumes": ["capital", "fields"], "produces": []}, {"id": "v2Region", "label": "GET\\n/v2/region/{region}", "color": "#4CAF50", "consumes": ["fields", "region"], "produces": []}, {"id": "v2Lang", "label": "GET\\n/v2/lang/{lang}", "color": "#4CAF50", "consumes": ["fields", "lang"], "produces": []}, {"id": "v2Regionalbloc", "label": "GET\\n/v2/regionalbloc/{regionalbloc}", "color": "#4CAF50", "consumes": ["fields", "regionalbloc"], "produces": []}, {"id": "v3All", "label": "GET\\n/v3/all", "color": "#4CAF50", "consumes": ["fields"], "produces": []}, {"id": "v3Alphacode", "label": "GET\\n/v3/alpha/{alphacode}", "color": "#4CAF50", "consumes": ["alphacode", "fields"], "produces": []}, {"id": "v3Alphacodes", "label": "GET\\n/v3/alpha", "color": "#4CAF50", "consumes": ["fields", "codes"], "produces": []}, {"id": "v3Currency", "label": "GET\\n/v3/currency/{currency}", "color": "#4CAF50", "consumes": ["fields", "currency"], "produces": []}, {"id": "v3Name", "label": "GET\\n/v3/name/{name}", "color": "#4CAF50", "consumes": ["fields", "name", "fullText"], "produces": []}, {"id": "v3Capital", "label": "GET\\n/v3/capital/{capital}", "color": "#4CAF50", "consumes": ["capital", "fields"], "produces": []}, {"id": "v3Region", "label": "GET\\n/v3.1/region/{region}", "color": "#4CAF50", "consumes": ["fields", "region"], "produces": []}, {"id": "v3Subregion", "label": "GET\\n/v3/subregion/{subregion}", "color": "#4CAF50", "consumes": ["fields", "subregion"], "produces": []}, {"id": "v3Lang", "label": "GET\\n/v3/lang/{lang}", "color": "#4CAF50", "consumes": ["fields", "lang"], "produces": []}, {"id": "v3Demonym", "label": "GET\\n/v3/demonym/{demonym}", "color": "#4CAF50", "consumes": ["fields", "demonym"], "produces": []}, {"id": "v3Translation", "label": "GET\\n/v3/translation/{translation}", "color": "#4CAF50", "consumes": ["fields", "translation"], "produces": []}]);
+        var edges = new vis.DataSet([]);
+        
+        var container = document.getElementById('mynetwork');
+        var data = {
+            nodes: nodes,
+            edges: edges
+        };
+        
+        var options = {
+            nodes: {
+                shape: 'box',
+                margin: 10,
+                widthConstraint: {
+                    maximum: 200
+                }
+            },
+            edges: {
+                arrows: 'to',
+                smooth: {
+                    type: 'cubicBezier'
+                }
+            },
+            physics: {
+                enabled: true,
+                barnesHut: {
+                    gravitationalConstant: -2000,
+                    springConstant: 0.001,
+                    springLength: 200
+                }
+            },
+            layout: {
+                hierarchical: {
+                    enabled: true,
+                    direction: 'UD',
+                    sortMethod: 'directed'
+                }
+            }
+        };
+        
+        var network = new vis.Network(container, data, options);
+        
+        network.on("click", function(params) {
+            if (params.nodes.length > 0) {
+                var nodeId = params.nodes[0];
+                var node = nodes.get(nodeId);
+                alert('Operation: ' + node.label + '\n' +
+                      'ID: ' + node.id + '\n' +
+                      'Consumes: ' + (node.consumes || []).join(', ') + '\n' +
+                      'Produces: ' + (node.produces || []).join(', '));
+            }
+        });
+    </script>
+</body>
+</html>
+        

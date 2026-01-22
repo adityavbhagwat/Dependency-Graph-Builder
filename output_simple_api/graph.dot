@@ -1,0 +1,6 @@
+digraph G {
+rankdir=TB;
+createUser [label="POST /users", shape=box, style=filled, fillcolor="#2196F3"];
+getUserById [label="GET /users/{userId}", shape=box, style=filled, fillcolor="#4CAF50"];
+createUser -> getUserById [label=crud, color="#4CAF50"];
+}

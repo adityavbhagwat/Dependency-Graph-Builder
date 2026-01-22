@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Dependency Graph</title>
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <style>
+        #mynetwork {
+            width: 100%;
+            height: 800px;
+            border: 1px solid lightgray;
+        }
+        .legend {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: white;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>API Dependency Graph</h1>
+    <div class="legend">
+        <h3>Legend</h3>
+        <div><span style="color: #4CAF50;">■</span> GET Operations</div>
+        <div><span style="color: #2196F3;">■</span> POST Operations</div>
+        <div><span style="color: #FF9800;">■</span> PUT/PATCH Operations</div>
+        <div><span style="color: #F44336;">■</span> DELETE Operations</div>
+    </div>
+    <div id="mynetwork"></div>
+    <script type="text/javascript">
+        // Graph data
+        var nodes = new vis.DataSet([{"id": "getFeaturesForProduct", "label": "GET\\n/products/{productName}/features", "color": "#4CAF50", "consumes": ["productName"], "produces": ["name", "id", "description"]}, {"id": "updateFeatureOfProduct", "label": "PUT\\n/products/{productName}/features/{featureName}", "color": "#FF9800", "consumes": ["description", "productName", "featureName"], "produces": ["name", "id", "description"]}, {"id": "addFeatureToProduct", "label": "POST\\n/products/{productName}/features/{featureName}", "color": "#2196F3", "consumes": ["description", "productName", "featureName"], "produces": []}, {"id": "deleteFeatureOfProduct", "label": "DELETE\\n/products/{productName}/features/{featureName}", "color": "#F44336", "consumes": ["productName", "featureName"], "produces": []}, {"id": "getAllProducts", "label": "GET\\n/products", "color": "#4CAF50", "consumes": [], "produces": []}, {"id": "getProductByName", "label": "GET\\n/products/{productName}", "color": "#4CAF50", "consumes": ["productName"], "produces": ["constraints", "name", "features", "id"]}, {"id": "addProduct", "label": "POST\\n/products/{productName}", "color": "#2196F3", "consumes": ["productName"], "produces": []}, {"id": "deleteProductByName", "label": "DELETE\\n/products/{productName}", "color": "#F44336", "consumes": ["productName"], "produces": []}, {"id": "getConfigurationWithNameForProduct", "label": "GET\\n/products/{productName}/configurations/{configurationName}", "color": "#4CAF50", "consumes": ["productName", "configurationName"], "produces": ["activedFeatures", "name", "valid"]}, {"id": "addConfiguration", "label": "POST\\n/products/{productName}/configurations/{configurationName}", "color": "#2196F3", "consumes": ["productName", "configurationName"], "produces": []}, {"id": "deleteConfiguration", "label": "DELETE\\n/products/{productName}/configurations/{configurationName}", "color": "#F44336", "consumes": ["productName", "configurationName"], "produces": []}, {"id": "getConfigurationsForProduct", "label": "GET\\n/products/{productName}/configurations", "color": "#4CAF50", "consumes": ["productName"], "produces": []}, {"id": "addFeatureToConfiguration", "label": "POST\\n/products/{productName}/configurations/{configurationName}/features/{featureName}", "color": "#2196F3", "consumes": ["productName", "configurationName", "featureName"], "produces": []}, {"id": "deleteFeature", "label": "DELETE\\n/products/{productName}/configurations/{configurationName}/features/{featureName}", "color": "#F44336", "consumes": ["productName", "configurationName", "featureName"], "produces": []}, {"id": "getConfigurationActivedFeatures", "label": "GET\\n/products/{productName}/configurations/{configurationName}/features", "color": "#4CAF50", "consumes": ["productName", "configurationName"], "produces": []}, {"id": "deleteConstraint", "label": "DELETE\\n/products/{productName}/constraints/{constraintId}", "color": "#F44336", "consumes": ["productName", "constraintId"], "produces": []}, {"id": "addRequiresConstraintToProduct", "label": "POST\\n/products/{productName}/constraints/requires", "color": "#2196F3", "consumes": ["requiredFeature", "productName", "sourceFeature"], "produces": []}, {"id": "addExcludesConstraintToProduct", "label": "POST\\n/products/{productName}/constraints/excludes", "color": "#2196F3", "consumes": ["excludedFeature", "productName", "sourceFeature"], "produces": []}]);
+        var edges = new vis.DataSet([{"from": "getFeaturesForProduct", "to": "updateFeatureOfProduct", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read products before updating; Parameter 'description' produced by getFeaturesForProduct and consumed by updateFeatureOfProduct"}, {"from": "getFeaturesForProduct", "to": "addFeatureToProduct", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read products before updating"}, {"from": "getFeaturesForProduct", "to": "addProduct", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read products before updating"}, {"from": "getFeaturesForProduct", "to": "addFeatureToConfiguration", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read products before updating"}, {"from": "getAllProducts", "to": "updateFeatureOfProduct", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read products before updating"}, {"from": "getAllProducts", "to": "addFeatureToProduct", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read products before updating"}, {"from": "getAllProducts", "to": "addProduct", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read products before updating"}, {"from": "getAllProducts", "to": "addConfiguration", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read products before updating"}, {"from": "getAllProducts", "to": "addFeatureToConfiguration", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read products before updating"}, {"from": "getAllProducts", "to": "addRequiresConstraintToProduct", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read products before updating"}, {"from": "getAllProducts", "to": "addExcludesConstraintToProduct", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read products before updating"}, {"from": "getProductByName", "to": "updateFeatureOfProduct", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read products before updating"}, {"from": "getProductByName", "to": "addFeatureToProduct", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read products before updating"}, {"from": "getProductByName", "to": "addProduct", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read products before updating"}, {"from": "getProductByName", "to": "addConfiguration", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read products before updating"}, {"from": "getProductByName", "to": "addFeatureToConfiguration", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read products before updating"}, {"from": "getProductByName", "to": "addRequiresConstraintToProduct", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read products before updating"}, {"from": "getProductByName", "to": "addExcludesConstraintToProduct", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read products before updating"}, {"from": "getConfigurationWithNameForProduct", "to": "addProduct", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read products before updating"}, {"from": "getConfigurationWithNameForProduct", "to": "addConfiguration", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read products before updating"}, {"from": "getConfigurationWithNameForProduct", "to": "addFeatureToConfiguration", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read products before updating"}, {"from": "getConfigurationsForProduct", "to": "addProduct", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read products before updating"}, {"from": "getConfigurationsForProduct", "to": "addConfiguration", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read products before updating"}, {"from": "getConfigurationsForProduct", "to": "addFeatureToConfiguration", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read products before updating"}, {"from": "getConfigurationActivedFeatures", "to": "updateFeatureOfProduct", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read products before updating"}, {"from": "getConfigurationActivedFeatures", "to": "addFeatureToProduct", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read products before updating"}, {"from": "getConfigurationActivedFeatures", "to": "addProduct", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read products before updating"}, {"from": "getConfigurationActivedFeatures", "to": "addConfiguration", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read products before updating"}, {"from": "getConfigurationActivedFeatures", "to": "addFeatureToConfiguration", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read products before updating"}, {"from": "addProduct", "to": "updateFeatureOfProduct", "label": "nested_resource", "color": "#9C27B0", "title": "/products/{productName}/features/{featureName} is nested under /products/{productName}"}, {"from": "addProduct", "to": "addFeatureToProduct", "label": "nested_resource", "color": "#9C27B0", "title": "/products/{productName}/features/{featureName} is nested under /products/{productName}"}, {"from": "addProduct", "to": "deleteFeatureOfProduct", "label": "nested_resource", "color": "#9C27B0", "title": "/products/{productName}/features/{featureName} is nested under /products/{productName}"}, {"from": "addProduct", "to": "addConfiguration", "label": "nested_resource", "color": "#9C27B0", "title": "/products/{productName}/configurations/{configurationName} is nested under /products/{productName}"}, {"from": "addProduct", "to": "deleteConfiguration", "label": "nested_resource", "color": "#9C27B0", "title": "/products/{productName}/configurations/{configurationName} is nested under /products/{productName}"}, {"from": "addProduct", "to": "addFeatureToConfiguration", "label": "nested_resource", "color": "#9C27B0", "title": "/products/{productName}/configurations/{configurationName}/features/{featureName} is nested under /products/{productName}"}, {"from": "addConfiguration", "to": "addFeatureToConfiguration", "label": "nested_resource", "color": "#9C27B0", "title": "/products/{productName}/configurations/{configurationName}/features/{featureName} is nested under /products/{productName}/configurations/{configurationName}"}, {"from": "addProduct", "to": "deleteFeature", "label": "nested_resource", "color": "#9C27B0", "title": "/products/{productName}/configurations/{configurationName}/features/{featureName} is nested under /products/{productName}"}, {"from": "addConfiguration", "to": "deleteFeature", "label": "nested_resource", "color": "#9C27B0", "title": "/products/{productName}/configurations/{configurationName}/features/{featureName} is nested under /products/{productName}/configurations/{configurationName}"}, {"from": "addProduct", "to": "deleteConstraint", "label": "nested_resource", "color": "#9C27B0", "title": "/products/{productName}/constraints/{constraintId} is nested under /products/{productName}"}, {"from": "addProduct", "to": "addRequiresConstraintToProduct", "label": "nested_resource", "color": "#9C27B0", "title": "/products/{productName}/constraints/requires is nested under /products/{productName}"}, {"from": "addProduct", "to": "addExcludesConstraintToProduct", "label": "nested_resource", "color": "#9C27B0", "title": "/products/{productName}/constraints/excludes is nested under /products/{productName}"}, {"from": "updateFeatureOfProduct", "to": "addFeatureToProduct", "label": "parameter_data", "color": "#2196F3", "title": "Parameter 'description' produced by updateFeatureOfProduct and consumed by addFeatureToProduct"}, {"from": "getProductByName", "to": "deleteConstraint", "label": "parameter_data", "color": "#2196F3", "title": "Fuzzy match: 'constraints' -> 'constraintId'"}]);
+        
+        var container = document.getElementById('mynetwork');
+        var data = {
+            nodes: nodes,
+            edges: edges
+        };
+        
+        var options = {
+            nodes: {
+                shape: 'box',
+                margin: 10,
+                widthConstraint: {
+                    maximum: 200
+                }
+            },
+            edges: {
+                arrows: 'to',
+                smooth: {
+                    type: 'cubicBezier'
+                }
+            },
+            physics: {
+                enabled: true,
+                barnesHut: {
+                    gravitationalConstant: -2000,
+                    springConstant: 0.001,
+                    springLength: 200
+                }
+            },
+            layout: {
+                hierarchical: {
+                    enabled: true,
+                    direction: 'UD',
+                    sortMethod: 'directed'
+                }
+            }
+        };
+        
+        var network = new vis.Network(container, data, options);
+        
+        network.on("click", function(params) {
+            if (params.nodes.length > 0) {
+                var nodeId = params.nodes[0];
+                var node = nodes.get(nodeId);
+                alert('Operation: ' + node.label + '\n' +
+                      'ID: ' + node.id + '\n' +
+                      'Consumes: ' + (node.consumes || []).join(', ') + '\n' +
+                      'Produces: ' + (node.produces || []).join(', '));
+            }
+        });
+    </script>
+</body>
+</html>
+        

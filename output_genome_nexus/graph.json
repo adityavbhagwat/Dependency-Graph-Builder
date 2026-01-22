@@ -1,0 +1,902 @@
+{
+  "nodes": [
+    {
+      "id": "fetchVariantAnnotationPOST",
+      "path": "/annotation",
+      "method": "POST",
+      "resource_type": "annotation",
+      "consumes": [
+        "token",
+        "fields",
+        "isoformOverrideSource"
+      ],
+      "produces": [
+        "seq_region_name",
+        "strand",
+        "mutation_assessor",
+        "assembly_name",
+        "successfully_annotated",
+        "end",
+        "nucleotide_context",
+        "annotation_summary",
+        "clinvar",
+        "colocatedVariants",
+        "intergenic_consequences",
+        "id",
+        "transcript_consequences",
+        "allele_string",
+        "most_severe_consequence",
+        "ptms",
+        "originalVariantQuery",
+        "signalAnnotation",
+        "hotspots",
+        "hgvsg",
+        "variant",
+        "my_variant_info",
+        "start",
+        "annotationJSON",
+        "oncokb"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "fetchVariantAnnotationByIdPOST",
+      "path": "/annotation/dbsnp/",
+      "method": "POST",
+      "resource_type": "dbsnp",
+      "consumes": [
+        "token",
+        "fields",
+        "isoformOverrideSource"
+      ],
+      "produces": [
+        "seq_region_name",
+        "strand",
+        "mutation_assessor",
+        "assembly_name",
+        "successfully_annotated",
+        "end",
+        "nucleotide_context",
+        "annotation_summary",
+        "clinvar",
+        "colocatedVariants",
+        "intergenic_consequences",
+        "id",
+        "transcript_consequences",
+        "allele_string",
+        "most_severe_consequence",
+        "ptms",
+        "originalVariantQuery",
+        "signalAnnotation",
+        "hotspots",
+        "hgvsg",
+        "variant",
+        "my_variant_info",
+        "start",
+        "annotationJSON",
+        "oncokb"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "fetchVariantAnnotationByIdGET",
+      "path": "/annotation/dbsnp/{variantId}",
+      "method": "GET",
+      "resource_type": "dbsnp",
+      "consumes": [
+        "token",
+        "fields",
+        "isoformOverrideSource",
+        "variantId"
+      ],
+      "produces": [
+        "seq_region_name",
+        "strand",
+        "mutation_assessor",
+        "assembly_name",
+        "successfully_annotated",
+        "end",
+        "nucleotide_context",
+        "annotation_summary",
+        "clinvar",
+        "colocatedVariants",
+        "intergenic_consequences",
+        "id",
+        "transcript_consequences",
+        "allele_string",
+        "most_severe_consequence",
+        "ptms",
+        "originalVariantQuery",
+        "signalAnnotation",
+        "hotspots",
+        "hgvsg",
+        "variant",
+        "my_variant_info",
+        "start",
+        "annotationJSON",
+        "oncokb"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "fetchVariantAnnotationByGenomicLocationPOST",
+      "path": "/annotation/genomic",
+      "method": "POST",
+      "resource_type": "genomic",
+      "consumes": [
+        "chromosome",
+        "variantAllele",
+        "isoformOverrideSource",
+        "token",
+        "end",
+        "referenceAllele",
+        "fields",
+        "start"
+      ],
+      "produces": [
+        "seq_region_name",
+        "strand",
+        "mutation_assessor",
+        "assembly_name",
+        "successfully_annotated",
+        "end",
+        "nucleotide_context",
+        "annotation_summary",
+        "clinvar",
+        "colocatedVariants",
+        "intergenic_consequences",
+        "id",
+        "transcript_consequences",
+        "allele_string",
+        "most_severe_consequence",
+        "ptms",
+        "originalVariantQuery",
+        "signalAnnotation",
+        "hotspots",
+        "hgvsg",
+        "variant",
+        "my_variant_info",
+        "start",
+        "annotationJSON",
+        "oncokb"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "fetchVariantAnnotationByGenomicLocationGET",
+      "path": "/annotation/genomic/{genomicLocation}",
+      "method": "GET",
+      "resource_type": "genomic",
+      "consumes": [
+        "token",
+        "fields",
+        "genomicLocation",
+        "isoformOverrideSource"
+      ],
+      "produces": [
+        "seq_region_name",
+        "strand",
+        "mutation_assessor",
+        "assembly_name",
+        "successfully_annotated",
+        "end",
+        "nucleotide_context",
+        "annotation_summary",
+        "clinvar",
+        "colocatedVariants",
+        "intergenic_consequences",
+        "id",
+        "transcript_consequences",
+        "allele_string",
+        "most_severe_consequence",
+        "ptms",
+        "originalVariantQuery",
+        "signalAnnotation",
+        "hotspots",
+        "hgvsg",
+        "variant",
+        "my_variant_info",
+        "start",
+        "annotationJSON",
+        "oncokb"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "fetchVariantAnnotationGET",
+      "path": "/annotation/{variant}",
+      "method": "GET",
+      "resource_type": "annotation",
+      "consumes": [
+        "token",
+        "variant",
+        "isoformOverrideSource",
+        "fields"
+      ],
+      "produces": [
+        "seq_region_name",
+        "strand",
+        "mutation_assessor",
+        "assembly_name",
+        "successfully_annotated",
+        "end",
+        "nucleotide_context",
+        "annotation_summary",
+        "clinvar",
+        "colocatedVariants",
+        "intergenic_consequences",
+        "id",
+        "transcript_consequences",
+        "allele_string",
+        "most_severe_consequence",
+        "ptms",
+        "originalVariantQuery",
+        "signalAnnotation",
+        "hotspots",
+        "hgvsg",
+        "variant",
+        "my_variant_info",
+        "start",
+        "annotationJSON",
+        "oncokb"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "fetchCanonicalEnsemblGeneIdByEntrezGeneIdsPOST",
+      "path": "/ensembl/canonical-gene/entrez",
+      "method": "POST",
+      "resource_type": "entrez",
+      "consumes": [],
+      "produces": [
+        "entrezGeneId",
+        "geneId",
+        "hugoSymbol",
+        "synonyms",
+        "previousSymbols"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "fetchCanonicalEnsemblGeneIdByEntrezGeneIdGET",
+      "path": "/ensembl/canonical-gene/entrez/{entrezGeneId}",
+      "method": "GET",
+      "resource_type": "entrez",
+      "consumes": [
+        "entrezGeneId"
+      ],
+      "produces": [
+        "entrezGeneId",
+        "geneId",
+        "hugoSymbol",
+        "synonyms",
+        "previousSymbols"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "fetchCanonicalEnsemblGeneIdByHugoSymbolsPOST",
+      "path": "/ensembl/canonical-gene/hgnc",
+      "method": "POST",
+      "resource_type": "hgnc",
+      "consumes": [],
+      "produces": [
+        "entrezGeneId",
+        "geneId",
+        "hugoSymbol",
+        "synonyms",
+        "previousSymbols"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "fetchCanonicalEnsemblGeneIdByHugoSymbolGET",
+      "path": "/ensembl/canonical-gene/hgnc/{hugoSymbol}",
+      "method": "GET",
+      "resource_type": "hgnc",
+      "consumes": [
+        "hugoSymbol"
+      ],
+      "produces": [
+        "entrezGeneId",
+        "geneId",
+        "hugoSymbol",
+        "synonyms",
+        "previousSymbols"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "fetchCanonicalEnsemblTranscriptsByHugoSymbolsPOST",
+      "path": "/ensembl/canonical-transcript/hgnc",
+      "method": "POST",
+      "resource_type": "hgnc",
+      "consumes": [
+        "isoformOverrideSource"
+      ],
+      "produces": [
+        "exons",
+        "hugoSymbols",
+        "proteinLength",
+        "utrs",
+        "proteinId",
+        "uniprotId",
+        "refseqMrnaId",
+        "transcriptId",
+        "geneId",
+        "pfamDomains",
+        "ccdsId"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "fetchCanonicalEnsemblTranscriptByHugoSymbolGET",
+      "path": "/ensembl/canonical-transcript/hgnc/{hugoSymbol}",
+      "method": "GET",
+      "resource_type": "hgnc",
+      "consumes": [
+        "hugoSymbol",
+        "isoformOverrideSource"
+      ],
+      "produces": [
+        "exons",
+        "hugoSymbols",
+        "proteinLength",
+        "utrs",
+        "proteinId",
+        "uniprotId",
+        "refseqMrnaId",
+        "transcriptId",
+        "geneId",
+        "pfamDomains",
+        "ccdsId"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "fetchEnsemblTranscriptsGET",
+      "path": "/ensembl/transcript",
+      "method": "GET",
+      "resource_type": "transcript",
+      "consumes": [
+        "geneId",
+        "proteinId",
+        "hugoSymbol"
+      ],
+      "produces": [
+        "exons",
+        "hugoSymbols",
+        "proteinLength",
+        "utrs",
+        "proteinId",
+        "uniprotId",
+        "refseqMrnaId",
+        "transcriptId",
+        "geneId",
+        "pfamDomains",
+        "ccdsId"
+      ],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "fetchEnsemblTranscriptsByEnsemblFilterPOST",
+      "path": "/ensembl/transcript",
+      "method": "POST",
+      "resource_type": "transcript",
+      "consumes": [
+        "proteinIds",
+        "hugoSymbols",
+        "transcriptIds",
+        "geneIds"
+      ],
+      "produces": [
+        "exons",
+        "hugoSymbols",
+        "proteinLength",
+        "utrs",
+        "proteinId",
+        "uniprotId",
+        "refseqMrnaId",
+        "transcriptId",
+        "geneId",
+        "pfamDomains",
+        "ccdsId"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "fetchEnsemblTranscriptByTranscriptIdGET",
+      "path": "/ensembl/transcript/{transcriptId}",
+      "method": "GET",
+      "resource_type": "transcript",
+      "consumes": [
+        "transcriptId"
+      ],
+      "produces": [
+        "exons",
+        "hugoSymbols",
+        "proteinLength",
+        "utrs",
+        "proteinId",
+        "uniprotId",
+        "refseqMrnaId",
+        "transcriptId",
+        "geneId",
+        "pfamDomains",
+        "ccdsId"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "fetchGeneXrefsGET",
+      "path": "/ensembl/xrefs",
+      "method": "GET",
+      "resource_type": "xrefs",
+      "consumes": [
+        "accession"
+      ],
+      "produces": [
+        "primary_id",
+        "dbname",
+        "display_id",
+        "db_display_name",
+        "info_types",
+        "ensemblGeneId",
+        "version",
+        "synonyms",
+        "info_text",
+        "description"
+      ],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "fetchPdbHeaderPOST",
+      "path": "/pdb/header",
+      "method": "POST",
+      "resource_type": "header",
+      "consumes": [],
+      "produces": [
+        "source",
+        "title",
+        "pdbId",
+        "compound"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "fetchPdbHeaderGET",
+      "path": "/pdb/header/{pdbId}",
+      "method": "GET",
+      "resource_type": "header",
+      "consumes": [
+        "pdbId"
+      ],
+      "produces": [
+        "source",
+        "title",
+        "pdbId",
+        "compound"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "fetchPfamDomainsByPfamAccessionPOST",
+      "path": "/pfam/domain",
+      "method": "POST",
+      "resource_type": "domain",
+      "consumes": [],
+      "produces": [
+        "pfamAccession",
+        "name",
+        "description"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "fetchPfamDomainsByAccessionGET",
+      "path": "/pfam/domain/{pfamAccession}",
+      "method": "GET",
+      "resource_type": "domain",
+      "consumes": [
+        "pfamAccession"
+      ],
+      "produces": [
+        "pfamAccession",
+        "name",
+        "description"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "fetchPostTranslationalModificationsGET",
+      "path": "/ptm/experimental",
+      "method": "GET",
+      "resource_type": "experimental",
+      "consumes": [
+        "ensemblTranscriptId"
+      ],
+      "produces": [
+        "uniprotEntry",
+        "uniprotAccession",
+        "ensemblTranscriptIds",
+        "pubmedIds",
+        "type",
+        "position",
+        "sequence"
+      ],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "fetchPostTranslationalModificationsByPtmFilterPOST",
+      "path": "/ptm/experimental",
+      "method": "POST",
+      "resource_type": "experimental",
+      "consumes": [
+        "transcriptIds"
+      ],
+      "produces": [
+        "uniprotEntry",
+        "uniprotAccession",
+        "ensemblTranscriptIds",
+        "pubmedIds",
+        "type",
+        "position",
+        "sequence"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "fetchVersionGET",
+      "path": "/version",
+      "method": "GET",
+      "resource_type": "version",
+      "consumes": [],
+      "produces": [
+        "version"
+      ],
+      "is_interesting": false,
+      "annotations": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "fetchVariantAnnotationPOST",
+      "target": "fetchVariantAnnotationGET",
+      "type": "crud",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "variant": "variant"
+      },
+      "reason": "/annotation/{variant} is nested under /annotation; CRUD: Must create annotation before reading; Parameter 'variant' produced by fetchVariantAnnotationPOST and consumed by fetchVariantAnnotationGET",
+      "verified": null
+    },
+    {
+      "source": "fetchCanonicalEnsemblGeneIdByEntrezGeneIdsPOST",
+      "target": "fetchCanonicalEnsemblGeneIdByEntrezGeneIdGET",
+      "type": "crud",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "entrezGeneId": "entrezGeneId"
+      },
+      "reason": "/ensembl/canonical-gene/entrez/{entrezGeneId} is nested under /ensembl/canonical-gene/entrez; CRUD: Must create entrez before reading; Parameter 'entrezGeneId' produced by fetchCanonicalEnsemblGeneIdByEntrezGeneIdsPOST and consumed by fetchCanonicalEnsemblGeneIdByEntrezGeneIdGET",
+      "verified": null
+    },
+    {
+      "source": "fetchCanonicalEnsemblGeneIdByHugoSymbolsPOST",
+      "target": "fetchCanonicalEnsemblGeneIdByHugoSymbolGET",
+      "type": "crud",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "hugoSymbol": "hugoSymbol"
+      },
+      "reason": "/ensembl/canonical-gene/hgnc/{hugoSymbol} is nested under /ensembl/canonical-gene/hgnc; CRUD: Must create hgnc before reading; Parameter 'hugoSymbol' produced by fetchCanonicalEnsemblGeneIdByHugoSymbolsPOST and consumed by fetchCanonicalEnsemblGeneIdByHugoSymbolGET",
+      "verified": null
+    },
+    {
+      "source": "fetchEnsemblTranscriptsByEnsemblFilterPOST",
+      "target": "fetchEnsemblTranscriptByTranscriptIdGET",
+      "type": "crud",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "transcriptId": "transcriptId"
+      },
+      "reason": "/ensembl/transcript/{transcriptId} is nested under /ensembl/transcript; CRUD: Must create transcript before reading; Parameter 'transcriptId' produced by fetchEnsemblTranscriptsByEnsemblFilterPOST and consumed by fetchEnsemblTranscriptByTranscriptIdGET",
+      "verified": null
+    },
+    {
+      "source": "fetchPdbHeaderPOST",
+      "target": "fetchPdbHeaderGET",
+      "type": "crud",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "pdbId": "pdbId"
+      },
+      "reason": "/pdb/header/{pdbId} is nested under /pdb/header; CRUD: Must create header before reading; Parameter 'pdbId' produced by fetchPdbHeaderPOST and consumed by fetchPdbHeaderGET",
+      "verified": null
+    },
+    {
+      "source": "fetchPfamDomainsByPfamAccessionPOST",
+      "target": "fetchPfamDomainsByAccessionGET",
+      "type": "crud",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "pfamAccession": "pfamAccession"
+      },
+      "reason": "/pfam/domain/{pfamAccession} is nested under /pfam/domain; CRUD: Must create domain before reading; Parameter 'pfamAccession' produced by fetchPfamDomainsByPfamAccessionPOST and consumed by fetchPfamDomainsByAccessionGET",
+      "verified": null
+    },
+    {
+      "source": "fetchEnsemblTranscriptsByEnsemblFilterPOST",
+      "target": "fetchEnsemblTranscriptsGET",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {
+        "hugoSymbols": "hugoSymbol",
+        "geneId": "geneId",
+        "proteinId": "proteinId"
+      },
+      "reason": "CRUD: Must create transcript before reading; Fuzzy match: 'hugoSymbols' -> 'hugoSymbol'; Parameter 'geneId' produced by fetchEnsemblTranscriptsByEnsemblFilterPOST and consumed by fetchEnsemblTranscriptsGET; Parameter 'proteinId' produced by fetchEnsemblTranscriptsByEnsemblFilterPOST and consumed by fetchEnsemblTranscriptsGET",
+      "verified": null
+    },
+    {
+      "source": "fetchVariantAnnotationByIdPOST",
+      "target": "fetchVariantAnnotationByIdGET",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {
+        "variant": "variantId"
+      },
+      "reason": "CRUD: Must create dbsnp before reading; Fuzzy match: 'variant' -> 'variantId'",
+      "verified": null
+    },
+    {
+      "source": "fetchCanonicalEnsemblTranscriptsByHugoSymbolsPOST",
+      "target": "fetchCanonicalEnsemblTranscriptByHugoSymbolGET",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {
+        "hugoSymbols": "hugoSymbol"
+      },
+      "reason": "/ensembl/canonical-transcript/hgnc/{hugoSymbol} is nested under /ensembl/canonical-transcript/hgnc; CRUD: Must create hgnc before reading; Fuzzy match: 'hugoSymbols' -> 'hugoSymbol'",
+      "verified": null
+    },
+    {
+      "source": "fetchPostTranslationalModificationsByPtmFilterPOST",
+      "target": "fetchPostTranslationalModificationsGET",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {
+        "ensemblTranscriptIds": "ensemblTranscriptId"
+      },
+      "reason": "CRUD: Must create experimental before reading; Fuzzy match: 'ensemblTranscriptIds' -> 'ensemblTranscriptId'",
+      "verified": null
+    },
+    {
+      "source": "fetchVariantAnnotationByGenomicLocationPOST",
+      "target": "fetchVariantAnnotationByGenomicLocationGET",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "/annotation/genomic/{genomicLocation} is nested under /annotation/genomic; CRUD: Must create genomic before reading",
+      "verified": null
+    },
+    {
+      "source": "fetchVariantAnnotationPOST",
+      "target": "fetchVariantAnnotationByIdPOST",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {},
+      "reason": "/annotation/dbsnp/ is nested under /annotation",
+      "verified": null
+    },
+    {
+      "source": "fetchVariantAnnotationPOST",
+      "target": "fetchVariantAnnotationByIdGET",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {},
+      "reason": "/annotation/dbsnp/{variantId} is nested under /annotation",
+      "verified": null
+    },
+    {
+      "source": "fetchVariantAnnotationPOST",
+      "target": "fetchVariantAnnotationByGenomicLocationPOST",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {},
+      "reason": "/annotation/genomic is nested under /annotation",
+      "verified": null
+    },
+    {
+      "source": "fetchVariantAnnotationPOST",
+      "target": "fetchVariantAnnotationByGenomicLocationGET",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {},
+      "reason": "/annotation/genomic/{genomicLocation} is nested under /annotation",
+      "verified": null
+    },
+    {
+      "source": "fetchCanonicalEnsemblGeneIdByHugoSymbolsPOST",
+      "target": "fetchCanonicalEnsemblGeneIdByEntrezGeneIdGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "entrezGeneId": "entrezGeneId"
+      },
+      "reason": "Parameter 'entrezGeneId' produced by fetchCanonicalEnsemblGeneIdByHugoSymbolsPOST and consumed by fetchCanonicalEnsemblGeneIdByEntrezGeneIdGET",
+      "verified": null
+    },
+    {
+      "source": "fetchCanonicalEnsemblGeneIdByHugoSymbolGET",
+      "target": "fetchCanonicalEnsemblGeneIdByEntrezGeneIdGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "entrezGeneId": "entrezGeneId"
+      },
+      "reason": "Parameter 'entrezGeneId' produced by fetchCanonicalEnsemblGeneIdByHugoSymbolGET and consumed by fetchCanonicalEnsemblGeneIdByEntrezGeneIdGET",
+      "verified": null
+    },
+    {
+      "source": "fetchCanonicalEnsemblGeneIdByHugoSymbolsPOST",
+      "target": "fetchCanonicalEnsemblTranscriptByHugoSymbolGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "hugoSymbol": "hugoSymbol"
+      },
+      "reason": "Parameter 'hugoSymbol' produced by fetchCanonicalEnsemblGeneIdByHugoSymbolsPOST and consumed by fetchCanonicalEnsemblTranscriptByHugoSymbolGET",
+      "verified": null
+    },
+    {
+      "source": "fetchCanonicalEnsemblGeneIdByHugoSymbolGET",
+      "target": "fetchCanonicalEnsemblTranscriptByHugoSymbolGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "hugoSymbol": "hugoSymbol"
+      },
+      "reason": "Parameter 'hugoSymbol' produced by fetchCanonicalEnsemblGeneIdByHugoSymbolGET and consumed by fetchCanonicalEnsemblTranscriptByHugoSymbolGET",
+      "verified": null
+    },
+    {
+      "source": "fetchCanonicalEnsemblTranscriptsByHugoSymbolsPOST",
+      "target": "fetchEnsemblTranscriptByTranscriptIdGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "transcriptId": "transcriptId"
+      },
+      "reason": "Parameter 'transcriptId' produced by fetchCanonicalEnsemblTranscriptsByHugoSymbolsPOST and consumed by fetchEnsemblTranscriptByTranscriptIdGET",
+      "verified": null
+    },
+    {
+      "source": "fetchCanonicalEnsemblTranscriptByHugoSymbolGET",
+      "target": "fetchEnsemblTranscriptByTranscriptIdGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "transcriptId": "transcriptId"
+      },
+      "reason": "Parameter 'transcriptId' produced by fetchCanonicalEnsemblTranscriptByHugoSymbolGET and consumed by fetchEnsemblTranscriptByTranscriptIdGET",
+      "verified": null
+    },
+    {
+      "source": "fetchEnsemblTranscriptsGET",
+      "target": "fetchEnsemblTranscriptByTranscriptIdGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "transcriptId": "transcriptId"
+      },
+      "reason": "Parameter 'transcriptId' produced by fetchEnsemblTranscriptsGET and consumed by fetchEnsemblTranscriptByTranscriptIdGET",
+      "verified": null
+    },
+    {
+      "source": "fetchCanonicalEnsemblGeneIdByEntrezGeneIdsPOST",
+      "target": "fetchEnsemblTranscriptsGET",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "geneId": "geneId"
+      },
+      "reason": "Parameter 'geneId' produced by fetchCanonicalEnsemblGeneIdByEntrezGeneIdsPOST and consumed by fetchEnsemblTranscriptsGET",
+      "verified": null
+    },
+    {
+      "source": "fetchCanonicalEnsemblGeneIdByEntrezGeneIdGET",
+      "target": "fetchEnsemblTranscriptsGET",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "geneId": "geneId"
+      },
+      "reason": "Parameter 'geneId' produced by fetchCanonicalEnsemblGeneIdByEntrezGeneIdGET and consumed by fetchEnsemblTranscriptsGET",
+      "verified": null
+    },
+    {
+      "source": "fetchCanonicalEnsemblGeneIdByHugoSymbolsPOST",
+      "target": "fetchEnsemblTranscriptsGET",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "geneId": "geneId"
+      },
+      "reason": "Parameter 'geneId' produced by fetchCanonicalEnsemblGeneIdByHugoSymbolsPOST and consumed by fetchEnsemblTranscriptsGET",
+      "verified": null
+    },
+    {
+      "source": "fetchCanonicalEnsemblGeneIdByHugoSymbolGET",
+      "target": "fetchEnsemblTranscriptsGET",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "geneId": "geneId"
+      },
+      "reason": "Parameter 'geneId' produced by fetchCanonicalEnsemblGeneIdByHugoSymbolGET and consumed by fetchEnsemblTranscriptsGET",
+      "verified": null
+    },
+    {
+      "source": "fetchCanonicalEnsemblTranscriptsByHugoSymbolsPOST",
+      "target": "fetchEnsemblTranscriptsGET",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "proteinId": "proteinId",
+        "geneId": "geneId"
+      },
+      "reason": "Parameter 'geneId' produced by fetchCanonicalEnsemblTranscriptsByHugoSymbolsPOST and consumed by fetchEnsemblTranscriptsGET; Parameter 'proteinId' produced by fetchCanonicalEnsemblTranscriptsByHugoSymbolsPOST and consumed by fetchEnsemblTranscriptsGET",
+      "verified": null
+    },
+    {
+      "source": "fetchCanonicalEnsemblTranscriptByHugoSymbolGET",
+      "target": "fetchEnsemblTranscriptsGET",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "proteinId": "proteinId",
+        "geneId": "geneId"
+      },
+      "reason": "Parameter 'geneId' produced by fetchCanonicalEnsemblTranscriptByHugoSymbolGET and consumed by fetchEnsemblTranscriptsGET; Parameter 'proteinId' produced by fetchCanonicalEnsemblTranscriptByHugoSymbolGET and consumed by fetchEnsemblTranscriptsGET",
+      "verified": null
+    },
+    {
+      "source": "fetchCanonicalEnsemblTranscriptsByHugoSymbolsPOST",
+      "target": "fetchCanonicalEnsemblGeneIdByHugoSymbolGET",
+      "type": "parameter_data",
+      "confidence": 0.6,
+      "parameter_mapping": {
+        "hugoSymbols": "hugoSymbol"
+      },
+      "reason": "Fuzzy match: 'hugoSymbols' -> 'hugoSymbol'",
+      "verified": null
+    }
+  ],
+  "metadata": {
+    "num_operations": 23,
+    "num_dependencies": 29
+  }
+}

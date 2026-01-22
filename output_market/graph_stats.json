@@ -30,15 +30,15 @@
     "example": [
       "errorUsingPOST",
       "errorUsingGET",
-      "errorUsingPATCH"
+      "errorUsingPUT"
     ]
   },
   "_timings": {
-    "longest_path_sec": 0.000308990478515625,
-    "betweenness_sec": 0.00032901763916015625,
-    "degree_centrality_sec": 6.079673767089844e-05,
-    "pickle_serialize_sec": 0.00022602081298828125,
-    "total_sec": 0.0014836788177490234
+    "longest_path_sec": 0.0001609325408935547,
+    "betweenness_sec": 0.0002512931823730469,
+    "degree_centrality_sec": 1.6689300537109375e-05,
+    "pickle_serialize_sec": 4.601478576660156e-05,
+    "total_sec": 0.0008759498596191406
   },
   "centrality": {
     "betweenness_top": [

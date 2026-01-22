@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Dependency Graph</title>
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <style>
+        #mynetwork {
+            width: 100%;
+            height: 800px;
+            border: 1px solid lightgray;
+        }
+        .legend {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: white;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>API Dependency Graph</h1>
+    <div class="legend">
+        <h3>Legend</h3>
+        <div><span style="color: #4CAF50;">■</span> GET Operations</div>
+        <div><span style="color: #2196F3;">■</span> POST Operations</div>
+        <div><span style="color: #FF9800;">■</span> PUT/PATCH Operations</div>
+        <div><span style="color: #F44336;">■</span> DELETE Operations</div>
+    </div>
+    <div id="mynetwork"></div>
+    <script type="text/javascript">
+        // Graph data
+        var nodes = new vis.DataSet([{"id": "endpoint-get-current-users-profile", "label": "GET\\n/me", "color": "#4CAF50", "consumes": [], "produces": ["product", "explicit_content", "type", "images", "country", "href", "display_name", "external_urls", "email", "uri", "followers", "id"]}, {"id": "endpoint-get-a-list-of-current-users-playlists", "label": "GET\\n/me/playlists", "color": "#4CAF50", "consumes": ["offset", "limit"], "produces": ["href", "total", "items", "next", "offset", "previous", "limit"]}, {"id": "endpoint-get-playlist", "label": "GET\\n/playlists/{playlist_id}", "color": "#4CAF50", "consumes": ["additional_types", "fields", "playlist_id", "market"], "produces": ["owner", "type", "tracks.href", "public", "tracks.limit", "href", "tracks.offset", "external_urls", "tracks.previous", "tracks.next", "tracks", "name", "id", "description", "tracks.total", "tracks.items", "images", "snapshot_id", "uri", "followers", "collaborative"]}, {"id": "endpoint-change-playlist-details", "label": "PUT\\n/playlists/{playlist_id}", "color": "#FF9800", "consumes": ["collaborative", "playlist_id", "name", "public", "description"], "produces": []}, {"id": "endpoint-get-playlist-cover", "label": "GET\\n/playlists/{playlist_id}/images", "color": "#4CAF50", "consumes": ["playlist_id"], "produces": ["url", "height", "width"]}, {"id": "endpoint-remove-tracks-playlist1", "label": "PUT\\n/playlists/{playlist_id1}/{tracks1}", "color": "#FF9800", "consumes": ["playlist_id1", "tracks1", "range_start", "insert_before"], "produces": ["snapshot_id"]}, {"id": "endpoint-remove-tracks-playlist", "label": "DELETE\\n/playlists/{playlist_id}/tracks", "color": "#F44336", "consumes": ["snapshot_id", "tracks", "playlist_id"], "produces": ["snapshot_id"]}, {"id": "endpoint-get-playlists-tracks", "label": "GET\\n/playlists/{playlist_id}/tracks", "color": "#4CAF50", "consumes": ["playlist_id", "market", "additional_types", "offset", "fields", "limit"], "produces": ["href", "total", "items", "next", "offset", "previous", "limit"]}, {"id": "endpoint-add-tracks-to-playlist", "label": "POST\\n/playlists/{playlist_id}/tracks", "color": "#2196F3", "consumes": ["playlist_id", "position", "uris"], "produces": ["snapshot_id"]}, {"id": "endpoint-reorder-or-replace-playlists-tracks", "label": "PUT\\n/playlists/{playlist_id}/tracks", "color": "#FF9800", "consumes": ["snapshot_id", "range_length", "playlist_id", "insert_before", "range_start", "uris"], "produces": ["snapshot_id"]}, {"id": "endpoint-search", "label": "GET\\n/search", "color": "#4CAF50", "consumes": ["type", "q", "market", "include_external", "offset", "limit"], "produces": ["episodes.limit", "shows.previous", "albums", "shows.href", "playlists.previous", "tracks.href", "tracks.limit", "tracks.offset", "artists.next", "albums.previous", "tracks", "albums.href", "shows", "shows.total", "albums.next", "episodes.items", "tracks.total", "artists", "playlists.next", "albums.limit", "episodes.next", "playlists", "shows.offset", "albums.total", "episodes.offset", "playlists.total", "artists.previous", "episodes.previous", "playlists.href", "shows.next", "tracks.previous", "artists.href", "artists.offset", "tracks.next", "albums.items", "albums.offset", "shows.items", "shows.limit", "episodes", "playlists.offset", "tracks.items", "episodes.href", "artists.items", "playlists.items", "playlists.limit", "artists.limit", "artists.total", "episodes.total"]}, {"id": "endpoint-get-list-users-playlists", "label": "GET\\n/users/{user_id}/playlists", "color": "#4CAF50", "consumes": ["user_id", "offset", "limit"], "produces": ["href", "total", "items", "next", "offset", "previous", "limit"]}, {"id": "endpoint-create-playlist", "label": "POST\\n/users/{user_id}/playlists", "color": "#2196F3", "consumes": ["collaborative", "user_id", "name", "public", "description"], "produces": ["owner", "tracks.href", "tracks.limit", "href", "tracks.offset", "external_urls", "tracks", "description", "tracks.total", "images", "snapshot_id", "uri", "type", "public", "tracks.previous", "tracks.next", "name", "id", "tracks.items", "followers", "collaborative"]}]);
+        var edges = new vis.DataSet([{"from": "endpoint-get-playlist", "to": "endpoint-change-playlist-details", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read playlists before updating; Parameter 'collaborative' produced by endpoint-get-playlist and consumed by endpoint-change-playlist-details; Parameter 'description' produced by endpoint-get-playlist and consumed by endpoint-change-playlist-details; Parameter 'name' produced by endpoint-get-playlist and consumed by endpoint-change-playlist-details; Parameter 'public' produced by endpoint-get-playlist and consumed by endpoint-change-playlist-details"}, {"from": "endpoint-get-playlist", "to": "endpoint-reorder-or-replace-playlists-tracks", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read playlists before updating; Fuzzy match: 'uri' -> 'uris'; Parameter 'snapshot_id' produced by endpoint-get-playlist and consumed by endpoint-reorder-or-replace-playlists-tracks"}, {"from": "endpoint-get-playlist", "to": "endpoint-remove-tracks-playlist1", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read playlists before updating; Fuzzy match: 'tracks' -> 'tracks1'"}, {"from": "endpoint-get-a-list-of-current-users-playlists", "to": "endpoint-change-playlist-details", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read playlists before updating"}, {"from": "endpoint-get-a-list-of-current-users-playlists", "to": "endpoint-remove-tracks-playlist1", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read playlists before updating"}, {"from": "endpoint-get-playlist", "to": "endpoint-add-tracks-to-playlist", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read playlists before updating"}, {"from": "endpoint-get-playlist-cover", "to": "endpoint-change-playlist-details", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read playlists before updating"}, {"from": "endpoint-get-playlist-cover", "to": "endpoint-remove-tracks-playlist1", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read playlists before updating"}, {"from": "endpoint-get-playlists-tracks", "to": "endpoint-change-playlist-details", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read playlists before updating"}, {"from": "endpoint-get-playlists-tracks", "to": "endpoint-remove-tracks-playlist1", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read playlists before updating"}, {"from": "endpoint-get-playlists-tracks", "to": "endpoint-reorder-or-replace-playlists-tracks", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read playlists before updating"}, {"from": "endpoint-get-playlists-tracks", "to": "endpoint-add-tracks-to-playlist", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read playlists before updating"}, {"from": "endpoint-get-list-users-playlists", "to": "endpoint-create-playlist", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read users before updating"}, {"from": "endpoint-get-playlist", "to": "endpoint-remove-tracks-playlist", "label": "parameter_data", "color": "#2196F3", "title": "Parameter 'snapshot_id' produced by endpoint-get-playlist and consumed by endpoint-remove-tracks-playlist; Parameter 'tracks' produced by endpoint-get-playlist and consumed by endpoint-remove-tracks-playlist"}, {"from": "endpoint-remove-tracks-playlist", "to": "endpoint-reorder-or-replace-playlists-tracks", "label": "parameter_data", "color": "#2196F3", "title": "Parameter 'snapshot_id' produced by endpoint-remove-tracks-playlist and consumed by endpoint-reorder-or-replace-playlists-tracks"}, {"from": "endpoint-add-tracks-to-playlist", "to": "endpoint-remove-tracks-playlist", "label": "parameter_data", "color": "#2196F3", "title": "Parameter 'snapshot_id' produced by endpoint-add-tracks-to-playlist and consumed by endpoint-remove-tracks-playlist"}, {"from": "endpoint-add-tracks-to-playlist", "to": "endpoint-reorder-or-replace-playlists-tracks", "label": "parameter_data", "color": "#2196F3", "title": "Parameter 'snapshot_id' produced by endpoint-add-tracks-to-playlist and consumed by endpoint-reorder-or-replace-playlists-tracks"}, {"from": "endpoint-remove-tracks-playlist1", "to": "endpoint-remove-tracks-playlist", "label": "parameter_data", "color": "#2196F3", "title": "Parameter 'snapshot_id' produced by endpoint-remove-tracks-playlist1 and consumed by endpoint-remove-tracks-playlist"}, {"from": "endpoint-remove-tracks-playlist1", "to": "endpoint-reorder-or-replace-playlists-tracks", "label": "parameter_data", "color": "#2196F3", "title": "Parameter 'snapshot_id' produced by endpoint-remove-tracks-playlist1 and consumed by endpoint-reorder-or-replace-playlists-tracks"}, {"from": "endpoint-create-playlist", "to": "endpoint-remove-tracks-playlist", "label": "parameter_data", "color": "#2196F3", "title": "Parameter 'snapshot_id' produced by endpoint-create-playlist and consumed by endpoint-remove-tracks-playlist"}, {"from": "endpoint-create-playlist", "to": "endpoint-reorder-or-replace-playlists-tracks", "label": "parameter_data", "color": "#2196F3", "title": "Parameter 'snapshot_id' produced by endpoint-create-playlist and consumed by endpoint-reorder-or-replace-playlists-tracks"}, {"from": "endpoint-get-a-list-of-current-users-playlists", "to": "endpoint-get-playlists-tracks", "label": "parameter_data", "color": "#2196F3", "title": "Parameter 'limit' produced by endpoint-get-a-list-of-current-users-playlists and consumed by endpoint-get-playlists-tracks; Parameter 'offset' produced by endpoint-get-a-list-of-current-users-playlists and consumed by endpoint-get-playlists-tracks"}]);
+        
+        var container = document.getElementById('mynetwork');
+        var data = {
+            nodes: nodes,
+            edges: edges
+        };
+        
+        var options = {
+            nodes: {
+                shape: 'box',
+                margin: 10,
+                widthConstraint: {
+                    maximum: 200
+                }
+            },
+            edges: {
+                arrows: 'to',
+                smooth: {
+                    type: 'cubicBezier'
+                }
+            },
+            physics: {
+                enabled: true,
+                barnesHut: {
+                    gravitationalConstant: -2000,
+                    springConstant: 0.001,
+                    springLength: 200
+                }
+            },
+            layout: {
+                hierarchical: {
+                    enabled: true,
+                    direction: 'UD',
+                    sortMethod: 'directed'
+                }
+            }
+        };
+        
+        var network = new vis.Network(container, data, options);
+        
+        network.on("click", function(params) {
+            if (params.nodes.length > 0) {
+                var nodeId = params.nodes[0];
+                var node = nodes.get(nodeId);
+                alert('Operation: ' + node.label + '\n' +
+                      'ID: ' + node.id + '\n' +
+                      'Consumes: ' + (node.consumes || []).join(', ') + '\n' +
+                      'Produces: ' + (node.produces || []).join(', '));
+            }
+        });
+    </script>
+</body>
+</html>
+        

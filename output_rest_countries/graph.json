@@ -1,0 +1,282 @@
+{
+  "nodes": [
+    {
+      "id": "v2All",
+      "path": "/v2/all",
+      "method": "GET",
+      "resource_type": "all",
+      "consumes": [
+        "fields"
+      ],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "v2Alphacode",
+      "path": "/v2/alpha/{alphacode}",
+      "method": "GET",
+      "resource_type": "alpha",
+      "consumes": [
+        "alphacode",
+        "fields"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "v2Alphacodes",
+      "path": "/v2/alpha",
+      "method": "GET",
+      "resource_type": "alpha",
+      "consumes": [
+        "fields",
+        "codes"
+      ],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "v2Currency",
+      "path": "/v2/currency/{currency}",
+      "method": "GET",
+      "resource_type": "currency",
+      "consumes": [
+        "fields",
+        "currency"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "v2Name",
+      "path": "/v2/name/{name}",
+      "method": "GET",
+      "resource_type": "name",
+      "consumes": [
+        "fields",
+        "name",
+        "fullText"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "v2Callingcode",
+      "path": "/v2/callingcode/{callingcode}",
+      "method": "GET",
+      "resource_type": "callingcode",
+      "consumes": [
+        "fields",
+        "callingcode"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "v2Capital",
+      "path": "/v2/capital/{capital}",
+      "method": "GET",
+      "resource_type": "capital",
+      "consumes": [
+        "capital",
+        "fields"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "v2Region",
+      "path": "/v2/region/{region}",
+      "method": "GET",
+      "resource_type": "region",
+      "consumes": [
+        "fields",
+        "region"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "v2Lang",
+      "path": "/v2/lang/{lang}",
+      "method": "GET",
+      "resource_type": "lang",
+      "consumes": [
+        "fields",
+        "lang"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "v2Regionalbloc",
+      "path": "/v2/regionalbloc/{regionalbloc}",
+      "method": "GET",
+      "resource_type": "regionalbloc",
+      "consumes": [
+        "fields",
+        "regionalbloc"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "v3All",
+      "path": "/v3/all",
+      "method": "GET",
+      "resource_type": "all",
+      "consumes": [
+        "fields"
+      ],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "v3Alphacode",
+      "path": "/v3/alpha/{alphacode}",
+      "method": "GET",
+      "resource_type": "alpha",
+      "consumes": [
+        "alphacode",
+        "fields"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "v3Alphacodes",
+      "path": "/v3/alpha",
+      "method": "GET",
+      "resource_type": "alpha",
+      "consumes": [
+        "fields",
+        "codes"
+      ],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "v3Currency",
+      "path": "/v3/currency/{currency}",
+      "method": "GET",
+      "resource_type": "currency",
+      "consumes": [
+        "fields",
+        "currency"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "v3Name",
+      "path": "/v3/name/{name}",
+      "method": "GET",
+      "resource_type": "name",
+      "consumes": [
+        "fields",
+        "name",
+        "fullText"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "v3Capital",
+      "path": "/v3/capital/{capital}",
+      "method": "GET",
+      "resource_type": "capital",
+      "consumes": [
+        "capital",
+        "fields"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "v3Region",
+      "path": "/v3.1/region/{region}",
+      "method": "GET",
+      "resource_type": "region",
+      "consumes": [
+        "fields",
+        "region"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "v3Subregion",
+      "path": "/v3/subregion/{subregion}",
+      "method": "GET",
+      "resource_type": "subregion",
+      "consumes": [
+        "fields",
+        "subregion"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "v3Lang",
+      "path": "/v3/lang/{lang}",
+      "method": "GET",
+      "resource_type": "lang",
+      "consumes": [
+        "fields",
+        "lang"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "v3Demonym",
+      "path": "/v3/demonym/{demonym}",
+      "method": "GET",
+      "resource_type": "demonym",
+      "consumes": [
+        "fields",
+        "demonym"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "v3Translation",
+      "path": "/v3/translation/{translation}",
+      "method": "GET",
+      "resource_type": "translation",
+      "consumes": [
+        "fields",
+        "translation"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    }
+  ],
+  "edges": [],
+  "metadata": {
+    "num_operations": 21,
+    "num_dependencies": 0
+  }
+}

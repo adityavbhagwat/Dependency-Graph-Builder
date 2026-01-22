@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <graph edgedefault="directed">
+    <node id="fetchVariantAnnotationPOST" />
+    <node id="fetchVariantAnnotationByIdPOST" />
+    <node id="fetchVariantAnnotationByIdGET" />
+    <node id="fetchVariantAnnotationByGenomicLocationPOST" />
+    <node id="fetchVariantAnnotationByGenomicLocationGET" />
+    <node id="fetchVariantAnnotationGET" />
+    <node id="fetchCanonicalEnsemblGeneIdByEntrezGeneIdsPOST" />
+    <node id="fetchCanonicalEnsemblGeneIdByEntrezGeneIdGET" />
+    <node id="fetchCanonicalEnsemblGeneIdByHugoSymbolsPOST" />
+    <node id="fetchCanonicalEnsemblGeneIdByHugoSymbolGET" />
+    <node id="fetchCanonicalEnsemblTranscriptsByHugoSymbolsPOST" />
+    <node id="fetchCanonicalEnsemblTranscriptByHugoSymbolGET" />
+    <node id="fetchEnsemblTranscriptsGET" />
+    <node id="fetchEnsemblTranscriptsByEnsemblFilterPOST" />
+    <node id="fetchEnsemblTranscriptByTranscriptIdGET" />
+    <node id="fetchGeneXrefsGET" />
+    <node id="fetchPdbHeaderPOST" />
+    <node id="fetchPdbHeaderGET" />
+    <node id="fetchPfamDomainsByPfamAccessionPOST" />
+    <node id="fetchPfamDomainsByAccessionGET" />
+    <node id="fetchPostTranslationalModificationsGET" />
+    <node id="fetchPostTranslationalModificationsByPtmFilterPOST" />
+    <node id="fetchVersionGET" />
+    <edge source="fetchVariantAnnotationPOST" target="fetchVariantAnnotationGET" />
+    <edge source="fetchVariantAnnotationPOST" target="fetchVariantAnnotationByGenomicLocationPOST" />
+    <edge source="fetchVariantAnnotationPOST" target="fetchVariantAnnotationByIdPOST" />
+    <edge source="fetchVariantAnnotationByIdPOST" target="fetchVariantAnnotationByIdGET" />
+    <edge source="fetchVariantAnnotationByGenomicLocationPOST" target="fetchVariantAnnotationByGenomicLocationGET" />
+    <edge source="fetchCanonicalEnsemblGeneIdByEntrezGeneIdsPOST" target="fetchCanonicalEnsemblGeneIdByEntrezGeneIdGET" />
+    <edge source="fetchCanonicalEnsemblGeneIdByEntrezGeneIdGET" target="fetchEnsemblTranscriptsGET" />
+    <edge source="fetchCanonicalEnsemblGeneIdByHugoSymbolsPOST" target="fetchCanonicalEnsemblGeneIdByHugoSymbolGET" />
+    <edge source="fetchCanonicalEnsemblGeneIdByHugoSymbolGET" target="fetchCanonicalEnsemblGeneIdByEntrezGeneIdGET" />
+    <edge source="fetchCanonicalEnsemblGeneIdByHugoSymbolGET" target="fetchCanonicalEnsemblTranscriptByHugoSymbolGET" />
+    <edge source="fetchCanonicalEnsemblTranscriptsByHugoSymbolsPOST" target="fetchCanonicalEnsemblGeneIdByHugoSymbolGET" />
+    <edge source="fetchCanonicalEnsemblTranscriptByHugoSymbolGET" target="fetchEnsemblTranscriptsGET" />
+    <edge source="fetchEnsemblTranscriptsGET" target="fetchEnsemblTranscriptByTranscriptIdGET" />
+    <edge source="fetchEnsemblTranscriptsByEnsemblFilterPOST" target="fetchEnsemblTranscriptsGET" />
+    <edge source="fetchPdbHeaderPOST" target="fetchPdbHeaderGET" />
+    <edge source="fetchPfamDomainsByPfamAccessionPOST" target="fetchPfamDomainsByAccessionGET" />
+    <edge source="fetchPostTranslationalModificationsByPtmFilterPOST" target="fetchPostTranslationalModificationsGET" />
+  </graph>
+</graphml>

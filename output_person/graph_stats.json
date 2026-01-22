@@ -1,0 +1,158 @@
+{
+  "basic": {
+    "num_nodes": 12,
+    "num_edges": 11,
+    "is_dag": true,
+    "directed": true
+  },
+  "components": {
+    "count": 2,
+    "largest_size": 8
+  },
+  "degree": {
+    "in": {
+      "min": 0,
+      "max": 2,
+      "mean": 0.9166666666666666,
+      "median": 1.0,
+      "stdev": 0.4930066485916347
+    },
+    "out": {
+      "min": 0,
+      "max": 6,
+      "mean": 0.9166666666666666,
+      "median": 0.5,
+      "stdev": 1.6051133570215186
+    }
+  },
+  "longest_path": {
+    "length": 3,
+    "example": [
+      "postPersonUsingPOST",
+      "getPersonUsingGET",
+      "putPersonUsingPUT",
+      "deletePersonUsingDELETE"
+    ]
+  },
+  "_timings": {
+    "longest_path_sec": 6.914138793945312e-05,
+    "betweenness_sec": 4.982948303222656e-05,
+    "degree_centrality_sec": 7.867813110351562e-06,
+    "pickle_serialize_sec": 3.719329833984375e-05,
+    "total_sec": 0.0003840923309326172
+  },
+  "centrality": {
+    "betweenness_top": [
+      [
+        "putPersonUsingPUT",
+        0.01818181818181818
+      ],
+      [
+        "getPersonUsingGET",
+        0.01818181818181818
+      ],
+      [
+        "getPersonsUsingGET",
+        0.004545454545454545
+      ],
+      [
+        "getPersonsUsingGET_1",
+        0.004545454545454545
+      ],
+      [
+        "postPersonUsingPOST",
+        0.0
+      ],
+      [
+        "deletePersonUsingDELETE",
+        0.0
+      ],
+      [
+        "putPersonUsingPUT_1",
+        0.0
+      ],
+      [
+        "postPersonsUsingPOST",
+        0.0
+      ],
+      [
+        "deletePersonsUsingDELETE",
+        0.0
+      ],
+      [
+        "averageAgeUsingGET",
+        0.0
+      ]
+    ],
+    "degree_top": [
+      [
+        "postPersonsUsingPOST",
+        0.5454545454545454
+      ],
+      [
+        "putPersonUsingPUT",
+        0.18181818181818182
+      ],
+      [
+        "getPersonUsingGET",
+        0.18181818181818182
+      ],
+      [
+        "getPersonsUsingGET",
+        0.18181818181818182
+      ],
+      [
+        "putPersonUsingPUT_1",
+        0.18181818181818182
+      ],
+      [
+        "getPersonsUsingGET_1",
+        0.18181818181818182
+      ],
+      [
+        "postPersonUsingPOST",
+        0.09090909090909091
+      ],
+      [
+        "deletePersonUsingDELETE",
+        0.09090909090909091
+      ],
+      [
+        "deletePersonsUsingDELETE",
+        0.09090909090909091
+      ],
+      [
+        "averageAgeUsingGET",
+        0.09090909090909091
+      ]
+    ]
+  },
+  "detailed_size_in_memory": {
+    "nodes": {
+      "count": 12,
+      "total_bytes": 1830,
+      "avg_bytes_per_node": 152,
+      "avg_node_id_bytes": 88,
+      "avg_fields_per_node": 0.0
+    },
+    "edges": {
+      "count": 11,
+      "total_bytes": 2638,
+      "avg_bytes_per_edge": 239,
+      "avg_fields_per_edge": 0.0
+    },
+    "overhead": {
+      "per_node_bytes": 96,
+      "per_edge_bytes": 40,
+      "total_overhead_bytes": 1592
+    },
+    "total_estimated_bytes": 6060,
+    "human_readable": "5.92KB"
+  },
+  "serialization": {
+    "pickle_bytes": 1056
+  },
+  "extras": {
+    "density": 0.08333333333333333
+  }
+}

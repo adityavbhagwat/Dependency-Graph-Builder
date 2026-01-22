@@ -1,0 +1,88 @@
+{
+  "nodes": [
+    {
+      "id": "POST__check",
+      "path": "/check",
+      "method": "POST",
+      "resource_type": "check",
+      "consumes": [
+        "language",
+        "preferredVariants",
+        "enabledRules",
+        "motherTongue",
+        "enabledCategories",
+        "text",
+        "enabledOnly",
+        "disabledRules",
+        "altLanguages",
+        "disabledCategories",
+        "data"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "POST__{check1}",
+      "path": "/{check1}",
+      "method": "POST",
+      "resource_type": null,
+      "consumes": [
+        "language",
+        "check1",
+        "text"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "POST__{check2}",
+      "path": "/{check2}",
+      "method": "POST",
+      "resource_type": null,
+      "consumes": [
+        "data",
+        "check2",
+        "language"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "POST__{check3}",
+      "path": "/{check3}",
+      "method": "POST",
+      "resource_type": null,
+      "consumes": [
+        "language",
+        "preferredVariants",
+        "text",
+        "check3"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "GET__languages",
+      "path": "/languages",
+      "method": "GET",
+      "resource_type": "languages",
+      "consumes": [],
+      "produces": [
+        "name",
+        "code",
+        "longCode"
+      ],
+      "is_interesting": false,
+      "annotations": {}
+    }
+  ],
+  "edges": [],
+  "metadata": {
+    "num_operations": 5,
+    "num_dependencies": 0
+  }
+}

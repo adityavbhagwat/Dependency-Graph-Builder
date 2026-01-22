@@ -1,0 +1,250 @@
+{
+  "basic": {
+    "num_nodes": 244,
+    "num_edges": 280,
+    "is_dag": true,
+    "directed": true
+  },
+  "components": {
+    "count": 3,
+    "largest_size": 234
+  },
+  "degree": {
+    "in": {
+      "min": 0,
+      "max": 2,
+      "mean": 1.1475409836065573,
+      "median": 1.0,
+      "stdev": 0.4182737974482975
+    },
+    "out": {
+      "min": 0,
+      "max": 5,
+      "mean": 1.1475409836065573,
+      "median": 1.0,
+      "stdev": 0.7753595796974077
+    }
+  },
+  "longest_path": {
+    "length": 95,
+    "example": [
+      "area_1",
+      "areaDensity_1",
+      "areaDensityGroupByBoundary_1",
+      "areaDensityGroupByBoundaryGroupByTag_gen",
+      "areaDensityGroupByTag_gen",
+      "areaDensityGroupByType_gen",
+      "areaGroupByBoundary_gen",
+      "areaGroupByKey_gen",
+      "areaGroupByTag_gen",
+      "areaGroupByType_gen",
+      "areaDensityGroupByBoundary_1_gen",
+      "areaGroupByBoundaryGroupByTag_gen",
+      "areaDensityGroupByBoundaryGroupByTag_1_gen",
+      "areaDensityGroupByTag_1_gen",
+      "areaDensityGroupByType_1_gen",
+      "areaRatioGroupByBoundary_gen",
+      "areaGroupByBoundary_1_gen",
+      "areaGroupByBoundaryGroupByTag_1_gen",
+      "areaGroupByKey_1_gen",
+      "areaGroupByTag_1_gen",
+      "areaGroupByType_1_gen",
+      "areaRatioGroupByBoundary_1_gen",
+      "countDensityGroupByBoundary_gen",
+      "countDensityGroupByBoundaryGroupByTag_gen",
+      "countDensityGroupByTag_gen",
+      "countDensityGroupByType_gen",
+      "countGroupByBoundary_gen",
+      "countGroupByKey_gen",
+      "countGroupByTag_gen",
+      "countGroupByType_gen",
+      "countDensityGroupByBoundary_1_gen",
+      "countGroupByBoundaryGroupByTag_gen",
+      "countDensityGroupByBoundaryGroupByTag_1_gen",
+      "countDensityGroupByTag_1_gen",
+      "countDensityGroupByType_1_gen",
+      "countRatioGroupByBoundary_gen",
+      "countGroupByBoundary_1_gen",
+      "countGroupByBoundaryGroupByTag_1_gen",
+      "countGroupByKey_1_gen",
+      "countGroupByTag_1_gen",
+      "countGroupByType_1_gen",
+      "countRatioGroupByBoundary_1_gen",
+      "lengthDensityGroupByBoundary_gen",
+      "lengthDensityGroupByBoundaryGroupByTag_gen",
+      "lengthDensityGroupByTag_gen",
+      "lengthDensityGroupByType_gen",
+      "lengthGroupByBoundary_gen",
+      "lengthGroupByKey_gen",
+      "lengthGroupByTag_gen",
+      "lengthGroupByType_gen",
+      "lengthDensityGroupByBoundary_1_gen",
+      "lengthGroupByBoundaryGroupByTag_gen",
+      "lengthDensityGroupByBoundaryGroupByTag_1_gen",
+      "lengthDensityGroupByTag_1_gen",
+      "lengthDensityGroupByType_1_gen",
+      "lengthRatioGroupByBoundary_gen",
+      "lengthGroupByBoundary_1_gen",
+      "lengthGroupByBoundaryGroupByTag_1_gen",
+      "lengthGroupByKey_1_gen",
+      "lengthGroupByTag_1_gen",
+      "lengthGroupByType_1_gen",
+      "lengthRatioGroupByBoundary_1_gen",
+      "perimeterDensityGroupByBoundary_gen",
+      "perimeterDensityGroupByBoundaryGroupByTag_gen",
+      "perimeterDensityGroupByTag_gen",
+      "perimeterDensityGroupByType_gen",
+      "perimeterGroupByBoundary_gen",
+      "perimeterGroupByKey_gen",
+      "perimeterGroupByTag_gen",
+      "perimeterGroupByType_gen",
+      "perimeterDensityGroupByBoundary_1_gen",
+      "perimeterGroupByBoundaryGroupByTag_gen",
+      "perimeterDensityGroupByBoundaryGroupByTag_1_gen",
+      "perimeterDensityGroupByTag_1_gen",
+      "perimeterDensityGroupByType_1_gen",
+      "perimeterRatioGroupByBoundary_gen",
+      "perimeterGroupByBoundary_1_gen",
+      "perimeterGroupByBoundaryGroupByTag_1_gen",
+      "perimeterGroupByKey_1_gen",
+      "perimeterGroupByTag_1_gen",
+      "perimeterGroupByType_1_gen",
+      "perimeterRatioGroupByBoundary_1_gen",
+      "countDensityGroupByBoundary_2_gen",
+      "countDensityGroupByTag_2_gen",
+      "countDensityGroupByType_2_gen",
+      "countGroupByBoundary_2_gen",
+      "countGroupByKey_2_gen",
+      "countGroupByTag_2_gen",
+      "countGroupByType_2_gen",
+      "countDensityGroupByBoundary_3_gen",
+      "countDensityGroupByTag_3_gen",
+      "countDensityGroupByType_3_gen",
+      "countGroupByBoundary_3_gen",
+      "countGroupByKey_3_gen",
+      "countGroupByTag_3_gen",
+      "countGroupByType_3_gen"
+    ]
+  },
+  "_timings": {
+    "longest_path_sec": 0.0007429122924804688,
+    "betweenness_sec": 0.010490179061889648,
+    "degree_centrality_sec": 8.082389831542969e-05,
+    "pickle_serialize_sec": 0.0001289844512939453,
+    "total_sec": 0.012891769409179688
+  },
+  "centrality": {
+    "betweenness_top": [
+      [
+        "lengthGroupByBoundaryGroupByTag_gen",
+        0.04011495425636839
+      ],
+      [
+        "lengthDensityGroupByBoundaryGroupByTag_1_gen",
+        0.03967282250110533
+      ],
+      [
+        "lengthDensityGroupByTag_1_gen",
+        0.03919668061082202
+      ],
+      [
+        "lengthDensityGroupByType_1_gen",
+        0.03868652858551848
+      ],
+      [
+        "lengthDensityGroupByBoundaryGroupByTag_gen",
+        0.038516477910417304
+      ],
+      [
+        "lengthRatioGroupByBoundary_gen",
+        0.038380437370336355
+      ],
+      [
+        "lengthDensityGroupByTag_gen",
+        0.03836343230282624
+      ],
+      [
+        "lengthDensityGroupByType_gen",
+        0.03817637656021494
+      ],
+      [
+        "lengthGroupByBoundary_gen",
+        0.037955310682583406
+      ],
+      [
+        "lengthGroupByBoundary_1_gen",
+        0.037785260007482224
+      ]
+    ],
+    "degree_top": [
+      [
+        "countDensity_1",
+        0.02469135802469136
+      ],
+      [
+        "lengthDensity_1",
+        0.02469135802469136
+      ],
+      [
+        "perimeterDensity_1",
+        0.02469135802469136
+      ],
+      [
+        "countDensity_3",
+        0.02469135802469136
+      ],
+      [
+        "areaDensity_1",
+        0.020576131687242802
+      ],
+      [
+        "count_1",
+        0.020576131687242802
+      ],
+      [
+        "countDensityGroupByBoundary_1",
+        0.020576131687242802
+      ],
+      [
+        "lengthDensityGroupByBoundary_1",
+        0.020576131687242802
+      ],
+      [
+        "perimeterDensityGroupByBoundary_1",
+        0.020576131687242802
+      ],
+      [
+        "area_1",
+        0.01646090534979424
+      ]
+    ]
+  },
+  "detailed_size_in_memory": {
+    "nodes": {
+      "count": 244,
+      "total_bytes": 38988,
+      "avg_bytes_per_node": 159,
+      "avg_node_id_bytes": 95,
+      "avg_fields_per_node": 0.0
+    },
+    "edges": {
+      "count": 280,
+      "total_bytes": 71870,
+      "avg_bytes_per_edge": 256,
+      "avg_fields_per_edge": 0.0
+    },
+    "overhead": {
+      "per_node_bytes": 96,
+      "per_edge_bytes": 40,
+      "total_overhead_bytes": 34624
+    },
+    "total_estimated_bytes": 145482,
+    "human_readable": "142.07KB"
+  },
+  "serialization": {
+    "pickle_bytes": 14618
+  },
+  "extras": {
+    "density": 0.004722390879039331
+  }
+}

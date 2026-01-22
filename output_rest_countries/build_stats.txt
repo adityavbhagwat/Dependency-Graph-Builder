@@ -1,0 +1,117 @@
+================================================================================
+DEPENDENCY GRAPH BUILD LOG - REST-COUNTRIES
+Generated: 2026-01-22 10:24:53
+================================================================================
+
+================================================================================
+DEPENDENCY GRAPH BUILDER
+================================================================================
+
+[PHASE 1] Building Static Dependency Graph
+--------------------------------------------------------------------------------
+Step 1: Parsing OpenAPI specification...
+  Found 21 operations
+
+Step 2: Adding operations to graph...
+
+Step 3: Analyzing dependencies...
+  - Parameter-wise dependencies...
+    Found 0 dependencies
+  - CRUD dependencies...
+    Found 0 dependencies
+  - Logical dependencies...
+    Found 0 dependencies
+  - Nested resource dependencies...
+    Found 0 dependencies
+  - Constraint dependencies...
+    Found 0 dependencies
+
+Step 4: Resolving conflicts and adding to graph...
+  Resolved to 0 dependencies
+  Added 0 dependencies, skipped 0 to prevent cycles.
+
+Step 5: Performing transitive reduction to remove redundant edges...
+  Graph optimized. Reduced edge count from 0 to 0.
+
+================================================================================
+✓ Graph building completed in 0.05 seconds
+================================================================================
+
+[EXPORT] Exporting dependency graph...
+Exported annotated OpenAPI specification to ./output_rest_countries/annotated_spec.yaml
+Exported JSON graph to ./output_rest_countries/graph.json
+Exported GraphML to ./output_rest_countries/graph.graphml
+Exported DOT graph to ./output_rest_countries/graph.dot
+Created interactive visualization at ./output_rest_countries/graph.html
+
+✓ All exports completed in ./output_rest_countries/
+
+[STATS] Generating graph statistics...
+
+--- Per-node and per-edge memory breakdown (estimated) ---
+Average per-node bytes (includes node id + attributes): 131 bytes
+  - Avg node-id bytes: 67 bytes (string length + object overhead)
+  - Avg number of attribute fields per node: 0.00
+  Reasoning:
+    * node-id: stored as Python object (usually str) => bytes = utf-8 length + object overhead.
+    * attributes: dictionary object overhead + sizes of keys and values recursively.
+    * Operation-like attribute objects contribute: object header + per-field sizes (operation_id, path, method, params, annotations).
+    * Lists/maps stored in attributes are walked recursively and their element sizes included.
+
+Average per-edge bytes (includes edge endpoints + attributes): 0 bytes
+  - Avg number of attribute fields per edge: 0.00
+  Reasoning:
+    * edge stores references to source/target (ids) plus an attributes dict.
+    * Dependency-like objects add their __dict__ fields (type, confidence, parameter mappings, flags).
+    * Each container or string contributes its own memory as estimated above.
+----------------------------------------------------------
+
+
+=== Dependency Graph Benchmark Report ===
+Nodes: 21   Edges: 0   DAG: True
+Components: count=21 largest=1
+Degree in: {'min': 0, 'max': 0, 'mean': 0.0, 'median': 0.0, 'stdev': 0.0} out: {'min': 0, 'max': 0, 'mean': 0.0, 'median': 0.0, 'stdev': 0.0}
+Detailed in-memory size estimate:
+  Nodes total bytes: 2761  avg/node: 131
+  (avg node-id bytes: 67  avg fields/node: 0.0)
+  Edges total bytes: 0  avg/edge: 0
+  (avg fields/edge: 0.0)
+  Overhead total bytes: 2016
+  Estimated total in-memory bytes: 4777 (4.67KB)
+Pickle serialized size: 1024 bytes
+Timings (s): {'longest_path_sec': 6.198883056640625e-05, 'betweenness_sec': 6.103515625e-05, 'degree_centrality_sec': 1.0967254638671875e-05, 'pickle_serialize_sec': 3.910064697265625e-05, 'total_sec': 0.0003910064697265625}
+=== End Report ===
+
+
+
+================================================================================
+DEPENDENCY TYPES SUMMARY
+================================================================================
+
+================================================================================
+OPERATION SEQUENCES (Sample)
+================================================================================
+
+To execute: GET /v2/alpha/{alphacode}
+  Prerequisites:
+    (No dependencies - can execute directly)
+
+To execute: GET /v2/currency/{currency}
+  Prerequisites:
+    (No dependencies - can execute directly)
+
+To execute: GET /v2/name/{name}
+  Prerequisites:
+    (No dependencies - can execute directly)
+
+To execute: GET /v2/callingcode/{callingcode}
+  Prerequisites:
+    (No dependencies - can execute directly)
+
+To execute: GET /v2/capital/{capital}
+  Prerequisites:
+    (No dependencies - can execute directly)
+
+================================================================================
+END OF LOG
+================================================================================

@@ -1,0 +1,138 @@
+================================================================================
+DEPENDENCY GRAPH BUILD LOG - FEATURES
+Generated: 2026-01-22 10:24:53
+================================================================================
+
+================================================================================
+DEPENDENCY GRAPH BUILDER
+================================================================================
+
+[PHASE 1] Building Static Dependency Graph
+--------------------------------------------------------------------------------
+Step 1: Parsing OpenAPI specification...
+  Found 18 operations
+
+Step 2: Adding operations to graph...
+
+Step 3: Analyzing dependencies...
+  - Parameter-wise dependencies...
+    Found 3 dependencies
+  - CRUD dependencies...
+    Found 29 dependencies
+  - Logical dependencies...
+    Found 0 dependencies
+  - Nested resource dependencies...
+    Found 17 dependencies
+  - Constraint dependencies...
+    Found 0 dependencies
+
+Step 4: Resolving conflicts and adding to graph...
+  Resolved to 43 dependencies
+  Added 43 dependencies, skipped 0 to prevent cycles.
+
+Step 5: Performing transitive reduction to remove redundant edges...
+  Graph optimized. Reduced edge count from 43 to 16.
+
+================================================================================
+✓ Graph building completed in 0.02 seconds
+================================================================================
+
+[EXPORT] Exporting dependency graph...
+Exported annotated OpenAPI specification to ./output_features/annotated_spec.yaml
+Exported JSON graph to ./output_features/graph.json
+Exported GraphML to ./output_features/graph.graphml
+Exported DOT graph to ./output_features/graph.dot
+Created interactive visualization at ./output_features/graph.html
+
+✓ All exports completed in ./output_features/
+
+[STATS] Generating graph statistics...
+
+--- Per-node and per-edge memory breakdown (estimated) ---
+Average per-node bytes (includes node id + attributes): 155 bytes
+  - Avg node-id bytes: 91 bytes (string length + object overhead)
+  - Avg number of attribute fields per node: 0.00
+  Reasoning:
+    * node-id: stored as Python object (usually str) => bytes = utf-8 length + object overhead.
+    * attributes: dictionary object overhead + sizes of keys and values recursively.
+    * Operation-like attribute objects contribute: object header + per-field sizes (operation_id, path, method, params, annotations).
+    * Lists/maps stored in attributes are walked recursively and their element sizes included.
+
+Average per-edge bytes (includes edge endpoints + attributes): 229 bytes
+  - Avg number of attribute fields per edge: 0.00
+  Reasoning:
+    * edge stores references to source/target (ids) plus an attributes dict.
+    * Dependency-like objects add their __dict__ fields (type, confidence, parameter mappings, flags).
+    * Each container or string contributes its own memory as estimated above.
+----------------------------------------------------------
+
+
+=== Dependency Graph Benchmark Report ===
+Nodes: 18   Edges: 16   DAG: True
+Components: count=2 largest=17
+Degree in: {'min': 0, 'max': 6, 'mean': 0.8888888888888888, 'median': 1.0, 'stdev': 1.3286956381223776} out: {'min': 0, 'max': 7, 'mean': 0.8888888888888888, 'median': 0.5, 'stdev': 1.5947444549341472}
+Detailed in-memory size estimate:
+  Nodes total bytes: 2802  avg/node: 155
+  (avg node-id bytes: 91  avg fields/node: 0.0)
+  Edges total bytes: 3670  avg/edge: 229
+  (avg fields/edge: 0.0)
+  Overhead total bytes: 2368
+  Estimated total in-memory bytes: 8840 (8.63KB)
+Pickle serialized size: 1326 bytes
+Timings (s): {'longest_path_sec': 7.390975952148438e-05, 'betweenness_sec': 0.00011014938354492188, 'degree_centrality_sec': 7.867813110351562e-06, 'pickle_serialize_sec': 3.504753112792969e-05, 'total_sec': 0.0004930496215820312}
+=== End Report ===
+
+
+
+================================================================================
+DEPENDENCY TYPES SUMMARY
+================================================================================
+  crud: 29
+  nested_resource: 12
+  parameter_data: 2
+
+================================================================================
+OPERATION SEQUENCES (Sample)
+================================================================================
+
+To execute: GET /products/{productName}/features
+  Prerequisites:
+    (No dependencies - can execute directly)
+
+To execute: PUT /products/{productName}/features/{featureName}
+  Prerequisites:
+    1. GET /products/{productName}/configurations
+    2. GET /products
+    3. GET /products/{productName}/configurations/{configurationName}/features
+    4. GET /products/{productName}/configurations/{configurationName}
+    5. GET /products/{productName}
+    6. GET /products/{productName}/features
+    7. POST /products/{productName}
+
+To execute: POST /products/{productName}/features/{featureName}
+  Prerequisites:
+    1. GET /products/{productName}/features
+    2. GET /products
+    3. GET /products/{productName}
+    4. GET /products/{productName}/configurations/{configurationName}
+    5. GET /products/{productName}/configurations
+    6. GET /products/{productName}/configurations/{configurationName}/features
+    7. POST /products/{productName}
+    8. PUT /products/{productName}/features/{featureName}
+
+To execute: GET /products/{productName}
+  Prerequisites:
+    (No dependencies - can execute directly)
+
+To execute: POST /products/{productName}
+  Prerequisites:
+    1. GET /products/{productName}/configurations
+    2. GET /products
+    3. GET /products/{productName}/configurations/{configurationName}/features
+    4. GET /products/{productName}/configurations/{configurationName}
+    5. GET /products/{productName}
+    6. GET /products/{productName}/features
+
+================================================================================
+END OF LOG
+================================================================================

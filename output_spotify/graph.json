@@ -1,0 +1,570 @@
+{
+  "nodes": [
+    {
+      "id": "endpoint-get-current-users-profile",
+      "path": "/me",
+      "method": "GET",
+      "resource_type": "me",
+      "consumes": [],
+      "produces": [
+        "product",
+        "explicit_content",
+        "type",
+        "images",
+        "country",
+        "href",
+        "display_name",
+        "external_urls",
+        "email",
+        "uri",
+        "followers",
+        "id"
+      ],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "endpoint-get-a-list-of-current-users-playlists",
+      "path": "/me/playlists",
+      "method": "GET",
+      "resource_type": "playlists",
+      "consumes": [
+        "offset",
+        "limit"
+      ],
+      "produces": [
+        "href",
+        "total",
+        "items",
+        "next",
+        "offset",
+        "previous",
+        "limit"
+      ],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "endpoint-get-playlist",
+      "path": "/playlists/{playlist_id}",
+      "method": "GET",
+      "resource_type": "playlists",
+      "consumes": [
+        "additional_types",
+        "fields",
+        "playlist_id",
+        "market"
+      ],
+      "produces": [
+        "owner",
+        "type",
+        "tracks.href",
+        "public",
+        "tracks.limit",
+        "href",
+        "tracks.offset",
+        "external_urls",
+        "tracks.previous",
+        "tracks.next",
+        "tracks",
+        "name",
+        "id",
+        "description",
+        "tracks.total",
+        "tracks.items",
+        "images",
+        "snapshot_id",
+        "uri",
+        "followers",
+        "collaborative"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "endpoint-change-playlist-details",
+      "path": "/playlists/{playlist_id}",
+      "method": "PUT",
+      "resource_type": "playlists",
+      "consumes": [
+        "collaborative",
+        "playlist_id",
+        "name",
+        "public",
+        "description"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "endpoint-get-playlist-cover",
+      "path": "/playlists/{playlist_id}/images",
+      "method": "GET",
+      "resource_type": "playlists",
+      "consumes": [
+        "playlist_id"
+      ],
+      "produces": [
+        "url",
+        "height",
+        "width"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "endpoint-remove-tracks-playlist1",
+      "path": "/playlists/{playlist_id1}/{tracks1}",
+      "method": "PUT",
+      "resource_type": "playlists",
+      "consumes": [
+        "playlist_id1",
+        "tracks1",
+        "range_start",
+        "insert_before"
+      ],
+      "produces": [
+        "snapshot_id"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "endpoint-remove-tracks-playlist",
+      "path": "/playlists/{playlist_id}/tracks",
+      "method": "DELETE",
+      "resource_type": "playlists",
+      "consumes": [
+        "snapshot_id",
+        "tracks",
+        "playlist_id"
+      ],
+      "produces": [
+        "snapshot_id"
+      ],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "endpoint-get-playlists-tracks",
+      "path": "/playlists/{playlist_id}/tracks",
+      "method": "GET",
+      "resource_type": "playlists",
+      "consumes": [
+        "playlist_id",
+        "market",
+        "additional_types",
+        "offset",
+        "fields",
+        "limit"
+      ],
+      "produces": [
+        "href",
+        "total",
+        "items",
+        "next",
+        "offset",
+        "previous",
+        "limit"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "endpoint-add-tracks-to-playlist",
+      "path": "/playlists/{playlist_id}/tracks",
+      "method": "POST",
+      "resource_type": "playlists",
+      "consumes": [
+        "playlist_id",
+        "position",
+        "uris"
+      ],
+      "produces": [
+        "snapshot_id"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "endpoint-reorder-or-replace-playlists-tracks",
+      "path": "/playlists/{playlist_id}/tracks",
+      "method": "PUT",
+      "resource_type": "playlists",
+      "consumes": [
+        "snapshot_id",
+        "range_length",
+        "playlist_id",
+        "insert_before",
+        "range_start",
+        "uris"
+      ],
+      "produces": [
+        "snapshot_id"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "endpoint-search",
+      "path": "/search",
+      "method": "GET",
+      "resource_type": "search",
+      "consumes": [
+        "type",
+        "q",
+        "market",
+        "include_external",
+        "offset",
+        "limit"
+      ],
+      "produces": [
+        "episodes.limit",
+        "shows.previous",
+        "albums",
+        "shows.href",
+        "playlists.previous",
+        "tracks.href",
+        "tracks.limit",
+        "tracks.offset",
+        "artists.next",
+        "albums.previous",
+        "tracks",
+        "albums.href",
+        "shows",
+        "shows.total",
+        "albums.next",
+        "episodes.items",
+        "tracks.total",
+        "artists",
+        "playlists.next",
+        "albums.limit",
+        "episodes.next",
+        "playlists",
+        "shows.offset",
+        "albums.total",
+        "episodes.offset",
+        "playlists.total",
+        "artists.previous",
+        "episodes.previous",
+        "playlists.href",
+        "shows.next",
+        "tracks.previous",
+        "artists.href",
+        "artists.offset",
+        "tracks.next",
+        "albums.items",
+        "albums.offset",
+        "shows.items",
+        "shows.limit",
+        "episodes",
+        "playlists.offset",
+        "tracks.items",
+        "episodes.href",
+        "artists.items",
+        "playlists.items",
+        "playlists.limit",
+        "artists.limit",
+        "artists.total",
+        "episodes.total"
+      ],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "endpoint-get-list-users-playlists",
+      "path": "/users/{user_id}/playlists",
+      "method": "GET",
+      "resource_type": "users",
+      "consumes": [
+        "user_id",
+        "offset",
+        "limit"
+      ],
+      "produces": [
+        "href",
+        "total",
+        "items",
+        "next",
+        "offset",
+        "previous",
+        "limit"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "endpoint-create-playlist",
+      "path": "/users/{user_id}/playlists",
+      "method": "POST",
+      "resource_type": "users",
+      "consumes": [
+        "collaborative",
+        "user_id",
+        "name",
+        "public",
+        "description"
+      ],
+      "produces": [
+        "owner",
+        "tracks.href",
+        "tracks.limit",
+        "href",
+        "tracks.offset",
+        "external_urls",
+        "tracks",
+        "description",
+        "tracks.total",
+        "images",
+        "snapshot_id",
+        "uri",
+        "type",
+        "public",
+        "tracks.previous",
+        "tracks.next",
+        "name",
+        "id",
+        "tracks.items",
+        "followers",
+        "collaborative"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "endpoint-get-playlist",
+      "target": "endpoint-change-playlist-details",
+      "type": "crud",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "collaborative": "collaborative",
+        "description": "description",
+        "name": "name",
+        "public": "public"
+      },
+      "reason": "CRUD: Often read playlists before updating; Parameter 'collaborative' produced by endpoint-get-playlist and consumed by endpoint-change-playlist-details; Parameter 'description' produced by endpoint-get-playlist and consumed by endpoint-change-playlist-details; Parameter 'name' produced by endpoint-get-playlist and consumed by endpoint-change-playlist-details; Parameter 'public' produced by endpoint-get-playlist and consumed by endpoint-change-playlist-details",
+      "verified": null
+    },
+    {
+      "source": "endpoint-get-playlist",
+      "target": "endpoint-reorder-or-replace-playlists-tracks",
+      "type": "crud",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "uri": "uris",
+        "snapshot_id": "snapshot_id"
+      },
+      "reason": "CRUD: Often read playlists before updating; Fuzzy match: 'uri' -> 'uris'; Parameter 'snapshot_id' produced by endpoint-get-playlist and consumed by endpoint-reorder-or-replace-playlists-tracks",
+      "verified": null
+    },
+    {
+      "source": "endpoint-get-playlist",
+      "target": "endpoint-remove-tracks-playlist1",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {
+        "tracks": "tracks1"
+      },
+      "reason": "CRUD: Often read playlists before updating; Fuzzy match: 'tracks' -> 'tracks1'",
+      "verified": null
+    },
+    {
+      "source": "endpoint-get-a-list-of-current-users-playlists",
+      "target": "endpoint-change-playlist-details",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read playlists before updating",
+      "verified": null
+    },
+    {
+      "source": "endpoint-get-a-list-of-current-users-playlists",
+      "target": "endpoint-remove-tracks-playlist1",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read playlists before updating",
+      "verified": null
+    },
+    {
+      "source": "endpoint-get-playlist",
+      "target": "endpoint-add-tracks-to-playlist",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read playlists before updating",
+      "verified": null
+    },
+    {
+      "source": "endpoint-get-playlist-cover",
+      "target": "endpoint-change-playlist-details",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read playlists before updating",
+      "verified": null
+    },
+    {
+      "source": "endpoint-get-playlist-cover",
+      "target": "endpoint-remove-tracks-playlist1",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read playlists before updating",
+      "verified": null
+    },
+    {
+      "source": "endpoint-get-playlists-tracks",
+      "target": "endpoint-change-playlist-details",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read playlists before updating",
+      "verified": null
+    },
+    {
+      "source": "endpoint-get-playlists-tracks",
+      "target": "endpoint-remove-tracks-playlist1",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read playlists before updating",
+      "verified": null
+    },
+    {
+      "source": "endpoint-get-playlists-tracks",
+      "target": "endpoint-reorder-or-replace-playlists-tracks",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read playlists before updating",
+      "verified": null
+    },
+    {
+      "source": "endpoint-get-playlists-tracks",
+      "target": "endpoint-add-tracks-to-playlist",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read playlists before updating",
+      "verified": null
+    },
+    {
+      "source": "endpoint-get-list-users-playlists",
+      "target": "endpoint-create-playlist",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read users before updating",
+      "verified": null
+    },
+    {
+      "source": "endpoint-get-playlist",
+      "target": "endpoint-remove-tracks-playlist",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "snapshot_id": "snapshot_id",
+        "tracks": "tracks"
+      },
+      "reason": "Parameter 'snapshot_id' produced by endpoint-get-playlist and consumed by endpoint-remove-tracks-playlist; Parameter 'tracks' produced by endpoint-get-playlist and consumed by endpoint-remove-tracks-playlist",
+      "verified": null
+    },
+    {
+      "source": "endpoint-remove-tracks-playlist",
+      "target": "endpoint-reorder-or-replace-playlists-tracks",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "snapshot_id": "snapshot_id"
+      },
+      "reason": "Parameter 'snapshot_id' produced by endpoint-remove-tracks-playlist and consumed by endpoint-reorder-or-replace-playlists-tracks",
+      "verified": null
+    },
+    {
+      "source": "endpoint-add-tracks-to-playlist",
+      "target": "endpoint-remove-tracks-playlist",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "snapshot_id": "snapshot_id"
+      },
+      "reason": "Parameter 'snapshot_id' produced by endpoint-add-tracks-to-playlist and consumed by endpoint-remove-tracks-playlist",
+      "verified": null
+    },
+    {
+      "source": "endpoint-add-tracks-to-playlist",
+      "target": "endpoint-reorder-or-replace-playlists-tracks",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "snapshot_id": "snapshot_id"
+      },
+      "reason": "Parameter 'snapshot_id' produced by endpoint-add-tracks-to-playlist and consumed by endpoint-reorder-or-replace-playlists-tracks",
+      "verified": null
+    },
+    {
+      "source": "endpoint-remove-tracks-playlist1",
+      "target": "endpoint-remove-tracks-playlist",
+      "type": "parameter_data",
+      "confidence": 0.8,
+      "parameter_mapping": {
+        "snapshot_id": "snapshot_id"
+      },
+      "reason": "Parameter 'snapshot_id' produced by endpoint-remove-tracks-playlist1 and consumed by endpoint-remove-tracks-playlist",
+      "verified": null
+    },
+    {
+      "source": "endpoint-remove-tracks-playlist1",
+      "target": "endpoint-reorder-or-replace-playlists-tracks",
+      "type": "parameter_data",
+      "confidence": 0.8,
+      "parameter_mapping": {
+        "snapshot_id": "snapshot_id"
+      },
+      "reason": "Parameter 'snapshot_id' produced by endpoint-remove-tracks-playlist1 and consumed by endpoint-reorder-or-replace-playlists-tracks",
+      "verified": null
+    },
+    {
+      "source": "endpoint-create-playlist",
+      "target": "endpoint-remove-tracks-playlist",
+      "type": "parameter_data",
+      "confidence": 0.8,
+      "parameter_mapping": {
+        "snapshot_id": "snapshot_id"
+      },
+      "reason": "Parameter 'snapshot_id' produced by endpoint-create-playlist and consumed by endpoint-remove-tracks-playlist",
+      "verified": null
+    },
+    {
+      "source": "endpoint-create-playlist",
+      "target": "endpoint-reorder-or-replace-playlists-tracks",
+      "type": "parameter_data",
+      "confidence": 0.8,
+      "parameter_mapping": {
+        "snapshot_id": "snapshot_id"
+      },
+      "reason": "Parameter 'snapshot_id' produced by endpoint-create-playlist and consumed by endpoint-reorder-or-replace-playlists-tracks",
+      "verified": null
+    },
+    {
+      "source": "endpoint-get-a-list-of-current-users-playlists",
+      "target": "endpoint-get-playlists-tracks",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "limit": "limit",
+        "offset": "offset"
+      },
+      "reason": "Parameter 'limit' produced by endpoint-get-a-list-of-current-users-playlists and consumed by endpoint-get-playlists-tracks; Parameter 'offset' produced by endpoint-get-a-list-of-current-users-playlists and consumed by endpoint-get-playlists-tracks",
+      "verified": null
+    }
+  ],
+  "metadata": {
+    "num_operations": 13,
+    "num_dependencies": 22
+  }
+}

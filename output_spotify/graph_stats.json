@@ -1,0 +1,159 @@
+{
+  "basic": {
+    "num_nodes": 13,
+    "num_edges": 14,
+    "is_dag": true,
+    "directed": true
+  },
+  "components": {
+    "count": 3,
+    "largest_size": 11
+  },
+  "degree": {
+    "in": {
+      "min": 0,
+      "max": 3,
+      "mean": 1.0769230769230769,
+      "median": 1.0,
+      "stdev": 1.2064913185660093
+    },
+    "out": {
+      "min": 0,
+      "max": 3,
+      "mean": 1.0769230769230769,
+      "median": 1.0,
+      "stdev": 0.9970370305242862
+    }
+  },
+  "longest_path": {
+    "length": 4,
+    "example": [
+      "endpoint-get-a-list-of-current-users-playlists",
+      "endpoint-get-playlists-tracks",
+      "endpoint-remove-tracks-playlist1",
+      "endpoint-remove-tracks-playlist",
+      "endpoint-reorder-or-replace-playlists-tracks"
+    ]
+  },
+  "_timings": {
+    "longest_path_sec": 6.699562072753906e-05,
+    "betweenness_sec": 6.389617919921875e-05,
+    "degree_centrality_sec": 7.152557373046875e-06,
+    "pickle_serialize_sec": 3.600120544433594e-05,
+    "total_sec": 0.00039887428283691406
+  },
+  "centrality": {
+    "betweenness_top": [
+      [
+        "endpoint-remove-tracks-playlist",
+        0.06060606060606061
+      ],
+      [
+        "endpoint-remove-tracks-playlist1",
+        0.03787878787878788
+      ],
+      [
+        "endpoint-get-playlists-tracks",
+        0.03787878787878788
+      ],
+      [
+        "endpoint-add-tracks-to-playlist",
+        0.022727272727272728
+      ],
+      [
+        "endpoint-create-playlist",
+        0.015151515151515152
+      ],
+      [
+        "endpoint-get-current-users-profile",
+        0.0
+      ],
+      [
+        "endpoint-get-a-list-of-current-users-playlists",
+        0.0
+      ],
+      [
+        "endpoint-get-playlist",
+        0.0
+      ],
+      [
+        "endpoint-change-playlist-details",
+        0.0
+      ],
+      [
+        "endpoint-get-playlist-cover",
+        0.0
+      ]
+    ],
+    "degree_top": [
+      [
+        "endpoint-remove-tracks-playlist1",
+        0.3333333333333333
+      ],
+      [
+        "endpoint-remove-tracks-playlist",
+        0.3333333333333333
+      ],
+      [
+        "endpoint-get-playlists-tracks",
+        0.3333333333333333
+      ],
+      [
+        "endpoint-get-playlist",
+        0.25
+      ],
+      [
+        "endpoint-change-playlist-details",
+        0.25
+      ],
+      [
+        "endpoint-add-tracks-to-playlist",
+        0.25
+      ],
+      [
+        "endpoint-get-playlist-cover",
+        0.16666666666666666
+      ],
+      [
+        "endpoint-create-playlist",
+        0.16666666666666666
+      ],
+      [
+        "endpoint-get-a-list-of-current-users-playlists",
+        0.08333333333333333
+      ],
+      [
+        "endpoint-reorder-or-replace-playlists-tracks",
+        0.08333333333333333
+      ]
+    ]
+  },
+  "detailed_size_in_memory": {
+    "nodes": {
+      "count": 13,
+      "total_bytes": 2267,
+      "avg_bytes_per_node": 174,
+      "avg_node_id_bytes": 110,
+      "avg_fields_per_node": 0.0
+    },
+    "edges": {
+      "count": 14,
+      "total_bytes": 3958,
+      "avg_bytes_per_edge": 282,
+      "avg_fields_per_edge": 0.0
+    },
+    "overhead": {
+      "per_node_bytes": 96,
+      "per_edge_bytes": 40,
+      "total_overhead_bytes": 1808
+    },
+    "total_estimated_bytes": 8033,
+    "human_readable": "7.84KB"
+  },
+  "serialization": {
+    "pickle_bytes": 1260
+  },
+  "extras": {
+    "density": 0.08974358974358974
+  }
+}

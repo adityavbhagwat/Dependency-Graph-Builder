@@ -1,0 +1,24 @@
+digraph G {
+rankdir=TB;
+v2All [label="GET /v2/all", shape=box, style=filled, fillcolor="#4CAF50"];
+v2Alphacode [label="GET /v2/alpha/{alphacode}", shape=box, style=filled, fillcolor="#4CAF50"];
+v2Alphacodes [label="GET /v2/alpha", shape=box, style=filled, fillcolor="#4CAF50"];
+v2Currency [label="GET /v2/currency/{currency}", shape=box, style=filled, fillcolor="#4CAF50"];
+v2Name [label="GET /v2/name/{name}", shape=box, style=filled, fillcolor="#4CAF50"];
+v2Callingcode [label="GET /v2/callingcode/{callingcode}", shape=box, style=filled, fillcolor="#4CAF50"];
+v2Capital [label="GET /v2/capital/{capital}", shape=box, style=filled, fillcolor="#4CAF50"];
+v2Region [label="GET /v2/region/{region}", shape=box, style=filled, fillcolor="#4CAF50"];
+v2Lang [label="GET /v2/lang/{lang}", shape=box, style=filled, fillcolor="#4CAF50"];
+v2Regionalbloc [label="GET /v2/regionalbloc/{regionalbloc}", shape=box, style=filled, fillcolor="#4CAF50"];
+v3All [label="GET /v3/all", shape=box, style=filled, fillcolor="#4CAF50"];
+v3Alphacode [label="GET /v3/alpha/{alphacode}", shape=box, style=filled, fillcolor="#4CAF50"];
+v3Alphacodes [label="GET /v3/alpha", shape=box, style=filled, fillcolor="#4CAF50"];
+v3Currency [label="GET /v3/currency/{currency}", shape=box, style=filled, fillcolor="#4CAF50"];
+v3Name [label="GET /v3/name/{name}", shape=box, style=filled, fillcolor="#4CAF50"];
+v3Capital [label="GET /v3/capital/{capital}", shape=box, style=filled, fillcolor="#4CAF50"];
+v3Region [label="GET /v3.1/region/{region}", shape=box, style=filled, fillcolor="#4CAF50"];
+v3Subregion [label="GET /v3/subregion/{subregion}", shape=box, style=filled, fillcolor="#4CAF50"];
+v3Lang [label="GET /v3/lang/{lang}", shape=box, style=filled, fillcolor="#4CAF50"];
+v3Demonym [label="GET /v3/demonym/{demonym}", shape=box, style=filled, fillcolor="#4CAF50"];
+v3Translation [label="GET /v3/translation/{translation}", shape=box, style=filled, fillcolor="#4CAF50"];
+}

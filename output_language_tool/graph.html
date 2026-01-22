@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Dependency Graph</title>
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <style>
+        #mynetwork {
+            width: 100%;
+            height: 800px;
+            border: 1px solid lightgray;
+        }
+        .legend {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: white;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>API Dependency Graph</h1>
+    <div class="legend">
+        <h3>Legend</h3>
+        <div><span style="color: #4CAF50;">■</span> GET Operations</div>
+        <div><span style="color: #2196F3;">■</span> POST Operations</div>
+        <div><span style="color: #FF9800;">■</span> PUT/PATCH Operations</div>
+        <div><span style="color: #F44336;">■</span> DELETE Operations</div>
+    </div>
+    <div id="mynetwork"></div>
+    <script type="text/javascript">
+        // Graph data
+        var nodes = new vis.DataSet([{"id": "POST__check", "label": "POST\\n/check", "color": "#2196F3", "consumes": ["language", "preferredVariants", "enabledRules", "motherTongue", "enabledCategories", "text", "enabledOnly", "disabledRules", "altLanguages", "disabledCategories", "data"], "produces": []}, {"id": "POST__{check1}", "label": "POST\\n/{check1}", "color": "#2196F3", "consumes": ["language", "check1", "text"], "produces": []}, {"id": "POST__{check2}", "label": "POST\\n/{check2}", "color": "#2196F3", "consumes": ["data", "check2", "language"], "produces": []}, {"id": "POST__{check3}", "label": "POST\\n/{check3}", "color": "#2196F3", "consumes": ["language", "preferredVariants", "text", "check3"], "produces": []}, {"id": "GET__languages", "label": "GET\\n/languages", "color": "#4CAF50", "consumes": [], "produces": ["name", "code", "longCode"]}]);
+        var edges = new vis.DataSet([]);
+        
+        var container = document.getElementById('mynetwork');
+        var data = {
+            nodes: nodes,
+            edges: edges
+        };
+        
+        var options = {
+            nodes: {
+                shape: 'box',
+                margin: 10,
+                widthConstraint: {
+                    maximum: 200
+                }
+            },
+            edges: {
+                arrows: 'to',
+                smooth: {
+                    type: 'cubicBezier'
+                }
+            },
+            physics: {
+                enabled: true,
+                barnesHut: {
+                    gravitationalConstant: -2000,
+                    springConstant: 0.001,
+                    springLength: 200
+                }
+            },
+            layout: {
+                hierarchical: {
+                    enabled: true,
+                    direction: 'UD',
+                    sortMethod: 'directed'
+                }
+            }
+        };
+        
+        var network = new vis.Network(container, data, options);
+        
+        network.on("click", function(params) {
+            if (params.nodes.length > 0) {
+                var nodeId = params.nodes[0];
+                var node = nodes.get(nodeId);
+                alert('Operation: ' + node.label + '\n' +
+                      'ID: ' + node.id + '\n' +
+                      'Consumes: ' + (node.consumes || []).join(', ') + '\n' +
+                      'Produces: ' + (node.produces || []).join(', '));
+            }
+        });
+    </script>
+</body>
+</html>
+        

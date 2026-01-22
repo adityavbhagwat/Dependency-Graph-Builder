@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <graph edgedefault="directed">
+    <node id="v2All" />
+    <node id="v2Alphacode" />
+    <node id="v2Alphacodes" />
+    <node id="v2Currency" />
+    <node id="v2Name" />
+    <node id="v2Callingcode" />
+    <node id="v2Capital" />
+    <node id="v2Region" />
+    <node id="v2Lang" />
+    <node id="v2Regionalbloc" />
+    <node id="v3All" />
+    <node id="v3Alphacode" />
+    <node id="v3Alphacodes" />
+    <node id="v3Currency" />
+    <node id="v3Name" />
+    <node id="v3Capital" />
+    <node id="v3Region" />
+    <node id="v3Subregion" />
+    <node id="v3Lang" />
+    <node id="v3Demonym" />
+    <node id="v3Translation" />
+  </graph>
+</graphml>

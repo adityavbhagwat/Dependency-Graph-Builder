@@ -1,0 +1,650 @@
+==========================================================================================
+DEPENDENCY GRAPH COVERAGE ANALYSIS REPORT
+Generated: 2026-01-22 10:48:50
+==========================================================================================
+
+COVERAGE METRICS DEFINITIONS
+------------------------------------------------------------------------------------------
+
+  The following metrics provide a comprehensive view of dependency graph quality:
+
+  1. NODE COVERAGE
+     Definition: Percentage of API operations captured as graph nodes
+     Formula:    (Operations in Graph / Operations in Spec) × 100%
+     Ideal:      100% - all operations should be captured
+     
+  2. CONNECTIVITY COVERAGE  
+     Definition: Percentage of operations that are connected (have edges)
+     Formula:    (Connected Nodes / Total Nodes) × 100%
+     Ideal:      High % - operations should be linked in dependency chains
+     Note:       GET-only APIs may legitimately have 0% connectivity
+     
+  3. PARAMETER FLOW COVERAGE
+     Definition: How well parameter dependencies are captured
+     Formula:    (Parameters with matched producers/consumers) / (Total unique params) × 100%
+     Ideal:      High % - consumed params should have producing operations connected
+
+     
+  4. CRUD COVERAGE
+     Definition: Percentage of expected CRUD relationships that are captured
+     Formula:    (Captured CRUD Links / Expected CRUD Links) × 100%
+     Expected:   POST→GET, POST→PUT, POST→DELETE for each resource
+     Ideal:      100% - all CRUD relationships properly linked
+ ____________________________________________________________________________________________________________________________________________________________________________|
+
+
+
+(NOTE- Here What "Expected CRUD Links" Means ??
+The logic is based on semantic CRUD ordering: Before you can read, update, or delete a resource, it must first be created.
+For each resource that has a POST (create) operation:
+POST should link → every GET for that resource
+POST should link → every PUT/PATCH for that resource
+POST should link → every DELETE for that resource
+Example: Pet Resource
+If the OpenAPI spec has:
+POST /pet          (createPet)GET  /pet/{petId}  (getPetById)GET  /pet/findByStatus (findPetsByStatus)PUT  /pet          (updatePet)DELETE /pet/{petId} (deletePet)
+Expected CRUD links:
+From	To	Why
+POST createPet	→ GET getPetById	Must create pet before fetching it
+POST createPet	→ GET findPetsByStatus	Must create pet before searching
+POST createPet	→ PUT updatePet	Must create pet before updating
+POST createPet	→ DELETE deletePet	Must create pet before deleting
+Expected = 4 links (1 POST × 4 other operations)
+ ____________________________________________________________________________________________________________________________________________________________________________
+  5. SEMANTIC CORRECTNESS
+     Definition: Percentage of edges following correct semantic ordering
+     Formula:    (Correct orderings) / (Total directional edges) × 100%
+     Correct:    POST→GET, POST→PUT, POST→DELETE, GET→PUT, GET→DELETE
+     Incorrect:  GET→POST (creating data from non-existent resource)
+     Ideal:      High % - proper CRUD ordering preserved
+  Note: GET→POST may be valid for authentication flows or read-before-create patterns
+
+     
+  6. OVERALL QUALITY SCORE
+     Definition: Weighted combination of all metrics
+     Weights:    Node(20%) + Connectivity(20%) + ParamFlow(20%) + CRUD(25%) + Semantic(15%)
+     Ideal:      80+ is good, 90+ is excellent
+
+
+EXECUTIVE SUMMARY
+------------------------------------------------------------------------------------------
+
+  Total APIs Analyzed:          14
+  Total Operations in Specs:    1611
+  Total Operations in Graphs:   1611
+  Total Dependencies:           50526
+  All Graphs are DAGs:          Yes
+
+
+  AVERAGE COVERAGE METRICS:
+    Node Coverage:               100.0%
+    Connectivity Coverage:        75.4%
+    Parameter Flow Coverage:      38.8%
+    CRUD Coverage:                68.7%
+    Semantic Correctness:         81.6%
+    ─────────────────────────────────
+    OVERALL QUALITY SCORE:        72.3/100
+
+
+COVERAGE METRICS BY API
+------------------------------------------------------------------------------------------
+
+API              |   Node |   Conn |  Param |   CRUD |    Sem |  OVERALL
+------------------------------------------------------------------------------------------
+simple_api       | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% |   100.0
+person           | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% |   100.0
+project          | 100.0% | 100.0% | 100.0% | 100.0% |  92.1% |    98.8
+petstore         | 100.0% | 100.0% | 100.0% |  64.3% |  77.4% |    87.7
+genome-nexus     | 100.0% |  91.3% |  26.7% | 100.0% | 100.0% |    83.6
+user             | 100.0% | 100.0% |  43.9% |  77.3% |  89.2% |    81.5
+ohsome           | 100.0% | 100.0% |   0.0% |  53.7% |  80.4% |    65.5
+fdic             | 100.0% |   0.0% |   0.0% | 100.0% | 100.0% |    60.0
+rest-countries   | 100.0% |   0.0% |   0.0% | 100.0% | 100.0% |    60.0
+language-tool    | 100.0% |   0.0% |   0.0% | 100.0% | 100.0% |    60.0
+spotify          | 100.0% |  84.6% |  18.0% |  22.2% |  83.3% |    58.6
+github           | 100.0% |  98.0% |  40.9% |   4.2% |  49.0% |    56.2
+market           | 100.0% |  87.8% |   0.0% |  31.7% |  41.0% |    51.6
+features         | 100.0% |  94.4% |  14.3% |   8.3% |  30.6% |    48.4
+------------------------------------------------------------------------------------------
+
+  Legend: Node=Node Coverage, Conn=Connectivity, Param=Parameter Flow,
+          CRUD=CRUD Coverage, Sem=Semantic Correctness
+
+
+DETAILED COVERAGE BREAKDOWN
+------------------------------------------------------------------------------------------
+
+  CRUD Relationship Analysis:
+    Expected CRUD links:    50083
+    Captured CRUD links:    3648
+    Missing CRUD links:     46435
+    CRUD Capture Rate:      7.3%
+
+  Parameter Flow Analysis:
+    Total consumed params:  6282
+    Total produced params:  14596
+
+
+DEPENDENCY TYPE DISTRIBUTION
+------------------------------------------------------------------------------------------
+
+  parameter_data        32808 ( 64.9%) ████████████████████████████████
+  constraint            11680 ( 23.1%) ███████████
+  authentication         2849 (  5.6%) ██
+  crud                   2443 (  4.8%) ██
+  nested_resource         428 (  0.8%) 
+  authorization           317 (  0.6%) 
+  workflow                  1 (  0.0%) 
+
+
+SEMANTIC ORDERING BREAKDOWN
+------------------------------------------------------------------------------------------
+
+  Correct Orderings (Create before Use):
+    POST → GET:       2768 edges
+    POST → PUT:        785 edges
+    POST → DELETE:     911 edges
+    GET → PUT:        4396 edges
+    GET → DELETE:     3976 edges
+
+  Potentially Incorrect Orderings:
+    GET → POST:      11700 edges
+
+  Note: GET→POST may be valid for authentication flows or read-before-create patterns
+
+
+QUALITY ASSESSMENT
+------------------------------------------------------------------------------------------
+
+  QUALITY DISTRIBUTION:
+    Excellent (90+):  3 APIs
+    Good (70-89):     3 APIs
+    Fair (50-69):     7 APIs
+    Poor (<50):       1 APIs
+
+  [PASS] DAG PROPERTY: All graphs are valid Directed Acyclic Graphs
+  [PASS] NODE COVERAGE: 100% of operations captured in all APIs
+  [WARN] CRUD COVERAGE: Average 68.7% - some relationships missing
+
+
+
+
+
+DETAILED API ANALYSIS
+------------------------------------------------------------------------------------------
+
+  FDIC
+  ──────────────────────────────────────────────────
+    Spec: fdic.yaml
+    Output: output_fdic
+
+    Coverage Metrics:
+      Node Coverage:          100.0%
+      Connectivity Coverage:    0.0%
+      Parameter Flow:           0.0%
+      CRUD Coverage:          100.0%
+      Semantic Correctness:   100.0%
+      ─────────────────────────────
+      OVERALL SCORE:           60.0/100
+
+    Operations:
+      In Spec:  6
+      In Graph: 6
+      By Method: GET:6
+
+    Dependencies:
+      Total Edges: 0
+      Edge Ratio:  0.00
+
+    Graph Quality:
+      Is DAG: Yes
+      Components: 6
+      Connected: 0/6
+      Longest Path: 0
+
+  FEATURES
+  ──────────────────────────────────────────────────
+    Spec: features.yaml
+    Output: output_features
+
+    Coverage Metrics:
+      Node Coverage:          100.0%
+      Connectivity Coverage:   94.4%
+      Parameter Flow:          14.3%
+      CRUD Coverage:            8.3%
+      Semantic Correctness:    30.6%
+      ─────────────────────────────
+      OVERALL SCORE:           48.4/100
+
+    Operations:
+      In Spec:  18
+      In Graph: 18
+      By Method: GET:6, POST:6, PUT:1, DELETE:5
+
+    Dependencies:
+      Total Edges: 43
+      Edge Ratio:  2.39
+      By Type: crud:29, nested_resource:12, parameter_data:2
+
+    CRUD Relationships:
+      Expected: 72
+      Captured: 6
+      Missing:  66
+
+    Graph Quality:
+      Is DAG: Yes
+      Components: 2
+      Connected: 17/18
+      Longest Path: 3
+
+  GENOME-NEXUS
+  ──────────────────────────────────────────────────
+    Spec: genome-nexus.yaml
+    Output: output_genome_nexus
+
+    Coverage Metrics:
+      Node Coverage:          100.0%
+      Connectivity Coverage:   91.3%
+      Parameter Flow:          26.7%
+      CRUD Coverage:          100.0%
+      Semantic Correctness:   100.0%
+      ─────────────────────────────
+      OVERALL SCORE:           83.6/100
+
+    Operations:
+      In Spec:  23
+      In Graph: 23
+      By Method: GET:13, POST:10
+
+    Dependencies:
+      Total Edges: 29
+      Edge Ratio:  1.26
+      By Type: parameter_data:14, crud:11, nested_resource:4
+
+    CRUD Relationships:
+      Expected: 13
+      Captured: 13
+      Missing:  0
+
+    Graph Quality:
+      Is DAG: Yes
+      Components: 7
+      Connected: 21/23
+      Longest Path: 4
+
+  GITHUB
+  ──────────────────────────────────────────────────
+    Spec: openapi_specs/github.json
+    Output: output_github
+
+    Coverage Metrics:
+      Node Coverage:          100.0%
+      Connectivity Coverage:   98.0%
+      Parameter Flow:          40.9%
+      CRUD Coverage:            4.2%
+      Semantic Correctness:    49.0%
+      ─────────────────────────────
+      OVERALL SCORE:           56.2/100
+
+    Operations:
+      In Spec:  1111
+      In Graph: 1111
+      By Method: GET:585, POST:174, PUT:109, DELETE:176, PATCH:67
+
+    Dependencies:
+      Total Edges: 44768
+      Edge Ratio:  40.30
+      By Type: parameter_data:31340, constraint:8593, authentication:2821, crud:1686, authorization:292, nested_resource:36
+
+    CRUD Relationships:
+      Expected: 46908
+      Captured: 1956
+      Missing:  44952
+
+    Graph Quality:
+      Is DAG: Yes
+      Components: 23
+      Connected: 1089/1111
+      Longest Path: 206
+
+  LANGUAGE-TOOL
+  ──────────────────────────────────────────────────
+    Spec: language-tool.yaml
+    Output: output_language_tool
+
+    Coverage Metrics:
+      Node Coverage:          100.0%
+      Connectivity Coverage:    0.0%
+      Parameter Flow:           0.0%
+      CRUD Coverage:          100.0%
+      Semantic Correctness:   100.0%
+      ─────────────────────────────
+      OVERALL SCORE:           60.0/100
+
+    Operations:
+      In Spec:  5
+      In Graph: 5
+      By Method: GET:1, POST:4
+
+    Dependencies:
+      Total Edges: 0
+      Edge Ratio:  0.00
+
+    Graph Quality:
+      Is DAG: Yes
+      Components: 5
+      Connected: 0/5
+      Longest Path: 0
+
+  MARKET
+  ──────────────────────────────────────────────────
+    Spec: market.yaml
+    Output: output_market
+
+    Coverage Metrics:
+      Node Coverage:          100.0%
+      Connectivity Coverage:   87.8%
+      Parameter Flow:           0.0%
+      CRUD Coverage:           31.7%
+      Semantic Correctness:    41.0%
+      ─────────────────────────────
+      OVERALL SCORE:           51.6/100
+
+    Operations:
+      In Spec:  49
+      In Graph: 49
+      By Method: GET:27, POST:17, PUT:3, DELETE:1, PATCH:1
+
+    Dependencies:
+      Total Edges: 56
+      Edge Ratio:  1.14
+      By Type: crud:28, authorization:25, nested_resource:2, authentication:1
+
+    CRUD Relationships:
+      Expected: 41
+      Captured: 13
+      Missing:  28
+
+    Graph Quality:
+      Is DAG: Yes
+      Components: 11
+      Connected: 43/49
+      Longest Path: 2
+
+  OHSOME
+  ──────────────────────────────────────────────────
+    Spec: ohsome.yaml
+    Output: output_ohsome
+
+    Coverage Metrics:
+      Node Coverage:          100.0%
+      Connectivity Coverage:  100.0%
+      Parameter Flow:           0.0%
+      CRUD Coverage:           53.7%
+      Semantic Correctness:    80.4%
+      ─────────────────────────────
+      OVERALL SCORE:           65.5/100
+
+    Operations:
+      In Spec:  244
+      In Graph: 244
+      By Method: GET:122, POST:122
+
+    Dependencies:
+      Total Edges: 5161
+      Edge Ratio:  21.15
+      By Type: constraint:3087, parameter_data:1167, crud:577, nested_resource:330
+
+    CRUD Relationships:
+      Expected: 2964
+      Captured: 1592
+      Missing:  1372
+
+    Graph Quality:
+      Is DAG: Yes
+      Components: 3
+      Connected: 244/244
+      Longest Path: 95
+
+  PERSON
+  ──────────────────────────────────────────────────
+    Spec: person.yaml
+    Output: output_person
+
+    Coverage Metrics:
+      Node Coverage:          100.0%
+      Connectivity Coverage:  100.0%
+      Parameter Flow:         100.0%
+      CRUD Coverage:          100.0%
+      Semantic Correctness:   100.0%
+      ─────────────────────────────
+      OVERALL SCORE:          100.0/100
+
+    Operations:
+      In Spec:  12
+      In Graph: 12
+      By Method: GET:5, POST:2, PUT:2, DELETE:3
+
+    Dependencies:
+      Total Edges: 15
+      Edge Ratio:  1.25
+      By Type: crud:11, nested_resource:2, parameter_data:2
+
+    CRUD Relationships:
+      Expected: 8
+      Captured: 8
+      Missing:  0
+
+    Graph Quality:
+      Is DAG: Yes
+      Components: 2
+      Connected: 12/12
+      Longest Path: 3
+
+  PETSTORE
+  ──────────────────────────────────────────────────
+    Spec: openapi_specs/petstore.yaml
+    Output: output_petstore_fixed
+
+    Coverage Metrics:
+      Node Coverage:          100.0%
+      Connectivity Coverage:  100.0%
+      Parameter Flow:         100.0%
+      CRUD Coverage:           64.3%
+      Semantic Correctness:    77.4%
+      ─────────────────────────────
+      OVERALL SCORE:           87.7/100
+
+    Operations:
+      In Spec:  19
+      In Graph: 19
+      By Method: GET:8, POST:6, PUT:2, DELETE:3
+
+    Dependencies:
+      Total Edges: 42
+      Edge Ratio:  2.21
+      By Type: crud:14, authentication:12, parameter_data:10, nested_resource:6
+
+    CRUD Relationships:
+      Expected: 14
+      Captured: 9
+      Missing:  5
+
+    Graph Quality:
+      Is DAG: Yes
+      Components: 1
+      Connected: 19/19
+      Longest Path: 5
+
+  PROJECT
+  ──────────────────────────────────────────────────
+    Spec: project.yaml
+    Output: output_project
+
+    Coverage Metrics:
+      Node Coverage:          100.0%
+      Connectivity Coverage:  100.0%
+      Parameter Flow:         100.0%
+      CRUD Coverage:          100.0%
+      Semantic Correctness:    92.1%
+      ─────────────────────────────
+      OVERALL SCORE:           98.8/100
+
+    Operations:
+      In Spec:  67
+      In Graph: 67
+      By Method: GET:27, POST:14, PUT:12, DELETE:14
+
+    Dependencies:
+      Total Edges: 339
+      Edge Ratio:  5.06
+      By Type: parameter_data:253, crud:50, nested_resource:28, authentication:8
+
+    CRUD Relationships:
+      Expected: 31
+      Captured: 31
+      Missing:  0
+
+    Graph Quality:
+      Is DAG: Yes
+      Components: 1
+      Connected: 67/67
+      Longest Path: 12
+
+  REST-COUNTRIES
+  ──────────────────────────────────────────────────
+    Spec: rest-countries.yaml
+    Output: output_rest_countries
+
+    Coverage Metrics:
+      Node Coverage:          100.0%
+      Connectivity Coverage:    0.0%
+      Parameter Flow:           0.0%
+      CRUD Coverage:          100.0%
+      Semantic Correctness:   100.0%
+      ─────────────────────────────
+      OVERALL SCORE:           60.0/100
+
+    Operations:
+      In Spec:  21
+      In Graph: 21
+      By Method: GET:21
+
+    Dependencies:
+      Total Edges: 0
+      Edge Ratio:  0.00
+
+    Graph Quality:
+      Is DAG: Yes
+      Components: 21
+      Connected: 0/21
+      Longest Path: 0
+
+  SIMPLE_API
+  ──────────────────────────────────────────────────
+    Spec: simple_api.yaml
+    Output: output_simple_api
+
+    Coverage Metrics:
+      Node Coverage:          100.0%
+      Connectivity Coverage:  100.0%
+      Parameter Flow:         100.0%
+      CRUD Coverage:          100.0%
+      Semantic Correctness:   100.0%
+      ─────────────────────────────
+      OVERALL SCORE:          100.0/100
+
+    Operations:
+      In Spec:  2
+      In Graph: 2
+      By Method: GET:1, POST:1
+
+    Dependencies:
+      Total Edges: 1
+      Edge Ratio:  0.50
+      By Type: crud:1
+
+    CRUD Relationships:
+      Expected: 1
+      Captured: 1
+      Missing:  0
+
+    Graph Quality:
+      Is DAG: Yes
+      Components: 1
+      Connected: 2/2
+      Longest Path: 1
+
+  SPOTIFY
+  ──────────────────────────────────────────────────
+    Spec: spotify.yaml
+    Output: output_spotify
+
+    Coverage Metrics:
+      Node Coverage:          100.0%
+      Connectivity Coverage:   84.6%
+      Parameter Flow:          18.0%
+      CRUD Coverage:           22.2%
+      Semantic Correctness:    83.3%
+      ─────────────────────────────
+      OVERALL SCORE:           58.6/100
+
+    Operations:
+      In Spec:  13
+      In Graph: 13
+      By Method: GET:7, POST:2, PUT:3, DELETE:1
+
+    Dependencies:
+      Total Edges: 22
+      Edge Ratio:  1.69
+      By Type: crud:13, parameter_data:9
+
+    CRUD Relationships:
+      Expected: 9
+      Captured: 2
+      Missing:  7
+
+    Graph Quality:
+      Is DAG: Yes
+      Components: 3
+      Connected: 11/13
+      Longest Path: 4
+
+  USER
+  ──────────────────────────────────────────────────
+    Spec: user.yaml
+    Output: output_user
+
+    Coverage Metrics:
+      Node Coverage:          100.0%
+      Connectivity Coverage:  100.0%
+      Parameter Flow:          43.9%
+      CRUD Coverage:           77.3%
+      Semantic Correctness:    89.2%
+      ─────────────────────────────
+      OVERALL SCORE:           81.5/100
+
+    Operations:
+      In Spec:  21
+      In Graph: 21
+      By Method: GET:6, POST:7, PUT:2, DELETE:5, PATCH:1
+
+    Dependencies:
+      Total Edges: 50
+      Edge Ratio:  2.38
+      By Type: crud:23, parameter_data:11, nested_resource:8, authentication:7, workflow:1
+
+    CRUD Relationships:
+      Expected: 22
+      Captured: 17
+      Missing:  5
+
+    Graph Quality:
+      Is DAG: Yes
+      Components: 2
+      Connected: 21/21
+      Longest Path: 6
+
+==========================================================================================
+END OF REPORT
+==========================================================================================

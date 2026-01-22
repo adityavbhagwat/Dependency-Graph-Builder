@@ -1,0 +1,30 @@
+digraph G {
+rankdir=TB;
+putPersonUsingPUT [label="PUT /api/person", shape=box, style=filled, fillcolor="#FF9800"];
+postPersonUsingPOST [label="POST /api/person", shape=box, style=filled, fillcolor="#2196F3"];
+getPersonUsingGET [label="GET /api/person/{id}", shape=box, style=filled, fillcolor="#4CAF50"];
+deletePersonUsingDELETE [label="DELETE /api/person/{id}", shape=box, style=filled, fillcolor="#F44336"];
+getPersonsUsingGET [label="GET /api/persons", shape=box, style=filled, fillcolor="#4CAF50"];
+putPersonUsingPUT_1 [label="PUT /api/persons", shape=box, style=filled, fillcolor="#FF9800"];
+postPersonsUsingPOST [label="POST /api/persons", shape=box, style=filled, fillcolor="#2196F3"];
+deletePersonsUsingDELETE [label="DELETE /api/persons", shape=box, style=filled, fillcolor="#F44336"];
+averageAgeUsingGET [label="GET /api/persons/averageAge", shape=box, style=filled, fillcolor="#4CAF50"];
+getCountUsingGET [label="GET /api/persons/count", shape=box, style=filled, fillcolor="#4CAF50"];
+getPersonsUsingGET_1 [label="GET /api/persons/{ids}", shape=box, style=filled, fillcolor="#4CAF50"];
+deletePersonsUsingDELETE_1 [label="DELETE /api/persons/{ids}", shape=box, style=filled, fillcolor="#F44336"];
+postPersonUsingPOST -> putPersonUsingPUT [label=crud, color="#4CAF50"];
+getPersonUsingGET -> putPersonUsingPUT [label=crud, color="#4CAF50"];
+postPersonUsingPOST -> getPersonUsingGET [label=crud, color="#4CAF50"];
+postPersonUsingPOST -> deletePersonUsingDELETE [label=crud, color="#4CAF50"];
+getPersonsUsingGET -> putPersonUsingPUT_1 [label=crud, color="#4CAF50"];
+postPersonsUsingPOST -> putPersonUsingPUT_1 [label=crud, color="#4CAF50"];
+getPersonsUsingGET_1 -> putPersonUsingPUT_1 [label=crud, color="#4CAF50"];
+postPersonsUsingPOST -> getPersonsUsingGET [label=crud, color="#4CAF50"];
+postPersonsUsingPOST -> getPersonsUsingGET_1 [label=crud, color="#4CAF50"];
+postPersonsUsingPOST -> deletePersonsUsingDELETE [label=crud, color="#4CAF50"];
+postPersonsUsingPOST -> deletePersonsUsingDELETE_1 [label=crud, color="#4CAF50"];
+postPersonsUsingPOST -> averageAgeUsingGET [label="nested_resource", color="#9C27B0"];
+postPersonsUsingPOST -> getCountUsingGET [label="nested_resource", color="#9C27B0"];
+putPersonUsingPUT -> deletePersonUsingDELETE [label="parameter_data", color="#2196F3"];
+getPersonUsingGET -> deletePersonUsingDELETE [label="parameter_data", color="#2196F3"];
+}

@@ -1,0 +1,159 @@
+{
+  "basic": {
+    "num_nodes": 23,
+    "num_edges": 17,
+    "is_dag": true,
+    "directed": true
+  },
+  "components": {
+    "count": 7,
+    "largest_size": 9
+  },
+  "degree": {
+    "in": {
+      "min": 0,
+      "max": 3,
+      "mean": 0.7391304347826086,
+      "median": 1.0,
+      "stdev": 0.7922116155777651
+    },
+    "out": {
+      "min": 0,
+      "max": 3,
+      "mean": 0.7391304347826086,
+      "median": 1.0,
+      "stdev": 0.7352841097951202
+    }
+  },
+  "longest_path": {
+    "length": 4,
+    "example": [
+      "fetchCanonicalEnsemblGeneIdByHugoSymbolsPOST",
+      "fetchCanonicalEnsemblGeneIdByHugoSymbolGET",
+      "fetchCanonicalEnsemblGeneIdByEntrezGeneIdGET",
+      "fetchEnsemblTranscriptsGET",
+      "fetchEnsemblTranscriptByTranscriptIdGET"
+    ]
+  },
+  "_timings": {
+    "longest_path_sec": 9.083747863769531e-05,
+    "betweenness_sec": 0.00010800361633300781,
+    "degree_centrality_sec": 1.0967254638671875e-05,
+    "pickle_serialize_sec": 4.57763671875e-05,
+    "total_sec": 0.00055694580078125
+  },
+  "centrality": {
+    "betweenness_top": [
+      [
+        "fetchCanonicalEnsemblGeneIdByHugoSymbolGET",
+        0.017316017316017316
+      ],
+      [
+        "fetchEnsemblTranscriptsGET",
+        0.015151515151515152
+      ],
+      [
+        "fetchCanonicalEnsemblGeneIdByEntrezGeneIdGET",
+        0.010822510822510822
+      ],
+      [
+        "fetchCanonicalEnsemblTranscriptByHugoSymbolGET",
+        0.006493506493506494
+      ],
+      [
+        "fetchVariantAnnotationByIdPOST",
+        0.0021645021645021645
+      ],
+      [
+        "fetchVariantAnnotationByGenomicLocationPOST",
+        0.0021645021645021645
+      ],
+      [
+        "fetchVariantAnnotationPOST",
+        0.0
+      ],
+      [
+        "fetchVariantAnnotationByIdGET",
+        0.0
+      ],
+      [
+        "fetchVariantAnnotationByGenomicLocationGET",
+        0.0
+      ],
+      [
+        "fetchVariantAnnotationGET",
+        0.0
+      ]
+    ],
+    "degree_top": [
+      [
+        "fetchCanonicalEnsemblGeneIdByHugoSymbolGET",
+        0.18181818181818182
+      ],
+      [
+        "fetchEnsemblTranscriptsGET",
+        0.18181818181818182
+      ],
+      [
+        "fetchVariantAnnotationPOST",
+        0.13636363636363635
+      ],
+      [
+        "fetchCanonicalEnsemblGeneIdByEntrezGeneIdGET",
+        0.13636363636363635
+      ],
+      [
+        "fetchVariantAnnotationByIdPOST",
+        0.09090909090909091
+      ],
+      [
+        "fetchVariantAnnotationByGenomicLocationPOST",
+        0.09090909090909091
+      ],
+      [
+        "fetchCanonicalEnsemblTranscriptByHugoSymbolGET",
+        0.09090909090909091
+      ],
+      [
+        "fetchVariantAnnotationByIdGET",
+        0.045454545454545456
+      ],
+      [
+        "fetchVariantAnnotationByGenomicLocationGET",
+        0.045454545454545456
+      ],
+      [
+        "fetchVariantAnnotationGET",
+        0.045454545454545456
+      ]
+    ]
+  },
+  "detailed_size_in_memory": {
+    "nodes": {
+      "count": 23,
+      "total_bytes": 4185,
+      "avg_bytes_per_node": 181,
+      "avg_node_id_bytes": 117,
+      "avg_fields_per_node": 0.0
+    },
+    "edges": {
+      "count": 17,
+      "total_bytes": 5202,
+      "avg_bytes_per_edge": 306,
+      "avg_fields_per_edge": 0.0
+    },
+    "overhead": {
+      "per_node_bytes": 96,
+      "per_edge_bytes": 40,
+      "total_overhead_bytes": 2888
+    },
+    "total_estimated_bytes": 12275,
+    "human_readable": "11.99KB"
+  },
+  "serialization": {
+    "pickle_bytes": 1817
+  },
+  "extras": {
+    "density": 0.03359683794466403
+  }
+}

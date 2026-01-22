@@ -1,0 +1,4935 @@
+{
+  "nodes": [
+    {
+      "id": "findAllUsingGET",
+      "path": "/app/api/assignments",
+      "method": "GET",
+      "resource_type": "assignments",
+      "consumes": [],
+      "produces": [
+        "collection"
+      ],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "updateUsingPUT",
+      "path": "/app/api/assignments",
+      "method": "PUT",
+      "resource_type": "assignments",
+      "consumes": [
+        "commitEmpDesc",
+        "employeeId",
+        "employee",
+        "commitMgrDesc",
+        "project",
+        "projectId",
+        "commitDate"
+      ],
+      "produces": [
+        "commitEmpDesc",
+        "employeeId",
+        "employee",
+        "commitMgrDesc",
+        "project",
+        "projectId",
+        "commitDate"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "saveUsingPOST",
+      "path": "/app/api/assignments",
+      "method": "POST",
+      "resource_type": "assignments",
+      "consumes": [
+        "commitEmpDesc",
+        "employeeId",
+        "employee",
+        "commitMgrDesc",
+        "project",
+        "projectId",
+        "commitDate"
+      ],
+      "produces": [
+        "commitEmpDesc",
+        "employeeId",
+        "employee",
+        "commitMgrDesc",
+        "project",
+        "projectId",
+        "commitDate"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "findAllUsingGET_1",
+      "path": "/app/api/assignments/",
+      "method": "GET",
+      "resource_type": "assignments",
+      "consumes": [],
+      "produces": [
+        "collection"
+      ],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "findByEmployeeIdAndProjectIdUsingGET",
+      "path": "/app/api/assignments/data/project-commit/{employeeId}/{projectId}",
+      "method": "GET",
+      "resource_type": "project-commit",
+      "consumes": [
+        "employeeId",
+        "projectId"
+      ],
+      "produces": [
+        "collection"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "findByEmployeeIdAndProjectIdAndCommitDateUsingGET",
+      "path": "/app/api/assignments/data/project-commit/{employeeId}/{projectId}/{commitDate}",
+      "method": "GET",
+      "resource_type": "project-commit",
+      "consumes": [
+        "employeeId",
+        "commitDate",
+        "projectId"
+      ],
+      "produces": [
+        "commitEmpDesc",
+        "employeeId",
+        "lastName",
+        "commitMgrDesc",
+        "commitDate",
+        "projectId",
+        "firstName"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "findByProjectIdUsingGET",
+      "path": "/app/api/assignments/data/project-commit/{projectId}",
+      "method": "GET",
+      "resource_type": "project-commit",
+      "consumes": [
+        "projectId"
+      ],
+      "produces": [
+        "collection"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "deleteByIdUsingDELETE",
+      "path": "/app/api/assignments/delete/{employeeId}/{projectId}/{commitDate}",
+      "method": "DELETE",
+      "resource_type": "delete",
+      "consumes": [
+        "employeeId",
+        "commitDate",
+        "projectId"
+      ],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "saveUsingPOST_1",
+      "path": "/app/api/assignments/save",
+      "method": "POST",
+      "resource_type": "save",
+      "consumes": [
+        "commitEmpDesc",
+        "employeeId",
+        "employee",
+        "commitMgrDesc",
+        "project",
+        "projectId",
+        "commitDate"
+      ],
+      "produces": [
+        "commitEmpDesc",
+        "employeeId",
+        "employee",
+        "commitMgrDesc",
+        "project",
+        "projectId",
+        "commitDate"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "updateUsingPUT_1",
+      "path": "/app/api/assignments/update",
+      "method": "PUT",
+      "resource_type": "update",
+      "consumes": [
+        "commitEmpDesc",
+        "employeeId",
+        "employee",
+        "commitMgrDesc",
+        "project",
+        "projectId",
+        "commitDate"
+      ],
+      "produces": [
+        "commitEmpDesc",
+        "employeeId",
+        "employee",
+        "commitMgrDesc",
+        "project",
+        "projectId",
+        "commitDate"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "findAllByEmployeeIdAndManagerIdUsingGET",
+      "path": "/app/api/assignments/{employeeId}/{projectId}",
+      "method": "GET",
+      "resource_type": "assignments",
+      "consumes": [
+        "employeeId",
+        "projectId"
+      ],
+      "produces": [
+        "collection"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "findByIdUsingGET",
+      "path": "/app/api/assignments/{employeeId}/{projectId}/{commitDate}",
+      "method": "GET",
+      "resource_type": "assignments",
+      "consumes": [
+        "employeeId",
+        "commitDate",
+        "projectId"
+      ],
+      "produces": [
+        "commitEmpDesc",
+        "employeeId",
+        "employee",
+        "commitMgrDesc",
+        "project",
+        "projectId",
+        "commitDate"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "deleteByIdUsingDELETE_1",
+      "path": "/app/api/assignments/{employeeId}/{projectId}/{commitDate}",
+      "method": "DELETE",
+      "resource_type": "assignments",
+      "consumes": [
+        "employeeId",
+        "commitDate",
+        "projectId"
+      ],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "authenticateUsingPOST",
+      "path": "/app/api/authenticate",
+      "method": "POST",
+      "resource_type": "authenticate",
+      "consumes": [
+        "password",
+        "username"
+      ],
+      "produces": [
+        "username",
+        "isEligible"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "authenticateUsingPOST_1",
+      "path": "/app/api/authenticate/",
+      "method": "POST",
+      "resource_type": "authenticate",
+      "consumes": [
+        "password",
+        "username"
+      ],
+      "produces": [
+        "username",
+        "isEligible"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "findAllUsingGET_2",
+      "path": "/app/api/credentials",
+      "method": "GET",
+      "resource_type": "credentials",
+      "consumes": [],
+      "produces": [
+        "collection"
+      ],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "updateUsingPUT_2",
+      "path": "/app/api/credentials",
+      "method": "PUT",
+      "resource_type": "credentials",
+      "consumes": [
+        "credentialId",
+        "password",
+        "username",
+        "enabled",
+        "role"
+      ],
+      "produces": [
+        "credentialId",
+        "password",
+        "username",
+        "enabled",
+        "role"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "saveUsingPOST_2",
+      "path": "/app/api/credentials",
+      "method": "POST",
+      "resource_type": "credentials",
+      "consumes": [
+        "credentialId",
+        "password",
+        "username",
+        "enabled",
+        "role"
+      ],
+      "produces": [
+        "credentialId",
+        "password",
+        "username",
+        "enabled",
+        "role"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "deleteByIdUsingDELETE_2",
+      "path": "/app/api/credentials",
+      "method": "DELETE",
+      "resource_type": "credentials",
+      "consumes": [
+        "credentialId"
+      ],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "findAllUsingGET_3",
+      "path": "/app/api/credentials/",
+      "method": "GET",
+      "resource_type": "credentials",
+      "consumes": [],
+      "produces": [
+        "collection"
+      ],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "deleteByIdUsingDELETE_3",
+      "path": "/app/api/credentials/delete",
+      "method": "DELETE",
+      "resource_type": "delete",
+      "consumes": [
+        "credentialId"
+      ],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "saveUsingPOST_3",
+      "path": "/app/api/credentials/save",
+      "method": "POST",
+      "resource_type": "save",
+      "consumes": [
+        "credentialId",
+        "password",
+        "username",
+        "enabled",
+        "role"
+      ],
+      "produces": [
+        "credentialId",
+        "password",
+        "username",
+        "enabled",
+        "role"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "updateUsingPUT_3",
+      "path": "/app/api/credentials/update",
+      "method": "PUT",
+      "resource_type": "update",
+      "consumes": [
+        "credentialId",
+        "password",
+        "username",
+        "enabled",
+        "role"
+      ],
+      "produces": [
+        "credentialId",
+        "password",
+        "username",
+        "enabled",
+        "role"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "findByUsernameUsingGET",
+      "path": "/app/api/credentials/username/{username}",
+      "method": "GET",
+      "resource_type": "username",
+      "consumes": [
+        "username"
+      ],
+      "produces": [
+        "credentialId",
+        "password",
+        "username",
+        "enabled",
+        "role"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "deleteByUsernameUsingDELETE",
+      "path": "/app/api/credentials/username/{username}",
+      "method": "DELETE",
+      "resource_type": "username",
+      "consumes": [
+        "username"
+      ],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "findByIdUsingGET_1",
+      "path": "/app/api/credentials/{id}",
+      "method": "GET",
+      "resource_type": "credentials",
+      "consumes": [
+        "id"
+      ],
+      "produces": [
+        "credentialId",
+        "password",
+        "username",
+        "enabled",
+        "role"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "findAllUsingGET_4",
+      "path": "/app/api/departments",
+      "method": "GET",
+      "resource_type": "departments",
+      "consumes": [],
+      "produces": [
+        "collection"
+      ],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "updateUsingPUT_4",
+      "path": "/app/api/departments",
+      "method": "PUT",
+      "resource_type": "departments",
+      "consumes": [
+        "departmentId",
+        "location",
+        "departmentName"
+      ],
+      "produces": [
+        "departmentId",
+        "location",
+        "departmentName"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "saveUsingPOST_4",
+      "path": "/app/api/departments",
+      "method": "POST",
+      "resource_type": "departments",
+      "consumes": [
+        "departmentId",
+        "location",
+        "departmentName"
+      ],
+      "produces": [
+        "departmentId",
+        "location",
+        "departmentName"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "deleteByIdUsingDELETE_4",
+      "path": "/app/api/departments",
+      "method": "DELETE",
+      "resource_type": "departments",
+      "consumes": [
+        "departmentId"
+      ],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "findAllUsingGET_5",
+      "path": "/app/api/departments/",
+      "method": "GET",
+      "resource_type": "departments",
+      "consumes": [],
+      "produces": [
+        "collection"
+      ],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "deleteByIdUsingDELETE_5",
+      "path": "/app/api/departments/delete",
+      "method": "DELETE",
+      "resource_type": "delete",
+      "consumes": [
+        "departmentId"
+      ],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "saveUsingPOST_5",
+      "path": "/app/api/departments/save",
+      "method": "POST",
+      "resource_type": "save",
+      "consumes": [
+        "departmentId",
+        "location",
+        "departmentName"
+      ],
+      "produces": [
+        "departmentId",
+        "location",
+        "departmentName"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "updateUsingPUT_5",
+      "path": "/app/api/departments/update",
+      "method": "PUT",
+      "resource_type": "update",
+      "consumes": [
+        "departmentId",
+        "location",
+        "departmentName"
+      ],
+      "produces": [
+        "departmentId",
+        "location",
+        "departmentName"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "findByIdUsingGET_2",
+      "path": "/app/api/departments/{id}",
+      "method": "GET",
+      "resource_type": "departments",
+      "consumes": [
+        "id"
+      ],
+      "produces": [
+        "departmentId",
+        "location",
+        "departmentName"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "findAllUsingGET_6",
+      "path": "/app/api/employees",
+      "method": "GET",
+      "resource_type": "employees",
+      "consumes": [],
+      "produces": [
+        "collection"
+      ],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "updateUsingPUT_6",
+      "path": "/app/api/employees",
+      "method": "PUT",
+      "resource_type": "employees",
+      "consumes": [
+        "department",
+        "hiredate",
+        "lastName",
+        "phone",
+        "job",
+        "credential",
+        "employeeId",
+        "email",
+        "salary",
+        "firstName"
+      ],
+      "produces": [
+        "department",
+        "hiredate",
+        "lastName",
+        "phone",
+        "job",
+        "credential",
+        "employeeId",
+        "email",
+        "salary",
+        "firstName"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "saveUsingPOST_6",
+      "path": "/app/api/employees",
+      "method": "POST",
+      "resource_type": "employees",
+      "consumes": [
+        "department",
+        "hiredate",
+        "lastName",
+        "phone",
+        "job",
+        "credential",
+        "employeeId",
+        "email",
+        "salary",
+        "firstName"
+      ],
+      "produces": [
+        "department",
+        "hiredate",
+        "lastName",
+        "phone",
+        "job",
+        "credential",
+        "employeeId",
+        "email",
+        "salary",
+        "firstName"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "deleteByIdUsingDELETE_6",
+      "path": "/app/api/employees",
+      "method": "DELETE",
+      "resource_type": "employees",
+      "consumes": [
+        "employeeId"
+      ],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "findAllUsingGET_7",
+      "path": "/app/api/employees/",
+      "method": "GET",
+      "resource_type": "employees",
+      "consumes": [],
+      "produces": [
+        "collection"
+      ],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "findByDepartmentIdUsingGET",
+      "path": "/app/api/employees/data/department/{departmentId}",
+      "method": "GET",
+      "resource_type": "department",
+      "consumes": [
+        "departmentId"
+      ],
+      "produces": [
+        "collection"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "findByEmployeeProjectDataEmployeeIdUsingGET",
+      "path": "/app/api/employees/data/employee-project-data/{employeeId}",
+      "method": "GET",
+      "resource_type": "employee-project-data",
+      "consumes": [
+        "employeeId"
+      ],
+      "produces": [
+        "collection"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "findManagerProjectDataByEmployeeIdUsingGET",
+      "path": "/app/api/employees/data/manager-project-data/{employeeId}",
+      "method": "GET",
+      "resource_type": "manager-project-data",
+      "consumes": [
+        "employeeId"
+      ],
+      "produces": [
+        "collection"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "deleteByIdUsingDELETE_7",
+      "path": "/app/api/employees/delete",
+      "method": "DELETE",
+      "resource_type": "delete",
+      "consumes": [
+        "employeeId"
+      ],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "saveUsingPOST_7",
+      "path": "/app/api/employees/save",
+      "method": "POST",
+      "resource_type": "save",
+      "consumes": [
+        "department",
+        "hiredate",
+        "lastName",
+        "phone",
+        "job",
+        "credential",
+        "employeeId",
+        "email",
+        "salary",
+        "firstName"
+      ],
+      "produces": [
+        "department",
+        "hiredate",
+        "lastName",
+        "phone",
+        "job",
+        "credential",
+        "employeeId",
+        "email",
+        "salary",
+        "firstName"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "updateUsingPUT_7",
+      "path": "/app/api/employees/update",
+      "method": "PUT",
+      "resource_type": "update",
+      "consumes": [
+        "department",
+        "hiredate",
+        "lastName",
+        "phone",
+        "job",
+        "credential",
+        "employeeId",
+        "email",
+        "salary",
+        "firstName"
+      ],
+      "produces": [
+        "department",
+        "hiredate",
+        "lastName",
+        "phone",
+        "job",
+        "credential",
+        "employeeId",
+        "email",
+        "salary",
+        "firstName"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "findByUsernameUsingGET_1",
+      "path": "/app/api/employees/username/{username}",
+      "method": "GET",
+      "resource_type": "username",
+      "consumes": [
+        "username"
+      ],
+      "produces": [
+        "department",
+        "hiredate",
+        "lastName",
+        "phone",
+        "job",
+        "credential",
+        "employeeId",
+        "email",
+        "salary",
+        "firstName"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "deleteByUsernameUsingDELETE_1",
+      "path": "/app/api/employees/username/{username}",
+      "method": "DELETE",
+      "resource_type": "username",
+      "consumes": [
+        "username"
+      ],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "findByIdUsingGET_3",
+      "path": "/app/api/employees/{id}",
+      "method": "GET",
+      "resource_type": "employees",
+      "consumes": [
+        "id"
+      ],
+      "produces": [
+        "department",
+        "hiredate",
+        "lastName",
+        "phone",
+        "job",
+        "credential",
+        "employeeId",
+        "email",
+        "salary",
+        "firstName"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "findAllUsingGET_8",
+      "path": "/app/api/locations",
+      "method": "GET",
+      "resource_type": "locations",
+      "consumes": [],
+      "produces": [
+        "collection"
+      ],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "updateUsingPUT_8",
+      "path": "/app/api/locations",
+      "method": "PUT",
+      "resource_type": "locations",
+      "consumes": [
+        "postalCode",
+        "adr",
+        "locationId",
+        "city"
+      ],
+      "produces": [
+        "postalCode",
+        "adr",
+        "locationId",
+        "city"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "saveUsingPOST_8",
+      "path": "/app/api/locations",
+      "method": "POST",
+      "resource_type": "locations",
+      "consumes": [
+        "postalCode",
+        "adr",
+        "locationId",
+        "city"
+      ],
+      "produces": [
+        "postalCode",
+        "adr",
+        "locationId",
+        "city"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "deleteByIdUsingDELETE_8",
+      "path": "/app/api/locations",
+      "method": "DELETE",
+      "resource_type": "locations",
+      "consumes": [
+        "locationId"
+      ],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "findAllUsingGET_9",
+      "path": "/app/api/locations/",
+      "method": "GET",
+      "resource_type": "locations",
+      "consumes": [],
+      "produces": [
+        "collection"
+      ],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "deleteByIdUsingDELETE_9",
+      "path": "/app/api/locations/delete",
+      "method": "DELETE",
+      "resource_type": "delete",
+      "consumes": [
+        "locationId"
+      ],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "saveUsingPOST_9",
+      "path": "/app/api/locations/save",
+      "method": "POST",
+      "resource_type": "save",
+      "consumes": [
+        "postalCode",
+        "adr",
+        "locationId",
+        "city"
+      ],
+      "produces": [
+        "postalCode",
+        "adr",
+        "locationId",
+        "city"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "updateUsingPUT_9",
+      "path": "/app/api/locations/update",
+      "method": "PUT",
+      "resource_type": "update",
+      "consumes": [
+        "postalCode",
+        "adr",
+        "locationId",
+        "city"
+      ],
+      "produces": [
+        "postalCode",
+        "adr",
+        "locationId",
+        "city"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "findByIdUsingGET_4",
+      "path": "/app/api/locations/{id}",
+      "method": "GET",
+      "resource_type": "locations",
+      "consumes": [
+        "id"
+      ],
+      "produces": [
+        "postalCode",
+        "adr",
+        "locationId",
+        "city"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "findAllUsingGET_10",
+      "path": "/app/api/projects",
+      "method": "GET",
+      "resource_type": "projects",
+      "consumes": [],
+      "produces": [
+        "collection"
+      ],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "updateUsingPUT_10",
+      "path": "/app/api/projects",
+      "method": "PUT",
+      "resource_type": "projects",
+      "consumes": [
+        "endDate",
+        "status",
+        "title",
+        "projectId",
+        "startDate"
+      ],
+      "produces": [
+        "endDate",
+        "status",
+        "title",
+        "projectId",
+        "startDate"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "saveUsingPOST_10",
+      "path": "/app/api/projects",
+      "method": "POST",
+      "resource_type": "projects",
+      "consumes": [
+        "endDate",
+        "status",
+        "title",
+        "projectId",
+        "startDate"
+      ],
+      "produces": [
+        "endDate",
+        "status",
+        "title",
+        "projectId",
+        "startDate"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "deleteByIdUsingDELETE_10",
+      "path": "/app/api/projects",
+      "method": "DELETE",
+      "resource_type": "projects",
+      "consumes": [
+        "projectId"
+      ],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "findAllUsingGET_11",
+      "path": "/app/api/projects/",
+      "method": "GET",
+      "resource_type": "projects",
+      "consumes": [],
+      "produces": [
+        "collection"
+      ],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "deleteByIdUsingDELETE_11",
+      "path": "/app/api/projects/delete",
+      "method": "DELETE",
+      "resource_type": "delete",
+      "consumes": [
+        "projectId"
+      ],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "saveUsingPOST_11",
+      "path": "/app/api/projects/save",
+      "method": "POST",
+      "resource_type": "save",
+      "consumes": [
+        "endDate",
+        "status",
+        "title",
+        "projectId",
+        "startDate"
+      ],
+      "produces": [
+        "endDate",
+        "status",
+        "title",
+        "projectId",
+        "startDate"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "updateUsingPUT_11",
+      "path": "/app/api/projects/update",
+      "method": "PUT",
+      "resource_type": "update",
+      "consumes": [
+        "endDate",
+        "status",
+        "title",
+        "projectId",
+        "startDate"
+      ],
+      "produces": [
+        "endDate",
+        "status",
+        "title",
+        "projectId",
+        "startDate"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "findByIdUsingGET_5",
+      "path": "/app/api/projects/{id}",
+      "method": "GET",
+      "resource_type": "projects",
+      "consumes": [
+        "id"
+      ],
+      "produces": [
+        "endDate",
+        "status",
+        "title",
+        "projectId",
+        "startDate"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "saveUsingPOST",
+      "target": "updateUsingPUT",
+      "type": "crud",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId",
+        "project": "project",
+        "commitMgrDesc": "commitMgrDesc",
+        "employee": "employee",
+        "employeeId": "employeeId",
+        "commitEmpDesc": "commitEmpDesc",
+        "commitDate": "commitDate"
+      },
+      "reason": "CRUD: Must create assignments before updating; Fuzzy match: 'commitEmpDesc' -> 'commitMgrDesc'; Fuzzy match: 'commitMgrDesc' -> 'commitEmpDesc'; Fuzzy match: 'employee' -> 'employeeId'; Fuzzy match: 'employeeId' -> 'employee'; Fuzzy match: 'project' -> 'projectId'; Fuzzy match: 'projectId' -> 'project'; Parameter 'commitDate' produced by saveUsingPOST and consumed by updateUsingPUT; Parameter 'commitEmpDesc' produced by saveUsingPOST and consumed by updateUsingPUT; Parameter 'commitMgrDesc' produced by saveUsingPOST and consumed by updateUsingPUT; Parameter 'employee' produced by saveUsingPOST and consumed by updateUsingPUT; Parameter 'employeeId' produced by saveUsingPOST and consumed by updateUsingPUT; Parameter 'project' produced by saveUsingPOST and consumed by updateUsingPUT; Parameter 'projectId' produced by saveUsingPOST and consumed by updateUsingPUT",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET",
+      "target": "updateUsingPUT",
+      "type": "crud",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId",
+        "project": "project",
+        "commitMgrDesc": "commitMgrDesc",
+        "employee": "employee",
+        "employeeId": "employeeId",
+        "commitEmpDesc": "commitEmpDesc",
+        "commitDate": "commitDate"
+      },
+      "reason": "CRUD: Often read assignments before updating; Fuzzy match: 'commitEmpDesc' -> 'commitMgrDesc'; Fuzzy match: 'commitMgrDesc' -> 'commitEmpDesc'; Fuzzy match: 'employee' -> 'employeeId'; Fuzzy match: 'employeeId' -> 'employee'; Fuzzy match: 'project' -> 'projectId'; Fuzzy match: 'projectId' -> 'project'; Parameter 'commitDate' produced by findByIdUsingGET and consumed by updateUsingPUT; Parameter 'commitEmpDesc' produced by findByIdUsingGET and consumed by updateUsingPUT; Parameter 'commitMgrDesc' produced by findByIdUsingGET and consumed by updateUsingPUT; Parameter 'employee' produced by findByIdUsingGET and consumed by updateUsingPUT; Parameter 'employeeId' produced by findByIdUsingGET and consumed by updateUsingPUT; Parameter 'project' produced by findByIdUsingGET and consumed by updateUsingPUT; Parameter 'projectId' produced by findByIdUsingGET and consumed by updateUsingPUT",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST",
+      "target": "findAllByEmployeeIdAndManagerIdUsingGET",
+      "type": "crud",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "project": "projectId",
+        "employee": "employeeId",
+        "projectId": "projectId",
+        "employeeId": "employeeId"
+      },
+      "reason": "/app/api/assignments/{employeeId}/{projectId} is nested under /app/api/assignments; CRUD: Must create assignments before reading; Fuzzy match: 'employee' -> 'employeeId'; Fuzzy match: 'project' -> 'projectId'; Parameter 'employeeId' produced by saveUsingPOST and consumed by findAllByEmployeeIdAndManagerIdUsingGET; Parameter 'projectId' produced by saveUsingPOST and consumed by findAllByEmployeeIdAndManagerIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST",
+      "target": "findByIdUsingGET",
+      "type": "crud",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "project": "projectId",
+        "employee": "employeeId",
+        "commitDate": "commitDate",
+        "projectId": "projectId",
+        "employeeId": "employeeId"
+      },
+      "reason": "/app/api/assignments/{employeeId}/{projectId}/{commitDate} is nested under /app/api/assignments; CRUD: Must create assignments before reading; Fuzzy match: 'employee' -> 'employeeId'; Fuzzy match: 'project' -> 'projectId'; Parameter 'commitDate' produced by saveUsingPOST and consumed by findByIdUsingGET; Parameter 'employeeId' produced by saveUsingPOST and consumed by findByIdUsingGET; Parameter 'projectId' produced by saveUsingPOST and consumed by findByIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST",
+      "target": "deleteByIdUsingDELETE_1",
+      "type": "crud",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "project": "projectId",
+        "employee": "employeeId",
+        "commitDate": "commitDate",
+        "projectId": "projectId",
+        "employeeId": "employeeId"
+      },
+      "reason": "/app/api/assignments/{employeeId}/{projectId}/{commitDate} is nested under /app/api/assignments; CRUD: Must create assignments before deleting; Fuzzy match: 'employee' -> 'employeeId'; Fuzzy match: 'project' -> 'projectId'; Parameter 'commitDate' produced by saveUsingPOST and consumed by deleteByIdUsingDELETE_1; Parameter 'employeeId' produced by saveUsingPOST and consumed by deleteByIdUsingDELETE_1; Parameter 'projectId' produced by saveUsingPOST and consumed by deleteByIdUsingDELETE_1",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_2",
+      "target": "updateUsingPUT_2",
+      "type": "crud",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "role": "role",
+        "enabled": "enabled",
+        "username": "username",
+        "password": "password",
+        "credentialId": "credentialId"
+      },
+      "reason": "CRUD: Must create credentials before updating; Parameter 'credentialId' produced by saveUsingPOST_2 and consumed by updateUsingPUT_2; Parameter 'enabled' produced by saveUsingPOST_2 and consumed by updateUsingPUT_2; Parameter 'password' produced by saveUsingPOST_2 and consumed by updateUsingPUT_2; Parameter 'role' produced by saveUsingPOST_2 and consumed by updateUsingPUT_2; Parameter 'username' produced by saveUsingPOST_2 and consumed by updateUsingPUT_2",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET_1",
+      "target": "updateUsingPUT_2",
+      "type": "crud",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "role": "role",
+        "enabled": "enabled",
+        "username": "username",
+        "password": "password",
+        "credentialId": "credentialId"
+      },
+      "reason": "CRUD: Often read credentials before updating; Parameter 'credentialId' produced by findByIdUsingGET_1 and consumed by updateUsingPUT_2; Parameter 'enabled' produced by findByIdUsingGET_1 and consumed by updateUsingPUT_2; Parameter 'password' produced by findByIdUsingGET_1 and consumed by updateUsingPUT_2; Parameter 'role' produced by findByIdUsingGET_1 and consumed by updateUsingPUT_2; Parameter 'username' produced by findByIdUsingGET_1 and consumed by updateUsingPUT_2",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_4",
+      "target": "updateUsingPUT_4",
+      "type": "crud",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "departmentName": "departmentName",
+        "location": "location",
+        "departmentId": "departmentId"
+      },
+      "reason": "CRUD: Must create departments before updating; Parameter 'departmentId' produced by saveUsingPOST_4 and consumed by updateUsingPUT_4; Parameter 'departmentName' produced by saveUsingPOST_4 and consumed by updateUsingPUT_4; Parameter 'location' produced by saveUsingPOST_4 and consumed by updateUsingPUT_4",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET_2",
+      "target": "updateUsingPUT_4",
+      "type": "crud",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "departmentName": "departmentName",
+        "location": "location",
+        "departmentId": "departmentId"
+      },
+      "reason": "CRUD: Often read departments before updating; Parameter 'departmentId' produced by findByIdUsingGET_2 and consumed by updateUsingPUT_4; Parameter 'departmentName' produced by findByIdUsingGET_2 and consumed by updateUsingPUT_4; Parameter 'location' produced by findByIdUsingGET_2 and consumed by updateUsingPUT_4",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_6",
+      "target": "updateUsingPUT_6",
+      "type": "crud",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "firstName": "firstName",
+        "salary": "salary",
+        "email": "email",
+        "employeeId": "employeeId",
+        "credential": "credential",
+        "job": "job",
+        "phone": "phone",
+        "lastName": "lastName",
+        "hiredate": "hiredate",
+        "department": "department"
+      },
+      "reason": "CRUD: Must create employees before updating; Parameter 'credential' produced by saveUsingPOST_6 and consumed by updateUsingPUT_6; Parameter 'department' produced by saveUsingPOST_6 and consumed by updateUsingPUT_6; Parameter 'email' produced by saveUsingPOST_6 and consumed by updateUsingPUT_6; Parameter 'employeeId' produced by saveUsingPOST_6 and consumed by updateUsingPUT_6; Parameter 'firstName' produced by saveUsingPOST_6 and consumed by updateUsingPUT_6; Parameter 'hiredate' produced by saveUsingPOST_6 and consumed by updateUsingPUT_6; Parameter 'job' produced by saveUsingPOST_6 and consumed by updateUsingPUT_6; Parameter 'lastName' produced by saveUsingPOST_6 and consumed by updateUsingPUT_6; Parameter 'phone' produced by saveUsingPOST_6 and consumed by updateUsingPUT_6; Parameter 'salary' produced by saveUsingPOST_6 and consumed by updateUsingPUT_6",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET_3",
+      "target": "updateUsingPUT_6",
+      "type": "crud",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "firstName": "firstName",
+        "salary": "salary",
+        "email": "email",
+        "employeeId": "employeeId",
+        "credential": "credential",
+        "job": "job",
+        "phone": "phone",
+        "lastName": "lastName",
+        "hiredate": "hiredate",
+        "department": "department"
+      },
+      "reason": "CRUD: Often read employees before updating; Parameter 'credential' produced by findByIdUsingGET_3 and consumed by updateUsingPUT_6; Parameter 'department' produced by findByIdUsingGET_3 and consumed by updateUsingPUT_6; Parameter 'email' produced by findByIdUsingGET_3 and consumed by updateUsingPUT_6; Parameter 'employeeId' produced by findByIdUsingGET_3 and consumed by updateUsingPUT_6; Parameter 'firstName' produced by findByIdUsingGET_3 and consumed by updateUsingPUT_6; Parameter 'hiredate' produced by findByIdUsingGET_3 and consumed by updateUsingPUT_6; Parameter 'job' produced by findByIdUsingGET_3 and consumed by updateUsingPUT_6; Parameter 'lastName' produced by findByIdUsingGET_3 and consumed by updateUsingPUT_6; Parameter 'phone' produced by findByIdUsingGET_3 and consumed by updateUsingPUT_6; Parameter 'salary' produced by findByIdUsingGET_3 and consumed by updateUsingPUT_6",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_8",
+      "target": "updateUsingPUT_8",
+      "type": "crud",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "city": "city",
+        "locationId": "locationId",
+        "adr": "adr",
+        "postalCode": "postalCode"
+      },
+      "reason": "CRUD: Must create locations before updating; Parameter 'adr' produced by saveUsingPOST_8 and consumed by updateUsingPUT_8; Parameter 'city' produced by saveUsingPOST_8 and consumed by updateUsingPUT_8; Parameter 'locationId' produced by saveUsingPOST_8 and consumed by updateUsingPUT_8; Parameter 'postalCode' produced by saveUsingPOST_8 and consumed by updateUsingPUT_8",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET_4",
+      "target": "updateUsingPUT_8",
+      "type": "crud",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "city": "city",
+        "locationId": "locationId",
+        "adr": "adr",
+        "postalCode": "postalCode"
+      },
+      "reason": "CRUD: Often read locations before updating; Parameter 'adr' produced by findByIdUsingGET_4 and consumed by updateUsingPUT_8; Parameter 'city' produced by findByIdUsingGET_4 and consumed by updateUsingPUT_8; Parameter 'locationId' produced by findByIdUsingGET_4 and consumed by updateUsingPUT_8; Parameter 'postalCode' produced by findByIdUsingGET_4 and consumed by updateUsingPUT_8",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_10",
+      "target": "updateUsingPUT_10",
+      "type": "crud",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "startDate": "startDate",
+        "projectId": "projectId",
+        "title": "title",
+        "status": "status",
+        "endDate": "endDate"
+      },
+      "reason": "CRUD: Must create projects before updating; Parameter 'endDate' produced by saveUsingPOST_10 and consumed by updateUsingPUT_10; Parameter 'projectId' produced by saveUsingPOST_10 and consumed by updateUsingPUT_10; Parameter 'startDate' produced by saveUsingPOST_10 and consumed by updateUsingPUT_10; Parameter 'status' produced by saveUsingPOST_10 and consumed by updateUsingPUT_10; Parameter 'title' produced by saveUsingPOST_10 and consumed by updateUsingPUT_10",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET_5",
+      "target": "updateUsingPUT_10",
+      "type": "crud",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "startDate": "startDate",
+        "projectId": "projectId",
+        "title": "title",
+        "status": "status",
+        "endDate": "endDate"
+      },
+      "reason": "CRUD: Often read projects before updating; Parameter 'endDate' produced by findByIdUsingGET_5 and consumed by updateUsingPUT_10; Parameter 'projectId' produced by findByIdUsingGET_5 and consumed by updateUsingPUT_10; Parameter 'startDate' produced by findByIdUsingGET_5 and consumed by updateUsingPUT_10; Parameter 'status' produced by findByIdUsingGET_5 and consumed by updateUsingPUT_10; Parameter 'title' produced by findByIdUsingGET_5 and consumed by updateUsingPUT_10",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_2",
+      "target": "deleteByIdUsingDELETE_2",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {
+        "credentialId": "credentialId"
+      },
+      "reason": "CRUD: Must create credentials before deleting; Parameter 'credentialId' produced by saveUsingPOST_2 and consumed by deleteByIdUsingDELETE_2",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_4",
+      "target": "deleteByIdUsingDELETE_4",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {
+        "departmentId": "departmentId"
+      },
+      "reason": "CRUD: Must create departments before deleting; Parameter 'departmentId' produced by saveUsingPOST_4 and consumed by deleteByIdUsingDELETE_4",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_6",
+      "target": "deleteByIdUsingDELETE_6",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "CRUD: Must create employees before deleting; Parameter 'employeeId' produced by saveUsingPOST_6 and consumed by deleteByIdUsingDELETE_6",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_8",
+      "target": "deleteByIdUsingDELETE_8",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {
+        "locationId": "locationId"
+      },
+      "reason": "CRUD: Must create locations before deleting; Parameter 'locationId' produced by saveUsingPOST_8 and consumed by deleteByIdUsingDELETE_8",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_10",
+      "target": "deleteByIdUsingDELETE_10",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "CRUD: Must create projects before deleting; Parameter 'projectId' produced by saveUsingPOST_10 and consumed by deleteByIdUsingDELETE_10",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST",
+      "target": "findAllUsingGET",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "CRUD: Must create assignments before reading",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST",
+      "target": "findAllUsingGET_1",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "CRUD: Must create assignments before reading",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_2",
+      "target": "findAllUsingGET_2",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "CRUD: Must create credentials before reading",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_2",
+      "target": "findAllUsingGET_3",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "CRUD: Must create credentials before reading",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_2",
+      "target": "findByIdUsingGET_1",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "/app/api/credentials/{id} is nested under /app/api/credentials; CRUD: Must create credentials before reading",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_4",
+      "target": "findAllUsingGET_4",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "CRUD: Must create departments before reading",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_4",
+      "target": "findAllUsingGET_5",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "CRUD: Must create departments before reading",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_4",
+      "target": "findByIdUsingGET_2",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "/app/api/departments/{id} is nested under /app/api/departments; CRUD: Must create departments before reading",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_6",
+      "target": "findAllUsingGET_6",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "CRUD: Must create employees before reading",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_6",
+      "target": "findAllUsingGET_7",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "CRUD: Must create employees before reading",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_6",
+      "target": "findByIdUsingGET_3",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "/app/api/employees/{id} is nested under /app/api/employees; CRUD: Must create employees before reading",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_8",
+      "target": "findAllUsingGET_8",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "CRUD: Must create locations before reading",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_8",
+      "target": "findAllUsingGET_9",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "CRUD: Must create locations before reading",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_8",
+      "target": "findByIdUsingGET_4",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "/app/api/locations/{id} is nested under /app/api/locations; CRUD: Must create locations before reading",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_10",
+      "target": "findAllUsingGET_10",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "CRUD: Must create projects before reading",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_10",
+      "target": "findAllUsingGET_11",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "CRUD: Must create projects before reading",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_10",
+      "target": "findByIdUsingGET_5",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "/app/api/projects/{id} is nested under /app/api/projects; CRUD: Must create projects before reading",
+      "verified": null
+    },
+    {
+      "source": "findAllByEmployeeIdAndManagerIdUsingGET",
+      "target": "updateUsingPUT",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read assignments before updating",
+      "verified": null
+    },
+    {
+      "source": "findAllUsingGET",
+      "target": "updateUsingPUT",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read assignments before updating",
+      "verified": null
+    },
+    {
+      "source": "findAllUsingGET_1",
+      "target": "updateUsingPUT",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read assignments before updating",
+      "verified": null
+    },
+    {
+      "source": "findAllUsingGET_2",
+      "target": "updateUsingPUT_2",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read credentials before updating",
+      "verified": null
+    },
+    {
+      "source": "findAllUsingGET_3",
+      "target": "updateUsingPUT_2",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read credentials before updating",
+      "verified": null
+    },
+    {
+      "source": "findAllUsingGET_4",
+      "target": "updateUsingPUT_4",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read departments before updating",
+      "verified": null
+    },
+    {
+      "source": "findAllUsingGET_5",
+      "target": "updateUsingPUT_4",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read departments before updating",
+      "verified": null
+    },
+    {
+      "source": "findAllUsingGET_6",
+      "target": "updateUsingPUT_6",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read employees before updating",
+      "verified": null
+    },
+    {
+      "source": "findAllUsingGET_7",
+      "target": "updateUsingPUT_6",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read employees before updating",
+      "verified": null
+    },
+    {
+      "source": "findAllUsingGET_8",
+      "target": "updateUsingPUT_8",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read locations before updating",
+      "verified": null
+    },
+    {
+      "source": "findAllUsingGET_9",
+      "target": "updateUsingPUT_8",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read locations before updating",
+      "verified": null
+    },
+    {
+      "source": "findAllUsingGET_10",
+      "target": "updateUsingPUT_10",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read projects before updating",
+      "verified": null
+    },
+    {
+      "source": "findAllUsingGET_11",
+      "target": "updateUsingPUT_10",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read projects before updating",
+      "verified": null
+    },
+    {
+      "source": "authenticateUsingPOST",
+      "target": "deleteByIdUsingDELETE",
+      "type": "authentication",
+      "confidence": 0.7,
+      "parameter_mapping": {},
+      "reason": "deleteByIdUsingDELETE likely requires authentication (heuristic)",
+      "verified": null
+    },
+    {
+      "source": "authenticateUsingPOST_1",
+      "target": "deleteByIdUsingDELETE",
+      "type": "authentication",
+      "confidence": 0.7,
+      "parameter_mapping": {},
+      "reason": "deleteByIdUsingDELETE likely requires authentication (heuristic)",
+      "verified": null
+    },
+    {
+      "source": "authenticateUsingPOST",
+      "target": "deleteByIdUsingDELETE_1",
+      "type": "authentication",
+      "confidence": 0.7,
+      "parameter_mapping": {},
+      "reason": "deleteByIdUsingDELETE_1 likely requires authentication (heuristic)",
+      "verified": null
+    },
+    {
+      "source": "authenticateUsingPOST_1",
+      "target": "deleteByIdUsingDELETE_1",
+      "type": "authentication",
+      "confidence": 0.7,
+      "parameter_mapping": {},
+      "reason": "deleteByIdUsingDELETE_1 likely requires authentication (heuristic)",
+      "verified": null
+    },
+    {
+      "source": "authenticateUsingPOST",
+      "target": "deleteByUsernameUsingDELETE",
+      "type": "authentication",
+      "confidence": 0.7,
+      "parameter_mapping": {},
+      "reason": "deleteByUsernameUsingDELETE likely requires authentication (heuristic)",
+      "verified": null
+    },
+    {
+      "source": "authenticateUsingPOST_1",
+      "target": "deleteByUsernameUsingDELETE",
+      "type": "authentication",
+      "confidence": 0.7,
+      "parameter_mapping": {},
+      "reason": "deleteByUsernameUsingDELETE likely requires authentication (heuristic)",
+      "verified": null
+    },
+    {
+      "source": "authenticateUsingPOST",
+      "target": "deleteByUsernameUsingDELETE_1",
+      "type": "authentication",
+      "confidence": 0.7,
+      "parameter_mapping": {},
+      "reason": "deleteByUsernameUsingDELETE_1 likely requires authentication (heuristic)",
+      "verified": null
+    },
+    {
+      "source": "authenticateUsingPOST_1",
+      "target": "deleteByUsernameUsingDELETE_1",
+      "type": "authentication",
+      "confidence": 0.7,
+      "parameter_mapping": {},
+      "reason": "deleteByUsernameUsingDELETE_1 likely requires authentication (heuristic)",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST",
+      "target": "findByEmployeeIdAndProjectIdUsingGET",
+      "type": "nested_resource",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId",
+        "employeeId": "employeeId"
+      },
+      "reason": "/app/api/assignments/data/project-commit/{employeeId}/{projectId} is nested under /app/api/assignments; Parameter 'employeeId' produced by saveUsingPOST and consumed by findByEmployeeIdAndProjectIdUsingGET; Parameter 'projectId' produced by saveUsingPOST and consumed by findByEmployeeIdAndProjectIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST",
+      "target": "findByEmployeeIdAndProjectIdAndCommitDateUsingGET",
+      "type": "nested_resource",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId",
+        "employeeId": "employeeId"
+      },
+      "reason": "/app/api/assignments/data/project-commit/{employeeId}/{projectId}/{commitDate} is nested under /app/api/assignments; Parameter 'employeeId' produced by saveUsingPOST and consumed by findByEmployeeIdAndProjectIdAndCommitDateUsingGET; Parameter 'projectId' produced by saveUsingPOST and consumed by findByEmployeeIdAndProjectIdAndCommitDateUsingGET",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST",
+      "target": "deleteByIdUsingDELETE",
+      "type": "nested_resource",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId",
+        "employeeId": "employeeId"
+      },
+      "reason": "/app/api/assignments/delete/{employeeId}/{projectId}/{commitDate} is nested under /app/api/assignments; Parameter 'employeeId' produced by saveUsingPOST and consumed by deleteByIdUsingDELETE; Parameter 'projectId' produced by saveUsingPOST and consumed by deleteByIdUsingDELETE",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST",
+      "target": "saveUsingPOST_1",
+      "type": "nested_resource",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId",
+        "employeeId": "employeeId"
+      },
+      "reason": "/app/api/assignments/save is nested under /app/api/assignments; Parameter 'employeeId' produced by saveUsingPOST and consumed by saveUsingPOST_1; Parameter 'projectId' produced by saveUsingPOST and consumed by saveUsingPOST_1",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST",
+      "target": "updateUsingPUT_1",
+      "type": "nested_resource",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId",
+        "employeeId": "employeeId"
+      },
+      "reason": "/app/api/assignments/update is nested under /app/api/assignments; Parameter 'employeeId' produced by saveUsingPOST and consumed by updateUsingPUT_1; Parameter 'projectId' produced by saveUsingPOST and consumed by updateUsingPUT_1",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST",
+      "target": "findByProjectIdUsingGET",
+      "type": "nested_resource",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "/app/api/assignments/data/project-commit/{projectId} is nested under /app/api/assignments; Parameter 'projectId' produced by saveUsingPOST and consumed by findByProjectIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_6",
+      "target": "saveUsingPOST_7",
+      "type": "nested_resource",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "/app/api/employees/save is nested under /app/api/employees; Parameter 'employeeId' produced by saveUsingPOST_6 and consumed by saveUsingPOST_7",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_10",
+      "target": "saveUsingPOST_11",
+      "type": "nested_resource",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "/app/api/projects/save is nested under /app/api/projects; Parameter 'projectId' produced by saveUsingPOST_10 and consumed by saveUsingPOST_11",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_6",
+      "target": "updateUsingPUT_7",
+      "type": "nested_resource",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "/app/api/employees/update is nested under /app/api/employees; Parameter 'employeeId' produced by saveUsingPOST_6 and consumed by updateUsingPUT_7",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_10",
+      "target": "updateUsingPUT_11",
+      "type": "nested_resource",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "/app/api/projects/update is nested under /app/api/projects; Parameter 'projectId' produced by saveUsingPOST_10 and consumed by updateUsingPUT_11",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_2",
+      "target": "saveUsingPOST_3",
+      "type": "nested_resource",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "credentialId": "credentialId"
+      },
+      "reason": "/app/api/credentials/save is nested under /app/api/credentials; Parameter 'credentialId' produced by saveUsingPOST_2 and consumed by saveUsingPOST_3",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_2",
+      "target": "updateUsingPUT_3",
+      "type": "nested_resource",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "credentialId": "credentialId"
+      },
+      "reason": "/app/api/credentials/update is nested under /app/api/credentials; Parameter 'credentialId' produced by saveUsingPOST_2 and consumed by updateUsingPUT_3",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_4",
+      "target": "saveUsingPOST_5",
+      "type": "nested_resource",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "departmentId": "departmentId"
+      },
+      "reason": "/app/api/departments/save is nested under /app/api/departments; Parameter 'departmentId' produced by saveUsingPOST_4 and consumed by saveUsingPOST_5",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_4",
+      "target": "updateUsingPUT_5",
+      "type": "nested_resource",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "departmentId": "departmentId"
+      },
+      "reason": "/app/api/departments/update is nested under /app/api/departments; Parameter 'departmentId' produced by saveUsingPOST_4 and consumed by updateUsingPUT_5",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_6",
+      "target": "findByEmployeeProjectDataEmployeeIdUsingGET",
+      "type": "nested_resource",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "/app/api/employees/data/employee-project-data/{employeeId} is nested under /app/api/employees; Parameter 'employeeId' produced by saveUsingPOST_6 and consumed by findByEmployeeProjectDataEmployeeIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_6",
+      "target": "findManagerProjectDataByEmployeeIdUsingGET",
+      "type": "nested_resource",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "/app/api/employees/data/manager-project-data/{employeeId} is nested under /app/api/employees; Parameter 'employeeId' produced by saveUsingPOST_6 and consumed by findManagerProjectDataByEmployeeIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_8",
+      "target": "saveUsingPOST_9",
+      "type": "nested_resource",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "locationId": "locationId"
+      },
+      "reason": "/app/api/locations/save is nested under /app/api/locations; Parameter 'locationId' produced by saveUsingPOST_8 and consumed by saveUsingPOST_9",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_8",
+      "target": "updateUsingPUT_9",
+      "type": "nested_resource",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "locationId": "locationId"
+      },
+      "reason": "/app/api/locations/update is nested under /app/api/locations; Parameter 'locationId' produced by saveUsingPOST_8 and consumed by updateUsingPUT_9",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_2",
+      "target": "deleteByIdUsingDELETE_3",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {
+        "credentialId": "credentialId"
+      },
+      "reason": "/app/api/credentials/delete is nested under /app/api/credentials; Parameter 'credentialId' produced by saveUsingPOST_2 and consumed by deleteByIdUsingDELETE_3",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_2",
+      "target": "findByUsernameUsingGET",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {},
+      "reason": "/app/api/credentials/username/{username} is nested under /app/api/credentials",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_4",
+      "target": "deleteByIdUsingDELETE_5",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {
+        "departmentId": "departmentId"
+      },
+      "reason": "/app/api/departments/delete is nested under /app/api/departments; Parameter 'departmentId' produced by saveUsingPOST_4 and consumed by deleteByIdUsingDELETE_5",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_6",
+      "target": "deleteByIdUsingDELETE_7",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "/app/api/employees/delete is nested under /app/api/employees; Parameter 'employeeId' produced by saveUsingPOST_6 and consumed by deleteByIdUsingDELETE_7",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_6",
+      "target": "findByUsernameUsingGET_1",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {},
+      "reason": "/app/api/employees/username/{username} is nested under /app/api/employees",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_8",
+      "target": "deleteByIdUsingDELETE_9",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {
+        "locationId": "locationId"
+      },
+      "reason": "/app/api/locations/delete is nested under /app/api/locations; Parameter 'locationId' produced by saveUsingPOST_8 and consumed by deleteByIdUsingDELETE_9",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_10",
+      "target": "deleteByIdUsingDELETE_11",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "/app/api/projects/delete is nested under /app/api/projects; Parameter 'projectId' produced by saveUsingPOST_10 and consumed by deleteByIdUsingDELETE_11",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_2",
+      "target": "deleteByUsernameUsingDELETE",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {},
+      "reason": "/app/api/credentials/username/{username} is nested under /app/api/credentials",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_6",
+      "target": "findByDepartmentIdUsingGET",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {},
+      "reason": "/app/api/employees/data/department/{departmentId} is nested under /app/api/employees",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_6",
+      "target": "deleteByUsernameUsingDELETE_1",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {},
+      "reason": "/app/api/employees/username/{username} is nested under /app/api/employees",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT",
+      "target": "deleteByIdUsingDELETE_1",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "project": "projectId",
+        "employee": "employeeId",
+        "commitDate": "commitDate",
+        "projectId": "projectId",
+        "employeeId": "employeeId"
+      },
+      "reason": "Fuzzy match: 'employee' -> 'employeeId'; Fuzzy match: 'project' -> 'projectId'; Parameter 'commitDate' produced by updateUsingPUT and consumed by deleteByIdUsingDELETE_1; Parameter 'employeeId' produced by updateUsingPUT and consumed by deleteByIdUsingDELETE_1; Parameter 'projectId' produced by updateUsingPUT and consumed by deleteByIdUsingDELETE_1",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET",
+      "target": "findAllByEmployeeIdAndManagerIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "project": "projectId",
+        "employee": "employeeId",
+        "projectId": "projectId",
+        "employeeId": "employeeId"
+      },
+      "reason": "Fuzzy match: 'employee' -> 'employeeId'; Fuzzy match: 'project' -> 'projectId'; Parameter 'employeeId' produced by findByIdUsingGET and consumed by findAllByEmployeeIdAndManagerIdUsingGET; Parameter 'projectId' produced by findByIdUsingGET and consumed by findAllByEmployeeIdAndManagerIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET",
+      "target": "deleteByIdUsingDELETE_1",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "project": "projectId",
+        "employee": "employeeId",
+        "commitDate": "commitDate",
+        "projectId": "projectId",
+        "employeeId": "employeeId"
+      },
+      "reason": "Fuzzy match: 'employee' -> 'employeeId'; Fuzzy match: 'project' -> 'projectId'; Parameter 'commitDate' produced by findByIdUsingGET and consumed by deleteByIdUsingDELETE_1; Parameter 'employeeId' produced by findByIdUsingGET and consumed by deleteByIdUsingDELETE_1; Parameter 'projectId' produced by findByIdUsingGET and consumed by deleteByIdUsingDELETE_1",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT",
+      "target": "findByEmployeeIdAndProjectIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId",
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by updateUsingPUT and consumed by findByEmployeeIdAndProjectIdUsingGET; Parameter 'projectId' produced by updateUsingPUT and consumed by findByEmployeeIdAndProjectIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT",
+      "target": "findByEmployeeIdAndProjectIdAndCommitDateUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId",
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by updateUsingPUT and consumed by findByEmployeeIdAndProjectIdAndCommitDateUsingGET; Parameter 'projectId' produced by updateUsingPUT and consumed by findByEmployeeIdAndProjectIdAndCommitDateUsingGET",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET",
+      "target": "findByEmployeeIdAndProjectIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId",
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByIdUsingGET and consumed by findByEmployeeIdAndProjectIdUsingGET; Parameter 'projectId' produced by findByIdUsingGET and consumed by findByEmployeeIdAndProjectIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET",
+      "target": "findByEmployeeIdAndProjectIdAndCommitDateUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId",
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByIdUsingGET and consumed by findByEmployeeIdAndProjectIdAndCommitDateUsingGET; Parameter 'projectId' produced by findByIdUsingGET and consumed by findByEmployeeIdAndProjectIdAndCommitDateUsingGET",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT",
+      "target": "deleteByIdUsingDELETE",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId",
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by updateUsingPUT and consumed by deleteByIdUsingDELETE; Parameter 'projectId' produced by updateUsingPUT and consumed by deleteByIdUsingDELETE",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET",
+      "target": "deleteByIdUsingDELETE",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId",
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByIdUsingGET and consumed by deleteByIdUsingDELETE; Parameter 'projectId' produced by findByIdUsingGET and consumed by deleteByIdUsingDELETE",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT",
+      "target": "saveUsingPOST_1",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId",
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by updateUsingPUT and consumed by saveUsingPOST_1; Parameter 'projectId' produced by updateUsingPUT and consumed by saveUsingPOST_1",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT",
+      "target": "saveUsingPOST_7",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by updateUsingPUT and consumed by saveUsingPOST_7",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST",
+      "target": "saveUsingPOST_7",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by saveUsingPOST and consumed by saveUsingPOST_7",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET",
+      "target": "saveUsingPOST_1",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId",
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByIdUsingGET and consumed by saveUsingPOST_1; Parameter 'projectId' produced by findByIdUsingGET and consumed by saveUsingPOST_1",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET",
+      "target": "saveUsingPOST_7",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByIdUsingGET and consumed by saveUsingPOST_7",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT",
+      "target": "updateUsingPUT_1",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId",
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by updateUsingPUT and consumed by updateUsingPUT_1; Parameter 'projectId' produced by updateUsingPUT and consumed by updateUsingPUT_1",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT",
+      "target": "updateUsingPUT_7",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by updateUsingPUT and consumed by updateUsingPUT_7",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST",
+      "target": "updateUsingPUT_7",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by saveUsingPOST and consumed by updateUsingPUT_7",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET",
+      "target": "updateUsingPUT_1",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId",
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByIdUsingGET and consumed by updateUsingPUT_1; Parameter 'projectId' produced by findByIdUsingGET and consumed by updateUsingPUT_1",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET",
+      "target": "updateUsingPUT_7",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByIdUsingGET and consumed by updateUsingPUT_7",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT",
+      "target": "updateUsingPUT_6",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by updateUsingPUT and consumed by updateUsingPUT_6",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT",
+      "target": "saveUsingPOST_6",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by updateUsingPUT and consumed by saveUsingPOST_6",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST",
+      "target": "updateUsingPUT_6",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by saveUsingPOST and consumed by updateUsingPUT_6",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST",
+      "target": "saveUsingPOST_6",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by saveUsingPOST and consumed by saveUsingPOST_6",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET",
+      "target": "updateUsingPUT_6",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByIdUsingGET and consumed by updateUsingPUT_6",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET",
+      "target": "saveUsingPOST_6",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByIdUsingGET and consumed by saveUsingPOST_6",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT",
+      "target": "findByEmployeeProjectDataEmployeeIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by updateUsingPUT and consumed by findByEmployeeProjectDataEmployeeIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST",
+      "target": "findByEmployeeProjectDataEmployeeIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by saveUsingPOST and consumed by findByEmployeeProjectDataEmployeeIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET",
+      "target": "findByEmployeeProjectDataEmployeeIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByIdUsingGET and consumed by findByEmployeeProjectDataEmployeeIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT",
+      "target": "findManagerProjectDataByEmployeeIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by updateUsingPUT and consumed by findManagerProjectDataByEmployeeIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST",
+      "target": "findManagerProjectDataByEmployeeIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by saveUsingPOST and consumed by findManagerProjectDataByEmployeeIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET",
+      "target": "findManagerProjectDataByEmployeeIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByIdUsingGET and consumed by findManagerProjectDataByEmployeeIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT",
+      "target": "findByProjectIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by updateUsingPUT and consumed by findByProjectIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET",
+      "target": "findByProjectIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by findByIdUsingGET and consumed by findByProjectIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT",
+      "target": "saveUsingPOST_11",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by updateUsingPUT and consumed by saveUsingPOST_11",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST",
+      "target": "saveUsingPOST_11",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by saveUsingPOST and consumed by saveUsingPOST_11",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET",
+      "target": "saveUsingPOST_11",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by findByIdUsingGET and consumed by saveUsingPOST_11",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT",
+      "target": "updateUsingPUT_11",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by updateUsingPUT and consumed by updateUsingPUT_11",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST",
+      "target": "updateUsingPUT_11",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by saveUsingPOST and consumed by updateUsingPUT_11",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET",
+      "target": "updateUsingPUT_11",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by findByIdUsingGET and consumed by updateUsingPUT_11",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT",
+      "target": "updateUsingPUT_10",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by updateUsingPUT and consumed by updateUsingPUT_10",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT",
+      "target": "saveUsingPOST_10",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by updateUsingPUT and consumed by saveUsingPOST_10",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST",
+      "target": "updateUsingPUT_10",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by saveUsingPOST and consumed by updateUsingPUT_10",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST",
+      "target": "saveUsingPOST_10",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by saveUsingPOST and consumed by saveUsingPOST_10",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET",
+      "target": "updateUsingPUT_10",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by findByIdUsingGET and consumed by updateUsingPUT_10",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET",
+      "target": "saveUsingPOST_10",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by findByIdUsingGET and consumed by saveUsingPOST_10",
+      "verified": null
+    },
+    {
+      "source": "findByEmployeeIdAndProjectIdAndCommitDateUsingGET",
+      "target": "deleteByIdUsingDELETE_1",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId",
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByEmployeeIdAndProjectIdAndCommitDateUsingGET and consumed by deleteByIdUsingDELETE_1; Parameter 'projectId' produced by findByEmployeeIdAndProjectIdAndCommitDateUsingGET and consumed by deleteByIdUsingDELETE_1",
+      "verified": null
+    },
+    {
+      "source": "findByEmployeeIdAndProjectIdAndCommitDateUsingGET",
+      "target": "findByEmployeeIdAndProjectIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId",
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByEmployeeIdAndProjectIdAndCommitDateUsingGET and consumed by findByEmployeeIdAndProjectIdUsingGET; Parameter 'projectId' produced by findByEmployeeIdAndProjectIdAndCommitDateUsingGET and consumed by findByEmployeeIdAndProjectIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "findByEmployeeIdAndProjectIdAndCommitDateUsingGET",
+      "target": "deleteByIdUsingDELETE",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId",
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByEmployeeIdAndProjectIdAndCommitDateUsingGET and consumed by deleteByIdUsingDELETE; Parameter 'projectId' produced by findByEmployeeIdAndProjectIdAndCommitDateUsingGET and consumed by deleteByIdUsingDELETE",
+      "verified": null
+    },
+    {
+      "source": "findByEmployeeIdAndProjectIdAndCommitDateUsingGET",
+      "target": "saveUsingPOST_1",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId",
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByEmployeeIdAndProjectIdAndCommitDateUsingGET and consumed by saveUsingPOST_1; Parameter 'projectId' produced by findByEmployeeIdAndProjectIdAndCommitDateUsingGET and consumed by saveUsingPOST_1",
+      "verified": null
+    },
+    {
+      "source": "findByEmployeeIdAndProjectIdAndCommitDateUsingGET",
+      "target": "saveUsingPOST_7",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByEmployeeIdAndProjectIdAndCommitDateUsingGET and consumed by saveUsingPOST_7",
+      "verified": null
+    },
+    {
+      "source": "findByEmployeeIdAndProjectIdAndCommitDateUsingGET",
+      "target": "updateUsingPUT_1",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId",
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByEmployeeIdAndProjectIdAndCommitDateUsingGET and consumed by updateUsingPUT_1; Parameter 'projectId' produced by findByEmployeeIdAndProjectIdAndCommitDateUsingGET and consumed by updateUsingPUT_1",
+      "verified": null
+    },
+    {
+      "source": "findByEmployeeIdAndProjectIdAndCommitDateUsingGET",
+      "target": "updateUsingPUT_7",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByEmployeeIdAndProjectIdAndCommitDateUsingGET and consumed by updateUsingPUT_7",
+      "verified": null
+    },
+    {
+      "source": "findByEmployeeIdAndProjectIdAndCommitDateUsingGET",
+      "target": "updateUsingPUT_6",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByEmployeeIdAndProjectIdAndCommitDateUsingGET and consumed by updateUsingPUT_6",
+      "verified": null
+    },
+    {
+      "source": "findByEmployeeIdAndProjectIdAndCommitDateUsingGET",
+      "target": "saveUsingPOST_6",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByEmployeeIdAndProjectIdAndCommitDateUsingGET and consumed by saveUsingPOST_6",
+      "verified": null
+    },
+    {
+      "source": "findByEmployeeIdAndProjectIdAndCommitDateUsingGET",
+      "target": "findByEmployeeProjectDataEmployeeIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByEmployeeIdAndProjectIdAndCommitDateUsingGET and consumed by findByEmployeeProjectDataEmployeeIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "findByEmployeeIdAndProjectIdAndCommitDateUsingGET",
+      "target": "findManagerProjectDataByEmployeeIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByEmployeeIdAndProjectIdAndCommitDateUsingGET and consumed by findManagerProjectDataByEmployeeIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "findByEmployeeIdAndProjectIdAndCommitDateUsingGET",
+      "target": "findByProjectIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by findByEmployeeIdAndProjectIdAndCommitDateUsingGET and consumed by findByProjectIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "findByEmployeeIdAndProjectIdAndCommitDateUsingGET",
+      "target": "saveUsingPOST_11",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by findByEmployeeIdAndProjectIdAndCommitDateUsingGET and consumed by saveUsingPOST_11",
+      "verified": null
+    },
+    {
+      "source": "findByEmployeeIdAndProjectIdAndCommitDateUsingGET",
+      "target": "updateUsingPUT_11",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by findByEmployeeIdAndProjectIdAndCommitDateUsingGET and consumed by updateUsingPUT_11",
+      "verified": null
+    },
+    {
+      "source": "findByEmployeeIdAndProjectIdAndCommitDateUsingGET",
+      "target": "updateUsingPUT_10",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by findByEmployeeIdAndProjectIdAndCommitDateUsingGET and consumed by updateUsingPUT_10",
+      "verified": null
+    },
+    {
+      "source": "findByEmployeeIdAndProjectIdAndCommitDateUsingGET",
+      "target": "saveUsingPOST_10",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by findByEmployeeIdAndProjectIdAndCommitDateUsingGET and consumed by saveUsingPOST_10",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_1",
+      "target": "deleteByIdUsingDELETE_1",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId",
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by saveUsingPOST_1 and consumed by deleteByIdUsingDELETE_1; Parameter 'projectId' produced by saveUsingPOST_1 and consumed by deleteByIdUsingDELETE_1",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_7",
+      "target": "deleteByIdUsingDELETE_1",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by saveUsingPOST_7 and consumed by deleteByIdUsingDELETE_1",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_1",
+      "target": "findByEmployeeIdAndProjectIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId",
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by saveUsingPOST_1 and consumed by findByEmployeeIdAndProjectIdUsingGET; Parameter 'projectId' produced by saveUsingPOST_1 and consumed by findByEmployeeIdAndProjectIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_7",
+      "target": "findByEmployeeIdAndProjectIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by saveUsingPOST_7 and consumed by findByEmployeeIdAndProjectIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_1",
+      "target": "deleteByIdUsingDELETE",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId",
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by saveUsingPOST_1 and consumed by deleteByIdUsingDELETE; Parameter 'projectId' produced by saveUsingPOST_1 and consumed by deleteByIdUsingDELETE",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_7",
+      "target": "deleteByIdUsingDELETE",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by saveUsingPOST_7 and consumed by deleteByIdUsingDELETE",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_1",
+      "target": "saveUsingPOST_7",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employee": "employeeId",
+        "employeeId": "employeeId"
+      },
+      "reason": "Fuzzy match: 'employee' -> 'employeeId'; Parameter 'employeeId' produced by saveUsingPOST_1 and consumed by saveUsingPOST_7",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_1",
+      "target": "updateUsingPUT_1",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId",
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by saveUsingPOST_1 and consumed by updateUsingPUT_1; Parameter 'projectId' produced by saveUsingPOST_1 and consumed by updateUsingPUT_1",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_1",
+      "target": "updateUsingPUT_7",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by saveUsingPOST_1 and consumed by updateUsingPUT_7",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_7",
+      "target": "updateUsingPUT_1",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by saveUsingPOST_7 and consumed by updateUsingPUT_1",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_7",
+      "target": "updateUsingPUT_7",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by saveUsingPOST_7 and consumed by updateUsingPUT_7",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_1",
+      "target": "updateUsingPUT_6",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by saveUsingPOST_1 and consumed by updateUsingPUT_6",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_1",
+      "target": "saveUsingPOST_6",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by saveUsingPOST_1 and consumed by saveUsingPOST_6",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_7",
+      "target": "updateUsingPUT_6",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by saveUsingPOST_7 and consumed by updateUsingPUT_6",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_1",
+      "target": "findByEmployeeProjectDataEmployeeIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by saveUsingPOST_1 and consumed by findByEmployeeProjectDataEmployeeIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_7",
+      "target": "findByEmployeeProjectDataEmployeeIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by saveUsingPOST_7 and consumed by findByEmployeeProjectDataEmployeeIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_1",
+      "target": "findManagerProjectDataByEmployeeIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by saveUsingPOST_1 and consumed by findManagerProjectDataByEmployeeIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_7",
+      "target": "findManagerProjectDataByEmployeeIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by saveUsingPOST_7 and consumed by findManagerProjectDataByEmployeeIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_11",
+      "target": "deleteByIdUsingDELETE_1",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by saveUsingPOST_11 and consumed by deleteByIdUsingDELETE_1",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_1",
+      "target": "findByProjectIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by saveUsingPOST_1 and consumed by findByProjectIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_11",
+      "target": "findByEmployeeIdAndProjectIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by saveUsingPOST_11 and consumed by findByEmployeeIdAndProjectIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_11",
+      "target": "findByProjectIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by saveUsingPOST_11 and consumed by findByProjectIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_11",
+      "target": "deleteByIdUsingDELETE",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by saveUsingPOST_11 and consumed by deleteByIdUsingDELETE",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_1",
+      "target": "saveUsingPOST_11",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "project": "projectId",
+        "projectId": "projectId"
+      },
+      "reason": "Fuzzy match: 'project' -> 'projectId'; Parameter 'projectId' produced by saveUsingPOST_1 and consumed by saveUsingPOST_11",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_1",
+      "target": "updateUsingPUT_11",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by saveUsingPOST_1 and consumed by updateUsingPUT_11",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_11",
+      "target": "updateUsingPUT_1",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by saveUsingPOST_11 and consumed by updateUsingPUT_1",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_11",
+      "target": "updateUsingPUT_11",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by saveUsingPOST_11 and consumed by updateUsingPUT_11",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_1",
+      "target": "updateUsingPUT_10",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by saveUsingPOST_1 and consumed by updateUsingPUT_10",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_1",
+      "target": "saveUsingPOST_10",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by saveUsingPOST_1 and consumed by saveUsingPOST_10",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_11",
+      "target": "updateUsingPUT_10",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by saveUsingPOST_11 and consumed by updateUsingPUT_10",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_1",
+      "target": "deleteByIdUsingDELETE_1",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId",
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by updateUsingPUT_1 and consumed by deleteByIdUsingDELETE_1; Parameter 'projectId' produced by updateUsingPUT_1 and consumed by deleteByIdUsingDELETE_1",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_7",
+      "target": "deleteByIdUsingDELETE_1",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by updateUsingPUT_7 and consumed by deleteByIdUsingDELETE_1",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_1",
+      "target": "findByEmployeeIdAndProjectIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId",
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by updateUsingPUT_1 and consumed by findByEmployeeIdAndProjectIdUsingGET; Parameter 'projectId' produced by updateUsingPUT_1 and consumed by findByEmployeeIdAndProjectIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_7",
+      "target": "findByEmployeeIdAndProjectIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by updateUsingPUT_7 and consumed by findByEmployeeIdAndProjectIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_1",
+      "target": "deleteByIdUsingDELETE",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId",
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by updateUsingPUT_1 and consumed by deleteByIdUsingDELETE; Parameter 'projectId' produced by updateUsingPUT_1 and consumed by deleteByIdUsingDELETE",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_7",
+      "target": "deleteByIdUsingDELETE",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by updateUsingPUT_7 and consumed by deleteByIdUsingDELETE",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_1",
+      "target": "updateUsingPUT_7",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employee": "employeeId",
+        "employeeId": "employeeId"
+      },
+      "reason": "Fuzzy match: 'employee' -> 'employeeId'; Parameter 'employeeId' produced by updateUsingPUT_1 and consumed by updateUsingPUT_7",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_1",
+      "target": "updateUsingPUT_6",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by updateUsingPUT_1 and consumed by updateUsingPUT_6",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_7",
+      "target": "updateUsingPUT_6",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by updateUsingPUT_7 and consumed by updateUsingPUT_6",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_1",
+      "target": "findByEmployeeProjectDataEmployeeIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by updateUsingPUT_1 and consumed by findByEmployeeProjectDataEmployeeIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_7",
+      "target": "findByEmployeeProjectDataEmployeeIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by updateUsingPUT_7 and consumed by findByEmployeeProjectDataEmployeeIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_1",
+      "target": "findManagerProjectDataByEmployeeIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by updateUsingPUT_1 and consumed by findManagerProjectDataByEmployeeIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_7",
+      "target": "findManagerProjectDataByEmployeeIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by updateUsingPUT_7 and consumed by findManagerProjectDataByEmployeeIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_11",
+      "target": "deleteByIdUsingDELETE_1",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by updateUsingPUT_11 and consumed by deleteByIdUsingDELETE_1",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_1",
+      "target": "findByProjectIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by updateUsingPUT_1 and consumed by findByProjectIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_11",
+      "target": "findByEmployeeIdAndProjectIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by updateUsingPUT_11 and consumed by findByEmployeeIdAndProjectIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_11",
+      "target": "findByProjectIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by updateUsingPUT_11 and consumed by findByProjectIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_11",
+      "target": "deleteByIdUsingDELETE",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by updateUsingPUT_11 and consumed by deleteByIdUsingDELETE",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_1",
+      "target": "updateUsingPUT_11",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "project": "projectId",
+        "projectId": "projectId"
+      },
+      "reason": "Fuzzy match: 'project' -> 'projectId'; Parameter 'projectId' produced by updateUsingPUT_1 and consumed by updateUsingPUT_11",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_1",
+      "target": "updateUsingPUT_10",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by updateUsingPUT_1 and consumed by updateUsingPUT_10",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_11",
+      "target": "updateUsingPUT_10",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by updateUsingPUT_11 and consumed by updateUsingPUT_10",
+      "verified": null
+    },
+    {
+      "source": "authenticateUsingPOST",
+      "target": "authenticateUsingPOST_1",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "username": "username"
+      },
+      "reason": "Parameter 'username' produced by authenticateUsingPOST and consumed by authenticateUsingPOST_1",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_2",
+      "target": "saveUsingPOST_3",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "credentialId": "credentialId"
+      },
+      "reason": "Parameter 'credentialId' produced by updateUsingPUT_2 and consumed by saveUsingPOST_3",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET_1",
+      "target": "saveUsingPOST_3",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "credentialId": "credentialId"
+      },
+      "reason": "Parameter 'credentialId' produced by findByIdUsingGET_1 and consumed by saveUsingPOST_3",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_2",
+      "target": "updateUsingPUT_3",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "credentialId": "credentialId"
+      },
+      "reason": "Parameter 'credentialId' produced by updateUsingPUT_2 and consumed by updateUsingPUT_3",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET_1",
+      "target": "updateUsingPUT_3",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "credentialId": "credentialId"
+      },
+      "reason": "Parameter 'credentialId' produced by findByIdUsingGET_1 and consumed by updateUsingPUT_3",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_3",
+      "target": "updateUsingPUT_3",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "credentialId": "credentialId"
+      },
+      "reason": "Parameter 'credentialId' produced by saveUsingPOST_3 and consumed by updateUsingPUT_3",
+      "verified": null
+    },
+    {
+      "source": "findByUsernameUsingGET",
+      "target": "updateUsingPUT_2",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "credentialId": "credentialId"
+      },
+      "reason": "Parameter 'credentialId' produced by findByUsernameUsingGET and consumed by updateUsingPUT_2",
+      "verified": null
+    },
+    {
+      "source": "findByUsernameUsingGET",
+      "target": "saveUsingPOST_3",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "credentialId": "credentialId"
+      },
+      "reason": "Parameter 'credentialId' produced by findByUsernameUsingGET and consumed by saveUsingPOST_3",
+      "verified": null
+    },
+    {
+      "source": "findByUsernameUsingGET",
+      "target": "updateUsingPUT_3",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "credentialId": "credentialId"
+      },
+      "reason": "Parameter 'credentialId' produced by findByUsernameUsingGET and consumed by updateUsingPUT_3",
+      "verified": null
+    },
+    {
+      "source": "findByUsernameUsingGET",
+      "target": "deleteByUsernameUsingDELETE",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "username": "username"
+      },
+      "reason": "Parameter 'username' produced by findByUsernameUsingGET and consumed by deleteByUsernameUsingDELETE",
+      "verified": null
+    },
+    {
+      "source": "findByUsernameUsingGET",
+      "target": "findByUsernameUsingGET_1",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "username": "username"
+      },
+      "reason": "Parameter 'username' produced by findByUsernameUsingGET and consumed by findByUsernameUsingGET_1",
+      "verified": null
+    },
+    {
+      "source": "findByUsernameUsingGET",
+      "target": "deleteByUsernameUsingDELETE_1",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "username": "username"
+      },
+      "reason": "Parameter 'username' produced by findByUsernameUsingGET and consumed by deleteByUsernameUsingDELETE_1",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_4",
+      "target": "saveUsingPOST_5",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "departmentId": "departmentId"
+      },
+      "reason": "Parameter 'departmentId' produced by updateUsingPUT_4 and consumed by saveUsingPOST_5",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET_2",
+      "target": "saveUsingPOST_5",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "departmentId": "departmentId"
+      },
+      "reason": "Parameter 'departmentId' produced by findByIdUsingGET_2 and consumed by saveUsingPOST_5",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_4",
+      "target": "updateUsingPUT_5",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "departmentId": "departmentId"
+      },
+      "reason": "Parameter 'departmentId' produced by updateUsingPUT_4 and consumed by updateUsingPUT_5",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET_2",
+      "target": "updateUsingPUT_5",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "departmentId": "departmentId"
+      },
+      "reason": "Parameter 'departmentId' produced by findByIdUsingGET_2 and consumed by updateUsingPUT_5",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_4",
+      "target": "findByDepartmentIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "departmentId": "departmentId"
+      },
+      "reason": "Parameter 'departmentId' produced by updateUsingPUT_4 and consumed by findByDepartmentIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_4",
+      "target": "findByDepartmentIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "departmentId": "departmentId"
+      },
+      "reason": "Parameter 'departmentId' produced by saveUsingPOST_4 and consumed by findByDepartmentIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET_2",
+      "target": "findByDepartmentIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "departmentId": "departmentId"
+      },
+      "reason": "Parameter 'departmentId' produced by findByIdUsingGET_2 and consumed by findByDepartmentIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_5",
+      "target": "updateUsingPUT_5",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "departmentId": "departmentId"
+      },
+      "reason": "Parameter 'departmentId' produced by saveUsingPOST_5 and consumed by updateUsingPUT_5",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_5",
+      "target": "findByDepartmentIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "departmentId": "departmentId"
+      },
+      "reason": "Parameter 'departmentId' produced by saveUsingPOST_5 and consumed by findByDepartmentIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_5",
+      "target": "findByDepartmentIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "departmentId": "departmentId"
+      },
+      "reason": "Parameter 'departmentId' produced by updateUsingPUT_5 and consumed by findByDepartmentIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_6",
+      "target": "deleteByIdUsingDELETE_1",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by updateUsingPUT_6 and consumed by deleteByIdUsingDELETE_1",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_6",
+      "target": "deleteByIdUsingDELETE_1",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by saveUsingPOST_6 and consumed by deleteByIdUsingDELETE_1",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET_3",
+      "target": "deleteByIdUsingDELETE_1",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByIdUsingGET_3 and consumed by deleteByIdUsingDELETE_1",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_6",
+      "target": "findByEmployeeIdAndProjectIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by updateUsingPUT_6 and consumed by findByEmployeeIdAndProjectIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_6",
+      "target": "findByEmployeeIdAndProjectIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by saveUsingPOST_6 and consumed by findByEmployeeIdAndProjectIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET_3",
+      "target": "findByEmployeeIdAndProjectIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByIdUsingGET_3 and consumed by findByEmployeeIdAndProjectIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_6",
+      "target": "deleteByIdUsingDELETE",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by updateUsingPUT_6 and consumed by deleteByIdUsingDELETE",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_6",
+      "target": "deleteByIdUsingDELETE",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by saveUsingPOST_6 and consumed by deleteByIdUsingDELETE",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET_3",
+      "target": "deleteByIdUsingDELETE",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByIdUsingGET_3 and consumed by deleteByIdUsingDELETE",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET_3",
+      "target": "saveUsingPOST_7",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByIdUsingGET_3 and consumed by saveUsingPOST_7",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET_3",
+      "target": "updateUsingPUT_1",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByIdUsingGET_3 and consumed by updateUsingPUT_1",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET_3",
+      "target": "updateUsingPUT_7",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByIdUsingGET_3 and consumed by updateUsingPUT_7",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_6",
+      "target": "findByEmployeeProjectDataEmployeeIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by updateUsingPUT_6 and consumed by findByEmployeeProjectDataEmployeeIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET_3",
+      "target": "findByEmployeeProjectDataEmployeeIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByIdUsingGET_3 and consumed by findByEmployeeProjectDataEmployeeIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_6",
+      "target": "findManagerProjectDataByEmployeeIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by updateUsingPUT_6 and consumed by findManagerProjectDataByEmployeeIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET_3",
+      "target": "findManagerProjectDataByEmployeeIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByIdUsingGET_3 and consumed by findManagerProjectDataByEmployeeIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "findByUsernameUsingGET_1",
+      "target": "deleteByIdUsingDELETE_1",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByUsernameUsingGET_1 and consumed by deleteByIdUsingDELETE_1",
+      "verified": null
+    },
+    {
+      "source": "findByUsernameUsingGET_1",
+      "target": "findByEmployeeIdAndProjectIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByUsernameUsingGET_1 and consumed by findByEmployeeIdAndProjectIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "findByUsernameUsingGET_1",
+      "target": "deleteByIdUsingDELETE",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByUsernameUsingGET_1 and consumed by deleteByIdUsingDELETE",
+      "verified": null
+    },
+    {
+      "source": "findByUsernameUsingGET_1",
+      "target": "saveUsingPOST_7",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByUsernameUsingGET_1 and consumed by saveUsingPOST_7",
+      "verified": null
+    },
+    {
+      "source": "findByUsernameUsingGET_1",
+      "target": "updateUsingPUT_1",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByUsernameUsingGET_1 and consumed by updateUsingPUT_1",
+      "verified": null
+    },
+    {
+      "source": "findByUsernameUsingGET_1",
+      "target": "updateUsingPUT_7",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByUsernameUsingGET_1 and consumed by updateUsingPUT_7",
+      "verified": null
+    },
+    {
+      "source": "findByUsernameUsingGET_1",
+      "target": "updateUsingPUT_6",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByUsernameUsingGET_1 and consumed by updateUsingPUT_6",
+      "verified": null
+    },
+    {
+      "source": "findByUsernameUsingGET_1",
+      "target": "findByEmployeeProjectDataEmployeeIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByUsernameUsingGET_1 and consumed by findByEmployeeProjectDataEmployeeIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "findByUsernameUsingGET_1",
+      "target": "findManagerProjectDataByEmployeeIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByUsernameUsingGET_1 and consumed by findManagerProjectDataByEmployeeIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_8",
+      "target": "saveUsingPOST_9",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "locationId": "locationId"
+      },
+      "reason": "Parameter 'locationId' produced by updateUsingPUT_8 and consumed by saveUsingPOST_9",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET_4",
+      "target": "saveUsingPOST_9",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "locationId": "locationId"
+      },
+      "reason": "Parameter 'locationId' produced by findByIdUsingGET_4 and consumed by saveUsingPOST_9",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_8",
+      "target": "updateUsingPUT_9",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "locationId": "locationId"
+      },
+      "reason": "Parameter 'locationId' produced by updateUsingPUT_8 and consumed by updateUsingPUT_9",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET_4",
+      "target": "updateUsingPUT_9",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "locationId": "locationId"
+      },
+      "reason": "Parameter 'locationId' produced by findByIdUsingGET_4 and consumed by updateUsingPUT_9",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_9",
+      "target": "updateUsingPUT_9",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "locationId": "locationId"
+      },
+      "reason": "Parameter 'locationId' produced by saveUsingPOST_9 and consumed by updateUsingPUT_9",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_10",
+      "target": "deleteByIdUsingDELETE_1",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by updateUsingPUT_10 and consumed by deleteByIdUsingDELETE_1",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_10",
+      "target": "deleteByIdUsingDELETE_1",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by saveUsingPOST_10 and consumed by deleteByIdUsingDELETE_1",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET_5",
+      "target": "deleteByIdUsingDELETE_1",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by findByIdUsingGET_5 and consumed by deleteByIdUsingDELETE_1",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_10",
+      "target": "findByEmployeeIdAndProjectIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by updateUsingPUT_10 and consumed by findByEmployeeIdAndProjectIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_10",
+      "target": "findByProjectIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by updateUsingPUT_10 and consumed by findByProjectIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_10",
+      "target": "findByEmployeeIdAndProjectIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by saveUsingPOST_10 and consumed by findByEmployeeIdAndProjectIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_10",
+      "target": "findByProjectIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by saveUsingPOST_10 and consumed by findByProjectIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET_5",
+      "target": "findByEmployeeIdAndProjectIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by findByIdUsingGET_5 and consumed by findByEmployeeIdAndProjectIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET_5",
+      "target": "findByProjectIdUsingGET",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by findByIdUsingGET_5 and consumed by findByProjectIdUsingGET",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_10",
+      "target": "deleteByIdUsingDELETE",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by updateUsingPUT_10 and consumed by deleteByIdUsingDELETE",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_10",
+      "target": "deleteByIdUsingDELETE",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by saveUsingPOST_10 and consumed by deleteByIdUsingDELETE",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET_5",
+      "target": "deleteByIdUsingDELETE",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by findByIdUsingGET_5 and consumed by deleteByIdUsingDELETE",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET_5",
+      "target": "saveUsingPOST_11",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by findByIdUsingGET_5 and consumed by saveUsingPOST_11",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET_5",
+      "target": "updateUsingPUT_1",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by findByIdUsingGET_5 and consumed by updateUsingPUT_1",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET_5",
+      "target": "updateUsingPUT_11",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by findByIdUsingGET_5 and consumed by updateUsingPUT_11",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT",
+      "target": "deleteByIdUsingDELETE_7",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by updateUsingPUT and consumed by deleteByIdUsingDELETE_7",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST",
+      "target": "deleteByIdUsingDELETE_7",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by saveUsingPOST and consumed by deleteByIdUsingDELETE_7",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET",
+      "target": "deleteByIdUsingDELETE_7",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByIdUsingGET and consumed by deleteByIdUsingDELETE_7",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT",
+      "target": "deleteByIdUsingDELETE_6",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by updateUsingPUT and consumed by deleteByIdUsingDELETE_6",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST",
+      "target": "deleteByIdUsingDELETE_6",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by saveUsingPOST and consumed by deleteByIdUsingDELETE_6",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET",
+      "target": "deleteByIdUsingDELETE_6",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByIdUsingGET and consumed by deleteByIdUsingDELETE_6",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT",
+      "target": "deleteByIdUsingDELETE_11",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by updateUsingPUT and consumed by deleteByIdUsingDELETE_11",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST",
+      "target": "deleteByIdUsingDELETE_11",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by saveUsingPOST and consumed by deleteByIdUsingDELETE_11",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET",
+      "target": "deleteByIdUsingDELETE_11",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by findByIdUsingGET and consumed by deleteByIdUsingDELETE_11",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT",
+      "target": "deleteByIdUsingDELETE_10",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by updateUsingPUT and consumed by deleteByIdUsingDELETE_10",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST",
+      "target": "deleteByIdUsingDELETE_10",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by saveUsingPOST and consumed by deleteByIdUsingDELETE_10",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET",
+      "target": "deleteByIdUsingDELETE_10",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by findByIdUsingGET and consumed by deleteByIdUsingDELETE_10",
+      "verified": null
+    },
+    {
+      "source": "findByEmployeeIdAndProjectIdAndCommitDateUsingGET",
+      "target": "deleteByIdUsingDELETE_7",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByEmployeeIdAndProjectIdAndCommitDateUsingGET and consumed by deleteByIdUsingDELETE_7",
+      "verified": null
+    },
+    {
+      "source": "findByEmployeeIdAndProjectIdAndCommitDateUsingGET",
+      "target": "deleteByIdUsingDELETE_6",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByEmployeeIdAndProjectIdAndCommitDateUsingGET and consumed by deleteByIdUsingDELETE_6",
+      "verified": null
+    },
+    {
+      "source": "findByEmployeeIdAndProjectIdAndCommitDateUsingGET",
+      "target": "deleteByIdUsingDELETE_11",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by findByEmployeeIdAndProjectIdAndCommitDateUsingGET and consumed by deleteByIdUsingDELETE_11",
+      "verified": null
+    },
+    {
+      "source": "findByEmployeeIdAndProjectIdAndCommitDateUsingGET",
+      "target": "deleteByIdUsingDELETE_10",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by findByEmployeeIdAndProjectIdAndCommitDateUsingGET and consumed by deleteByIdUsingDELETE_10",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_1",
+      "target": "deleteByIdUsingDELETE_7",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by saveUsingPOST_1 and consumed by deleteByIdUsingDELETE_7",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_7",
+      "target": "deleteByIdUsingDELETE_7",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by saveUsingPOST_7 and consumed by deleteByIdUsingDELETE_7",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_1",
+      "target": "deleteByIdUsingDELETE_6",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by saveUsingPOST_1 and consumed by deleteByIdUsingDELETE_6",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_7",
+      "target": "deleteByIdUsingDELETE_6",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by saveUsingPOST_7 and consumed by deleteByIdUsingDELETE_6",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_1",
+      "target": "deleteByIdUsingDELETE_11",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by saveUsingPOST_1 and consumed by deleteByIdUsingDELETE_11",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_11",
+      "target": "deleteByIdUsingDELETE_11",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by saveUsingPOST_11 and consumed by deleteByIdUsingDELETE_11",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_1",
+      "target": "deleteByIdUsingDELETE_10",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by saveUsingPOST_1 and consumed by deleteByIdUsingDELETE_10",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_11",
+      "target": "deleteByIdUsingDELETE_10",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by saveUsingPOST_11 and consumed by deleteByIdUsingDELETE_10",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_1",
+      "target": "deleteByIdUsingDELETE_7",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by updateUsingPUT_1 and consumed by deleteByIdUsingDELETE_7",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_7",
+      "target": "deleteByIdUsingDELETE_7",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by updateUsingPUT_7 and consumed by deleteByIdUsingDELETE_7",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_1",
+      "target": "deleteByIdUsingDELETE_6",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by updateUsingPUT_1 and consumed by deleteByIdUsingDELETE_6",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_7",
+      "target": "deleteByIdUsingDELETE_6",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by updateUsingPUT_7 and consumed by deleteByIdUsingDELETE_6",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_1",
+      "target": "deleteByIdUsingDELETE_11",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by updateUsingPUT_1 and consumed by deleteByIdUsingDELETE_11",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_11",
+      "target": "deleteByIdUsingDELETE_11",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by updateUsingPUT_11 and consumed by deleteByIdUsingDELETE_11",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_1",
+      "target": "deleteByIdUsingDELETE_10",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by updateUsingPUT_1 and consumed by deleteByIdUsingDELETE_10",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_11",
+      "target": "deleteByIdUsingDELETE_10",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by updateUsingPUT_11 and consumed by deleteByIdUsingDELETE_10",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_2",
+      "target": "deleteByIdUsingDELETE_2",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "credentialId": "credentialId"
+      },
+      "reason": "Parameter 'credentialId' produced by updateUsingPUT_2 and consumed by deleteByIdUsingDELETE_2",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET_1",
+      "target": "deleteByIdUsingDELETE_2",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "credentialId": "credentialId"
+      },
+      "reason": "Parameter 'credentialId' produced by findByIdUsingGET_1 and consumed by deleteByIdUsingDELETE_2",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_2",
+      "target": "deleteByIdUsingDELETE_3",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "credentialId": "credentialId"
+      },
+      "reason": "Parameter 'credentialId' produced by updateUsingPUT_2 and consumed by deleteByIdUsingDELETE_3",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET_1",
+      "target": "deleteByIdUsingDELETE_3",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "credentialId": "credentialId"
+      },
+      "reason": "Parameter 'credentialId' produced by findByIdUsingGET_1 and consumed by deleteByIdUsingDELETE_3",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_3",
+      "target": "deleteByIdUsingDELETE_2",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "credentialId": "credentialId"
+      },
+      "reason": "Parameter 'credentialId' produced by saveUsingPOST_3 and consumed by deleteByIdUsingDELETE_2",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_3",
+      "target": "deleteByIdUsingDELETE_3",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "credentialId": "credentialId"
+      },
+      "reason": "Parameter 'credentialId' produced by saveUsingPOST_3 and consumed by deleteByIdUsingDELETE_3",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_3",
+      "target": "deleteByIdUsingDELETE_2",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "credentialId": "credentialId"
+      },
+      "reason": "Parameter 'credentialId' produced by updateUsingPUT_3 and consumed by deleteByIdUsingDELETE_2",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_3",
+      "target": "deleteByIdUsingDELETE_3",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "credentialId": "credentialId"
+      },
+      "reason": "Parameter 'credentialId' produced by updateUsingPUT_3 and consumed by deleteByIdUsingDELETE_3",
+      "verified": null
+    },
+    {
+      "source": "findByUsernameUsingGET",
+      "target": "deleteByIdUsingDELETE_2",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "credentialId": "credentialId"
+      },
+      "reason": "Parameter 'credentialId' produced by findByUsernameUsingGET and consumed by deleteByIdUsingDELETE_2",
+      "verified": null
+    },
+    {
+      "source": "findByUsernameUsingGET",
+      "target": "deleteByIdUsingDELETE_3",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "credentialId": "credentialId"
+      },
+      "reason": "Parameter 'credentialId' produced by findByUsernameUsingGET and consumed by deleteByIdUsingDELETE_3",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_4",
+      "target": "deleteByIdUsingDELETE_4",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "departmentId": "departmentId"
+      },
+      "reason": "Parameter 'departmentId' produced by updateUsingPUT_4 and consumed by deleteByIdUsingDELETE_4",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET_2",
+      "target": "deleteByIdUsingDELETE_4",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "departmentId": "departmentId"
+      },
+      "reason": "Parameter 'departmentId' produced by findByIdUsingGET_2 and consumed by deleteByIdUsingDELETE_4",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_4",
+      "target": "deleteByIdUsingDELETE_5",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "departmentId": "departmentId"
+      },
+      "reason": "Parameter 'departmentId' produced by updateUsingPUT_4 and consumed by deleteByIdUsingDELETE_5",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET_2",
+      "target": "deleteByIdUsingDELETE_5",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "departmentId": "departmentId"
+      },
+      "reason": "Parameter 'departmentId' produced by findByIdUsingGET_2 and consumed by deleteByIdUsingDELETE_5",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_5",
+      "target": "deleteByIdUsingDELETE_4",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "departmentId": "departmentId"
+      },
+      "reason": "Parameter 'departmentId' produced by saveUsingPOST_5 and consumed by deleteByIdUsingDELETE_4",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_5",
+      "target": "deleteByIdUsingDELETE_5",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "departmentId": "departmentId"
+      },
+      "reason": "Parameter 'departmentId' produced by saveUsingPOST_5 and consumed by deleteByIdUsingDELETE_5",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_5",
+      "target": "deleteByIdUsingDELETE_4",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "departmentId": "departmentId"
+      },
+      "reason": "Parameter 'departmentId' produced by updateUsingPUT_5 and consumed by deleteByIdUsingDELETE_4",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_5",
+      "target": "deleteByIdUsingDELETE_5",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "departmentId": "departmentId"
+      },
+      "reason": "Parameter 'departmentId' produced by updateUsingPUT_5 and consumed by deleteByIdUsingDELETE_5",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_6",
+      "target": "deleteByIdUsingDELETE_7",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by updateUsingPUT_6 and consumed by deleteByIdUsingDELETE_7",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET_3",
+      "target": "deleteByIdUsingDELETE_7",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByIdUsingGET_3 and consumed by deleteByIdUsingDELETE_7",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_6",
+      "target": "deleteByIdUsingDELETE_6",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by updateUsingPUT_6 and consumed by deleteByIdUsingDELETE_6",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET_3",
+      "target": "deleteByIdUsingDELETE_6",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByIdUsingGET_3 and consumed by deleteByIdUsingDELETE_6",
+      "verified": null
+    },
+    {
+      "source": "findByUsernameUsingGET_1",
+      "target": "deleteByIdUsingDELETE_7",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByUsernameUsingGET_1 and consumed by deleteByIdUsingDELETE_7",
+      "verified": null
+    },
+    {
+      "source": "findByUsernameUsingGET_1",
+      "target": "deleteByIdUsingDELETE_6",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "employeeId": "employeeId"
+      },
+      "reason": "Parameter 'employeeId' produced by findByUsernameUsingGET_1 and consumed by deleteByIdUsingDELETE_6",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_8",
+      "target": "deleteByIdUsingDELETE_8",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "locationId": "locationId"
+      },
+      "reason": "Parameter 'locationId' produced by updateUsingPUT_8 and consumed by deleteByIdUsingDELETE_8",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET_4",
+      "target": "deleteByIdUsingDELETE_8",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "locationId": "locationId"
+      },
+      "reason": "Parameter 'locationId' produced by findByIdUsingGET_4 and consumed by deleteByIdUsingDELETE_8",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_8",
+      "target": "deleteByIdUsingDELETE_9",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "locationId": "locationId"
+      },
+      "reason": "Parameter 'locationId' produced by updateUsingPUT_8 and consumed by deleteByIdUsingDELETE_9",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET_4",
+      "target": "deleteByIdUsingDELETE_9",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "locationId": "locationId"
+      },
+      "reason": "Parameter 'locationId' produced by findByIdUsingGET_4 and consumed by deleteByIdUsingDELETE_9",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_9",
+      "target": "deleteByIdUsingDELETE_8",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "locationId": "locationId"
+      },
+      "reason": "Parameter 'locationId' produced by saveUsingPOST_9 and consumed by deleteByIdUsingDELETE_8",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_9",
+      "target": "deleteByIdUsingDELETE_9",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "locationId": "locationId"
+      },
+      "reason": "Parameter 'locationId' produced by saveUsingPOST_9 and consumed by deleteByIdUsingDELETE_9",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_9",
+      "target": "deleteByIdUsingDELETE_8",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "locationId": "locationId"
+      },
+      "reason": "Parameter 'locationId' produced by updateUsingPUT_9 and consumed by deleteByIdUsingDELETE_8",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_9",
+      "target": "deleteByIdUsingDELETE_9",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "locationId": "locationId"
+      },
+      "reason": "Parameter 'locationId' produced by updateUsingPUT_9 and consumed by deleteByIdUsingDELETE_9",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_10",
+      "target": "deleteByIdUsingDELETE_11",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by updateUsingPUT_10 and consumed by deleteByIdUsingDELETE_11",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET_5",
+      "target": "deleteByIdUsingDELETE_11",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by findByIdUsingGET_5 and consumed by deleteByIdUsingDELETE_11",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_10",
+      "target": "deleteByIdUsingDELETE_10",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by updateUsingPUT_10 and consumed by deleteByIdUsingDELETE_10",
+      "verified": null
+    },
+    {
+      "source": "findByIdUsingGET_5",
+      "target": "deleteByIdUsingDELETE_10",
+      "type": "parameter_data",
+      "confidence": 0.7,
+      "parameter_mapping": {
+        "projectId": "projectId"
+      },
+      "reason": "Parameter 'projectId' produced by findByIdUsingGET_5 and consumed by deleteByIdUsingDELETE_10",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_3",
+      "target": "saveUsingPOST_7",
+      "type": "parameter_data",
+      "confidence": 0.6,
+      "parameter_mapping": {
+        "credentialId": "credential"
+      },
+      "reason": "Fuzzy match: 'credentialId' -> 'credential'",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_3",
+      "target": "updateUsingPUT_7",
+      "type": "parameter_data",
+      "confidence": 0.6,
+      "parameter_mapping": {
+        "credentialId": "credential"
+      },
+      "reason": "Fuzzy match: 'credentialId' -> 'credential'",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_5",
+      "target": "saveUsingPOST_7",
+      "type": "parameter_data",
+      "confidence": 0.6,
+      "parameter_mapping": {
+        "departmentName": "department",
+        "departmentId": "department"
+      },
+      "reason": "Fuzzy match: 'departmentId' -> 'department'; Fuzzy match: 'departmentName' -> 'department'",
+      "verified": null
+    },
+    {
+      "source": "saveUsingPOST_5",
+      "target": "saveUsingPOST_9",
+      "type": "parameter_data",
+      "confidence": 0.6,
+      "parameter_mapping": {
+        "location": "locationId"
+      },
+      "reason": "Fuzzy match: 'location' -> 'locationId'",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_5",
+      "target": "updateUsingPUT_7",
+      "type": "parameter_data",
+      "confidence": 0.6,
+      "parameter_mapping": {
+        "departmentName": "department",
+        "departmentId": "department"
+      },
+      "reason": "Fuzzy match: 'departmentId' -> 'department'; Fuzzy match: 'departmentName' -> 'department'",
+      "verified": null
+    },
+    {
+      "source": "updateUsingPUT_5",
+      "target": "updateUsingPUT_9",
+      "type": "parameter_data",
+      "confidence": 0.6,
+      "parameter_mapping": {
+        "location": "locationId"
+      },
+      "reason": "Fuzzy match: 'location' -> 'locationId'",
+      "verified": null
+    }
+  ],
+  "metadata": {
+    "num_operations": 67,
+    "num_dependencies": 339
+  }
+}

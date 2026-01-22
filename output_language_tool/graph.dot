@@ -1,0 +1,8 @@
+digraph G {
+rankdir=TB;
+POST__check [label="POST /check", shape=box, style=filled, fillcolor="#2196F3"];
+"POST__{check1}" [label="POST /{check1}", shape=box, style=filled, fillcolor="#2196F3"];
+"POST__{check2}" [label="POST /{check2}", shape=box, style=filled, fillcolor="#2196F3"];
+"POST__{check3}" [label="POST /{check3}", shape=box, style=filled, fillcolor="#2196F3"];
+GET__languages [label="GET /languages", shape=box, style=filled, fillcolor="#4CAF50"];
+}

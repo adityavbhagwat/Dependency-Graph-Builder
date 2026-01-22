@@ -1,0 +1,652 @@
+{
+  "nodes": [
+    {
+      "id": "getFeaturesForProduct",
+      "path": "/products/{productName}/features",
+      "method": "GET",
+      "resource_type": "products",
+      "consumes": [
+        "productName"
+      ],
+      "produces": [
+        "name",
+        "id",
+        "description"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "updateFeatureOfProduct",
+      "path": "/products/{productName}/features/{featureName}",
+      "method": "PUT",
+      "resource_type": "products",
+      "consumes": [
+        "description",
+        "productName",
+        "featureName"
+      ],
+      "produces": [
+        "name",
+        "id",
+        "description"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "addFeatureToProduct",
+      "path": "/products/{productName}/features/{featureName}",
+      "method": "POST",
+      "resource_type": "products",
+      "consumes": [
+        "description",
+        "productName",
+        "featureName"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "deleteFeatureOfProduct",
+      "path": "/products/{productName}/features/{featureName}",
+      "method": "DELETE",
+      "resource_type": "products",
+      "consumes": [
+        "productName",
+        "featureName"
+      ],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "getAllProducts",
+      "path": "/products",
+      "method": "GET",
+      "resource_type": "products",
+      "consumes": [],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "getProductByName",
+      "path": "/products/{productName}",
+      "method": "GET",
+      "resource_type": "products",
+      "consumes": [
+        "productName"
+      ],
+      "produces": [
+        "constraints",
+        "name",
+        "features",
+        "id"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "addProduct",
+      "path": "/products/{productName}",
+      "method": "POST",
+      "resource_type": "products",
+      "consumes": [
+        "productName"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "deleteProductByName",
+      "path": "/products/{productName}",
+      "method": "DELETE",
+      "resource_type": "products",
+      "consumes": [
+        "productName"
+      ],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "getConfigurationWithNameForProduct",
+      "path": "/products/{productName}/configurations/{configurationName}",
+      "method": "GET",
+      "resource_type": "products",
+      "consumes": [
+        "productName",
+        "configurationName"
+      ],
+      "produces": [
+        "activedFeatures",
+        "name",
+        "valid"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "addConfiguration",
+      "path": "/products/{productName}/configurations/{configurationName}",
+      "method": "POST",
+      "resource_type": "products",
+      "consumes": [
+        "productName",
+        "configurationName"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "deleteConfiguration",
+      "path": "/products/{productName}/configurations/{configurationName}",
+      "method": "DELETE",
+      "resource_type": "products",
+      "consumes": [
+        "productName",
+        "configurationName"
+      ],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "getConfigurationsForProduct",
+      "path": "/products/{productName}/configurations",
+      "method": "GET",
+      "resource_type": "products",
+      "consumes": [
+        "productName"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "addFeatureToConfiguration",
+      "path": "/products/{productName}/configurations/{configurationName}/features/{featureName}",
+      "method": "POST",
+      "resource_type": "products",
+      "consumes": [
+        "productName",
+        "configurationName",
+        "featureName"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "deleteFeature",
+      "path": "/products/{productName}/configurations/{configurationName}/features/{featureName}",
+      "method": "DELETE",
+      "resource_type": "products",
+      "consumes": [
+        "productName",
+        "configurationName",
+        "featureName"
+      ],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "getConfigurationActivedFeatures",
+      "path": "/products/{productName}/configurations/{configurationName}/features",
+      "method": "GET",
+      "resource_type": "products",
+      "consumes": [
+        "productName",
+        "configurationName"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "deleteConstraint",
+      "path": "/products/{productName}/constraints/{constraintId}",
+      "method": "DELETE",
+      "resource_type": "products",
+      "consumes": [
+        "productName",
+        "constraintId"
+      ],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "addRequiresConstraintToProduct",
+      "path": "/products/{productName}/constraints/requires",
+      "method": "POST",
+      "resource_type": "products",
+      "consumes": [
+        "requiredFeature",
+        "productName",
+        "sourceFeature"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "addExcludesConstraintToProduct",
+      "path": "/products/{productName}/constraints/excludes",
+      "method": "POST",
+      "resource_type": "products",
+      "consumes": [
+        "excludedFeature",
+        "productName",
+        "sourceFeature"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "getFeaturesForProduct",
+      "target": "updateFeatureOfProduct",
+      "type": "crud",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "description": "description"
+      },
+      "reason": "CRUD: Often read products before updating; Parameter 'description' produced by getFeaturesForProduct and consumed by updateFeatureOfProduct",
+      "verified": null
+    },
+    {
+      "source": "getFeaturesForProduct",
+      "target": "addFeatureToProduct",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read products before updating",
+      "verified": null
+    },
+    {
+      "source": "getFeaturesForProduct",
+      "target": "addProduct",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read products before updating",
+      "verified": null
+    },
+    {
+      "source": "getFeaturesForProduct",
+      "target": "addFeatureToConfiguration",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read products before updating",
+      "verified": null
+    },
+    {
+      "source": "getAllProducts",
+      "target": "updateFeatureOfProduct",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read products before updating",
+      "verified": null
+    },
+    {
+      "source": "getAllProducts",
+      "target": "addFeatureToProduct",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read products before updating",
+      "verified": null
+    },
+    {
+      "source": "getAllProducts",
+      "target": "addProduct",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read products before updating",
+      "verified": null
+    },
+    {
+      "source": "getAllProducts",
+      "target": "addConfiguration",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read products before updating",
+      "verified": null
+    },
+    {
+      "source": "getAllProducts",
+      "target": "addFeatureToConfiguration",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read products before updating",
+      "verified": null
+    },
+    {
+      "source": "getAllProducts",
+      "target": "addRequiresConstraintToProduct",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read products before updating",
+      "verified": null
+    },
+    {
+      "source": "getAllProducts",
+      "target": "addExcludesConstraintToProduct",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read products before updating",
+      "verified": null
+    },
+    {
+      "source": "getProductByName",
+      "target": "updateFeatureOfProduct",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read products before updating",
+      "verified": null
+    },
+    {
+      "source": "getProductByName",
+      "target": "addFeatureToProduct",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read products before updating",
+      "verified": null
+    },
+    {
+      "source": "getProductByName",
+      "target": "addProduct",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read products before updating",
+      "verified": null
+    },
+    {
+      "source": "getProductByName",
+      "target": "addConfiguration",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read products before updating",
+      "verified": null
+    },
+    {
+      "source": "getProductByName",
+      "target": "addFeatureToConfiguration",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read products before updating",
+      "verified": null
+    },
+    {
+      "source": "getProductByName",
+      "target": "addRequiresConstraintToProduct",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read products before updating",
+      "verified": null
+    },
+    {
+      "source": "getProductByName",
+      "target": "addExcludesConstraintToProduct",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read products before updating",
+      "verified": null
+    },
+    {
+      "source": "getConfigurationWithNameForProduct",
+      "target": "addProduct",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read products before updating",
+      "verified": null
+    },
+    {
+      "source": "getConfigurationWithNameForProduct",
+      "target": "addConfiguration",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read products before updating",
+      "verified": null
+    },
+    {
+      "source": "getConfigurationWithNameForProduct",
+      "target": "addFeatureToConfiguration",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read products before updating",
+      "verified": null
+    },
+    {
+      "source": "getConfigurationsForProduct",
+      "target": "addProduct",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read products before updating",
+      "verified": null
+    },
+    {
+      "source": "getConfigurationsForProduct",
+      "target": "addConfiguration",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read products before updating",
+      "verified": null
+    },
+    {
+      "source": "getConfigurationsForProduct",
+      "target": "addFeatureToConfiguration",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read products before updating",
+      "verified": null
+    },
+    {
+      "source": "getConfigurationActivedFeatures",
+      "target": "updateFeatureOfProduct",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read products before updating",
+      "verified": null
+    },
+    {
+      "source": "getConfigurationActivedFeatures",
+      "target": "addFeatureToProduct",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read products before updating",
+      "verified": null
+    },
+    {
+      "source": "getConfigurationActivedFeatures",
+      "target": "addProduct",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read products before updating",
+      "verified": null
+    },
+    {
+      "source": "getConfigurationActivedFeatures",
+      "target": "addConfiguration",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read products before updating",
+      "verified": null
+    },
+    {
+      "source": "getConfigurationActivedFeatures",
+      "target": "addFeatureToConfiguration",
+      "type": "crud",
+      "confidence": 0.6,
+      "parameter_mapping": {},
+      "reason": "CRUD: Often read products before updating",
+      "verified": null
+    },
+    {
+      "source": "addProduct",
+      "target": "updateFeatureOfProduct",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {},
+      "reason": "/products/{productName}/features/{featureName} is nested under /products/{productName}",
+      "verified": null
+    },
+    {
+      "source": "addProduct",
+      "target": "addFeatureToProduct",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {},
+      "reason": "/products/{productName}/features/{featureName} is nested under /products/{productName}",
+      "verified": null
+    },
+    {
+      "source": "addProduct",
+      "target": "deleteFeatureOfProduct",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {},
+      "reason": "/products/{productName}/features/{featureName} is nested under /products/{productName}",
+      "verified": null
+    },
+    {
+      "source": "addProduct",
+      "target": "addConfiguration",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {},
+      "reason": "/products/{productName}/configurations/{configurationName} is nested under /products/{productName}",
+      "verified": null
+    },
+    {
+      "source": "addProduct",
+      "target": "deleteConfiguration",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {},
+      "reason": "/products/{productName}/configurations/{configurationName} is nested under /products/{productName}",
+      "verified": null
+    },
+    {
+      "source": "addProduct",
+      "target": "addFeatureToConfiguration",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {},
+      "reason": "/products/{productName}/configurations/{configurationName}/features/{featureName} is nested under /products/{productName}",
+      "verified": null
+    },
+    {
+      "source": "addConfiguration",
+      "target": "addFeatureToConfiguration",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {},
+      "reason": "/products/{productName}/configurations/{configurationName}/features/{featureName} is nested under /products/{productName}/configurations/{configurationName}",
+      "verified": null
+    },
+    {
+      "source": "addProduct",
+      "target": "deleteFeature",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {},
+      "reason": "/products/{productName}/configurations/{configurationName}/features/{featureName} is nested under /products/{productName}",
+      "verified": null
+    },
+    {
+      "source": "addConfiguration",
+      "target": "deleteFeature",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {},
+      "reason": "/products/{productName}/configurations/{configurationName}/features/{featureName} is nested under /products/{productName}/configurations/{configurationName}",
+      "verified": null
+    },
+    {
+      "source": "addProduct",
+      "target": "deleteConstraint",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {},
+      "reason": "/products/{productName}/constraints/{constraintId} is nested under /products/{productName}",
+      "verified": null
+    },
+    {
+      "source": "addProduct",
+      "target": "addRequiresConstraintToProduct",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {},
+      "reason": "/products/{productName}/constraints/requires is nested under /products/{productName}",
+      "verified": null
+    },
+    {
+      "source": "addProduct",
+      "target": "addExcludesConstraintToProduct",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {},
+      "reason": "/products/{productName}/constraints/excludes is nested under /products/{productName}",
+      "verified": null
+    },
+    {
+      "source": "updateFeatureOfProduct",
+      "target": "addFeatureToProduct",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "description": "description"
+      },
+      "reason": "Parameter 'description' produced by updateFeatureOfProduct and consumed by addFeatureToProduct",
+      "verified": null
+    },
+    {
+      "source": "getProductByName",
+      "target": "deleteConstraint",
+      "type": "parameter_data",
+      "confidence": 0.6,
+      "parameter_mapping": {
+        "constraints": "constraintId"
+      },
+      "reason": "Fuzzy match: 'constraints' -> 'constraintId'",
+      "verified": null
+    }
+  ],
+  "metadata": {
+    "num_operations": 18,
+    "num_dependencies": 43
+  }
+}

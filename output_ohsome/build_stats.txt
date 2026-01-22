@@ -1,0 +1,127 @@
+================================================================================
+DEPENDENCY GRAPH BUILD LOG - OHSOME
+Generated: 2026-01-22 10:24:55
+================================================================================
+
+================================================================================
+DEPENDENCY GRAPH BUILDER
+================================================================================
+
+[PHASE 1] Building Static Dependency Graph
+--------------------------------------------------------------------------------
+Step 1: Parsing OpenAPI specification...
+  Found 244 operations
+
+Step 2: Adding operations to graph...
+
+Step 3: Analyzing dependencies...
+  - Parameter-wise dependencies...
+    Found 8991 dependencies
+  - CRUD dependencies...
+    Found 577 dependencies
+  - Logical dependencies...
+    Found 0 dependencies
+  - Nested resource dependencies...
+    Found 348 dependencies
+  - Constraint dependencies...
+    Found 8914 dependencies
+
+Step 4: Resolving conflicts and adding to graph...
+  Resolved to 6112 dependencies
+  Added 5161 dependencies, skipped 951 to prevent cycles.
+
+Step 5: Performing transitive reduction to remove redundant edges...
+  Graph optimized. Reduced edge count from 5161 to 280.
+
+================================================================================
+✓ Graph building completed in 1.42 seconds
+================================================================================
+
+[EXPORT] Exporting dependency graph...
+Exported annotated OpenAPI specification to ./output_ohsome/annotated_spec.yaml
+Exported JSON graph to ./output_ohsome/graph.json
+Exported GraphML to ./output_ohsome/graph.graphml
+Exported DOT graph to ./output_ohsome/graph.dot
+Created interactive visualization at ./output_ohsome/graph.html
+
+✓ All exports completed in ./output_ohsome/
+
+[STATS] Generating graph statistics...
+
+--- Per-node and per-edge memory breakdown (estimated) ---
+Average per-node bytes (includes node id + attributes): 159 bytes
+  - Avg node-id bytes: 95 bytes (string length + object overhead)
+  - Avg number of attribute fields per node: 0.00
+  Reasoning:
+    * node-id: stored as Python object (usually str) => bytes = utf-8 length + object overhead.
+    * attributes: dictionary object overhead + sizes of keys and values recursively.
+    * Operation-like attribute objects contribute: object header + per-field sizes (operation_id, path, method, params, annotations).
+    * Lists/maps stored in attributes are walked recursively and their element sizes included.
+
+Average per-edge bytes (includes edge endpoints + attributes): 256 bytes
+  - Avg number of attribute fields per edge: 0.00
+  Reasoning:
+    * edge stores references to source/target (ids) plus an attributes dict.
+    * Dependency-like objects add their __dict__ fields (type, confidence, parameter mappings, flags).
+    * Each container or string contributes its own memory as estimated above.
+----------------------------------------------------------
+
+
+=== Dependency Graph Benchmark Report ===
+Nodes: 244   Edges: 280   DAG: True
+Components: count=3 largest=234
+Degree in: {'min': 0, 'max': 2, 'mean': 1.1475409836065573, 'median': 1.0, 'stdev': 0.4182737974482975} out: {'min': 0, 'max': 5, 'mean': 1.1475409836065573, 'median': 1.0, 'stdev': 0.7753595796974077}
+Detailed in-memory size estimate:
+  Nodes total bytes: 38988  avg/node: 159
+  (avg node-id bytes: 95  avg fields/node: 0.0)
+  Edges total bytes: 71870  avg/edge: 256
+  (avg fields/edge: 0.0)
+  Overhead total bytes: 34624
+  Estimated total in-memory bytes: 145482 (142.07KB)
+Pickle serialized size: 14618 bytes
+Timings (s): {'longest_path_sec': 0.0007429122924804688, 'betweenness_sec': 0.010490179061889648, 'degree_centrality_sec': 8.082389831542969e-05, 'pickle_serialize_sec': 0.0001289844512939453, 'total_sec': 0.012891769409179688}
+=== End Report ===
+
+
+
+================================================================================
+DEPENDENCY TYPES SUMMARY
+================================================================================
+  constraint: 3087
+  parameter_data: 1167
+  crud: 577
+  nested_resource: 330
+
+================================================================================
+OPERATION SEQUENCES (Sample)
+================================================================================
+
+To execute: POST /elements/area
+  Prerequisites:
+    (No dependencies - can execute directly)
+
+To execute: POST /elements/area/density
+  Prerequisites:
+    1. POST /elements/area
+
+To execute: POST /elements/area/density/groupBy/boundary
+  Prerequisites:
+    1. POST /elements/area
+    2. POST /elements/area/density
+
+To execute: POST /elements/area/density/groupBy/boundary/groupBy/tag
+  Prerequisites:
+    1. POST /elements/area
+    2. POST /elements/area/density
+    3. POST /elements/area/density/groupBy/boundary
+
+To execute: POST /elements/area/density/groupBy/tag
+  Prerequisites:
+    1. POST /elements/area
+    2. POST /elements/area/density
+    3. POST /elements/area/density/groupBy/boundary
+    4. POST /elements/area/density/groupBy/boundary/groupBy/tag
+
+================================================================================
+END OF LOG
+================================================================================

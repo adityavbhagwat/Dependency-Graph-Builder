@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <graph edgedefault="directed">
+    <node id="getFeaturesForProduct" />
+    <node id="updateFeatureOfProduct" />
+    <node id="addFeatureToProduct" />
+    <node id="deleteFeatureOfProduct" />
+    <node id="getAllProducts" />
+    <node id="getProductByName" />
+    <node id="addProduct" />
+    <node id="deleteProductByName" />
+    <node id="getConfigurationWithNameForProduct" />
+    <node id="addConfiguration" />
+    <node id="deleteConfiguration" />
+    <node id="getConfigurationsForProduct" />
+    <node id="addFeatureToConfiguration" />
+    <node id="deleteFeature" />
+    <node id="getConfigurationActivedFeatures" />
+    <node id="deleteConstraint" />
+    <node id="addRequiresConstraintToProduct" />
+    <node id="addExcludesConstraintToProduct" />
+    <edge source="getFeaturesForProduct" target="addProduct" />
+    <edge source="updateFeatureOfProduct" target="addFeatureToProduct" />
+    <edge source="getAllProducts" target="addProduct" />
+    <edge source="getProductByName" target="addProduct" />
+    <edge source="addProduct" target="addRequiresConstraintToProduct" />
+    <edge source="addProduct" target="updateFeatureOfProduct" />
+    <edge source="addProduct" target="addExcludesConstraintToProduct" />
+    <edge source="addProduct" target="deleteConstraint" />
+    <edge source="addProduct" target="deleteFeatureOfProduct" />
+    <edge source="addProduct" target="deleteConfiguration" />
+    <edge source="addProduct" target="addConfiguration" />
+    <edge source="getConfigurationWithNameForProduct" target="addProduct" />
+    <edge source="addConfiguration" target="addFeatureToConfiguration" />
+    <edge source="addConfiguration" target="deleteFeature" />
+    <edge source="getConfigurationsForProduct" target="addProduct" />
+    <edge source="getConfigurationActivedFeatures" target="addProduct" />
+  </graph>
+</graphml>

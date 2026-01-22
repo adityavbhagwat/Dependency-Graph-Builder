@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Dependency Graph</title>
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <style>
+        #mynetwork {
+            width: 100%;
+            height: 800px;
+            border: 1px solid lightgray;
+        }
+        .legend {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: white;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>API Dependency Graph</h1>
+    <div class="legend">
+        <h3>Legend</h3>
+        <div><span style="color: #4CAF50;">■</span> GET Operations</div>
+        <div><span style="color: #2196F3;">■</span> POST Operations</div>
+        <div><span style="color: #FF9800;">■</span> PUT/PATCH Operations</div>
+        <div><span style="color: #F44336;">■</span> DELETE Operations</div>
+    </div>
+    <div id="mynetwork"></div>
+    <script type="text/javascript">
+        // Graph data
+        var nodes = new vis.DataSet([{"id": "putPersonUsingPUT", "label": "PUT\\n/api/person", "color": "#FF9800", "consumes": ["insurance", "lastName", "address", "age", "createdAt", "cars", "id", "firstName"], "produces": ["insurance", "lastName", "address", "age", "createdAt", "cars", "id", "firstName"]}, {"id": "postPersonUsingPOST", "label": "POST\\n/api/person", "color": "#2196F3", "consumes": ["insurance", "lastName", "address", "age", "createdAt", "cars", "id", "firstName"], "produces": ["insurance", "lastName", "address", "age", "createdAt", "cars", "id", "firstName"]}, {"id": "getPersonUsingGET", "label": "GET\\n/api/person/{id}", "color": "#4CAF50", "consumes": ["id"], "produces": ["insurance", "lastName", "address", "age", "createdAt", "cars", "id", "firstName"]}, {"id": "deletePersonUsingDELETE", "label": "DELETE\\n/api/person/{id}", "color": "#F44336", "consumes": ["id"], "produces": []}, {"id": "getPersonsUsingGET", "label": "GET\\n/api/persons", "color": "#4CAF50", "consumes": [], "produces": ["insurance", "lastName", "address", "age", "createdAt", "cars", "id", "firstName"]}, {"id": "putPersonUsingPUT_1", "label": "PUT\\n/api/persons", "color": "#FF9800", "consumes": ["insurance", "lastName", "address", "age", "createdAt", "cars", "id", "firstName"], "produces": []}, {"id": "postPersonsUsingPOST", "label": "POST\\n/api/persons", "color": "#2196F3", "consumes": ["insurance", "lastName", "address", "age", "createdAt", "cars", "id", "firstName"], "produces": ["insurance", "lastName", "address", "age", "createdAt", "cars", "id", "firstName"]}, {"id": "deletePersonsUsingDELETE", "label": "DELETE\\n/api/persons", "color": "#F44336", "consumes": [], "produces": []}, {"id": "averageAgeUsingGET", "label": "GET\\n/api/persons/averageAge", "color": "#4CAF50", "consumes": [], "produces": []}, {"id": "getCountUsingGET", "label": "GET\\n/api/persons/count", "color": "#4CAF50", "consumes": [], "produces": []}, {"id": "getPersonsUsingGET_1", "label": "GET\\n/api/persons/{ids}", "color": "#4CAF50", "consumes": ["ids"], "produces": ["insurance", "lastName", "address", "age", "createdAt", "cars", "id", "firstName"]}, {"id": "deletePersonsUsingDELETE_1", "label": "DELETE\\n/api/persons/{ids}", "color": "#F44336", "consumes": ["ids"], "produces": []}]);
+        var edges = new vis.DataSet([{"from": "postPersonUsingPOST", "to": "putPersonUsingPUT", "label": "crud", "color": "#4CAF50", "title": "CRUD: Must create person before updating; Parameter 'address' produced by postPersonUsingPOST and consumed by putPersonUsingPUT; Parameter 'age' produced by postPersonUsingPOST and consumed by putPersonUsingPUT; Parameter 'cars' produced by postPersonUsingPOST and consumed by putPersonUsingPUT; Parameter 'createdAt' produced by postPersonUsingPOST and consumed by putPersonUsingPUT; Parameter 'firstName' produced by postPersonUsingPOST and consumed by putPersonUsingPUT; Parameter 'id' produced by postPersonUsingPOST and consumed by putPersonUsingPUT; Parameter 'insurance' produced by postPersonUsingPOST and consumed by putPersonUsingPUT; Parameter 'lastName' produced by postPersonUsingPOST and consumed by putPersonUsingPUT"}, {"from": "getPersonUsingGET", "to": "putPersonUsingPUT", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read person before updating; Parameter 'address' produced by getPersonUsingGET and consumed by putPersonUsingPUT; Parameter 'age' produced by getPersonUsingGET and consumed by putPersonUsingPUT; Parameter 'cars' produced by getPersonUsingGET and consumed by putPersonUsingPUT; Parameter 'createdAt' produced by getPersonUsingGET and consumed by putPersonUsingPUT; Parameter 'firstName' produced by getPersonUsingGET and consumed by putPersonUsingPUT; Parameter 'id' produced by getPersonUsingGET and consumed by putPersonUsingPUT; Parameter 'insurance' produced by getPersonUsingGET and consumed by putPersonUsingPUT; Parameter 'lastName' produced by getPersonUsingGET and consumed by putPersonUsingPUT"}, {"from": "postPersonUsingPOST", "to": "getPersonUsingGET", "label": "crud", "color": "#4CAF50", "title": "/api/person/{id} is nested under /api/person; CRUD: Must create person before reading; Parameter 'id' produced by postPersonUsingPOST and consumed by getPersonUsingGET"}, {"from": "postPersonUsingPOST", "to": "deletePersonUsingDELETE", "label": "crud", "color": "#4CAF50", "title": "/api/person/{id} is nested under /api/person; CRUD: Must create person before deleting; Parameter 'id' produced by postPersonUsingPOST and consumed by deletePersonUsingDELETE"}, {"from": "getPersonsUsingGET", "to": "putPersonUsingPUT_1", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read persons before updating; Parameter 'address' produced by getPersonsUsingGET and consumed by putPersonUsingPUT_1; Parameter 'age' produced by getPersonsUsingGET and consumed by putPersonUsingPUT_1; Parameter 'cars' produced by getPersonsUsingGET and consumed by putPersonUsingPUT_1; Parameter 'createdAt' produced by getPersonsUsingGET and consumed by putPersonUsingPUT_1; Parameter 'firstName' produced by getPersonsUsingGET and consumed by putPersonUsingPUT_1; Parameter 'id' produced by getPersonsUsingGET and consumed by putPersonUsingPUT_1; Parameter 'insurance' produced by getPersonsUsingGET and consumed by putPersonUsingPUT_1; Parameter 'lastName' produced by getPersonsUsingGET and consumed by putPersonUsingPUT_1"}, {"from": "postPersonsUsingPOST", "to": "putPersonUsingPUT_1", "label": "crud", "color": "#4CAF50", "title": "CRUD: Must create persons before updating; Parameter 'address' produced by postPersonsUsingPOST and consumed by putPersonUsingPUT_1; Parameter 'age' produced by postPersonsUsingPOST and consumed by putPersonUsingPUT_1; Parameter 'cars' produced by postPersonsUsingPOST and consumed by putPersonUsingPUT_1; Parameter 'createdAt' produced by postPersonsUsingPOST and consumed by putPersonUsingPUT_1; Parameter 'firstName' produced by postPersonsUsingPOST and consumed by putPersonUsingPUT_1; Parameter 'id' produced by postPersonsUsingPOST and consumed by putPersonUsingPUT_1; Parameter 'insurance' produced by postPersonsUsingPOST and consumed by putPersonUsingPUT_1; Parameter 'lastName' produced by postPersonsUsingPOST and consumed by putPersonUsingPUT_1"}, {"from": "getPersonsUsingGET_1", "to": "putPersonUsingPUT_1", "label": "crud", "color": "#4CAF50", "title": "CRUD: Often read persons before updating; Parameter 'address' produced by getPersonsUsingGET_1 and consumed by putPersonUsingPUT_1; Parameter 'age' produced by getPersonsUsingGET_1 and consumed by putPersonUsingPUT_1; Parameter 'cars' produced by getPersonsUsingGET_1 and consumed by putPersonUsingPUT_1; Parameter 'createdAt' produced by getPersonsUsingGET_1 and consumed by putPersonUsingPUT_1; Parameter 'firstName' produced by getPersonsUsingGET_1 and consumed by putPersonUsingPUT_1; Parameter 'id' produced by getPersonsUsingGET_1 and consumed by putPersonUsingPUT_1; Parameter 'insurance' produced by getPersonsUsingGET_1 and consumed by putPersonUsingPUT_1; Parameter 'lastName' produced by getPersonsUsingGET_1 and consumed by putPersonUsingPUT_1"}, {"from": "postPersonsUsingPOST", "to": "getPersonsUsingGET", "label": "crud", "color": "#4CAF50", "title": "CRUD: Must create persons before reading"}, {"from": "postPersonsUsingPOST", "to": "getPersonsUsingGET_1", "label": "crud", "color": "#4CAF50", "title": "/api/persons/{ids} is nested under /api/persons; CRUD: Must create persons before reading"}, {"from": "postPersonsUsingPOST", "to": "deletePersonsUsingDELETE", "label": "crud", "color": "#4CAF50", "title": "CRUD: Must create persons before deleting"}, {"from": "postPersonsUsingPOST", "to": "deletePersonsUsingDELETE_1", "label": "crud", "color": "#4CAF50", "title": "/api/persons/{ids} is nested under /api/persons; CRUD: Must create persons before deleting"}, {"from": "postPersonsUsingPOST", "to": "averageAgeUsingGET", "label": "nested_resource", "color": "#9C27B0", "title": "/api/persons/averageAge is nested under /api/persons"}, {"from": "postPersonsUsingPOST", "to": "getCountUsingGET", "label": "nested_resource", "color": "#9C27B0", "title": "/api/persons/count is nested under /api/persons"}, {"from": "putPersonUsingPUT", "to": "deletePersonUsingDELETE", "label": "parameter_data", "color": "#2196F3", "title": "Parameter 'id' produced by putPersonUsingPUT and consumed by deletePersonUsingDELETE"}, {"from": "getPersonUsingGET", "to": "deletePersonUsingDELETE", "label": "parameter_data", "color": "#2196F3", "title": "Parameter 'id' produced by getPersonUsingGET and consumed by deletePersonUsingDELETE"}]);
+        
+        var container = document.getElementById('mynetwork');
+        var data = {
+            nodes: nodes,
+            edges: edges
+        };
+        
+        var options = {
+            nodes: {
+                shape: 'box',
+                margin: 10,
+                widthConstraint: {
+                    maximum: 200
+                }
+            },
+            edges: {
+                arrows: 'to',
+                smooth: {
+                    type: 'cubicBezier'
+                }
+            },
+            physics: {
+                enabled: true,
+                barnesHut: {
+                    gravitationalConstant: -2000,
+                    springConstant: 0.001,
+                    springLength: 200
+                }
+            },
+            layout: {
+                hierarchical: {
+                    enabled: true,
+                    direction: 'UD',
+                    sortMethod: 'directed'
+                }
+            }
+        };
+        
+        var network = new vis.Network(container, data, options);
+        
+        network.on("click", function(params) {
+            if (params.nodes.length > 0) {
+                var nodeId = params.nodes[0];
+                var node = nodes.get(nodeId);
+                alert('Operation: ' + node.label + '\n' +
+                      'ID: ' + node.id + '\n' +
+                      'Consumes: ' + (node.consumes || []).join(', ') + '\n' +
+                      'Produces: ' + (node.produces || []).join(', '));
+            }
+        });
+    </script>
+</body>
+</html>
+        

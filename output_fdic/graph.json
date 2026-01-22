@@ -1,0 +1,157 @@
+{
+  "nodes": [
+    {
+      "id": "searchInstitutions",
+      "path": "/institutions",
+      "method": "GET",
+      "resource_type": "institutions",
+      "consumes": [
+        "",
+        "sort_order",
+        "sort_by",
+        "offset",
+        "search",
+        "filters",
+        "limit",
+        "fields"
+      ],
+      "produces": [
+        "data",
+        "meta"
+      ],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "searchLocations",
+      "path": "/locations",
+      "method": "GET",
+      "resource_type": "locations",
+      "consumes": [
+        "",
+        "sort_order",
+        "sort_by",
+        "offset",
+        "fields",
+        "filters",
+        "limit"
+      ],
+      "produces": [
+        "data",
+        "meta"
+      ],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "getHistorical",
+      "path": "/summary",
+      "method": "GET",
+      "resource_type": "summary",
+      "consumes": [
+        "",
+        "sort_order",
+        "sort_by",
+        "agg_sum_fields",
+        "agg_by",
+        "agg_limit",
+        "offset",
+        "fields",
+        "filters",
+        "agg_term_fields",
+        "limit"
+      ],
+      "produces": [
+        "data",
+        "meta"
+      ],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "getFailures",
+      "path": "/failures",
+      "method": "GET",
+      "resource_type": "failures",
+      "consumes": [
+        "",
+        "sort_order",
+        "sort_by",
+        "agg_sum_fields",
+        "subtotal_by",
+        "total_fields",
+        "agg_by",
+        "agg_limit",
+        "offset",
+        "fields",
+        "filters",
+        "agg_term_fields",
+        "limit"
+      ],
+      "produces": [
+        "data",
+        "meta",
+        "totals"
+      ],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "getHistory",
+      "path": "/history",
+      "method": "GET",
+      "resource_type": "history",
+      "consumes": [
+        "",
+        "sort_order",
+        "sort_by",
+        "agg_by",
+        "agg_limit",
+        "offset",
+        "search",
+        "filters",
+        "agg_term_fields",
+        "limit",
+        "fields"
+      ],
+      "produces": [
+        "data",
+        "meta",
+        "totals"
+      ],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "getFinancials",
+      "path": "/financials",
+      "method": "GET",
+      "resource_type": "financials",
+      "consumes": [
+        "",
+        "sort_order",
+        "sort_by",
+        "agg_sum_fields",
+        "agg_by",
+        "agg_limit",
+        "offset",
+        "fields",
+        "filters",
+        "agg_term_fields",
+        "limit"
+      ],
+      "produces": [
+        "data",
+        "meta",
+        "totals"
+      ],
+      "is_interesting": false,
+      "annotations": {}
+    }
+  ],
+  "edges": [],
+  "metadata": {
+    "num_operations": 6,
+    "num_dependencies": 0
+  }
+}

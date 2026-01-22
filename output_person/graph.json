@@ -1,0 +1,416 @@
+{
+  "nodes": [
+    {
+      "id": "putPersonUsingPUT",
+      "path": "/api/person",
+      "method": "PUT",
+      "resource_type": "person",
+      "consumes": [
+        "insurance",
+        "lastName",
+        "address",
+        "age",
+        "createdAt",
+        "cars",
+        "id",
+        "firstName"
+      ],
+      "produces": [
+        "insurance",
+        "lastName",
+        "address",
+        "age",
+        "createdAt",
+        "cars",
+        "id",
+        "firstName"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "postPersonUsingPOST",
+      "path": "/api/person",
+      "method": "POST",
+      "resource_type": "person",
+      "consumes": [
+        "insurance",
+        "lastName",
+        "address",
+        "age",
+        "createdAt",
+        "cars",
+        "id",
+        "firstName"
+      ],
+      "produces": [
+        "insurance",
+        "lastName",
+        "address",
+        "age",
+        "createdAt",
+        "cars",
+        "id",
+        "firstName"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "getPersonUsingGET",
+      "path": "/api/person/{id}",
+      "method": "GET",
+      "resource_type": "person",
+      "consumes": [
+        "id"
+      ],
+      "produces": [
+        "insurance",
+        "lastName",
+        "address",
+        "age",
+        "createdAt",
+        "cars",
+        "id",
+        "firstName"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "deletePersonUsingDELETE",
+      "path": "/api/person/{id}",
+      "method": "DELETE",
+      "resource_type": "person",
+      "consumes": [
+        "id"
+      ],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "getPersonsUsingGET",
+      "path": "/api/persons",
+      "method": "GET",
+      "resource_type": "persons",
+      "consumes": [],
+      "produces": [
+        "insurance",
+        "lastName",
+        "address",
+        "age",
+        "createdAt",
+        "cars",
+        "id",
+        "firstName"
+      ],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "putPersonUsingPUT_1",
+      "path": "/api/persons",
+      "method": "PUT",
+      "resource_type": "persons",
+      "consumes": [
+        "insurance",
+        "lastName",
+        "address",
+        "age",
+        "createdAt",
+        "cars",
+        "id",
+        "firstName"
+      ],
+      "produces": [],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "postPersonsUsingPOST",
+      "path": "/api/persons",
+      "method": "POST",
+      "resource_type": "persons",
+      "consumes": [
+        "insurance",
+        "lastName",
+        "address",
+        "age",
+        "createdAt",
+        "cars",
+        "id",
+        "firstName"
+      ],
+      "produces": [
+        "insurance",
+        "lastName",
+        "address",
+        "age",
+        "createdAt",
+        "cars",
+        "id",
+        "firstName"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "deletePersonsUsingDELETE",
+      "path": "/api/persons",
+      "method": "DELETE",
+      "resource_type": "persons",
+      "consumes": [],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "averageAgeUsingGET",
+      "path": "/api/persons/averageAge",
+      "method": "GET",
+      "resource_type": "averageAge",
+      "consumes": [],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "getCountUsingGET",
+      "path": "/api/persons/count",
+      "method": "GET",
+      "resource_type": "count",
+      "consumes": [],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    },
+    {
+      "id": "getPersonsUsingGET_1",
+      "path": "/api/persons/{ids}",
+      "method": "GET",
+      "resource_type": "persons",
+      "consumes": [
+        "ids"
+      ],
+      "produces": [
+        "insurance",
+        "lastName",
+        "address",
+        "age",
+        "createdAt",
+        "cars",
+        "id",
+        "firstName"
+      ],
+      "is_interesting": true,
+      "annotations": {}
+    },
+    {
+      "id": "deletePersonsUsingDELETE_1",
+      "path": "/api/persons/{ids}",
+      "method": "DELETE",
+      "resource_type": "persons",
+      "consumes": [
+        "ids"
+      ],
+      "produces": [],
+      "is_interesting": false,
+      "annotations": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "postPersonUsingPOST",
+      "target": "putPersonUsingPUT",
+      "type": "crud",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "firstName": "firstName",
+        "id": "id",
+        "cars": "cars",
+        "createdAt": "createdAt",
+        "age": "age",
+        "address": "address",
+        "lastName": "lastName",
+        "insurance": "insurance"
+      },
+      "reason": "CRUD: Must create person before updating; Parameter 'address' produced by postPersonUsingPOST and consumed by putPersonUsingPUT; Parameter 'age' produced by postPersonUsingPOST and consumed by putPersonUsingPUT; Parameter 'cars' produced by postPersonUsingPOST and consumed by putPersonUsingPUT; Parameter 'createdAt' produced by postPersonUsingPOST and consumed by putPersonUsingPUT; Parameter 'firstName' produced by postPersonUsingPOST and consumed by putPersonUsingPUT; Parameter 'id' produced by postPersonUsingPOST and consumed by putPersonUsingPUT; Parameter 'insurance' produced by postPersonUsingPOST and consumed by putPersonUsingPUT; Parameter 'lastName' produced by postPersonUsingPOST and consumed by putPersonUsingPUT",
+      "verified": null
+    },
+    {
+      "source": "getPersonUsingGET",
+      "target": "putPersonUsingPUT",
+      "type": "crud",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "firstName": "firstName",
+        "id": "id",
+        "cars": "cars",
+        "createdAt": "createdAt",
+        "age": "age",
+        "address": "address",
+        "lastName": "lastName",
+        "insurance": "insurance"
+      },
+      "reason": "CRUD: Often read person before updating; Parameter 'address' produced by getPersonUsingGET and consumed by putPersonUsingPUT; Parameter 'age' produced by getPersonUsingGET and consumed by putPersonUsingPUT; Parameter 'cars' produced by getPersonUsingGET and consumed by putPersonUsingPUT; Parameter 'createdAt' produced by getPersonUsingGET and consumed by putPersonUsingPUT; Parameter 'firstName' produced by getPersonUsingGET and consumed by putPersonUsingPUT; Parameter 'id' produced by getPersonUsingGET and consumed by putPersonUsingPUT; Parameter 'insurance' produced by getPersonUsingGET and consumed by putPersonUsingPUT; Parameter 'lastName' produced by getPersonUsingGET and consumed by putPersonUsingPUT",
+      "verified": null
+    },
+    {
+      "source": "postPersonUsingPOST",
+      "target": "getPersonUsingGET",
+      "type": "crud",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "id": "id"
+      },
+      "reason": "/api/person/{id} is nested under /api/person; CRUD: Must create person before reading; Parameter 'id' produced by postPersonUsingPOST and consumed by getPersonUsingGET",
+      "verified": null
+    },
+    {
+      "source": "postPersonUsingPOST",
+      "target": "deletePersonUsingDELETE",
+      "type": "crud",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "id": "id"
+      },
+      "reason": "/api/person/{id} is nested under /api/person; CRUD: Must create person before deleting; Parameter 'id' produced by postPersonUsingPOST and consumed by deletePersonUsingDELETE",
+      "verified": null
+    },
+    {
+      "source": "getPersonsUsingGET",
+      "target": "putPersonUsingPUT_1",
+      "type": "crud",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "firstName": "firstName",
+        "id": "id",
+        "cars": "cars",
+        "createdAt": "createdAt",
+        "age": "age",
+        "address": "address",
+        "lastName": "lastName",
+        "insurance": "insurance"
+      },
+      "reason": "CRUD: Often read persons before updating; Parameter 'address' produced by getPersonsUsingGET and consumed by putPersonUsingPUT_1; Parameter 'age' produced by getPersonsUsingGET and consumed by putPersonUsingPUT_1; Parameter 'cars' produced by getPersonsUsingGET and consumed by putPersonUsingPUT_1; Parameter 'createdAt' produced by getPersonsUsingGET and consumed by putPersonUsingPUT_1; Parameter 'firstName' produced by getPersonsUsingGET and consumed by putPersonUsingPUT_1; Parameter 'id' produced by getPersonsUsingGET and consumed by putPersonUsingPUT_1; Parameter 'insurance' produced by getPersonsUsingGET and consumed by putPersonUsingPUT_1; Parameter 'lastName' produced by getPersonsUsingGET and consumed by putPersonUsingPUT_1",
+      "verified": null
+    },
+    {
+      "source": "postPersonsUsingPOST",
+      "target": "putPersonUsingPUT_1",
+      "type": "crud",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "firstName": "firstName",
+        "id": "id",
+        "cars": "cars",
+        "createdAt": "createdAt",
+        "age": "age",
+        "address": "address",
+        "lastName": "lastName",
+        "insurance": "insurance"
+      },
+      "reason": "CRUD: Must create persons before updating; Parameter 'address' produced by postPersonsUsingPOST and consumed by putPersonUsingPUT_1; Parameter 'age' produced by postPersonsUsingPOST and consumed by putPersonUsingPUT_1; Parameter 'cars' produced by postPersonsUsingPOST and consumed by putPersonUsingPUT_1; Parameter 'createdAt' produced by postPersonsUsingPOST and consumed by putPersonUsingPUT_1; Parameter 'firstName' produced by postPersonsUsingPOST and consumed by putPersonUsingPUT_1; Parameter 'id' produced by postPersonsUsingPOST and consumed by putPersonUsingPUT_1; Parameter 'insurance' produced by postPersonsUsingPOST and consumed by putPersonUsingPUT_1; Parameter 'lastName' produced by postPersonsUsingPOST and consumed by putPersonUsingPUT_1",
+      "verified": null
+    },
+    {
+      "source": "getPersonsUsingGET_1",
+      "target": "putPersonUsingPUT_1",
+      "type": "crud",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "firstName": "firstName",
+        "id": "id",
+        "cars": "cars",
+        "createdAt": "createdAt",
+        "age": "age",
+        "address": "address",
+        "lastName": "lastName",
+        "insurance": "insurance"
+      },
+      "reason": "CRUD: Often read persons before updating; Parameter 'address' produced by getPersonsUsingGET_1 and consumed by putPersonUsingPUT_1; Parameter 'age' produced by getPersonsUsingGET_1 and consumed by putPersonUsingPUT_1; Parameter 'cars' produced by getPersonsUsingGET_1 and consumed by putPersonUsingPUT_1; Parameter 'createdAt' produced by getPersonsUsingGET_1 and consumed by putPersonUsingPUT_1; Parameter 'firstName' produced by getPersonsUsingGET_1 and consumed by putPersonUsingPUT_1; Parameter 'id' produced by getPersonsUsingGET_1 and consumed by putPersonUsingPUT_1; Parameter 'insurance' produced by getPersonsUsingGET_1 and consumed by putPersonUsingPUT_1; Parameter 'lastName' produced by getPersonsUsingGET_1 and consumed by putPersonUsingPUT_1",
+      "verified": null
+    },
+    {
+      "source": "postPersonsUsingPOST",
+      "target": "getPersonsUsingGET",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "CRUD: Must create persons before reading",
+      "verified": null
+    },
+    {
+      "source": "postPersonsUsingPOST",
+      "target": "getPersonsUsingGET_1",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "/api/persons/{ids} is nested under /api/persons; CRUD: Must create persons before reading",
+      "verified": null
+    },
+    {
+      "source": "postPersonsUsingPOST",
+      "target": "deletePersonsUsingDELETE",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "CRUD: Must create persons before deleting",
+      "verified": null
+    },
+    {
+      "source": "postPersonsUsingPOST",
+      "target": "deletePersonsUsingDELETE_1",
+      "type": "crud",
+      "confidence": 0.9,
+      "parameter_mapping": {},
+      "reason": "/api/persons/{ids} is nested under /api/persons; CRUD: Must create persons before deleting",
+      "verified": null
+    },
+    {
+      "source": "postPersonsUsingPOST",
+      "target": "averageAgeUsingGET",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {},
+      "reason": "/api/persons/averageAge is nested under /api/persons",
+      "verified": null
+    },
+    {
+      "source": "postPersonsUsingPOST",
+      "target": "getCountUsingGET",
+      "type": "nested_resource",
+      "confidence": 0.85,
+      "parameter_mapping": {},
+      "reason": "/api/persons/count is nested under /api/persons",
+      "verified": null
+    },
+    {
+      "source": "putPersonUsingPUT",
+      "target": "deletePersonUsingDELETE",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "id": "id"
+      },
+      "reason": "Parameter 'id' produced by putPersonUsingPUT and consumed by deletePersonUsingDELETE",
+      "verified": null
+    },
+    {
+      "source": "getPersonUsingGET",
+      "target": "deletePersonUsingDELETE",
+      "type": "parameter_data",
+      "confidence": 1.0,
+      "parameter_mapping": {
+        "id": "id"
+      },
+      "reason": "Parameter 'id' produced by getPersonUsingGET and consumed by deletePersonUsingDELETE",
+      "verified": null
+    }
+  ],
+  "metadata": {
+    "num_operations": 12,
+    "num_dependencies": 15
+  }
+}

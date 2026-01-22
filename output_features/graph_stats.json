@@ -1,0 +1,158 @@
+{
+  "basic": {
+    "num_nodes": 18,
+    "num_edges": 16,
+    "is_dag": true,
+    "directed": true
+  },
+  "components": {
+    "count": 2,
+    "largest_size": 17
+  },
+  "degree": {
+    "in": {
+      "min": 0,
+      "max": 6,
+      "mean": 0.8888888888888888,
+      "median": 1.0,
+      "stdev": 1.3286956381223776
+    },
+    "out": {
+      "min": 0,
+      "max": 7,
+      "mean": 0.8888888888888888,
+      "median": 0.5,
+      "stdev": 1.5947444549341472
+    }
+  },
+  "longest_path": {
+    "length": 3,
+    "example": [
+      "getFeaturesForProduct",
+      "addProduct",
+      "updateFeatureOfProduct",
+      "addFeatureToProduct"
+    ]
+  },
+  "_timings": {
+    "longest_path_sec": 7.390975952148438e-05,
+    "betweenness_sec": 0.00011014938354492188,
+    "degree_centrality_sec": 7.867813110351562e-06,
+    "pickle_serialize_sec": 3.504753112792969e-05,
+    "total_sec": 0.0004930496215820312
+  },
+  "centrality": {
+    "betweenness_top": [
+      [
+        "addProduct",
+        0.22058823529411764
+      ],
+      [
+        "addConfiguration",
+        0.051470588235294115
+      ],
+      [
+        "updateFeatureOfProduct",
+        0.025735294117647058
+      ],
+      [
+        "getFeaturesForProduct",
+        0.0
+      ],
+      [
+        "addFeatureToProduct",
+        0.0
+      ],
+      [
+        "deleteFeatureOfProduct",
+        0.0
+      ],
+      [
+        "getAllProducts",
+        0.0
+      ],
+      [
+        "getProductByName",
+        0.0
+      ],
+      [
+        "deleteProductByName",
+        0.0
+      ],
+      [
+        "getConfigurationWithNameForProduct",
+        0.0
+      ]
+    ],
+    "degree_top": [
+      [
+        "addProduct",
+        0.7647058823529411
+      ],
+      [
+        "addConfiguration",
+        0.1764705882352941
+      ],
+      [
+        "updateFeatureOfProduct",
+        0.11764705882352941
+      ],
+      [
+        "getFeaturesForProduct",
+        0.058823529411764705
+      ],
+      [
+        "addFeatureToProduct",
+        0.058823529411764705
+      ],
+      [
+        "deleteFeatureOfProduct",
+        0.058823529411764705
+      ],
+      [
+        "getAllProducts",
+        0.058823529411764705
+      ],
+      [
+        "getProductByName",
+        0.058823529411764705
+      ],
+      [
+        "getConfigurationWithNameForProduct",
+        0.058823529411764705
+      ],
+      [
+        "deleteConfiguration",
+        0.058823529411764705
+      ]
+    ]
+  },
+  "detailed_size_in_memory": {
+    "nodes": {
+      "count": 18,
+      "total_bytes": 2802,
+      "avg_bytes_per_node": 155,
+      "avg_node_id_bytes": 91,
+      "avg_fields_per_node": 0.0
+    },
+    "edges": {
+      "count": 16,
+      "total_bytes": 3670,
+      "avg_bytes_per_edge": 229,
+      "avg_fields_per_edge": 0.0
+    },
+    "overhead": {
+      "per_node_bytes": 96,
+      "per_edge_bytes": 40,
+      "total_overhead_bytes": 2368
+    },
+    "total_estimated_bytes": 8840,
+    "human_readable": "8.63KB"
+  },
+  "serialization": {
+    "pickle_bytes": 1326
+  },
+  "extras": {
+    "density": 0.05228758169934641
+  }
+}

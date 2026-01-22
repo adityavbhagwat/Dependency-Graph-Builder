@@ -1,0 +1,124 @@
+================================================================================
+DEPENDENCY GRAPH BUILD LOG - USER
+Generated: 2026-01-22 10:24:52
+================================================================================
+
+================================================================================
+DEPENDENCY GRAPH BUILDER
+================================================================================
+
+[PHASE 1] Building Static Dependency Graph
+--------------------------------------------------------------------------------
+Step 1: Parsing OpenAPI specification...
+  Found 21 operations
+
+Step 2: Adding operations to graph...
+
+Step 3: Analyzing dependencies...
+  - Parameter-wise dependencies...
+    Found 89 dependencies
+  - CRUD dependencies...
+    Found 23 dependencies
+  - Logical dependencies...
+    Found 8 dependencies
+  - Nested resource dependencies...
+    Found 17 dependencies
+  - Constraint dependencies...
+    Found 0 dependencies
+
+Step 4: Resolving conflicts and adding to graph...
+  Resolved to 50 dependencies
+  Added 50 dependencies, skipped 0 to prevent cycles.
+
+Step 5: Performing transitive reduction to remove redundant edges...
+  Graph optimized. Reduced edge count from 50 to 24.
+
+================================================================================
+✓ Graph building completed in 0.04 seconds
+================================================================================
+
+[EXPORT] Exporting dependency graph...
+Exported annotated OpenAPI specification to ./output_user/annotated_spec.yaml
+Exported JSON graph to ./output_user/graph.json
+Exported GraphML to ./output_user/graph.graphml
+Exported DOT graph to ./output_user/graph.dot
+Created interactive visualization at ./output_user/graph.html
+
+✓ All exports completed in ./output_user/
+
+[STATS] Generating graph statistics...
+
+--- Per-node and per-edge memory breakdown (estimated) ---
+Average per-node bytes (includes node id + attributes): 158 bytes
+  - Avg node-id bytes: 94 bytes (string length + object overhead)
+  - Avg number of attribute fields per node: 0.00
+  Reasoning:
+    * node-id: stored as Python object (usually str) => bytes = utf-8 length + object overhead.
+    * attributes: dictionary object overhead + sizes of keys and values recursively.
+    * Operation-like attribute objects contribute: object header + per-field sizes (operation_id, path, method, params, annotations).
+    * Lists/maps stored in attributes are walked recursively and their element sizes included.
+
+Average per-edge bytes (includes edge endpoints + attributes): 247 bytes
+  - Avg number of attribute fields per edge: 0.00
+  Reasoning:
+    * edge stores references to source/target (ids) plus an attributes dict.
+    * Dependency-like objects add their __dict__ fields (type, confidence, parameter mappings, flags).
+    * Each container or string contributes its own memory as estimated above.
+----------------------------------------------------------
+
+
+=== Dependency Graph Benchmark Report ===
+Nodes: 21   Edges: 24   DAG: True
+Components: count=2 largest=16
+Degree in: {'min': 0, 'max': 3, 'mean': 1.1428571428571428, 'median': 1.0, 'stdev': 0.7095078297976829} out: {'min': 0, 'max': 5, 'mean': 1.1428571428571428, 'median': 1.0, 'stdev': 1.2453996981544782}
+Detailed in-memory size estimate:
+  Nodes total bytes: 3319  avg/node: 158
+  (avg node-id bytes: 94  avg fields/node: 0.0)
+  Edges total bytes: 5942  avg/edge: 247
+  (avg fields/edge: 0.0)
+  Overhead total bytes: 2976
+  Estimated total in-memory bytes: 12237 (11.95KB)
+Pickle serialized size: 1536 bytes
+Timings (s): {'longest_path_sec': 0.00010395050048828125, 'betweenness_sec': 0.00012302398681640625, 'degree_centrality_sec': 1.0967254638671875e-05, 'pickle_serialize_sec': 3.910064697265625e-05, 'total_sec': 0.0005848407745361328}
+=== End Report ===
+
+
+
+================================================================================
+DEPENDENCY TYPES SUMMARY
+================================================================================
+  crud: 23
+  parameter_data: 11
+  nested_resource: 8
+  authentication: 7
+  workflow: 1
+
+================================================================================
+OPERATION SEQUENCES (Sample)
+================================================================================
+
+To execute: PUT /error
+  Prerequisites:
+    1. POST /error
+    2. GET /error
+
+To execute: POST /error
+  Prerequisites:
+    (No dependencies - can execute directly)
+
+To execute: POST /login
+  Prerequisites:
+    1. POST /users
+    2. POST /users/register
+
+To execute: POST /users
+  Prerequisites:
+    (No dependencies - can execute directly)
+
+To execute: POST /users/rbac/roles
+  Prerequisites:
+    1. POST /users
+
+================================================================================
+END OF LOG
+================================================================================
